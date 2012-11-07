@@ -1,4 +1,4 @@
-![null icon](https://dl.dropbox.com/u/3019972/null.png)
+![null logo](https://dl.dropbox.com/u/3019972/null.png)
 
 # null
 
@@ -13,7 +13,6 @@
 * Text Domain: null
 
 ## About
-------------
 
 null is a tinkerers framework with ambitions to be the smartest, fastest and simplest way to build WordPress themes. 
 
@@ -30,7 +29,6 @@ Things you will love:
 
 
 ## Installation
-------------
 
 To install this theme:
 
@@ -41,7 +39,6 @@ To install this theme:
 1. Visit "Appearance -> Theme Options" and configure the theme options to your liking. 
 
 ## Frequently Asked Questions
-------------
 
 ### Which Open Source projects does null make use of?
 
@@ -73,13 +70,13 @@ No yet, but it is planned for version 1.0. When using null as a parent theme the
 
 ### What are your plans for future versions?
 
-A roadmap of sorts can be found at the top of the functions.php file. Some of the more abitious features I hope to add at some point include:
+A roadmap of sorts can be found at the top of the functions.php file. Some of the more ambitious features I hope to add at some point include:
 
-* Automattic minification of JavaScript
+* Automatic minification of JavaScript
 * Building virtual page templates and grids for use on pages and custom post types
 * Improved typographic control
-* Further intergration with the WordPress theme customiser
-* Automattic updates via GitHub
+* Further integration with the WordPress theme customiser
+* Automatic updates via GitHub
 
 ### Is there a child starter theme available?
 
@@ -90,7 +87,7 @@ One is in development. It is called null-child.
 Currently null supports IE6+ and all modern browsers. By the time 1.0 launches support for IE6 and IE7 will most likely be removed.
 
 ### Does null pass [Theme-Check](http://wordpress.org/extend/plugins/theme-check/)?
-Not at the moment. It may never pass as we require the use of file_put_contents to write the compilied LESS files to the cache folder. The theme-check is also currently not checking .less files for required styles. Most of the errors and warnings are fairly minor. The plan is to improve this over time.
+Not at the moment. It may never pass as we require the use of file_put_contents to write the compiled LESS files to the cache folder. The theme-check is also currently not checking .less files for required styles. Most of the errors and warnings are fairly minor. The plan is to improve this over time.
 
 ### Contributing 
 
@@ -98,7 +95,6 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 
 
 ## Changelog
-------------
 
 #### 0.95
 * Upload to Github
