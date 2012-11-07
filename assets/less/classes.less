@@ -1,0 +1,76 @@
+/* 
+
+classes.less
+contents:
+
+	1. Classes - Handy re-usable classes
+
+*/
+
+
+/* 1. Classes
+--------------------------------------------------------------------------------------- */
+
+.right
+	{
+	float:right;
+	}
+
+.left
+	{
+	float:left;
+	}
+
+p img.left  
+	{ 
+	float: left;
+	margin: @baseline @baseline @baseline 0;
+	padding: 0; 
+	}
+
+p img.right 
+	{ 
+	float: right;
+	margin: @baseline 0 @baseline @baseline;
+	}
+
+.quiet  
+	{ 
+	color: #ccc; 
+	}
+
+.loud
+	{
+	color: #000;
+	}
+
+.highlight
+	{
+	background: #ff0;
+	padding: 2px 5px;
+	}
+
+// hide for both screenreaders and browsers
+
+.hide,
+.hidden   
+	{ 
+	display:none; 
+	visibility:none;
+	}
+
+// hide only visually, but have it available for screenreaders 
+
+.visuallyhidden 
+	{ 
+	position:absolute !important;    
+	clip: rect(1px 1px 1px 1px); // IE6, IE7
+	clip: rect(1px, 1px, 1px, 1px); 
+	}
+
+// hide visually and from screenreaders, but maintain layout
+
+.invisible 
+	{ 
+	visibility: hidden; 
+	}

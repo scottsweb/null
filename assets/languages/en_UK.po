@@ -1,0 +1,1288 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: null\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-11 19:59+0100\n"
+"PO-Revision-Date: 2012-02-11 20:00+0100\n"
+"Last-Translator: @scottsweb <null@scott.ee>\n"
+"Language-Team: @scottsweb <null@scott.ee>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: /Volumes/toggle/dropbox/web/framework-wordpress/wp-content/themes/null/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+msgid "Page Not Found"
+msgstr ""
+
+#: 404.php:13
+msgid "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+msgstr ""
+
+#: archive.php:6
+#: category.php:11
+msgid "Blog:"
+msgstr ""
+
+#: archive.php:8
+msgid "Tag Archive for"
+msgstr ""
+
+#: archive.php:10
+#: archive.php:12
+#: archive.php:14
+msgid "Archive"
+msgstr ""
+
+#: archive.php:16
+msgid "Search Results"
+msgstr ""
+
+#: archive.php:18
+#: author.php:13
+msgid "Author Archive"
+msgstr ""
+
+#: archive.php:20
+msgid "Blog Archive"
+msgstr ""
+
+#: attachment.php:22
+#, php-format
+msgid "Return to %s"
+msgstr ""
+
+#: attachment.php:66
+msgid "&laquo; Previous Image"
+msgstr ""
+
+#: attachment.php:67
+msgid "Next Image &raquo;"
+msgstr ""
+
+#: attachment.php:88
+#: loop-single.php:17
+#, php-format
+msgid "This entry was posted by %1$s on %2$s and is filed under %3$s. "
+msgstr ""
+
+#: attachment.php:94
+#: loop-single.php:23
+#, php-format
+msgid "You can follow any responses to this entry through the %1$sRSS 2.0%2$s feed. "
+msgstr ""
+
+#: attachment.php:103
+#: loop-single.php:32
+#, php-format
+msgid "You can <a href=\"#respond\">leave a response</a>, or <a href=\"%1$s\" rel=\"trackback\">trackback</a> from your own site."
+msgstr ""
+
+#: attachment.php:111
+#: loop-single.php:40
+#, php-format
+msgid "Responses are currently closed, but you can leave a <a href=\"%1$s\" rel=\"trackback\">trackback</a> from your own site."
+msgstr ""
+
+#: attachment.php:118
+#: loop-single.php:47
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr ""
+
+#: attachment.php:123
+#: loop-single.php:52
+msgid "Both comments and pings are currently closed."
+msgstr ""
+
+#: attachment.php:137
+#: loop.php:44
+msgid "No Posts Found"
+msgstr ""
+
+#: attachment.php:138
+msgid "Sorry, no attachments were found that matched your criteria."
+msgstr ""
+
+#: author.php:26
+msgid "Posts:"
+msgstr ""
+
+#: author.php:27
+msgid "Website:"
+msgstr ""
+
+#: comments.php:5
+msgid "Please do not load this page directly. Thanks!"
+msgstr ""
+
+#: comments.php:12
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:27
+#: loop-search.php:22
+#: loop.php:26
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:27
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:27
+#: loop-search.php:22
+#: loop.php:26
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:32
+#: comments.php:46
+msgid "&laquo; Previous Comments"
+msgstr ""
+
+#: comments.php:33
+#: comments.php:47
+msgid "Next Comments &raquo;"
+msgstr ""
+
+#: comments.php:60
+msgid "Comments are closed"
+msgstr ""
+
+#: comments.php:72
+msgid "Post a Comment"
+msgstr ""
+
+#: comments.php:72
+#, php-format
+msgid "Reply to %s"
+msgstr ""
+
+#: comments.php:73
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:74
+msgid "Your email is <em>never</em> shared."
+msgstr ""
+
+#: comments.php:74
+msgid "Required fields are marked <span class=\"required\">*</span>"
+msgstr ""
+
+#: comments.php:81
+#, php-format
+msgid "You must be <a href=\"%1$s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:89
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:89
+msgid "Logout &raquo;"
+msgstr ""
+
+#: comments.php:93
+#: comments.php:94
+msgid "Name"
+msgstr ""
+
+#: comments.php:97
+#: comments.php:98
+msgid "Email"
+msgstr ""
+
+#: comments.php:101
+#: comments.php:102
+msgid "Website"
+msgstr ""
+
+#: comments.php:106
+#: comments.php:107
+#: comments.php:110
+msgid "Comment"
+msgstr ""
+
+#: comments.php:107
+msgid "What's on your mind?"
+msgstr ""
+
+#: comments.php:116
+msgid "You can use the following tags:"
+msgstr ""
+
+#: header.php:28
+msgid "Skip to content &raquo;"
+msgstr ""
+
+#: header.php:51
+msgid "Home"
+msgstr ""
+
+#: loop-page.php:10
+#: loop-single.php:10
+msgid "Page:"
+msgstr ""
+
+#: loop-search.php:18
+#: loop.php:22
+msgid "By:"
+msgstr ""
+
+#: loop-search.php:19
+#: loop.php:23
+msgid "Reading time:"
+msgstr ""
+
+#: loop-search.php:20
+#: loop.php:24
+msgid "Posted in:"
+msgstr ""
+
+#: loop-search.php:21
+#: loop.php:25
+msgid "Tagged:"
+msgstr ""
+
+#: loop-search.php:22
+#: loop.php:26
+msgid "1 Comment"
+msgstr ""
+
+#: loop-search.php:41
+msgid "Nothing Found"
+msgstr ""
+
+#: loop-search.php:44
+msgid "Sorry but nothing matched your search. Please try searching again using the form below."
+msgstr ""
+
+#: loop-single.php:71
+msgid "Post Not Found"
+msgstr ""
+
+#: loop-single.php:72
+#: loop.php:45
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: loop.php:11
+msgid "Featured"
+msgstr ""
+
+#: options.php:16
+msgid "General"
+msgstr ""
+
+#: options.php:21
+msgid "Google Analytics"
+msgstr ""
+
+#: options.php:22
+msgid "Enter your Google Analytics tracking ID: <strong>UA-XXXXX-X</strong>"
+msgstr ""
+
+#: options.php:30
+msgid "Header Meta"
+msgstr ""
+
+#: options.php:31
+msgid "Add custom meta data to the theme header. e.g. Feedburner or Google Webmaster Tools."
+msgstr ""
+
+#: options.php:38
+msgid "Breadcrumbs"
+msgstr ""
+
+#: options.php:39
+msgid "Toggle to enable breadcrumbs."
+msgstr ""
+
+#: options.php:46
+msgid "Footer Sidebar"
+msgstr ""
+
+#: options.php:47
+msgid "Toggle to output the <a href=\""
+msgstr ""
+
+#: options.php:54
+msgid "Footer Meta"
+msgstr ""
+
+#: options.php:55
+msgid "Add custom meta data to the theme footer. e.g. Tracking codes."
+msgstr ""
+
+#: options.php:62
+msgid "WordPress Credit"
+msgstr ""
+
+#: options.php:63
+msgid "Thanks to WordPress."
+msgstr ""
+
+#: options.php:71
+msgid "Designer Credit"
+msgstr ""
+
+#: options.php:72
+msgid "Leave empty to remove from footer."
+msgstr ""
+
+#: options.php:86
+msgid "Design"
+msgstr ""
+
+#: options.php:93
+msgid "Background Texture"
+msgstr ""
+
+#: options.php:94
+msgid "Choose a background style, courtesy of <a href=\"http://subtlepatterns.com/\">subtlepatterns.com</a>."
+msgstr ""
+
+#: options.php:109
+msgid "Primary Colour"
+msgstr ""
+
+#: options.php:110
+msgid "Primary colour for your website. Available as <strong>@primarycol</strong> in your LESS/CSS."
+msgstr ""
+
+#: options.php:117
+msgid "Link Colour"
+msgstr ""
+
+#: options.php:118
+msgid "Link colour. Available as <strong>@linkcol</strong> in your LESS/CSS."
+msgstr ""
+
+#: options.php:125
+msgid "Link Hover Colour"
+msgstr ""
+
+#: options.php:126
+msgid "Link Hover colour. Available as <strong>@linkhovercol</strong> in your LESS/CSS."
+msgstr ""
+
+#: options.php:133
+msgid "Logo"
+msgstr ""
+
+#: options.php:134
+msgid "A logo for the theme header."
+msgstr ""
+
+#: options.php:140
+msgid "Favicon"
+msgstr ""
+
+#: options.php:141
+msgid "A 32px by 32px .ico file."
+msgstr ""
+
+#: options.php:147
+msgid "Touch Icon"
+msgstr ""
+
+#: options.php:148
+msgid "A 114px by 114px .png file for iOS and Android."
+msgstr ""
+
+#: options.php:154
+msgid "Gravatar"
+msgstr ""
+
+#: options.php:155
+msgid "Square <a href=\"http://en.gravatar.com/\">gravatar fallback</a>. Max of 512px by 512px."
+msgstr ""
+
+#: options.php:165
+msgid "iPhone App Splash Screen"
+msgstr ""
+
+#: options.php:166
+msgid "A 320px by 460px .png file for iOS."
+msgstr ""
+
+#: options.php:172
+msgid "iPad App Splash Screen (Portrait)"
+msgstr ""
+
+#: options.php:173
+msgid "Portrait image has to be 748px by 1024px."
+msgstr ""
+
+#: options.php:179
+msgid "iPad App Splash Screen (Landscape)"
+msgstr ""
+
+#: options.php:180
+msgid "Landscape image has to be 1024px by 748px."
+msgstr ""
+
+#: options.php:194
+msgid "WordPress"
+msgstr ""
+
+#: options.php:208
+msgid "Disable Admin Bar"
+msgstr ""
+
+#: options.php:209
+msgid "Disable the admin bar on the front end for the toggled user roles."
+msgstr ""
+
+#: options.php:216
+msgid "Admin Bar Attachment"
+msgstr ""
+
+#: options.php:217
+msgid "Change how the admin bar attaches to the browser."
+msgstr ""
+
+#: options.php:223
+msgid "Fixed (default)"
+msgstr ""
+
+#: options.php:224
+msgid "Absolute"
+msgstr ""
+
+#: options.php:229
+msgid "Howdy?"
+msgstr ""
+
+#: options.php:230
+msgid "Change the admin bar welcome message."
+msgstr ""
+
+#: options.php:238
+msgid "Dashboard Widgets"
+msgstr ""
+
+#: options.php:239
+msgid "Toggle WordPress dashboard widgets."
+msgstr ""
+
+#: options.php:254
+msgid "Browser Upgrade Notification (Browse Happy)"
+msgstr ""
+
+#: options.php:255
+msgid "Plugins Widget"
+msgstr ""
+
+#: options.php:256
+msgid "Right Now Widget"
+msgstr ""
+
+#: options.php:257
+#: options.php:349
+msgid "Recent Comments Widget"
+msgstr ""
+
+#: options.php:258
+msgid "Incoming Links Widget"
+msgstr ""
+
+#: options.php:259
+msgid "Primary RSS Widget"
+msgstr ""
+
+#: options.php:260
+msgid "Secondary RSS Widget"
+msgstr ""
+
+#: options.php:261
+msgid "Quick Press Widget"
+msgstr ""
+
+#: options.php:262
+msgid "Recent Drafts Widget"
+msgstr ""
+
+#: options.php:267
+msgid "Post Formats"
+msgstr ""
+
+#: options.php:268
+msgid "Enable support for <a href=\"http://codex.wordpress.org/Post_Formats\">WordPress post formats</a>."
+msgstr ""
+
+#: options.php:275
+msgid "Post Format Types"
+msgstr ""
+
+#: options.php:276
+msgid "Which <a href=\"http://codex.wordpress.org/Post_Formats#Supported_Formats\">post format types</a> would you like to support?"
+msgstr ""
+
+#: options.php:291
+msgid "Aside"
+msgstr ""
+
+#: options.php:292
+msgid "Chat"
+msgstr ""
+
+#: options.php:293
+msgid "Gallery"
+msgstr ""
+
+#: options.php:294
+msgid "Image"
+msgstr ""
+
+#: options.php:295
+msgid "Link"
+msgstr ""
+
+#: options.php:296
+msgid "Quote"
+msgstr ""
+
+#: options.php:297
+msgid "Status"
+msgstr ""
+
+#: options.php:298
+msgid "Video"
+msgstr ""
+
+#: options.php:299
+msgid "Audio"
+msgstr ""
+
+#: options.php:304
+msgid "Additional Post Types"
+msgstr ""
+
+#: options.php:305
+msgid "Toggle additional post types. Additional post types are found in the <strong>/null/assets/inc/post-types/</strong> folder or the same folder in your child theme."
+msgstr ""
+
+#: options.php:313
+msgid "Shortcodes"
+msgstr ""
+
+#: options.php:314
+msgid "Toggle shortcode support. Additional shortcodes are found in the <strong>/null/assets/inc/shortcodes/</strong> folder or the same folder in your child theme."
+msgstr ""
+
+#: options.php:322
+msgid "WordPress Widgets"
+msgstr ""
+
+#: options.php:323
+msgid "Toggle default WordPress widgets."
+msgstr ""
+
+#: options.php:342
+msgid "Archives Widget"
+msgstr ""
+
+#: options.php:343
+msgid "Calendar Widget"
+msgstr ""
+
+#: options.php:344
+msgid "Categories Widget"
+msgstr ""
+
+#: options.php:345
+msgid "Custom Menu Widget"
+msgstr ""
+
+#: options.php:346
+msgid "Links Widget"
+msgstr ""
+
+#: options.php:347
+msgid "Meta Widget"
+msgstr ""
+
+#: options.php:348
+msgid "Pages Widget"
+msgstr ""
+
+#: options.php:350
+msgid "Recent Posts Widget"
+msgstr ""
+
+#: options.php:351
+msgid "RSS Widget"
+msgstr ""
+
+#: options.php:352
+msgid "Search Widget"
+msgstr ""
+
+#: options.php:353
+msgid "Tag Cloud Widget"
+msgstr ""
+
+#: options.php:354
+msgid "Text Widget"
+msgstr ""
+
+#: options.php:359
+msgid "Additional Widgets"
+msgstr ""
+
+#: options.php:360
+msgid "Toggle additional widgets. Additional widgets are found in the <strong>/null/assets/inc/widgets/</strong> folder or the same folder in your child theme."
+msgstr ""
+
+#: options.php:374
+msgid "E-Mail"
+msgstr ""
+
+#: options.php:379
+msgid "Email From"
+msgstr ""
+
+#: options.php:380
+msgid "Personalise outgoing e-mail with a from name."
+msgstr ""
+
+#: options.php:387
+msgid "Email From Address"
+msgstr ""
+
+#: options.php:388
+msgid "WordPress should send email from this address."
+msgstr ""
+
+#: options.php:401
+msgid "Performance"
+msgstr ""
+
+#: options.php:406
+msgid "What's Going On Here?"
+msgstr ""
+
+#: options.php:407
+msgid "This little framework has ambitions to be the fastest theme framework for Wordpress. We are still working out the best way to achieve this ambition, so for now we recommend using a full featured cache plugin such as <a href=\"http://wordpress.org/extend/plugins/w3-total-cache/\">W3 Total Cache</a> or <a href=\"http://wordpress.org/extend/plugins/wp-super-cache/\">WP Super Cache</a>."
+msgstr ""
+
+#: options.php:412
+msgid "HTML Compression"
+msgstr ""
+
+#: options.php:413
+msgid "Compress HTML output (more options when toggled on)."
+msgstr ""
+
+#: options.php:420
+msgid "HTML Compression Options"
+msgstr ""
+
+#: options.php:421
+msgid "Which HTML features would you like to compress?"
+msgstr ""
+
+#: options.php:430
+msgid "Inline CSS"
+msgstr ""
+
+#: options.php:431
+msgid "Inline JS"
+msgstr ""
+
+#: options.php:432
+msgid "HTML Comments"
+msgstr ""
+
+#: options.php:443
+msgid "Advanced"
+msgstr ""
+
+#: options.php:448
+msgid "Login Redirect URL"
+msgstr ""
+
+#: options.php:449
+msgid "Change the default <a href=\"http://codex.wordpress.org/Function_Reference/wp_login_url\">login URL</a> redirect for WordPress. Can be left blank for default functionality."
+msgstr ""
+
+#: options.php:456
+msgid "Logout Redirect URL"
+msgstr ""
+
+#: options.php:457
+msgid "Change the default <a href=\"http://codex.wordpress.org/Function_Reference/wp_logout\">logout URL</a> redirect for WordPress. Can be left blank for default functionality."
+msgstr ""
+
+#: options.php:464
+msgid "WordPress Header Meta"
+msgstr ""
+
+#: options.php:465
+msgid "Toggle certain WordPress meta data found in the theme header."
+msgstr ""
+
+#: options.php:479
+msgid "Really Simple Discovery / XML-RPC"
+msgstr ""
+
+#: options.php:480
+msgid "Windows Live Tag"
+msgstr ""
+
+#: options.php:481
+msgid "Generator Tag"
+msgstr ""
+
+#: options.php:482
+msgid "RSS Feed Links"
+msgstr ""
+
+#: options.php:483
+msgid "Extra Feed Links (Categories etc)"
+msgstr ""
+
+#: options.php:484
+msgid "Shortlink"
+msgstr ""
+
+#: options.php:485
+msgid "Canonical"
+msgstr ""
+
+#: options.php:486
+msgid "Related Posts"
+msgstr ""
+
+#: options.php:492
+msgid "Advanced Header Meta"
+msgstr ""
+
+#: options.php:493
+msgid "Toggle advanced meta data in the theme header."
+msgstr ""
+
+#: options.php:500
+msgid "iOS Web App (if enabled set custom splash images in Design tab)"
+msgstr ""
+
+#: options.php:505
+msgid "Polyfills "
+msgstr ""
+
+#: options.php:506
+msgid "Patch up certain browsers with <a href=\"https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills\">JavaScript polyfills</a>?"
+msgstr ""
+
+#: options.php:519
+msgid "Screen Rotation Scale Bug (iOS)"
+msgstr ""
+
+#: options.php:520
+msgid "Selectivizr CSS3 Selectors (IE6,IE7,IE8)"
+msgstr ""
+
+#: options.php:521
+msgid "Superfish (primarily IE6 but improves menus on all browsers)"
+msgstr ""
+
+#: options.php:522
+msgid "HTML5 Forms (standardise form behaviour across all browsers)"
+msgstr ""
+
+#: options.php:523
+msgid "Fluid Images (IE6,IE7,IE8)"
+msgstr ""
+
+#: options.php:524
+msgid "Transparent PNG Support (IE6)"
+msgstr ""
+
+#: options.php:525
+msgid "Chrome Frame Prompt (IE6)"
+msgstr ""
+
+#: options.php:530
+msgid "Disable RSS"
+msgstr ""
+
+#: options.php:531
+msgid "Disable access to all RSS feeds."
+msgstr ""
+
+#: options.php:538
+msgid "Page Break"
+msgstr ""
+
+#: options.php:539
+msgid "Enable support for page breaks. Adds a new button to the editor."
+msgstr ""
+
+#: options.php:546
+msgid "Custom Background"
+msgstr ""
+
+#: options.php:547
+msgid "Enable support for setting a custom <a href=\"http://codex.wordpress.org/Function_Reference/add_custom_background\">theme background</a> within WordPress."
+msgstr ""
+
+#: options.php:554
+msgid "All Settings"
+msgstr ""
+
+#: options.php:555
+msgid "Enable the hidden <strong>All Settings</strong> WordPress menu for administrators."
+msgstr ""
+
+#: options.php:562
+msgid "Disable Update Notifications"
+msgstr ""
+
+#: options.php:563
+msgid "Disable update notifications for any user that is not an administrator (ties into the update_plugins capability)."
+msgstr ""
+
+#: options.php:572
+msgid "Cleanup URLs"
+msgstr ""
+
+#: options.php:573
+msgid "Rewrite WordPress URLs for cleaner HTML (e.g. /assets/, /uploads/ etc)."
+msgstr ""
+
+#: options.php:581
+msgid "Force Rewrite"
+msgstr ""
+
+#: options.php:582
+msgid "On some servers WordPress incorrectly detects rewrite functionality (e.g. Nginx). Checking this will force rewrite features."
+msgstr ""
+
+#: options.php:589
+msgid "Development Mode"
+msgstr ""
+
+#: options.php:590
+msgid "Development mode outputs memory and performance data in the footer of your HTML. For a comprehensive development tool try <a href=\"http://wordpress.org/extend/plugins/debug-bar/\">debug bar</a> and add define('WP_DEBUG', true); to your wp-config.php file."
+msgstr ""
+
+#: options.php:597
+msgid "Holmes"
+msgstr ""
+
+#: options.php:598
+msgid "Highlight HTML problems  with <a href=\"http://www.red-root.com/sandbox/holmes/\">holmes</a>, the CSS markup detective."
+msgstr ""
+
+#: search.php:5
+msgid "Search Results for:"
+msgstr ""
+
+#: searchform.php:4
+#: searchform.php:5
+#: searchform.php:6
+msgid "Search"
+msgstr ""
+
+#: assets/inc/activation.php:22
+msgid "null successfully re-activated."
+msgstr ""
+
+#: assets/inc/activation.php:27
+msgid "null successfully activated. Before you get started setting up your new website would you like us to configure WordPress for you?"
+msgstr ""
+
+#: assets/inc/activation.php:28
+msgid "Yes! Setup WordPress"
+msgstr ""
+
+#: assets/inc/activation.php:29
+msgid "No Thanks"
+msgstr ""
+
+#: assets/inc/activation.php:143
+msgid "WordPress setup complete."
+msgstr ""
+
+#: assets/inc/activation.php:144
+msgid "Theme Options"
+msgstr ""
+
+#: assets/inc/admin.php:362
+msgid "Custom Avatar"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:61
+msgid "Browse:"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:312
+msgid "g:i a"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:315
+#, php-format
+msgid "Minute %1$s"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:315
+msgid "i"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:318
+msgid "g a"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:329
+#: assets/inc/breadcrumbs.php:335
+#: assets/inc/breadcrumbs.php:340
+#: assets/inc/breadcrumbs.php:345
+#: assets/inc/breadcrumbs.php:410
+msgid "Y"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:330
+#: assets/inc/breadcrumbs.php:341
+#: assets/inc/breadcrumbs.php:414
+msgid "F"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:331
+#: assets/inc/breadcrumbs.php:418
+msgid "d"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:336
+#, php-format
+msgid "Week %1$s"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:352
+#, php-format
+msgid "Search results for &quot;%1$s&quot;"
+msgstr ""
+
+#: assets/inc/breadcrumbs.php:356
+msgid "404 Not Found"
+msgstr ""
+
+#: assets/inc/htaccess.php:18
+#, php-format
+msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
+msgstr ""
+
+#: assets/inc/theme.php:117
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: assets/inc/theme.php:302
+msgid "RSS is currently disabled. Please visit our <a href=\""
+msgstr ""
+
+#: assets/inc/theme.php:542
+#: assets/inc/theme.php:556
+msgid " &hellip;Continue reading &raquo;"
+msgstr ""
+
+#: assets/inc/theme.php:662
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: assets/inc/theme.php:668
+#: assets/inc/theme.php:680
+msgid "Moderate"
+msgstr ""
+
+#: assets/inc/theme.php:680
+msgid "Pingback:"
+msgstr ""
+
+#: assets/inc/widgets.php:15
+msgid "Homepage"
+msgstr ""
+
+#: assets/inc/widgets.php:15
+msgid "Page"
+msgstr ""
+
+#: assets/inc/widgets.php:15
+msgid "Posts/Blog"
+msgstr ""
+
+#: assets/inc/widgets.php:15
+msgid "Footer"
+msgstr ""
+
+#: assets/inc/options-framework/options-framework.php:228
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: assets/inc/options-framework/options-framework.php:260
+msgid "Default options restored."
+msgstr ""
+
+#: assets/inc/options-framework/options-framework.php:301
+msgid "Options saved."
+msgstr ""
+
+#: assets/inc/options-framework/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr ""
+
+#: assets/inc/options-framework/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr ""
+
+#: assets/inc/options-framework/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr ""
+
+#: assets/inc/options-framework/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:16
+#: assets/inc/post-types/post-type-products.php:30
+msgid "Collections"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:17
+msgid "Collection"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:18
+#: assets/inc/post-types/post-type-products.php:21
+msgid "New Collection"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:19
+msgid "Add New Collection"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:20
+msgid "Edit Collection"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:22
+msgid "View"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:23
+msgid "Search Collections"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:24
+msgid "No collections found"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:25
+msgid "No collections found in Trash"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:58
+msgid "Categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:59
+msgid "Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:60
+msgid "Search Categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:61
+msgid "Popular Categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:62
+msgid "All Categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:65
+msgid "Edit Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:66
+msgid "Update Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:67
+msgid "Add New Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:68
+msgid "New Category Name"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:69
+msgid "Separate categories with commas"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:70
+msgid "Add or remove categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:71
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:75
+msgid "Collection Category"
+msgstr ""
+
+#: assets/inc/shortcodes/shortcode-paypal-donate.php:16
+msgid "Make a donation"
+msgstr ""
+
+#: assets/inc/shortcodes/shortcode-qrcode.php:23
+msgid "QR Code for: "
+msgstr ""
+
+#: assets/inc/shortcodes/shortcode-related-posts.php:47
+msgid "No related posts found."
+msgstr ""
+
+#: assets/inc/shortcodes/shortcode-tabs.php:37
+#, php-format
+msgid "Tab %d"
+msgstr ""
+
+#: assets/inc/widgets/widget-featured.php:11
+msgid "Displays featured posts from one category"
+msgstr ""
+
+#: assets/inc/widgets/widget-featured.php:12
+msgid "Featured Posts"
+msgstr ""
+
+#: assets/inc/widgets/widget-featured.php:118
+#: assets/inc/widgets/widget-flickr.php:45
+#: assets/inc/widgets/widget-twitter.php:63
+msgid "Title"
+msgstr ""
+
+#: assets/inc/widgets/widget-featured.php:120
+msgid "Number of Posts"
+msgstr ""
+
+#: assets/inc/widgets/widget-flickr.php:11
+msgid "Displays your flickr photos"
+msgstr ""
+
+#: assets/inc/widgets/widget-flickr.php:12
+msgid "Flickr Feed"
+msgstr ""
+
+#: assets/inc/widgets/widget-flickr.php:46
+msgid "UserID"
+msgstr ""
+
+#: assets/inc/widgets/widget-flickr.php:46
+msgid "Flickr idGettr"
+msgstr ""
+
+#: assets/inc/widgets/widget-flickr.php:47
+msgid "Number of Photos"
+msgstr ""
+
+#: assets/inc/widgets/widget-flickr.php:48
+msgid "Link Text"
+msgstr ""
+
+#: assets/inc/widgets/widget-taxonomy.php:27
+msgid "Taxonomy"
+msgstr ""
+
+#: assets/inc/widgets/widget-taxonomy.php:29
+msgid "Create a list, dropdown or term cloud of any taxonomy."
+msgstr ""
+
+#: assets/inc/widgets/widget-taxonomy.php:34
+msgid "Cloud"
+msgstr ""
+
+#: assets/inc/widgets/widget-taxonomy.php:35
+msgid "Dropdown"
+msgstr ""
+
+#: assets/inc/widgets/widget-taxonomy.php:36
+msgid "Ordered List"
+msgstr ""
+
+#: assets/inc/widgets/widget-taxonomy.php:37
+msgid "Unordered List"
+msgstr ""
+
+#: assets/inc/widgets/widget-taxonomy.php:217
+msgid "Please Choose"
+msgstr ""
+
+#: assets/inc/widgets/widget-taxonomy.php:350
+msgid "Y-m-d"
+msgstr ""
+
+#: assets/inc/widgets/widget-twitter.php:11
+msgid "Displays your tweets"
+msgstr ""
+
+#: assets/inc/widgets/widget-twitter.php:12
+msgid "Twitter Feed"
+msgstr ""
+
+#: assets/inc/widgets/widget-twitter.php:57
+msgid "Latest Tweets"
+msgstr ""
+
+#: assets/inc/widgets/widget-twitter.php:64
+msgid "Username"
+msgstr ""
+
+#: assets/inc/widgets/widget-twitter.php:65
+msgid "Number of Tweets"
+msgstr ""
+
+#: assets/inc/widgets/widget-twitter.php:66
+msgid "Text Link"
+msgstr ""
+
+#: assets/inc/widgets/widget-vcard.php:12
+msgid "vCard"
+msgstr ""
+
+#: assets/inc/widgets/widget-vcard.php:45
+msgid "Title (optional):"
+msgstr ""
+
+#: assets/inc/widgets/widget-vcard.php:49
+msgid "Street Address:"
+msgstr ""
+
+#: assets/inc/widgets/widget-vcard.php:53
+msgid "City/Locality:"
+msgstr ""
+
+#: assets/inc/widgets/widget-vcard.php:57
+msgid "State/Region:"
+msgstr ""
+
+#: assets/inc/widgets/widget-vcard.php:61
+msgid "Zipcode/Postal Code:"
+msgstr ""
+
+#: assets/inc/widgets/widget-vcard.php:65
+msgid "Telephone:"
+msgstr ""
+
+#: assets/inc/widgets/widget-vcard.php:69
+msgid "Email:"
+msgstr ""
+

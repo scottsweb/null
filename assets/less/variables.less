@@ -1,0 +1,57 @@
+/* 
+
+variables.less
+contents:
+
+	1. Base colours & Variables 
+
+*/
+
+
+/* 1. Base Colours & Variables
+--------------------------------------------------------------------------------------- */
+
+// Vars from WordPress
+
+// primary colour
+// @primarycol
+
+// font colour
+// @bodycol
+
+// link colours
+// @linkcol
+// @linkhovercol
+
+// urls
+// @{stylesheeturi}
+// @{templateuri}
+
+// fonts
+// @headingfont;
+// @bodyfont;
+// @logofont
+// @taglinefont
+
+// more can be added via /assets/inc/theme.php in the null_less_vars function
+
+// greyscale for wireframes
+
+@black: rgb(0,0,0);
+@darkgrey: lighten(@black, 25%);
+@grey: lighten(@black, 50%);
+@lightgrey: lighten(@black, 75%);
+@lightergrey: lighten(@black, 95%);
+@white: rgb(255,255,255);
+
+// pulled from bootstrap - complementry colours
+
+@complement: spin(@primarycol, 180); 	// determine a complementary color
+@split1: spin(@primarycol, 158); 		// split complements
+@split2: spin(@primarycol, -158);
+@triad1: spin(@primarycol, 135); 		// triads colors
+@triad2: spin(@primarycol, -135);
+@tetra1: spin(@primarycol, 90); 		// tetra colors
+@tetra2: spin(@primarycol, -90);
+@analog1: spin(@primarycol, 22); 		// analogs colors
+@analog2: spin(@primarycol, -22);

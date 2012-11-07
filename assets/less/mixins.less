@@ -1,0 +1,504 @@
+/* 
+
+mixins.less
+contents:
+
+	1. Mixins
+
+*/
+
+
+/* 1. Mixins
+--------------------------------------------------------------------------------------- */
+	
+// typography
+
+.font-size(@fontsize: 16)
+	{
+	@rem: @fontsize / 10;
+	font-size: @fontsize * 1px;
+	font-size: e("@{rem}rem"); 
+	}
+
+.sans-serif 
+	{
+	font-family : "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	}
+
+.serif 
+	{
+	font-family : Cambria, Georgia, "Times New Roman", Times, serif; 
+	}
+
+.monospace 
+	{
+	font-family: Menlo, Monaco, "Courier New", monospace;
+	}
+
+.font-family(@font)
+	{
+	font-family: @font;
+	}
+
+.font-family(@font) when (@font = 'Arial') 
+	{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;	
+	}
+		
+.font-family(@font) when (@font = 'Arial Rounded') 
+	{
+	font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+	background: red;
+	}
+
+.font-family(@font) when (@font = 'Baskerville') 
+	{
+	font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+	}
+	
+.font-family(@font) when (@font = 'Cambria') 
+	{
+	font-family: Cambria, Georgia, serif;
+	}
+
+.font-family(@font) when (@font = 'Century Gothic') 
+	{
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;	
+	}
+
+.font-family(@font) when (@font = 'Courier New') 
+	{
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;	
+	}
+
+.font-family(@font) when (@font = 'Georgia') 
+	{
+	font-family: Georgia, Times, "Times New Roman", serif;	
+	}
+
+.font-family(@font) when (@font = 'Helvetica') 
+	{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+
+.font-family(@font) when (@font = 'Lucida Bright') 
+	{
+	font-family: "Lucida Bright", Georgia, serif;
+	}
+
+.font-family(@font) when (@font = 'Tahoma') 
+	{
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	}
+
+.font-family(@font) when (@font = 'Trebuchet MS') 
+	{
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	}
+	
+.font-family(@font) when (@font = 'Verdana') 
+	{
+	font-family: Verdana, Geneva, sans-serif;
+	}	
+
+.antialiased
+	{
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	}
+
+.optimizelegibility
+	{
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	-ms-text-rendering: optimizeLegibility;
+	-o-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+	}
+
+// icon font
+
+.lsf-replace(@fontsize: 18) 
+	{
+	.font-size(@fontsize) ;
+	.antialiased();
+	.optimizelegibility();
+	font-family: 'LigatureSymbols';
+	}
+
+.lsf(@fontsize: 18)
+	{
+	&:before 
+		{
+		// had to redeclare font size for !important declarations
+		@rem: @fontsize / 10 !important;
+		font-size: @fontsize * 1px !important;
+		font-size: e("@{rem}rem") !important; 
+		.antialiased();
+		.optimizelegibility();
+		content:attr(title);
+		margin-right:0.1em;
+		font-size:130%;
+		font-family: 'LigatureSymbols';
+		}
+	}
+
+.iconfont-replace
+	{
+	.lsf-replace(300);
+	}
+	
+.iconfont
+	{
+	.lsf(60);
+	}
+
+// size shortcuts
+
+.size(@height: 5px, @width: 5px) 
+	{
+	width: @width;
+	height: @height;
+	}
+	
+.square(@size: 5px) 
+	{
+	.size(@size, @size);
+	}
+
+// image replacement
+
+.ir 
+	{ 
+	display: block; 
+	text-indent: -999em; 
+	overflow: hidden; 
+	background-repeat: no-repeat; 
+	text-align: left; 
+	direction: ltr; 
+	}
+
+// list reset 
+
+.list-reset
+	{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	list-style: none;
+	}
+	
+// box model
+
+.box-sizing(@type: border-box) 
+	{
+	-webkit-box-sizing: @type;
+	-moz-box-sizing: @type;
+	box-sizing: @type;
+	}
+
+// background clip
+
+.background-clip(@clip) 
+	{
+	-webkit-background-clip: @clip;
+	-moz-background-clip: @clip;
+	background-clip: @clip;
+	}
+
+// background sizing
+
+.background-size(@size)
+	{
+	-webkit-background-size: @size;
+	-moz-background-size: @size;
+	-o-background-size: @size;
+	background-size: @size;
+	}
+
+// opacity
+
+.opacity(@opacity : .5) 
+	{
+	-webkit-opacity: @opacity;
+	-moz-opacity: @opacity;
+	opacity: @opacity; 
+	}
+
+// borders
+
+.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) 
+	{
+	border-top: solid 1px @top-color;
+	border-left: solid 1px @left-color;
+	border-right: solid 1px @right-color;
+	border-bottom: solid 1px @bottom-color;
+	}
+
+// border-radius
+
+.border-radius(@radius:3px) 
+	{
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius; 
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	}
+
+.border-radiuses(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) 
+	{
+	-webkit-border-top-right-radius: @topright;
+	-webkit-border-bottom-right-radius: @bottomright;
+	-webkit-border-bottom-left-radius: @bottomleft;
+	-webkit-border-top-left-radius: @topleft;
+	-moz-border-radius-topright: @topright;
+	-moz-border-radius-bottomright: @bottomright;
+	-moz-border-radius-bottomleft: @bottomleft;
+	-moz-border-radius-topleft: @topleft;
+	border-top-right-radius: @topright;
+	border-bottom-right-radius: @bottomright;
+	border-bottom-left-radius: @bottomleft;
+	border-top-left-radius: @topleft; 
+	-moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+	}
+
+// box-shadow
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) 
+	{
+	-webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha); 
+	}
+	
+.inset-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) 
+	{
+	-webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+	box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha); 
+	}
+
+.box-shadow(@arguments) 
+	{
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments; 
+	}
+
+// css columns
+
+.csscolumns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #eee, @columnRuleStyle: solid, @columnRuleWidth: 1px) 
+	{
+	-webkit-column-width: @colwidth;
+	-webkit-column-count: @colcount;
+	-webkit-column-gap: @colgap;
+	-webkit-column-rule-color: @columnRuleColor;
+	-webkit-column-rule-style: @columnRuleStyle;
+	-webkit-column-rule-width: @columnRuleWidth;
+	-moz-column-width: @colwidth;
+	-moz-column-count: @colcount;
+	-moz-column-gap: @colgap;
+	-moz-column-rule-color: @columnRuleColor;
+	-moz-column-rule-style: @columnRuleStyle;
+	-moz-column-rule-width: @columnRuleWidth;
+	column-width: @colwidth;
+	column-count: @colcount;
+	column-gap: @colgap;
+	column-rule-color: @columnRuleColor;
+	column-rule-style: @columnRuleStyle;
+	column-rule-width: @columnRuleWidth; 
+	}
+
+// css gradients
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) 
+	{
+  	background: @color;
+  	background: -webkit-gradient(
+  		linear,
+        left bottom,
+        left top,
+        color-stop(0, @start),
+        color-stop(1, @stop)
+	);
+	background: -ms-linear-gradient(
+		bottom,
+        @start,
+        @stop
+	);
+	background: -moz-linear-gradient(
+		center bottom,
+        @start 0%,
+		@stop 100%
+	);
+}
+
+.bw-gradient(@color: #F5F5F5, @start: 0, @stop: 255) 
+	{
+	background: @color;
+	background: -webkit-gradient(
+		linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(@start,@start,@start)),
+        color-stop(1, rgb(@stop,@stop,@stop))
+	);
+	background: -ms-linear-gradient(
+		bottom,
+        rgb(@start,@start,@start) 0%,
+        rgb(@start,@start,@start) 100%
+	);
+	background: -moz-linear-gradient(
+		center bottom,
+        rgb(@start,@start,@start) 0%,
+        rgb(@stop,@stop,@stop) 100%
+	);
+}
+
+// css transforms
+
+.rotate(@degrees) 
+	{
+	-webkit-transform: rotate(@degrees);
+	-moz-transform: rotate(@degrees);
+	-ms-transform: rotate(@degrees);
+	-o-transform: rotate(@degrees);
+	transform: rotate(@degrees);
+	}
+
+.transform-origin(@x: 0, @y: 0)
+	{
+	-ms-transform-origin: @x @y;
+	-webkit-transform-origin: @x @y;
+	-moz-transform-origin: @x @y;
+	-o-transform-origin: @x @y;
+	transform-origin: @x @y;
+	}
+	
+.scale(@ratio) 
+	{
+	-webkit-transform: scale(@ratio);
+	-moz-transform: scale(@ratio);
+	-ms-transform: scale(@ratio);
+	-o-transform: scale(@ratio);
+	transform: scale(@ratio);
+	}
+
+.translate(@x: 0, @y: 0) 
+	{
+	-webkit-transform: translate(@x, @y);
+	-moz-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+	}
+
+.skew(@x: 0, @y: 0) 
+	{
+	-webkit-transform: skew(@x, @y);
+	-moz-transform: skew(@x, @y);
+	-ms-transform: skew(@x, @y);
+	-o-transform: skew(@x, @y);
+	transform: skew(@x, @y);
+	}
+	
+.translate3d(@x: 0, @y: 0, @z: 0) 
+	{
+	-webkit-transform: translate(@x, @y, @z);
+	-moz-transform: translate(@x, @y, @z);
+	-ms-transform: translate(@x, @y, @z);
+	-o-transform: translate(@x, @y, @z);
+	transform: translate(@x, @y, @z);
+	}
+
+// css transitions
+
+.transition-duration(@duration : .2s) 
+	{
+	-moz-transition-duration: @duration;
+	-webkit-transition-duration: @duration;
+	transition-duration: @duration; 
+	}
+
+.transition-all(@duration : .2s, @ease:ease-out) 
+	{
+	-webkit-transition: all @duration @ease;
+	-moz-transition: all @duration @ease;
+	transition: all @duration @ease; 
+	}
+
+.transition(@what: all, @time: 0.2s) 
+	{
+	-webkit-transition: @what @time ease-out;
+	-moz-transition: @what @time ease-out;
+	-ms-transition: @what @time ease-out;
+	-o-transition: @what @time ease-out;
+	transition: @what @time ease-out;
+	}
+
+// webkit-style focus
+
+.tab-focus() 
+	{
+	// Default
+	outline: thin dotted #333;
+	// Webkit
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+	}
+
+// center-align a block level element
+
+.center-block() 
+	{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+// button - reverse text shadow on lighter text 
+
+.button(@facecol: #e1e1e1, @fontcol: #141414, @fontsize: 14px, @paddingv: 7px, @paddingh: 10px)
+	{
+	.border-radius(5px);
+	.font-size(@fontsize);
+	.gradient(@facecol, darken(@facecol, 5%), lighten(@facecol, 5%));
+	.bordered(darken(@facecol, 2%), darken(@facecol, 15%), darken(@facecol, 15%), darken(@facecol, 2%));
+	.box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.4));
+	.sans-serif;
+	color: @fontcol;
+	text-shadow: lighten(@facecol, 20%) 0px 1px 0px;
+	font-weight: 500;
+	cursor: pointer;
+    -webkit-appearance: none;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	padding: @paddingv @paddingh;
+	margin: 0;
+	
+	&:hover
+		{
+		.bordered(darken(@facecol, 15%), darken(@facecol, 2%), darken(@facecol, 2%), darken(@facecol, 15%));
+		background: @facecol;
+		}
+		
+	&:active
+		{
+		.bordered(darken(@facecol, 8%), darken(@facecol, 8%), darken(@facecol, 8%), darken(@facecol, 8%));
+		background: lighten(@facecol, 5%);
+		text-shadow: none;
+		}
+	}
+
+.button(@facecol: #e1e1e1, @fontcol: #141414) when (lightness(@fontcol) > 50)
+	{
+	text-shadow: darken(@facecol, 10%) 0px -1px 0px;
+	}

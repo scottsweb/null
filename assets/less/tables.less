@@ -1,0 +1,146 @@
+/* 
+
+tables.less
+contents:
+
+	1. Tables
+	2. Responsive Tables
+
+*/
+
+
+/* 1. Tables
+--------------------------------------------------------------------------------------- */
+	
+table
+	{
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom : @baseline; 
+	padding: 0;
+	border: 1px solid #141414;
+	// table-layout: fixed; use only on tables > 50 rows for speed improvements
+	}
+	
+caption
+	{
+	font-style: italic;
+	text-align: left;
+	}
+	
+td
+	{
+	vertical-align: middle;
+	padding: @baseline / 3;
+	}
+
+tr:nth-child(even)
+	{
+	background: @lightergrey;
+	}
+	
+th
+	{
+	//border: 1px solid #141414;
+	font-weight:700;
+	vertical-align:middle;
+	padding: @baseline / 3;
+	}
+
+thead tr
+	{
+	}
+	
+thead th
+	{
+	//background: lighten(@primarycol, 50%);
+	//background: fadeout(@primarycol, 90%);
+	}
+
+tbody
+	{
+	}
+	
+tfoot
+	{ 
+	font-style: italic; 
+	}
+
+/* 2. Responsive Tables (add a class of .responsive to your table)
+--------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 767px) 
+	{
+	
+	table.responsive 
+		{ 
+		margin-bottom: 0; 
+		border: none;
+		}
+	
+	.pinned 
+		{ 
+		.drop-shadow(0, 2px, 5px, 0.5);
+		background: @white;
+		position: absolute; 
+		left: 0; 
+		top: 0;
+		width: 35%; 
+		overflow: hidden; 
+		overflow-x: scroll; 
+		-webkit-overflow-scrolling: touch;
+		}
+		
+	.pinned table 
+		{ 
+		border: none;
+		//border-left: none; 
+		width: 100%; 
+		}
+		
+	.pinned table th, .pinned table td 
+		{ 
+		white-space: nowrap; 
+		}
+		
+	.pinned td:last-child 
+		{ 
+		border-bottom: 0; 
+		}
+	
+	div.table-wrapper 
+		{ 
+		border: 1px solid #141414;
+		position: relative; 
+		margin-bottom: @baseline; 
+		overflow: hidden; 
+		}
+		
+	div.table-wrapper div.scrollable table 
+		{ 
+		margin-left: 35%; 
+		}
+	
+	div.table-wrapper div.scrollable 
+		{ 
+		overflow: scroll; 
+		overflow-y: hidden; 
+		-webkit-overflow-scrolling: touch;
+		}	
+	
+	table.responsive td, table.responsive th 
+		{ 
+		position: relative; 
+		white-space: nowrap; 
+		overflow: hidden; 
+		}
+		
+	table.responsive th:first-child, 
+	table.responsive td:first-child, 
+	table.responsive td:first-child, 
+	table.responsive.pinned td 
+		{ 
+		display: none; 
+		}
+	}

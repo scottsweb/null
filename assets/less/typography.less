@@ -1,0 +1,343 @@
+/* 
+
+typography.less
+contents:
+	
+	1. Fonts
+	2. Typography & Baseline 
+
+*/
+
+/* 1. Fonts
+--------------------------------------------------------------------------------------- */
+
+// http://kudakurage.com/ligature_symbols/ 2.05
+
+@font-face 
+	{
+    font-family: 'LigatureSymbols';
+    src: url('@{templateuri}/assets/fonts/LigatureSymbols.eot');
+    src: url('@{templateuri}/assets/fonts/LigatureSymbols.eot?#iefix') format('embedded-opentype'),
+         url('@{templateturi}/assets/fonts/LigatureSymbols.woff') format('woff'),
+         url('@{templateuri}/assets/fonts/LigatureSymbols.ttf') format('truetype'),
+         url('@{templateuri}/assets/fonts/LigatureSymbols.svg#LigatureSymbols') format('svg');
+    src: url('@{templateuri}/assets/fonts/LigatureSymbols.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+
+/* 2. Typography & Baseline
+--------------------------------------------------------------------------------------- */
+
+@baseline: 1.6em;
+	
+body
+	{
+	.font-size(18);
+	//.font-family(@bodyfont);
+	color: @bodycol;
+	line-height: @baseline;
+	// -webkit-font-smoothing: antialiased; to thin out webkit fonts 
+	// text-rendering: optimizeLegibility; to improve kerning-pairs & ligatures (has certian issues)
+	}
+	
+a,
+a:visited
+	{
+	color: @linkcol;
+	text-decoration: none;
+	-webkit-tap-highlight-color: darken(@linkcol, 5%);
+	}
+	
+a:hover,
+a:focus,
+a:active
+	{
+	text-decoration:none;
+	color: @linkhovercol;
+	}
+	
+a img
+	{
+	border:0;
+	}
+
+img
+	{
+	display:inline-block;
+	vertical-align:text-bottom;
+	max-width: 100%; // responsive images
+	height: auto;
+	}
+
+h1, h2, h3, h4, h5, h6 
+	{
+	.font-family(@headingfont);
+	font-weight: 500; 
+	letter-spacing: -0.02em;	
+	}
+
+h1 
+	{ 
+	margin-bottom: @baseline / 2;
+	.font-size(50);
+	line-height: 1.2; 
+	}
+
+h2 
+	{ 
+	margin-bottom : @baseline / 2;
+	.font-size(34);
+	line-height : 1.2; 
+	}
+
+h3 
+	{ 
+	margin-bottom : @baseline / 1.5;
+	.font-size(26);
+	line-height : 1.3; 
+	}
+
+h4 
+	{ 
+	margin-bottom : @baseline / 1.5;
+	.font-size(20);
+	line-height : 1.25; 
+	}
+
+h5 
+	{ 
+	margin-bottom : @baseline / 1.5;
+	.font-size(18);  
+	}
+
+h6 
+	{ 
+	.font-size(18); 
+	}
+	
+blockquote,
+q
+	{
+	quotes:none;
+	font-style: italic;
+	}
+	
+blockquote:before,
+blockquote:after,
+q:before,
+q:after
+	{
+	content:none;
+	}
+
+abbr,
+acronym
+	{
+	border-bottom:1px dotted;
+	cursor:help;
+	font-variant:small-caps;
+	}
+
+dfn	
+	{
+	border-bottom:1px dashed;
+	font-style:italic;
+	cursor:help;
+	}
+	
+abbr[title], 
+dfn[title] 
+	{
+    border-bottom:1px dotted;
+    cursor:help;
+	}	
+	
+address,
+cite,
+em,
+i
+	{
+	font-style:italic;
+	}
+
+dt,
+strong,
+b
+	{
+	font-weight:700;
+	}
+	
+blockquote 
+	{
+	margin : 0 0 @baseline @baseline; 
+	padding-left : 24px; 
+	border-left : 1px solid @lightergrey;
+	font-style : italic;
+	}
+
+pre,	
+code,
+kbd,
+samp
+	{
+	.monospace;
+	line-height: @baseline;
+	}
+
+pre
+	{
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: pre-line;
+	word-wrap: break-word; 
+	}
+	
+del 
+	{
+    text-decoration: line-through;
+	}
+
+dl
+	{
+	margin-bottom : @baseline; 
+	}
+
+dd	
+	{
+	margin-left: @baseline;
+	}
+
+ins
+	{
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+	}
+	
+mark
+	{
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+	}
+	
+p
+	{
+	// http://www.w3.org/TR/css3-text/#hyphenation
+	// -webkit-hyphens : auto;
+	// -webkit-hyphenate-character : "\2010";
+	// -webkit-hyphenate-limit-after : 1;
+	// -webkit-hyphenate-limit-before : 3;
+	// -moz-hyphens : auto;
+	// hyphens : auto;
+	margin-bottom : @baseline; 
+	}
+	
+	
+sub, sup 
+	{ 
+	.font-size(12);
+	line-height : 0; 
+	position : relative; 
+	vertical-align : baseline; 
+	}
+
+sup 
+	{ 
+	top : -.5em; 
+	}
+
+sub 
+	{ 
+	bottom : -.25em; 
+	}
+
+small 
+	{ 
+	.font-size(14);
+	}
+
+ol
+	{
+	list-style: outside decimal;
+	}
+	
+ul
+	{
+	list-style: outside disc;
+	}
+	
+ul,
+ol
+	{
+	margin: 0 0 @baseline @baseline;
+	padding:0;
+	}
+	
+li ul,
+li ol
+	{
+	margin: 0 0 @baseline @baseline;
+	padding: 0;
+	}
+
+nav ul 
+	{
+    list-style:none;
+    margin: 0;
+    padding: 0;
+	}
+
+ul li ul,
+ol li ol
+	{
+	margin-bottom: 0;
+	}
+
+hr 
+	{
+    display:block;
+    height: 1px;
+    border: 0;   
+    border-top: 1px solid #cccccc;
+    margin: @baseline 0;
+    padding: 0;
+	}
+
+figure 
+	{
+	margin-bottom : @baseline; 
+	}
+
+figure img,
+figure object,
+figure embed 
+	{
+	//margin-bottom : @baseline / 2;
+	max-width : 100%; 
+	}
+
+figcaption 
+	{
+	display: block;
+	font-weight: normal; 
+	}
+
+/* text selection */
+
+::-moz-selection
+	{ 
+	background: darken(@linkcol, 5%); 
+	color: #fff; 
+	text-shadow: none; 
+	}
+	
+::selection 
+	{ 
+	background: darken(@linkcol, 5%); 
+	color: #fff; 
+	text-shadow: none; 
+	} 

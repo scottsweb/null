@@ -1,0 +1,308 @@
+/* 
+
+wordpress.less
+contents:
+
+	1. WordPress - Handy re-usable Wordpress specific classes
+	2. Shortcodes & Widgets
+	
+*/
+
+
+/* 1. WordPress
+--------------------------------------------------------------------------------------- */
+
+.entry-content img 
+	{
+	margin: @baseline 0 @baseline 0;
+	}
+	
+.alignleft,
+img.alignleft 
+	{
+	display: inline;
+	float: left;
+	margin-right: @baseline;
+	}
+	
+.alignright,
+img.alignright 
+	{
+	display: inline;
+	float: right;
+  	margin-left: @baseline;
+	}
+	
+.aligncenter,
+img.aligncenter 
+	{
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+.wp-caption 
+	{
+	.font-size(15);
+	padding: 5px 0;
+	text-align: center;
+	margin-bottom: @baseline;
+	background: @lightergrey;
+	}
+	
+.wp-caption img 
+	{
+	border: 0 none;
+	margin: 0;
+	padding: 0;
+	}
+	
+.wp-caption p.wp-caption-text 
+	{
+	margin: 0;
+	}
+	
+.wp-smiley 
+	{ 
+	max-height: 1em;
+	margin:0 !important;
+	}
+	
+.gallery dl 
+	{
+	margin: 0;
+	}
+	
+.gallery-caption 
+	{
+	margin:-@baseline 0 0 0;
+	}
+
+blockquote.left 
+	{
+	float: left;
+	margin-left: 0;
+	margin-right: 20px;
+	text-align: right;
+	width: 33%;
+	}
+
+blockquote.right 
+	{
+	float: right;
+	margin-left: 20px;
+	margin-right: 0;
+	text-align: left;
+	width: 33%;
+	}
+
+// admin bar settings 
+
+.admin-bar.admin-bar-absolute #wpadminbar
+	{
+	position: absolute;
+	}
+
+/* 2. Shortcodes & Widgets
+--------------------------------------------------------------------------------------- */
+
+// paypal shortcode button
+
+.donate-shortcode-button
+	{
+	.button;
+	display: inline-block;
+	margin-bottom: @baseline;
+	}
+
+.donate-shortcode-button:hover
+	{
+	.bordered(#adadad, #d9d9d9, #d9d9d9, #adadad);
+	background:#eee;
+	}
+
+.donate-shortcode-button:active
+	{
+	.bordered(#d9d9d9, #d9d9d9, #d9d9d9, #d9d9d9);
+	background: #eee;
+	text-shadow: none;
+	}
+
+// qrcode shortcode
+
+img.qrcode-shortcode
+	{
+	margin: 0;
+	}
+
+// rss shortcode
+
+.rss-shortcode ul
+	{
+	.list-reset;
+	}
+
+// map shortcode
+
+.map-shortcode-canvas
+	{
+	margin-bottom: @baseline;
+	}
+
+// accordion shortcode
+
+.accordion-shortcode
+	{
+	margin-bottom: @baseline;
+	
+	.aheader
+		{
+		display: block;
+		padding:  @baseline/4 @baseline/2;
+		background: @lightergrey;
+		cursor: pointer;
+		margin-bottom: 1px;
+		}
+
+	.aheader.ui-state-active
+		{
+		background: fadeout(@primarycol, 95%);
+		color: @black;
+		}
+	
+	.apane
+		{
+		padding: @baseline 0;
+		}
+	
+	.apane:last-child
+		{
+		padding-bottom: 0;
+		}
+	}
+
+// tabs shortcode
+
+.tabs-shortcode
+	{
+	margin-bottom: @baseline;
+
+	.tabs
+		{
+		.clearfix;
+		.list-reset;
+		border-bottom: 1px solid @primarycol;
+		}
+	
+	.tabs li
+		{
+		float: left;
+		display: block;
+		padding: @baseline/4 @baseline/2;
+		}
+		
+	.tabs.ui-tabs-nav .ui-tabs-selected
+		{
+		background: @primarycol;
+		color: #fff;
+		}
+	
+	.ui-tabs-nav .ui-tabs-selected a
+		{
+		color: #fff;
+		}
+		
+	.ui-tabs-nav a
+		{
+		text-decoration: none !important;
+		}
+			
+	.ui-tabs-hide
+		{ 
+		display: none !important; 
+		}
+	
+	.tpane
+		{
+		margin-top: @baseline;
+		}
+	}
+
+// toggle shortcode
+
+.toggle-shortcode
+	{
+	margin-bottom: @baseline;
+	
+	.toggle-container 
+		{
+		padding: 10px;
+		margin-bottom: 1px;
+		background-color: #fff;
+		}
+		
+	p.trigger 
+		{
+		margin: 0;
+		}
+
+	p.trigger a 
+		{
+		display: block;	
+		padding:  @baseline/4 @baseline/2;
+		background: @lightergrey;
+		cursor: pointer;
+		}
+	
+	p.trigger a:hover,
+	p.trigger.active a:hover 
+		{
+		}
+	
+	p.trigger.active a 
+		{
+		background: fadeout(@primarycol, 95%);
+		color: @black;
+		}
+	}
+	
+// twitter widget
+
+.null-twitter-feed
+	{
+	li
+		{
+		margin-bottom: @baseline;
+		}
+	}
+
+// flickr widget
+
+.null-flickr-feed
+	{
+	.clearfix;
+	
+	.flickr_badge_image
+		{
+		float: left;
+		}
+		
+	.flickr_badge_image img
+		{
+		margin: 2px;
+		display: inline-block;
+		padding: 2px;
+		border: 1px solid @lightergrey;
+		}
+	
+	.flickr_badge_image img:hover
+		{
+		border-color: @lightgrey;
+		}
+		
+	.flickr-link
+		{
+		clear: both;
+		}
+	}

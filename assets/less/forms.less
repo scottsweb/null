@@ -1,0 +1,279 @@
+/* 
+
+forms.less
+contents:
+
+	1. Forms
+	2. Notices 
+
+*/
+
+
+/* 1. Forms
+--------------------------------------------------------------------------------------- */
+
+form 
+	{
+	width: 100%;
+  	margin-bottom: @baseline;
+  	.clearfix;
+	}
+
+fieldset 
+	{
+	//.border-radius(6px);
+	//.bordered;
+  	margin-bottom: @baseline;
+  	//padding: (@baseline / 1.3) @baseline @baseline @baseline;
+  	legend 
+  		{
+    	display: block;
+    	padding: 0 10px;
+    	margin-left: -10px;
+    	line-height: 1;
+		font-family: 'Cabin', Arial;
+    	.font-size(22);
+    	font-weight: bold;
+		}
+	fieldset
+		{
+		margin-top: @baseline / 2;
+		}
+	}
+
+// labels
+
+label
+	{
+	.sans-serif;
+	.font-size(16);
+	line-height: 1;
+	}
+
+.required
+	{
+	color: @primarycol;
+	}
+
+// selects, textareas & text inputs (inc html5 ones)
+
+select,
+textarea,
+.password,
+.text,
+input[type="text"], 
+input[type="password"], 
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="tel"]
+	{
+  	.sans-serif;
+  	.font-size(16);
+  	.box-sizing(border-box);
+	.bordered(#ccc, #ccc, #ccc, #ccc);
+	.border-radius(4px);
+	.box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+  	.transition;
+  	background: #fff;
+  	display: inline-block;
+	width: 100%;
+	height: @baseline * 1.5;
+	padding: 4px;
+	line-height: @baseline;
+	margin-bottom: @baseline / 2;
+	color: #666;
+	}
+
+textarea:focus,
+.password:focus,
+.text:focus,
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus
+	{
+	color: #141414;
+  	outline: 0;
+  	border-color: @primarycol;
+ 	@shadow: inset 0 1px 3px fadeout(@primarycol, 95%), 0 0 8px fadeout(@primarycol, 75%);
+  	.box-shadow(@shadow);
+	}
+
+select 
+	{
+	padding: initial !important;
+	}
+
+select:focus
+	{
+	color: #141414;
+	outline: 1px dotted @primarycol;	
+	}
+
+select
+	{
+	height: @baseline * 1.5; // In IE7, the height of the select element cannot be changed by height, only font-size
+	*height: auto; // Reset for IE7
+	line-height: @baseline * 1.5;
+	*margin-top: 4px; // For IE7, add top margin to align select with labels 
+	}
+
+select[multiple] 
+	{
+	height: inherit;
+	background-color: @white;
+	}
+
+textarea
+	{
+	height: auto;
+	resize: none;
+	}
+
+// file uploads
+
+.file,
+input[type=file]
+	{
+	padding: initial;
+	border: initial;
+	line-height: initial;
+	height: @baseline * 1.5; // In IE7, the height of the select element cannot be changed by height, only font-size
+	*height: auto; // Reset for IE7
+	line-height: @baseline * 1.5;
+	*margin-top: 4px; // For IE7, add top margin to align select with labels 
+	}
+	
+.file:focus,
+input[type=file]:focus
+	{
+	outline: 1px dotted @primarycol;	
+	}
+
+// checkboxes and radios
+
+.checkbox,
+.radio,
+input[type="checkbox"],
+input[type="radio"] 
+	{
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 3px;
+	*margin-top: 0; // IE6-7
+	line-height: normal;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	margin-bottom: @baseline / 2;
+	}
+
+.checkbox:focus,
+.radio:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus
+	{
+	outline: 1px dotted @primarycol;
+	}
+	
+// buttons
+
+.submit,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] 
+	{
+	.button(@linkcol, #fff);
+	}
+
+// styles for valid and invalid inputs
+	
+input:invalid:focus, 
+textarea:invalid:focus 
+	{
+	background: #FBE3E4;
+	color: #d12f19; 
+	}
+
+input[type=text]:valid:focus,
+input[type=email]:valid:focus,
+input[type=url]:valid:focus,
+input[type=number]:valid:focus,
+input[type=password]:valid:focus,
+textarea:valid:focus 
+	{
+	background: #E6EFC2;
+	color: #529214;
+	}
+
+// HTML5 placeholders
+
+input:-moz-placeholder, 
+textarea:-moz-placeholder 
+	{
+	color: @lightgrey;
+	}
+
+::-webkit-input-placeholder
+	{
+	color: @lightgrey;
+	}
+
+::-webkit-validation-bubble-message 
+	{
+    padding: 15px;
+	}
+
+// Disabled and read-only inputs
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] 
+	{
+	background-color: #f5f5f5;
+	border-color: #ddd;
+	cursor: not-allowed;
+	}
+
+/* 2. Notices
+--------------------------------------------------------------------------------------- */
+
+.error,
+.notice, 
+.success
+	{ 
+	.sans-serif;
+	.border-radius(4px);
+	margin-bottom: @baseline;
+	padding: @baseline / 2;
+	border: 2px solid #ddd;
+	}
+
+.error
+	{
+	background: #FBE3E4;
+	color: #d12f19; 
+	border-color: #FBC2C4;
+	}
+
+.notice
+	{ 
+	background: #FFF6BF;
+	color: #c4a600;
+	border-color: #FFD324;
+	}
+	
+.success
+	{ 
+	background: #E6EFC2;
+	color: #529214;
+	border-color: #C6D880;
+	}

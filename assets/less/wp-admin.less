@@ -1,0 +1,147 @@
+/* 
+
+wp-admin.less
+contents:
+		
+	1. Admin CSS Tweaks
+	2. Login CSS Tweaks
+	3. Plugin CSS Tweaks
+
+*/
+
+/* 1. Admin CSS Tweaks
+--------------------------------------------------------------------------------------- */
+
+// absolute admin bar
+
+.admin-bar.admin-bar-absolute #wpadminbar
+	{
+	position: absolute;
+	}
+
+// hide welcome message option on dashboard screen options
+
+label[for="wp_welcome_panel-hide"],
+#wp_welcome_panel-hide
+	{
+	display: none;
+	}
+	
+// set width of the help messages for options framework
+
+#optionsframework .section-color .explain
+	{
+	max-width: 600px !important;
+	}
+
+// better line height on the options framework info panels
+
+.section-info p
+	{
+	line-height: 1.6em;
+	}
+
+// background image width
+
+#section-background_image img
+	{
+	width: 125px;
+	}
+
+// hide message 2 on theme activation
+
+.themes-php #message2
+	{
+	//display: none;
+	}
+
+// improve style on null activation message
+
+.themes-php #null-activated
+	{
+	position: relative;
+	top: 5px;
+	}
+
+.themes-php #null-activated .button-primary
+	{
+	margin-right: 5px;
+	}
+
+// change cursor icon when meta box dragging is disabled
+
+.drag-meta-box-disabled .hndle
+	{
+	cursor: default !important;
+	}
+
+.drag-meta-box-disabled .handlediv
+	{
+	display: none;
+	}
+
+.drag-meta-box-disabled #dashboard-widgets h3 .postbox-title-action
+	{
+	right: 10px;
+	}
+	
+// portfolio post type
+
+#menu-posts-portfolio .wp-menu-image img
+	{
+	display: none;
+	}
+	
+#menu-posts-portfolio .wp-menu-image 
+	{
+	background: url(@{templateuri}/assets/images/icon-post-type-portfolio.png) no-repeat 6px -16px !important;
+	overflow: hidden;
+	}
+	
+#menu-posts-portfolio:hover .wp-menu-image, #menu-posts-portfolio.wp-has-current-submenu .wp-menu-image
+	{
+    background-position: 6px 8px !important;
+	}
+	
+// products post type
+
+#menu-posts-products .wp-menu-image img
+	{
+	display: none;
+	}
+	
+#menu-posts-products .wp-menu-image 
+	{
+	background: url(@{templateuri}/assets/images/icon-post-type-products.png) no-repeat 6px -16px !important;
+	overflow: hidden;
+	}
+	
+#menu-posts-products:hover .wp-menu-image, #menu-posts-products.wp-has-current-submenu .wp-menu-image
+	{
+    background-position: 6px 8px !important;
+	}
+	
+// staff post type
+
+#menu-posts-staff .wp-menu-image img
+	{
+	display: none;
+	}
+	
+#menu-posts-staff .wp-menu-image 
+	{
+	background: url(@{templateuri}/assets/images/icon-post-type-staff.png) no-repeat 6px -16px !important;
+	overflow: hidden;
+	}
+	
+#menu-posts-staff:hover .wp-menu-image, #menu-posts-staff.wp-has-current-submenu .wp-menu-image
+	{
+    background-position: 6px 8px !important;
+	}
+	
+/* 2. Login CSS Tweaks (will likely need to be !important due to loading in footer in 3.3 with the hook login_enqueue_scripts in functions.php)
+--------------------------------------------------------------------------------------- */
+
+
+/* 3. Plugin CSS Tweaks
+--------------------------------------------------------------------------------------- */

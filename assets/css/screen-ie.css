@@ -1,0 +1,180 @@
+/* 
+
+screen-ie.css
+contents:
+
+	1. ie6
+	2. ie7	
+	3. ie8
+
+*/
+
+
+/* 1. ie6
+--------------------------------------------------------------------------------------- */
+
+/* fixes incorrect styling of legend in IE6. */
+.ie6 legend
+	{
+	margin-left: -7px; 
+	}
+
+/* fixes incorrect placement of ol numbers in IE6/7. */
+.ie6 ol
+	{
+	margin-left:2em;
+	}
+
+/* fixes wrong line-height on sup/sub in IE. */
+.ie6 sup 
+	{ 
+	vertical-align: text-top; 
+	}
+	
+.ie6 sub {
+	vertical-align: text-bottom;
+	}
+
+/* IE 6&7 has problems with setting proper <hr> margins. */
+.ie6 hr
+	{
+	margin: -8px auto 11px;
+	}
+
+/* fixes padding on fieldset */
+.ie6 fieldset 
+	{
+	padding-top: 0;
+	}
+
+.ie6 input 
+	{ 
+	vertical-align: text-bottom; 
+	}
+
+.ie6 .text,
+.ie6 select
+	{
+	height: 1.4em;
+	}
+
+.ie6 .error,
+.ie6 .notice, 
+.ie6 .success
+	{ 
+	behavior: url(/wp-content/themes/null/assets/css/pie.php);
+	}
+	
+/* 2. ie7
+--------------------------------------------------------------------------------------- */
+
+/* fixes incorrect styling of legend in IE7. */
+.ie7 legend 
+	{ 
+	margin-left: -7px; 
+	}
+
+/* fixes incorrect placement of ol numbers in IE6/7. */
+.ie7 ol 
+	{ 
+	margin-left:2em;
+	}
+	
+/* Fixes wrong line-height on sup/sub in IE. */
+.ie7 sup 
+	{
+	vertical-align: text-top;
+	}
+	
+.ie7 sub 
+	{ 
+	vertical-align: text-bottom; 
+	}
+
+/* fixes IE7 missing wrapping of code elements. */
+html.ie7>body p code 
+	{ 
+	*white-space: normal;
+	} 
+
+/* IE 6&7 has problems with setting proper <hr> margins. */
+.ie7 hr  { 
+	margin: -8px auto 11px;
+	}
+
+/* fixes padding on fieldset */
+.ie7 fieldset 
+	{
+	padding-top: 0;
+	}
+
+/* bicubic resizing for non-native sized img */
+.ie7 img
+	{
+	-ms-interpolation-mode: bicubic;
+	}
+
+.ie7 input[type="checkbox"] 
+	{ 
+	vertical-align: baseline; 
+	}
+
+.ie7 .text,
+.ie7 select,
+.ie7 textarea
+	{
+	behavior: url(/wp-content/themes/null/assets/css/pie.php);
+	}
+	
+.ie7 .text,
+.ie7 select
+	{
+	height: 1.4em;
+	}
+
+.ie7 .error,
+.ie7 .notice, 
+.ie7 .success
+	{ 
+	behavior: url(/wp-content/themes/null/assets/css/pie.php);
+	}
+
+.ie7 button,
+.ie7 .button,
+.ie7 input[type='submit'],
+.ie7 .submit
+	{
+	behavior: url(/wp-content/themes/null/assets/css/pie.php);
+	}
+
+.ie7 button
+	{
+	padding: 2px 10px 1px 10px;
+	position: relative;
+	top: 3px;
+	}
+	
+/* 3. ie8
+--------------------------------------------------------------------------------------- */
+
+.ie8 .text,
+.ie8 select,
+.ie8 textarea
+	{
+	behavior: url(/wp-content/themes/null/assets/css/pie.php);
+	}
+
+.ie8 .error,
+.ie8 .notice, 
+.ie8 .success
+	{ 
+	behavior: url(/wp-content/themes/null/assets/css/pie.php);
+	}
+
+.ie8 button,
+.ie8 .button,
+.ie8 input[type='submit'],
+.ie8 .submit
+	{
+	behavior: url(/wp-content/themes/null/assets/css/pie.php);
+	}
