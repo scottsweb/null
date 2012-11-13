@@ -544,43 +544,6 @@ function null_remove_meta_boxes() {
 }
 
 /***************************************************************
-* Function null_framework_check_for_update
-* Check for a framework automatic update - API needs to be finished for v1
-***************************************************************/
-
-add_filter('pre_set_site_transient_update_themes', 'null_framework_check_for_update');
-
-function null_framework_check_for_update($checked_data) {
-	
-	global $wp_version;
-
-	$request = array(
-		'slug' => get_option('template'),
-		'version' => NULL_VERSION
-	);
-	// Start checking for an update
-	$send_for_check = array(
-		'body' => array(
-			'action' => 'theme_update', 
-			'request' => serialize($request),
-			'api-key' => md5(site_url())
-		),
-		'user-agent' => 'WordPress/' . $wp_version . '; ' . site_url()
-	);
-		
-	$raw_response = wp_remote_post('http://scott.ee/api/', $send_for_check);
-		
-	if (!is_wp_error($raw_response) && ($raw_response['response']['code'] == 200))
-		$response = unserialize($raw_response['body']);
-	
-	// Feed the update data into WP updater
-	if (!empty($response)) 
-		$checked_data->response[get_option('template')] = $response;
-	
-	return $checked_data;
-}
-
-/***************************************************************
 * Function null_options_santiziation & null_sanitize_text_field & null_sanitize_textarea_field
 * Modify the options framework to validate differently
 ***************************************************************/

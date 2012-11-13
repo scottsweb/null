@@ -76,6 +76,9 @@
 	to-do: move ie.css to less - lots of advantages including references to pie CSS will always work, colours etc
 	to-do: can the automatic linking of emebedded images be disabled - attachment view is a waste of time
 	to-do: test if inline js compression kills analyitcs (it appears to)
+	to-do: look over https://github.com/wpmark/pxjn-framework / https://github.com/wpmark/pxlcore - especially the loop classes (move out of templates)
+	to-do: auto updates from GitHub - https://github.com/UCF/Theme-Updater
+	
 
 	*/
 
@@ -566,8 +569,7 @@
 		// return the saved list of Google Web Fonts
 		return $font_list;
 	
-	}
-			
+	}	
 
 	/***************************************************************
 	* Function null_cache_path
@@ -674,7 +676,6 @@
 	    return $str;
 	    
 	}
-		
 	// email
 	load_template(get_template_directory() . '/assets/inc/email.php');
 	
@@ -688,7 +689,7 @@
 	load_template(get_template_directory() . '/assets/inc/cron.php');
 	
 	// shortcodes
-	if (!is_admin()) { load_template(get_template_directory() . '/assets/inc/shortcodes.php', true, true); }
+	if (!is_admin()) { load_template(get_template_directory() . '/assets/inc/shortcodes.php'); }
 	
 	// breadcrumbs - http://wordpress.org/extend/plugins/breadcrumb-trail/
 	if (!is_admin()) { locate_template('/assets/inc/breadcrumbs.php', true, true); }
@@ -704,6 +705,9 @@
 	
 	// only load in admin functions in admin interface
 	if (is_admin()) { locate_template('/assets/inc/admin.php', true, true); }
+
+	// load update code
+	if (is_admin()) { load_template(get_template_directory() . '/assets/inc/update.php'); }
 	
 	// only load front end functions for site
 	if (!is_admin()) { locate_template('/assets/inc/theme.php', true, true); }
