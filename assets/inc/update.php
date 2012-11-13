@@ -1,11 +1,13 @@
 <?php
 
+$theme_info = null_theme_information();
+
 /***************************************************************
 * Function null_hide_theme
 * Stop the theme/child theme from checking the WordPress.org API for updates
 ***************************************************************/
 
-add_filter('http_request_args', 'null_hide_theme', 5, 2 );
+add_filter('http_request_args', 'null_hide_theme', 5, 2);
 
 function null_hide_theme($r, $url) {
 	if ( 0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check' ) )
@@ -25,9 +27,9 @@ function null_hide_theme($r, $url) {
 add_filter('http_request_args', 'null_http_request_sslverify', 10, 2);
 
 function null_http_request_sslverify($r, $url) {
-
-	$theme_info = null_theme_information();
-
+	
+	global $theme_info;
+	
 	if ($theme_info['zip_url'] == $url)
 		$r['sslverify'] = $theme_info['sslverify'];
 
@@ -59,7 +61,7 @@ function null_check_for_update($checked_data) {
 			$response['url'] = $theme_info['url'];
 			$response['package'] = $theme_info['zip_url'];
 			
-			// If response is false, don't alter the transient
+			// if response is false, don't alter the transient
 			if ( false !== $response )
 				$checked_data->response[$theme_info['slug']] = $response;
 		}		
@@ -76,12 +78,14 @@ function null_check_for_update($checked_data) {
 add_filter('themes_api', 'null_update_information', 10, 3);
 
 function null_update_information($def, $action, $response) {
-
+	
+	global $theme_info;
+	
 	// only modify the current template info
 	if ($response->slug != get_option('template')) return false;
 	
 	// grab the theme information
-	$theme_info = null_theme_information();
+	//$theme_info = null_theme_information();
 
 	$response = new stdClass;
 	$response->slug 			= $theme_info['slug'];
