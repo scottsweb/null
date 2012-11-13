@@ -96,6 +96,11 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 
 ## Changelog
 
+#### 0.97
+* post_class classes moved away from the loops 
+* Minor bug fix on update script 
+* Tweak to remove attachment urls from inserted media
+
 #### 0.96
 * Automatic updating from Github
 

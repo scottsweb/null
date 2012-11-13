@@ -1,10 +1,5 @@
-<?php $loopcounter = 0; ?>
 <?php if ( have_posts() ) : ?>
-<?php while ( have_posts() ) : the_post(); $loopcounter++; $class = ''; ?>
-<?php if ($loopcounter & 1) { $class .= "loop-odd"; } else { $class .= "loop-even"; }  ?>
-<?php if ($loopcounter == 1) { $class .= " loop-first"; } ?>
-<?php if ($loopcounter == $wp_query->post_count) { $class .= " loop-last"; } ?>
-<?php if (has_post_thumbnail()) { $class .= " loop-featured-image"; } ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
 <article <?php post_class('loop-search loop loop-'.$loopcounter.' '.$class) ?> role="article">
 	<header>

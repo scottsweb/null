@@ -61,10 +61,9 @@
 	to-do: a few new widgets (featured posts? - post type and taxonomy choice)
 	to-do: better shortcodes & shortcode builder (see md theme)
 	to-do: style and code for various post format types (chat, video, quote etc)
-	to-do: meta boxes - use php exports from ACF and add them to post types (start with portfolio)
+	to-do: meta boxes - use php exports from ACF and add them to post types (start with portfolio) - a developer ACF plugin is on its way for bundling with themes
 	to-do: custom fields in list view for custom post types (e.g. portfolio thumbnail, categories etc)
 	to-do: improve gallery shortcode - css and filters tweaks - see chailey - make the built in gallery useful in more projects //http://wordpress.stackexchange.com/questions/4343/how-to-customise-the-output-of-the-wp-image-gallery-shortcode-from-a-plugin
-	to-do: auto updater api (see admin.php)
 	to-do: improve nav walker to provide better classes and support for other attributes
 	to-do: standard placeholder image for admin - for list views etc
 	to-do: if some settings are filtered away (eg custom header and background) the options appear. of_get_option always need a default value!!!
@@ -74,11 +73,7 @@
 			- unset($options['force_rewrite']); - check these first
 	to-do: Implement a maintenance mode (as part of development mode?)
 	to-do: move ie.css to less - lots of advantages including references to pie CSS will always work, colours etc
-	to-do: can the automatic linking of emebedded images be disabled - attachment view is a waste of time
 	to-do: test if inline js compression kills analyitcs (it appears to)
-	to-do: look over https://github.com/wpmark/pxjn-framework / https://github.com/wpmark/pxlcore - especially the loop classes (move out of templates)
-	to-do: auto updates from GitHub - https://github.com/UCF/Theme-Updater
-	
 
 	*/
 
@@ -120,7 +115,7 @@
 		if ((!current_user_can('update_plugins')) && (of_get_option('disable_updates', '1'))) {
 			$wp_admin_bar->remove_menu('updates');
 		}
-		
+
 	}
 
 	/***************************************************************

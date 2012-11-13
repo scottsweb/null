@@ -1,12 +1,7 @@
-<?php $loopcounter = 0; ?>
 <?php if ( have_posts() ) : ?>
-<?php while ( have_posts() ) : the_post(); $loopcounter++; $class = ''; ?>
-<?php if ($loopcounter & 1) { $class .= "loop-odd"; } else { $class .= "loop-even"; }  ?>
-<?php if ($loopcounter == 1) { $class .= " loop-first"; } ?>
-<?php if ($loopcounter == $wp_query->post_count) { $class .= " loop-last"; } ?>
-<?php if (has_post_thumbnail()) { $class .= " loop-featured-image"; } ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
-<article <?php post_class('loop loop-'.$loopcounter.' '.$class) ?> role="article">
+<article <?php post_class() ?> role="article">
 	<header>		
 		<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 		<?php if ( is_sticky() ) : ?>

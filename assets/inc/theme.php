@@ -522,7 +522,45 @@ function null_breadcrumb_textdomain($domain) {
 	return $domain;
 
 }
- 
+
+/***************************************************************
+* Function null_post_class
+* Add some custom classes to each post
+***************************************************************/
+
+add_filter('post_class', 'null_post_class', 20);
+
+function null_post_class($classes){
+	
+	global $wp_query, $post;
+	
+	// apply only to archives not single posts
+	if (!is_single()) {
+	
+		// loop
+		$classes[] = 'loop';
+		
+		// first and last
+		if ($wp_query->current_post+1 == 1) $classes[] = 'loop-first'; 
+		if (($wp_query->current_post+1) == $wp_query->post_count) $classes[] = 'loop-last';
+	
+		// odd and even
+		if ($wp_query->current_post+1 & 1) { $classes[] = "loop-odd"; } else { $classes[] = "loop-even"; } 
+	
+		// counter
+		$count = $wp_query->current_post+1;
+		$classes[] = 'loop-'.$count;
+	
+		// per row? a filterable row count based on post type (think toggle shop). Perhaps wrap in a <div class="row"></div>
+	
+	}
+	
+	// featured image
+	if (has_post_thumbnail($post->ID)) $classes[] = "featured-image";
+
+	return $classes;
+}
+
 /***************************************************************
 * Function null_time
 * create a post time based on WordPress settings, can be declared in child theme
@@ -819,6 +857,54 @@ if (!function_exists('null_sidebar')) {
 			dynamic_sidebar('sidebar-'.null_slugify('Posts/Blog')); 
 		}
 	}
+}
+
+/***************************************************************
+* Function null_widget_classes
+* Add first and last classes to widgets
+***************************************************************/
+
+add_filter('dynamic_sidebar_params','null_widget_classes');
+
+function null_widget_classes($params) {
+
+	global $my_widget_num;
+
+	// get the id for the current sidebar we're processing
+	$this_id = $params[0]['id']; 
+	
+	// get an array of ALL registered widgets
+	$arr_registered_widgets = wp_get_sidebars_widgets(); 
+		
+	if (!$my_widget_num) { // If the counter array doesn't exist, create it
+		$my_widget_num = array();
+	}
+
+	// check if the current sidebar has no widgets.. if not bail early
+	if (!isset($arr_registered_widgets[$this_id]) || !is_array($arr_registered_widgets[$this_id])) { 
+		return $params;
+	}
+	
+	// see if the counter array has an entry for this sidebar
+	if (isset($my_widget_num[$this_id])) { 
+		$my_widget_num[$this_id] ++;
+	} else {
+		$my_widget_num[$this_id] = 1;
+	}
+
+	// add a widget number class for additional styling options
+	$class = 'class="widget-' . $my_widget_num[$this_id] . ' '; 
+	
+	// first and last classes
+	if ($my_widget_num[$this_id] == 1) {
+		$class .= 'widget-first ';
+	} else if($my_widget_num[$this_id] == count($arr_registered_widgets[$this_id])) { // If this is the last widget
+		$class .= 'widget-last ';
+	}
+
+	// insert our new classes into "before widget"
+	$params[0]['before_widget'] = str_replace('class="', $class, $params[0]['before_widget']);
+	return $params;
 }
 
 /***************************************************************

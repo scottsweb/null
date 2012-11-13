@@ -196,8 +196,10 @@ add_filter('upgrader_source_selection', 'null_upgrader_source_selection_filter',
 function null_upgrader_source_selection_filter($source, $remote_source=NULL, $upgrader=NULL) {
 
 	$theme_info = null_theme_information();
-
-	if (isset($source, $remote_source, $theme_info['slug'])){
+	
+	if ($remote_source != UPDATE_ZIP_URL) return $source; // only change the source for the github zip file
+	
+	if (isset($source, $remote_source, $theme_info['slug'])) {
 		$corrected_source = $remote_source . '/' . $theme_info['slug'] . '/';
 		
 		if(@rename($source, $corrected_source)) {

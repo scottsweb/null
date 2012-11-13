@@ -478,6 +478,24 @@ function null_ico_mime($mimes) {
 }
 
 /***************************************************************
+* Function null_attachments_fields_to_edit
+* Remove the default attachment URL for inserted images (will need updating in 3.5?)
+***************************************************************/
+
+add_filter("attachment_fields_to_edit", 'null_attachment_fields_to_edit', null, 2);
+
+function null_attachment_fields_to_edit($form_fields, $post) {
+
+	if (!empty($form_fields['url']['html'])) {
+		if ($filtered_html = preg_replace("#(.*?value=').*?(?:jpg|jpeg|png|gif|bmp|tiff|tif)('.*)#i",'$1$2',$form_fields['url']['html'])) {
+			$form_fields['url']['html'] = $filtered_html;
+		}
+	}
+
+	return $form_fields;
+}
+
+/***************************************************************
 * Use a custom stylesheet in the WordPress editor? + cache busting
 * Not added when run as a child theme - add this to child theme instead
 ***************************************************************/
