@@ -18,6 +18,23 @@ function null_hide_theme($r, $url) {
 }
 
 /***************************************************************
+* Function null_http_request_sslverify
+* Fix the SSL error caused when downloading ZIP from Github
+***************************************************************/
+
+add_filter('http_request_args', 'null_http_request_sslverify', 10, 2);
+
+function null_http_request_sslverify($r, $url) {
+
+	$theme_info = null_theme_information();
+
+	if ($theme_info['zip_url'] == $url)
+		$r['sslverify'] = $theme_info['sslverify'];
+
+	return $r;
+}
+        
+/***************************************************************
 * Function null_check_for_update
 * Check for a framework automatic update from Github
 ***************************************************************/
@@ -108,7 +125,7 @@ function null_theme_information() {
 			'api_url'		=> 'https://api.github.com/repos/scottsweb/null',
 			'raw_url' 		=> 'https://raw.github.com/scottsweb/null/master',
 			'zip_url' 		=> 'https://github.com/scottsweb/null/zipball/master',
-			'sslverify' 	=> false, // should we veryify SSL? - may cause issues if enabled
+			'sslverify' 	=> false, // should we veryify SSL? - will cause issues if enabled
 			'requires'		=> $wp_version,
 			'tested'		=> $wp_version
 		);
