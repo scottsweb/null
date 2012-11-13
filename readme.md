@@ -96,5 +96,8 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 
 ## Changelog
 
+#### 0.96
+* Automatic updating from Github
+
 #### 0.95
 * Upload to Github
