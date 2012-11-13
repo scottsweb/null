@@ -1,6 +1,15 @@
 <?php
 
 /***************************************************************
+* Constants 
+***************************************************************/
+
+define('UPDATE_URL', 'http://scott.ee'); // url to theme site or changelog
+define('UPDATE_API_URL', 'https://api.github.com/repos/scottsweb/null');
+define('UPDATE_RAW_URL', 'https://raw.github.com/scottsweb/null/master');
+define('UPDATE_ZIP_URL', 'https://github.com/scottsweb/null/zipball/master');
+			
+/***************************************************************
 * Function null_hide_theme
 * Stop the theme/child theme from checking the WordPress.org API for updates
 ***************************************************************/
@@ -8,7 +17,7 @@
 add_filter('http_request_args', 'null_hide_theme', 5, 2);
 
 function null_hide_theme($r, $url) {
-	if ( 0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check' ) )
+	if (!null_string_search('http://api.wordpress.org/themes/update-check', $url))
 		return $r; // not a theme update request. bail.
 	$themes = unserialize( $r['body']['themes'] );
 	unset( $themes[get_option('template')]);
@@ -26,15 +35,9 @@ add_filter('http_request_args', 'null_http_request_sslverify', 10, 2);
 
 function null_http_request_sslverify($r, $url) {
 
-	if ( 0 !== strpos($url, 'github.com' ) )
-		return $r; // not a github request. bail.
-		
-	$theme_info = null_theme_information();
-		
-	if ($theme_info['zip_url'] == $url) {
-		$r['sslverify'] = $theme_info['sslverify'];
-	}
-	
+	if (UPDATE_ZIP_URL != $url)
+		return $r; // not a github zip request. bail.
+	$r['sslverify'] = false; // do not SSL verify as it oftern fails	
 	return $r;
 }
         
@@ -127,10 +130,10 @@ function null_theme_information() {
 			'old_version' 	=> $current_theme->Version,
 			'version'		=> $current_theme->Version,
 			'updated'		=> date('Y-m-d'),
-			'url'			=> 'http://scott.ee', // url to theme site or changelog
-			'api_url'		=> 'https://api.github.com/repos/scottsweb/null',
-			'raw_url' 		=> 'https://raw.github.com/scottsweb/null/master',
-			'zip_url' 		=> 'https://github.com/scottsweb/null/zipball/master',
+			'url'			=> UPDATE_URL,
+			'api_url'		=> UPDATE_API_URL,
+			'raw_url' 		=> UPDATE_RAW_URL,
+			'zip_url' 		=> UPDATE_ZIP_URL,
 			'sslverify' 	=> false, // should we veryify SSL? - will cause issues if enabled
 			'requires'		=> $wp_version,
 			'tested'		=> $wp_version
@@ -197,8 +200,11 @@ function null_upgrader_source_selection_filter($source, $remote_source=NULL, $up
 	if (isset($source, $remote_source, $theme_info['slug'])){
 		$corrected_source = $remote_source . '/' . $theme_info['slug'] . '/';
 		
-		if(@rename($source, $corrected_source)){
+		if(@rename($source, $corrected_source)) {
+			
+			delete_transient('null_theme_update_information'); // clear the null information transient to ensure it gets checked again
 			return $corrected_source;
+			
 		} else {
 			return new WP_Error();
 		}
