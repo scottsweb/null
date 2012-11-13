@@ -1,7 +1,5 @@
 <?php
 
-$theme_info = null_theme_information();
-
 /***************************************************************
 * Function null_hide_theme
 * Stop the theme/child theme from checking the WordPress.org API for updates
@@ -27,12 +25,16 @@ function null_hide_theme($r, $url) {
 add_filter('http_request_args', 'null_http_request_sslverify', 10, 2);
 
 function null_http_request_sslverify($r, $url) {
-	
-	global $theme_info;
-	
-	if ($theme_info['zip_url'] == $url)
-		$r['sslverify'] = $theme_info['sslverify'];
 
+	if ( 0 !== strpos($url, 'github.com' ) )
+		return $r; // not a github request. bail.
+		
+	$theme_info = null_theme_information();
+		
+	if ($theme_info['zip_url'] == $url) {
+		$r['sslverify'] = $theme_info['sslverify'];
+	}
+	
 	return $r;
 }
         
@@ -51,11 +53,12 @@ function null_check_for_update($checked_data) {
 	
 	// grab the theme info from github using the function below
 	if ($theme_info = null_theme_information()) {
-	
-		// check the versions and push a new response to WordPress
-		$update = version_compare($theme_info['version'], NULL_VERSION);
-		if (1 === $update) {
 		
+		// check the versions and push a new response to WordPress
+		$update = version_compare($theme_info['version'], $theme_info['old_version']);
+		
+		if (1 === $update) {
+			
 			$response = array();
 			$response['new_version'] = $theme_info['version'];
 			$response['url'] = $theme_info['url'];
@@ -79,13 +82,11 @@ add_filter('themes_api', 'null_update_information', 10, 3);
 
 function null_update_information($def, $action, $response) {
 	
-	global $theme_info;
-	
 	// only modify the current template info
 	if ($response->slug != get_option('template')) return false;
 	
 	// grab the theme information
-	//$theme_info = null_theme_information();
+	$theme_info = null_theme_information();
 
 	$response = new stdClass;
 	$response->slug 			= $theme_info['slug'];
@@ -123,6 +124,7 @@ function null_theme_information() {
 			'name'			=> $current_theme->Name,
 			'slug'			=> $current_theme->Template,
 			'author'		=> $current_theme->Author,
+			'old_version' 	=> $current_theme->Version,
 			'version'		=> $current_theme->Version,
 			'updated'		=> date('Y-m-d'),
 			'url'			=> 'http://scott.ee', // url to theme site or changelog
@@ -179,5 +181,29 @@ function null_theme_information() {
 	// filter the array just in case it needs changing by the child theme
 	$theme = apply_filters('null_theme_information', $theme);
 	return $theme;
+}
+
+/***************************************************************
+* Function null_upgrader_source_selection_filter
+* Github delivers zip files as <Username>-<Repo>-<Hash>.zip - must rename this zip file to the accurate theme folder
+***************************************************************/
+
+add_filter('upgrader_source_selection', 'null_upgrader_source_selection_filter', 10, 3);
+
+function null_upgrader_source_selection_filter($source, $remote_source=NULL, $upgrader=NULL) {
+
+	$theme_info = null_theme_information();
+
+	if (isset($source, $remote_source, $theme_info['slug'])){
+		$corrected_source = $remote_source . '/' . $theme_info['slug'] . '/';
+		
+		if(@rename($source, $corrected_source)){
+			return $corrected_source;
+		} else {
+			return new WP_Error();
+		}
+	}
+		
+	return $source;
 }
 ?>
