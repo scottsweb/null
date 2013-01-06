@@ -15,7 +15,7 @@ function null_extension_shortcodes() {
 	foreach($shortcodes as $shortcode) {
 		if (isset($shortcode_settings[$shortcode['nicename']]))	{	
 			if (file_exists($shortcode['path']) && ($shortcode_settings[$shortcode['nicename']])) {
-				load_template($shortcode['path']); // used to be include
+				load_template($shortcode['path']);
 			}
 		}
 	}

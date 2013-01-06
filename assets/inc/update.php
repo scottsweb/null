@@ -34,10 +34,9 @@ function null_hide_theme($r, $url) {
 add_filter('http_request_args', 'null_http_request_sslverify', 10, 2);
 
 function null_http_request_sslverify($r, $url) {
-
 	if (UPDATE_ZIP_URL != $url)
 		return $r; // not a github zip request. bail.
-	$r['sslverify'] = false; // do not SSL verify as it oftern fails	
+	$r['sslverify'] = false; // do not SSL verify as it often fails	
 	return $r;
 }
         
@@ -188,7 +187,7 @@ function null_theme_information() {
 
 /***************************************************************
 * Function null_upgrader_source_selection_filter
-* Github delivers zip files as <Username>-<Repo>-<Hash>.zip - must rename this zip file to the accurate theme folder
+* Github delivers zip files as <Username>-<Repo>-<Hash>.zip - must rename this zip file to match theme folder
 ***************************************************************/
 
 add_filter('upgrader_source_selection', 'null_upgrader_source_selection_filter', 10, 3);
@@ -196,8 +195,9 @@ add_filter('upgrader_source_selection', 'null_upgrader_source_selection_filter',
 function null_upgrader_source_selection_filter($source, $remote_source=NULL, $upgrader=NULL) {
 
 	$theme_info = null_theme_information();
-	
-	if ($remote_source != UPDATE_ZIP_URL) return $source; // only change the source for the github zip file
+
+	// only change the source for the github zip file	
+	if ($remote_source != UPDATE_ZIP_URL) return $source; 
 	
 	if (isset($source, $remote_source, $theme_info['slug'])) {
 		$corrected_source = $remote_source . '/' . $theme_info['slug'] . '/';

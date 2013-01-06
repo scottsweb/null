@@ -1,5 +1,7 @@
 <?php
 
+global $pagenow;
+
 // only run this file on apache
 if (stristr($_SERVER['SERVER_SOFTWARE'], 'apache') !== false) {
 

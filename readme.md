@@ -1,10 +1,10 @@
 ![null logo](https://dl.dropbox.com/u/3019972/null.png)
 
-# null
+## null
 
 * Contributors: [@scottsweb](http://twitter.com/scottsweb)
 * Theme Name: null
-* Theme URI: [http://scott.ee](http://scott.ee)
+* Theme URI: [http://null.scott.ee](http://null.scott.ee)
 * Description: null: the tinkerers framework, a HTML5 WordPress starter theme & parent theme
 * Author: [Scott Evans](http://scott.ee)
 * Author URI: [http://scott.ee](http://scott.ee)
@@ -12,7 +12,7 @@
 * License URI: [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html)
 * Text Domain: null
 
-## About
+## about
 
 null is a tinkerers framework with ambitions to be the smartest, fastest and simplest way to build WordPress themes. 
 
@@ -28,7 +28,7 @@ Things you will love:
 * Semantic, responsive grid systems - null makes use of <a href="http://semantic.gs/">semantic.gs</a>.
 
 
-## Installation
+## installation
 
 To install this theme:
 
@@ -38,7 +38,7 @@ To install this theme:
 1. After activation you will be given the option to setup WordPress with a number of default settings. This is an optional step and should **not** be run if you have already setup WordPress how you like it.
 1. Visit "Appearance -> Theme Options" and configure the theme options to your liking. 
 
-## Frequently Asked Questions
+## frequently asked questions
 
 ### Which Open Source projects does null make use of?
 
@@ -60,7 +60,7 @@ Credits go to:
 * [Holmes CSS](https://github.com/redroot/holmes) - for visual markup debugging.
 * [Modernizr](http://www.modernizr.com/) - for all sorts of browser shinanigans.
 * [Superfish](http://users.tpg.com.au/j_birch/plugins/superfish/) - for making multi-level menus work on all browsers.
-*  [TGM Plugin Activation](http://tgmpluginactivation.com/) - The best way to require plugins for WordPress themes
+* [TGM Plugin Activation](http://tgmpluginactivation.com/) - The best way to require plugins for WordPress themes
 
 I will do my best to keep this updated as the framework develops - please let me know if I have missed you out.
 
@@ -80,7 +80,7 @@ A roadmap of sorts can be found at the top of the functions.php file. Some of th
 
 ### Is there a child starter theme available?
 
-One is in development. It is called null-child.
+Yes. It is called [null-child](https://github.com/scottsweb/null-child).
 
 ### What browsers does null support?
 
@@ -93,8 +93,21 @@ Not at the moment. It may never pass as we require the use of file_put_contents 
 
 Please submit all bugs, questions and suggestions to the [GitHub Issues](https://github.com/scottsweb/null/issues) queue.
 
+## changelog
 
-## Changelog
+#### 0.98
+* Moved IE specific styles into a LESS file for simplicity
+* Track downloads and external links in analytics
+* Fixed small bug with search post_class
+* New deprecated functions file to handle code added to 3.5 and future code removals
+* current_url() function to return the full URL of the current page
+* Options framework updated to 1.4
+* Font options added with Google Fonts API integration
+* WordPress 3.5 compatibility
+* Embed widget shortcode 
+* Removed IE6 polyfills - by the time v1.0 comes around all polyfills may be removed
+* HiDPI theme image
+* Improved compatibility with [null-child theme](https://github.com/scottsweb/null-child)
 
 #### 0.97
 * post_class classes moved away from the loops 
@@ -105,4 +118,4 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 * Automatic updating from Github
 
 #### 0.95
-* Upload to Github
+* Uploaded to Github

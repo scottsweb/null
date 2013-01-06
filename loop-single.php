@@ -1,6 +1,6 @@
 <?php if (have_posts()) : the_post(); ?>
 
-<article <?php post_class() ?> role="article">
+<article <?php post_class() ?> role="article" <?php if (function_exists("live_edit")) { live_edit(apply_filters('null_live_edit_single_post', 'post_title, post_content')); } ?>>
 
 	<header>
 		<h2 class="entry-title"><?php the_title() ?></h2>

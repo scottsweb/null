@@ -53,14 +53,6 @@ jQuery(document).ready(function() {
 		allBrowsers : true
 	});
 	
-	// superfish menu
-	jQuery('#navigation ul').superfish({ 
-	    animation:   {opacity:'show'},
-	    speed:       'fast',
-	    autoArrows:  false, 
-	    dropShadows: false                            
-	}); 
-	
 	// accordion shortcode
 	jQuery(".accordion-shortcode").accordion({ 
 		autoHeight: false, 

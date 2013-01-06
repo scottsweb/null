@@ -127,6 +127,9 @@ class wp_less {
 			wp_die( $ex->getMessage() );
 		}
 
+		// hack to cache bust theme customiser by overwriting the css query string to current time
+		if (isset($_POST['customize_messenger_channel']) && !empty($query_string)) { $query_string = time(); }
+
 		// return the compiled stylesheet with the query string it had if any
 		$url = trailingslashit( $this->get_cache_dir( false ) ) . "{$handle}.css" . ( ! empty( $query_string ) ? "?{$query_string}" : '' );
 		return add_query_arg( 'ver', $less_cache[ 'updated' ], $url );	

@@ -26,6 +26,14 @@ function optionsframework_options() {
 		"type" => "text"
 	);
 
+	$general_options['gat_external_download'] = array(
+		"name" => __('Track External Links &amp; Downloads?', 'null'),
+		"desc" => __('Track downloaded files and external links as events in Google Analytics?', 'null'),
+		"id" => "gat_external_download",
+		"std" => "0",
+		"type" => "checkbox"
+	);
+
 	$general_options['custom_header_meta'] = array(
 		"name" => __('Header Meta', 'null'),
 		"desc" => __('Add custom meta data to the theme header. e.g. Feedburner or Google Webmaster Tools.', 'null'),
@@ -71,7 +79,7 @@ function optionsframework_options() {
 		"desc" => __('Thanks to WordPress.', 'null'),
 		"id" => "wordpress_credit",
 		"std" => 'Powered by <a href="http://wordpress.org/" title="WordPress" rel="generator">WordPress</a> &amp; the <a href="http://null.scott.ee/" title="null framework">null framework</a>.',
-		"class" => "",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -80,7 +88,7 @@ function optionsframework_options() {
 		"desc" => __('Leave empty to remove from footer.', 'null'),
 		"id" => "theme_credit",
 		"std" => 'Designed by <a href="http://scott.ee" title="WordPress website design by Scott Evans." rel="designer">Scott Evans</a>.',
-		"class" => "",
+		"class" => "large",
 		"type" => "text"
 	);
 	
@@ -155,7 +163,7 @@ function optionsframework_options() {
 		"options" => null_get_fonts()
 	);
 
-	/*$design_options['body_font'] = array( 
+	$design_options['body_font'] = array( 
 		"name" => __('Body Font', 'null'),
 		"desc" => __('Choose your body font from the <a href="http://www.google.com/webfonts">Google Web Font</a> directory or default system fonts.', 'null'),
 		"id" => "body_font",
@@ -163,7 +171,7 @@ function optionsframework_options() {
 		"type" => "select",
 		"class" => "mini",
 		"options" => null_get_fonts()
-	);*/
+	);
 	
 	// logo font ?
 	// strapline font ?
@@ -252,6 +260,7 @@ function optionsframework_options() {
 		"name" => __('Delicious', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "delicious",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -259,6 +268,7 @@ function optionsframework_options() {
 		"name" => __('Dribbble', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "dribbble",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -266,6 +276,7 @@ function optionsframework_options() {
 		"name" => __('Facebook', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "facebook",
+		"class" => "large",
 		"type" => "text"
 	);
 	
@@ -273,6 +284,7 @@ function optionsframework_options() {
 		"name" => __('Flickr', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "flickr",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -280,6 +292,7 @@ function optionsframework_options() {
 		"name" => __('Github', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "github",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -287,6 +300,7 @@ function optionsframework_options() {
 		"name" => __('Google+', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "googleplus",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -294,6 +308,7 @@ function optionsframework_options() {
 		"name" => __('LinkedIn', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "linkedin",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -301,6 +316,7 @@ function optionsframework_options() {
 		"name" => __('Pinterest', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "pinterest",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -308,6 +324,7 @@ function optionsframework_options() {
 		"name" => __('SoundCloud', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "soundcloud",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -315,6 +332,7 @@ function optionsframework_options() {
 		"name" => __('Twitter', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "twitter",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -322,6 +340,7 @@ function optionsframework_options() {
 		"name" => __('Twitter @Username', 'null'),
 		"desc" => __('Username beginning with @', 'null'),
 		"id" => "twitterusername",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -329,6 +348,7 @@ function optionsframework_options() {
 		"name" => __('Vimeo', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "vimeo",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -336,6 +356,7 @@ function optionsframework_options() {
 		"name" => __('YouTube', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "youtube",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -535,6 +556,7 @@ function optionsframework_options() {
 		"desc" => __('Personalise outgoing e-mail with a from name.', 'null'),
 		"id" => "email_from_name",
 		"std" => get_bloginfo('name'),
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -543,6 +565,7 @@ function optionsframework_options() {
 		"desc" => __('WordPress should send email from this address.', 'null'),
 		"id" => "email_from",
 		"std" => get_bloginfo('admin_email'),
+		"class" => "large",
 		"type" => "text"
 	);
 	
@@ -590,7 +613,7 @@ function optionsframework_options() {
 
 	$performance_options = apply_filters('null_performance_options', $performance_options);
 					
-	// Advanced Settings polyfills & chrome frame for ie6
+	// Advanced Settings polyfills etc
 	
 	$advanced_options = array();
 	
@@ -604,6 +627,7 @@ function optionsframework_options() {
 		"desc" => __('Change the default <a href="http://codex.wordpress.org/Function_Reference/wp_login_url">login URL</a> redirect for WordPress. Can be left blank for default functionality.', 'null'),
 		"id" => "login_redirect_url",
 		"std" => "",
+		"class" => "large",
 		"type" => "text"
 	);
 
@@ -612,6 +636,7 @@ function optionsframework_options() {
 		"desc" => __('Change the default <a href="http://codex.wordpress.org/Function_Reference/wp_logout">logout URL</a> redirect for WordPress. Can be left blank for default functionality.', 'null'),
 		"id" => "logout_redirect_url",
 		"std" => "",
+		"class" => "large",
 		"type" => "text"
 	);
 	
@@ -667,21 +692,15 @@ function optionsframework_options() {
 		"std" => array( 
 			'ios' 			=> "1",
 			'selectivizr'	=> "0", 
-			'superfish' 	=> "1", 
 			'html5_forms'	=> "1",
 			'imgsizer'		=> "0",
-			'pngfix'		=> "0",
-			'chromeframe'	=> "0"
 		),
 		"type" => "multicheck",
 		"options" => array( 
 			'ios' 			=> __('Screen Rotation Scale Bug (iOS)', 'null'),
-			'selectivizr'	=> __('Selectivizr CSS3 Selectors (IE6,IE7,IE8)', 'null'),
-			'superfish' 	=> __('Superfish (primarily IE6 but improves menus on all browsers)', 'null'), 
+			'selectivizr'	=> __('Selectivizr CSS3 Selectors (IE7,IE8)', 'null'),
 			'html5_forms' 	=> __('HTML5 Forms (standardise form behaviour across all browsers)', 'null'),
-			'imgsizer'	 	=> __('Fluid Images (IE6,IE7,IE8)', 'null'),
-			'pngfix'		=> __('Transparent PNG Support (IE6)', 'null'),
-			'chromeframe'	=> __('Chrome Frame Prompt (IE6)', 'null')
+			'imgsizer'	 	=> __('Fluid Images (IE7,IE8)', 'null'),
 		)
 	);
 
@@ -776,6 +795,7 @@ function optionsframework_options() {
 		"type" => "checkbox"
 	);	
 
+	// if this is unset from a child theme then the framework will assume that the lessphp is not in use and you will need to use your own LESS compiler
 	$advanced_options['disable_less'] = array( 
 		"name" => __('Disable PHP LESS compiler', 'null'),
 		"desc" => __('Disable the built in PHP LESS compiler. Modifications to your less will require re-compiling by a <a href="http://incident57.com/less/">third party application</a>.', 'null'),
@@ -921,7 +941,7 @@ function null_options_theme_customiser($wp_customize) {
 		$wp_customize->add_setting($themename.'[primary_colour]', array(
 		    'default' => $options['primary_colour']['std'],
 		    'type' => 'option',
-		    //'transport' => 'refresh'
+		    'transport' => 'refresh'
 		) );
 		
 		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $themename.'_primary_colour', array( 
@@ -979,35 +999,38 @@ function null_options_theme_customiser($wp_customize) {
 	}
 
 	// heading font
-	/*$wp_customize->add_setting($themename.'[heading_font]', array(
-	    'default' => $options['heading_font']['std'],
-	    'type' => 'option',
-	    'transport' => 'refresh'
-	) );
-	
-	$wp_customize->add_control($themename.'_heading_font', array( 
-		'label' => $options['heading_font']['name'], 
-		'section' => 'null_options_theme_customiser_design', 
-		'settings' => $themename.'[heading_font]', 
-        'type' => $options['heading_font']['type'],
-        'choices' => $options['heading_font']['options'],
-        'priority' => 6
-	));
+	if (isset($options['heading_font'])) {
+		$wp_customize->add_setting($themename.'[heading_font]', array(
+		    'default' => $options['heading_font']['std'],
+		    'type' => 'option',
+		    'transport' => 'refresh'
+		));
+		
+		$wp_customize->add_control($themename.'_heading_font', array( 
+			'label' => $options['heading_font']['name'], 
+			'section' => 'null_options_theme_customiser_design', 
+			'settings' => $themename.'[heading_font]', 
+	        'type' => $options['heading_font']['type'],
+	        'choices' => $options['heading_font']['options'],
+	        'priority' => 6
+		));
+	}
 
-	// body font
-	$wp_customize->add_setting($themename.'[body_font]', array(
-	    'default' => $options['body_font']['std'],
-	    'type' => 'option',
-	    'transport' => 'refresh'
-	) );
-	
-	$wp_customize->add_control($themename.'_body_font', array( 
-		'label' => $options['body_font']['name'], 
-		'section' => 'null_options_theme_customiser_design', 
-		'settings' => $themename.'[body_font]', 
-        'type' => $options['body_font']['type'],
-        'choices' => $options['body_font']['options'],
-        'priority' => 7
-	));
-	*/
+	// body font	
+	if (isset($options['body_font'])) {
+		$wp_customize->add_setting($themename.'[body_font]', array(
+		    'default' => $options['body_font']['std'],
+		    'type' => 'option',
+		    'transport' => 'refresh'
+		) );
+		
+		$wp_customize->add_control($themename.'_body_font', array( 
+			'label' => $options['body_font']['name'], 
+			'section' => 'null_options_theme_customiser_design', 
+			'settings' => $themename.'[body_font]', 
+	        'type' => $options['body_font']['type'],
+	        'choices' => $options['body_font']['options'],
+	        'priority' => 7
+		));
+	}
 }

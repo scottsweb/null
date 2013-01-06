@@ -1,7 +1,7 @@
 <?php if ( have_posts() ) : ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
-<article <?php post_class('loop-search loop loop-'.$loopcounter.' '.$class) ?> role="article">
+<article <?php post_class('loop-search') ?> role="article">
 	<header>
 		<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 		<div class="entry-date"><time class="published" datetime="<?php the_time('Y-m-d\TH:i:s') ?>" pubdate><?php null_time(); ?></time></div>

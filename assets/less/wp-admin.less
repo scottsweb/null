@@ -26,19 +26,33 @@ label[for="wp_welcome_panel-hide"],
 	{
 	display: none;
 	}
-	
-// set width of the help messages for options framework
+
+// larger text boxes for options framework
+
+#optionsframework .section-text.large input
+	{
+	width: 34em;
+	}
+
+// set width of the help messages for options framework colour picker
+
+#optionsframework .section.section-color .controls
+	{
+	min-width: auto;
+	width: 280px !important;
+	}
 
 #optionsframework .section-color .explain
 	{
-	max-width: 600px !important;
+ 	max-width: 500px !important;
 	}
 
-// better line height on the options framework info panels
+// better position for explain labels in options framework
 
-.section-info p
+#optionsframework .explain
 	{
-	line-height: 1.6em;
+	position: relative;
+	top: 4px;
 	}
 
 // background image width
@@ -112,13 +126,13 @@ label[for="wp_welcome_panel-hide"],
 	
 #menu-posts-products .wp-menu-image 
 	{
-	background: url(@{templateuri}/assets/images/icon-post-type-products.png) no-repeat 6px -16px !important;
+	background: url(@{templateuri}/assets/images/icon-post-type-products.png) no-repeat 6px -18px !important;
 	overflow: hidden;
 	}
 	
 #menu-posts-products:hover .wp-menu-image, #menu-posts-products.wp-has-current-submenu .wp-menu-image
 	{
-    background-position: 6px 8px !important;
+    background-position: 6px 6px !important;
 	}
 	
 // staff post type

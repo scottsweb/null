@@ -94,7 +94,7 @@ function null_extension_widgets() {
 	foreach($widgets as $widget) {
 		if (isset($widget_settings[$widget['nicename']])) {		
 			if (file_exists($widget['path']) && ($widget_settings[$widget['nicename']])) {
-				load_template($widget['path']); // used to be include
+				load_template($widget['path']);
 			}
 		}
 	}

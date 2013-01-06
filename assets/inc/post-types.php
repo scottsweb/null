@@ -15,7 +15,7 @@ function null_extension_post_types() {
 	foreach($post_types as $post) {
 		if (isset($post_types_settings[$post['nicename']])) {
 			if (file_exists($post['path']) && ($post_types_settings[$post['nicename']])) {
-				load_template($post['path']); // used to be include
+				load_template($post['path']);
 			}
 		}
 	}

@@ -278,7 +278,7 @@ function null_admin_body_class( $classes ) {
 * Disable WordPress upgrade and plugin upgrade notices for admins (dead after 3.2?)
 ***************************************************************/
 
-if ((!current_user_can('update_plugins')) && (of_get_option('disable_updates'))) {  
+if ((!current_user_can('update_plugins')) && (of_get_option('disable_updates','1'))) {  
 	
 	// wordpress version # 3.0:
 	add_filter( 'pre_site_transient_update_core', create_function( '$a', "return null;" ));

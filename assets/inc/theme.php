@@ -57,8 +57,10 @@ if (!function_exists('null_robots')) {
 		
 			if ( file_exists($_SERVER['DOCUMENT_ROOT'].'/sitemap.xml.gz') )
 				$output .= 'Sitemap: http://'.$_SERVER['HTTP_HOST'].'/sitemap.xml.gz';
-			elseif ( class_exists('pc_xml_sitemap') || file_exists($_SERVER['DOCUMENT_ROOT'].'/sitemap.xml') )
+			else if ( file_exists($_SERVER['DOCUMENT_ROOT'].'/sitemap.xml') )
 				$output .= 'Sitemap: http://'.$_SERVER['HTTP_HOST'].'/sitemap.xml';
+			elseif ( class_exists('WPSEO_Sitemaps'))
+				$output .= 'Sitemap: http://'.$_SERVER['HTTP_HOST'].'/sitemap_index.xml';
 		
 			header('Status: 200 OK', true, 200);
 			header('Content-type: text/plain; charset='.get_bloginfo('charset'));
@@ -195,11 +197,7 @@ function null_wp_head() {
 	
 	// pollyfills
 	$polyfills = of_get_option('polyfills');
-	?>
-	
-	<!-- IE css -->
-	<!--[if lt IE 9]><link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/screen-ie.css" /><![endif]-->
-	<?php
+
 	//  ios fix
 	if ($polyfills['ios'] == "1") { 
 	?>
@@ -226,16 +224,6 @@ function null_wp_head() {
 	
 	<!-- fluid images -->
 	<!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/assets/js/imgsizer.js"></script><![endif]-->
-	<?php
-	}
-	
-	// pngfix
-	if ($polyfills['pngfix'] == "1") {
-	?>
-	
-	<!-- pngfix -->
-	<!--[if lt IE 7]><script src="<?php echo get_template_directory_uri(); ?>/assets/js/pngfix.js"></script>
-	<script>DD_belatedPNG.fix('img, .png-bg'); //fix any <img> or .png-bg background-images</script><![endif]-->
 	<?php
 	}
 
@@ -975,20 +963,6 @@ function null_wp_footer() {
 	
 	<!-- custom footer meta -->
 	<?php echo $meta . "\n"; ?>
-	<?php
-	}
-	
-	// pollyfills
-	$polyfills = of_get_option('polyfills');
-	
-	if ($polyfills['chromeframe'] == "1") { 
-	?>
-	
-	<!-- Prompt IE 6 users to install Chrome Frame. -->
-	<!--[if lt IE 7 ]>
-		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-	<![endif]-->
 	<?php
 	}
 }
