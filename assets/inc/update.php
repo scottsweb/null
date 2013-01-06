@@ -200,12 +200,13 @@ function null_upgrader_source_selection_filter($source, $remote_source=NULL, $up
 	if ($remote_source != UPDATE_ZIP_URL) return $source; 
 	
 	if (isset($source, $remote_source, $theme_info['slug'])) {
-		$corrected_source = $remote_source . '/' . $theme_info['slug'] . '/';
+		$corrected_source = $theme_info['slug'];
 		
 		if(@rename($source, $corrected_source)) {
 			
 			delete_transient('null_theme_update_information'); // clear the null information transient to ensure it gets checked again
 			return $corrected_source;
+			break;
 			
 		} else {
 			return new WP_Error();
