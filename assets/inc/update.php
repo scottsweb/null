@@ -192,12 +192,12 @@ function null_theme_information() {
 
 add_filter('upgrader_source_selection', 'null_upgrader_source_selection_filter', 10, 3);
 
-function null_upgrader_source_selection_filter($source, $remote_source=NULL, $upgrader=NULL) {
+function null_upgrader_source_selection_filter($source, $remote_source, $upgrader) {
 
 	$theme_info = null_theme_information();
 
 	// only change the source for the github zip file	
-	if ($remote_source != UPDATE_ZIP_URL) return $source; 
+	if (!null_string_search('scottsweb-null', $source)) return $source; 
 	
 	if (isset($source, $remote_source, $theme_info['slug'])) {
 		$corrected_source = $theme_info['slug'];
@@ -206,7 +206,6 @@ function null_upgrader_source_selection_filter($source, $remote_source=NULL, $up
 			
 			delete_transient('null_theme_update_information'); // clear the null information transient to ensure it gets checked again
 			return $corrected_source;
-			break;
 			
 		} else {
 			return new WP_Error();
