@@ -16,7 +16,15 @@ function optionsframework_options() {
 		"name" => __('General', 'null'),
 		"type" => "heading"
 	);
-	
+
+	$general_options['maintenance_mode'] = array(
+		"name" => __('Enable Maintenance Mode?', 'null'),
+		"desc" => __('Will bring down your site for the public (users that are not logged in and cannot edit_theme_options. wp-login is still accessible).', 'null'),
+		"id" => "maintenance_mode",
+		"std" => "0",
+		"type" => "checkbox"
+	);
+
 	$general_options['gat'] = array( 
 		"name" => __('Google Analytics', 'null'),
 		"desc" => __('Enter your Google Analytics tracking ID: <strong>UA-XXXXX-X</strong>', 'null'),
@@ -192,7 +200,7 @@ function optionsframework_options() {
 
 	$design_options['touchicon'] = array( 
 		"name" => __('Touch Icon', 'null'),
-		"desc" => __('A 114px by 114px .png file for iOS and Android.', 'null'),
+		"desc" => __('A 144px by 144px .png file for iOS and Android.', 'null'),
 		"id" => "touchicon",
 		"type" => "upload"
 	);
@@ -205,7 +213,9 @@ function optionsframework_options() {
 	);
 	
 	// only add these settings if ios meta has been enabled
+	
 	$advanced_header_meta = of_get_option('advanced_header_meta');
+	
 	if ($advanced_header_meta['ios_app'] == "1") { 
 	
 		$design_options['iphone_splash'] = array( 
@@ -242,9 +252,7 @@ function optionsframework_options() {
 		);
 			
 	}
-	
-	//null_get_google_fonts()
-	
+		
 	$design_options = apply_filters('null_design_options', $design_options);
 	
 	// Social settings (Twitter, YouTube etc)
@@ -264,7 +272,7 @@ function optionsframework_options() {
 		"type" => "text"
 	);
 
-	$social_options['dribble'] = array( 
+	$social_options['dribbble'] = array( 
 		"name" => __('Dribbble', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "dribbble",
@@ -289,7 +297,7 @@ function optionsframework_options() {
 	);
 
 	$social_options['github'] = array( 
-		"name" => __('Github', 'null'),
+		"name" => __('GitHub', 'null'),
 		"desc" => __('URL to your profile beginning with http://', 'null'),
 		"id" => "github",
 		"class" => "large",
@@ -568,11 +576,19 @@ function optionsframework_options() {
 		"class" => "large",
 		"type" => "text"
 	);
+
+	$email_options['email_encode'] = array(
+		"name" => __('Email Encoding / Anti Spam', 'null'),
+		"desc" => __('Encode email addresses added to the content editor?', 'null'),
+		"id" => "email_encode",
+		"std" => "1",
+		"type" => "checkbox"
+	);
 	
 	$email_options = apply_filters('null_email_options', $email_options);
 
 	// Performance settings (html, css, js compress, combine etc)
-	
+	// Move these to advanced as these will most likely be the only options going forward?
 	$performance_options = array();
 	
 	$performance_options['performance_heading'] = array( 
@@ -581,8 +597,8 @@ function optionsframework_options() {
 	);
 
 	$performance_options['performance_intro'] = array( 
-		"name" => __("What's Going On Here?", 'null'),
-		"desc" => __('This little framework has ambitions to be the fastest theme framework for Wordpress. We are still working out the best way to achieve this ambition, so for now we recommend using a full featured cache plugin such as <a href="http://wordpress.org/extend/plugins/w3-total-cache/">W3 Total Cache</a> or <a href="http://wordpress.org/extend/plugins/wp-super-cache/">WP Super Cache</a>.', 'null'),
+		"name" => __("Performance?", 'null'),
+		"desc" => __('Please refer to the <a href="'.admin_url('/plugins.php?page=install-compatible-plugins').'">recommended plugins section</a> for a number of the best performance/caching plugins. I still have plans to optimise the framework (reducing memory &amp; database queries) for v1.0. If you have any tips, please <a href="https://github.com/scottsweb/null">get in touch</a>.', 'null'),
 		"type" => "info"
 	);
 
@@ -746,6 +762,16 @@ function optionsframework_options() {
 		"std" => "1",
 		"type" => "checkbox"
 	);
+
+	if (!is_multisite()) {
+		$advanced_options['disable_wpas'] = array(
+			"name" => __('Disable WP App Store', 'null'),
+			"desc" => __('Unload the <a href="http://wpappstore.com/">WP App Store</a>.', 'null'),
+			"id" => "disable_wpas",
+			"std" => "0",
+			"type" => "checkbox"
+		);
+	}
 
 	$advanced_options['disable_drag_meta'] = array(
 		"name" => __('Disable Dragging Meta Boxes', 'null'),

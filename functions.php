@@ -27,50 +27,58 @@
 	----------------------------------------
 	
 	future
-	to-do: look through https://github.com/Automattic/_s
 	to-do: http://gridster.net/ - build virtual templates via UI
-	to-do: customise the admin bar? options for this (plugin?)
+	to-do: bundle xml file import for WordPress (use wordpress import/export feature) - theme unit test installer?
 	to-do: option to toggle forced cropping on standard image sizes - better via plugin http://wordpress.org/extend/plugins/scissors/ OR better cropping?
 	to-do: perhaps move to: http://wordpress.org/extend/plugins/option-tree/ for options? - not quite as good yet
 	to-do: potential performance and debug script http://pbl.elgatonaranja.com/home
 	to-do: a second take on responsive tables -> http://filamentgroup.com/examples/rwd-table-patterns/ / http://consulenza-web.com/jquery/MediaTable/?
-	to-do: https://github.com/clearleft/clearless - investigate clear less - might make a good default less replacement OR bootstrap for css/less? http://twitter.github.com/bootstrap/ also http://bootswatch.com/
 	to-do: pre-configured site settings (so buddypress, multi site, multi author, client etc)
 	to-do: https://github.com/JosephLenton/PHP-Error/ - for debug mode
-	to-do: pimp user profiles with tabs (from client work) - plugin?
 	to-do: font effects? https://developers.google.com/webfonts/docs/getting_started#Effects - shortcode?
 	to-do: explore the gantry-framework http://www.gantry-framework.org/download
+	to-do: ability to disable built in post types and taxonomies (customise the WP menu - already a hook for this and always different?) - http://core.trac.wordpress.org/ticket/14761
+	to-do: bundle psds with zip for icon/image templates
+	to-do: move to an existing CSS/LESS framework?
+			- https://github.com/clearleft/clearless
+			- http://twitter.github.com/bootstrap/ also http://bootswatch.com/
+			- http://responsablecss.com/ - baseline is not calculated
+			- http://mateuszkocz.github.com/3l - seo helper is rather nifty
+			- http://compass-style.org/reference/compass/css3/ - less mixin ideas from compass
+			- https://github.com/dancrew32/lesslib/blob/master/mixins.less - less mixins
+			- http://kushagragour.in/lab/hint/ - css tooltips 
+			- http://necolas.github.com/normalize.css/ - use normalize instead of full reset
+			- investigate this grid system: https://t.co/GaP9MWsZtS
 
 	ongoing
 	to-do: update language files
 	to-do: update modernizr
+	to-do: update ligature symbols
 	to-do: update less compiler 0.3.5+ - hopefully will work again and provide css compression
+	to-do: update acf lite
 
 	for 1.0
-	to-do: compatibilty with live edit (started in loop-single.php) - http://wordpress.org/extend/plugins/live-edit/
-	to-do: less mixin ideas from compass http://compass-style.org/reference/compass/css3/ & https://github.com/dancrew32/lesslib/blob/master/mixins.less
 	to-do: live bind shortcode JS for instant search plugin compatibility
 	to-do: a beautiful, minimal, responsive design 
-	to-do: bundle psds with zip for icon/image templates
-	to-do: ability to disable built in post types and taxonomies (customise the WP menu - already a hook for this and always different?) - http://core.trac.wordpress.org/ticket/14761
-	to-do: bundle xml file import for WordPress (use wordpress import/export feature) - theme unit test installer?
-	to-do: feature tooltips restricted by user type (same code as with admin bar)
-	to-do: table of contents generator improvements - choose to include and post type support
+	to-do: table of contents generator improvements - choose to include and post type support? get rid of it?
 	to-do: cron schedules to have there own options (enabled / disable)
 	to-do: clean up gravity forms less and test with some forms
 	to-do: a few new widgets (featured posts? - post type and taxonomy choice)
 	to-do: shortcode builder / tinymce button (see md theme or http://wordpress.org/extend/plugins/shortcodes-ultimate/)
-	to-do: style and code for various post format types (chat, video, quote etc)
-	to-do: meta boxes - use php exports from ACF and add them to post types (start with portfolio) - the developer ACF plugin might be worth including: https://github.com/elliotcondon/acf-lite/
 	to-do: improve gallery shortcode - css and filters tweaks - see chailey - make the built in gallery useful in more projects //http://wordpress.stackexchange.com/questions/4343/how-to-customise-the-output-of-the-wp-image-gallery-shortcode-from-a-plugin
 	to-do: improve nav walker to provide better classes and support for other attributes
-	to-do: Implement a maintenance mode - behaviour on multisite? - might be worth see if user is member of the blog: http://markwilkinson.me/2012/11/protecting-wordpress-multisite-blogs/
 	to-do: test if inline js compression kills analyitcs (it appears to)
 	to-do: create an editable 404?
-	to-do: plugin-compat.php - a layer of plugin compatibility / tweaks (when needed) - e.g. might remove gat theme options when a an analytics plugin is present
-	to-do: HiDPI post type icons
-	to-do: light firewall security as part of framework? - look at http://wordpress.org/extend/plugins/wp-waf/ - good for performance?
-	
+	to-do: light firewall security as part of framework? - look at http://wordpress.org/extend/plugins/wp-waf/ - good for performance? or keep as a plugin?
+	to-do: HiDPI post type icons - will the 3.6 icons be staying?
+	to-do: issue - all templates that exist in the parent theme are a pain - if i just want index.php in child theme I have to overwrite category, tag etc etc - move all these to null child?
+		- 	to-do: style and code for various post format types (chat, video, quote etc)
+	to-do: compatibilty with live edit (started in loop-single.php & loop.php) - http://wordpress.org/extend/plugins/live-edit/
+	to-do: feature tooltips restricted by user type (same code as with admin bar)
+	to-do: reduce number of database queries - load acf lite only when necessary - filter so child themes can force this
+	to-do: remove more polyfills - chrome frame notice? (see h5bp index.html)
+	to-do: windows 8 tile icon? different to old Win stuff? <meta name="msapplication-TileColor" content="#f01d4f"><meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/win8-tile-icon.png">
+
 	*/
 
 	// load the options framework
@@ -93,9 +101,65 @@
 		
 	// load activation code
 	locate_template('/assets/inc/activation.php', true, true);
+
+	// deprecated code - do not rely on code in this file
+	load_template(get_template_directory() . '/assets/inc/deprecated.php');
+
+	// compatibility - work nicely with other popular plugins
+	load_template(get_template_directory() . '/assets/inc/compatibility.php');
+
+	// email
+	load_template(get_template_directory() . '/assets/inc/email.php');
 	
+	// custom post types
+	load_template(get_template_directory() . '/assets/inc/post-types.php');
+
+	// widgets and sidebars
+	load_template(get_template_directory() . '/assets/inc/widgets.php');
+
+	// cron
+	load_template(get_template_directory() . '/assets/inc/cron.php');
+	
+	// shortcodes
+	if (!is_admin()) { load_template(get_template_directory() . '/assets/inc/shortcodes.php'); }
+	
+	// breadcrumbs - http://wordpress.org/extend/plugins/breadcrumb-trail/
+	if (!is_admin()) { locate_template('/assets/inc/breadcrumbs.php', true, true); }
+
+	// performance
+	if (!is_admin()) { locate_template('/assets/inc/performance.php', true, true); }
+	
+	// table of contents - add settings to attach this to certain post types only
+	//if (!is_admin()) { load_template(get_template_directory() . '/assets/lib/class-toc.php'); }
+
+	// load htaccess code, rewrites etc
+	if (is_admin()) { locate_template('/assets/inc/htaccess.php', true, true); }
+	
+	// only load in admin functions in admin interface
+	if (is_admin()) { locate_template('/assets/inc/admin.php', true, true); }
+
+	// load update code
+	if (is_admin()) { load_template(get_template_directory() . '/assets/inc/update.php'); }
+	
+	// wp app store
+	if (is_admin() && !class_exists('WP_App_Store_Installer') && !of_get_option('disable_wpas', '0') && !is_multisite()) { load_template(get_template_directory() . '/assets/inc/wp-app-store.php'); }
+	
+	// only load front end functions for site
+	if (!is_admin()) { locate_template('/assets/inc/theme.php', true, true); }
+
 	// set content width - see: http://toggl.es/wEBCFs - largely irrelevant with responsive sites?
 	if (!isset($content_width)) $content_width = 656;
+
+	/***************************************************************
+	* Maintenance Mode
+	* Take the front end of the site down for users that are not logged in and cannot manage optionsframework
+	***************************************************************/
+
+	global $pagenow;
+	if (!is_user_logged_in() && !current_user_can('edit_theme_options') && $pagenow != 'wp-login.php' && of_get_option('maintenance_mode', '0')) { 
+		header('Retry-After: 600'); // 600 seconds/10 minutes
+		wp_die(__('Website is down for maintenance.', 'null'), get_bloginfo('name').' | '.__('Maintenance (503)', 'null'), array('response' => 503)); 
+	}
 
 	/***************************************************************
 	* Functions null_admin_bar_updates
@@ -145,7 +209,7 @@
 		load_theme_textdomain('null', get_template_directory() . '/assets/languages'); 		
  
  		// add support for custom header if setup
-		if (of_get_option('custom_header', '1')) {
+		if (of_get_option('custom_header', '0')) {
 			if (is_wp_version( '3.4' )) {
 				add_theme_support('custom-header'); 
 			} else { 
@@ -154,7 +218,7 @@
 		}
 			
 		// add support for custom backgrounds if setup
-		if (of_get_option('custom_background', '1')) {
+		if (of_get_option('custom_background', '0')) {
 			if (is_wp_version( '3.4' )) {
 				add_theme_support('custom-background'); 
 			} else { 
@@ -163,7 +227,7 @@
 		}
 			
 		// post-formats
-		if (of_get_option('post_formats', '0')) {
+		if (of_get_option('post_formats', '1')) {
 			add_theme_support('post-formats');
 			
 			$formats = of_get_option('post_format_types');
@@ -337,7 +401,7 @@
 		wp_register_script('html5-forms', get_template_directory_uri() . '/assets/js/forms.js', array('jquery'), filemtime(get_template_directory() . '/assets/js/forms.js'));
 		wp_register_script('null-gat', get_template_directory_uri() . '/assets/js/analytics.js', array('jquery'), filemtime(get_template_directory() . '/assets/js/analytics.js'));
 		wp_register_script('null', get_template_directory_uri() . '/assets/js/onload.js', array('jquery'), filemtime(get_template_directory() . '/assets/js/onload.js'));
-		
+
 		// comment threading
 		if (is_singular() && get_option('thread_comments')) wp_enqueue_script('comment-reply');
 		
@@ -373,7 +437,7 @@
 	
 	function null_conditional_ie_styles( $tag, $handle ) {
 	
-		if ('null-screen-ie' == $handle || 'ie' == $handle)
+		if ('null-screen-ie' == $handle || 'screen-ie' == $handle)
 			$tag = '<!-- IE css -->' . "\n" .'<!--[if lt IE 9]>' . "\n" . $tag . '<![endif]-->' . "\n";
 	
 		return $tag;
@@ -634,7 +698,7 @@
 
 	/***************************************************************
 	* Function null_obscure_login
-	* Make the login error message a touch more generic - add to option
+	* Make the login error message a touch more generic - add to options?
 	***************************************************************/
 
 	add_filter( 'login_errors', 'null_obscure_login' );
@@ -643,9 +707,7 @@
 		$new_message = __('The credentials you provided are incorrect.', 'null');
 		$error = str_replace( 'Invalid username.', $new_message, $error );
 		$error = preg_replace( '{The password you entered for the username <strong>.*</strong> is incorrect.}', $new_message, $error );
-
 		return $error;
-		//return __('<strong>ERROR</strong>: You supplied incorrect login information.', 'null');
 	}
 
 	/***************************************************************
@@ -671,45 +733,5 @@
 	    $str = preg_replace('/-+/', '-', $str);
 	    return $str;
 	    
-	}
-
-	// deprecated code - do not rely on code in this file
-	load_template(get_template_directory() . '/assets/inc/deprecated.php');
-
-	// email
-	load_template(get_template_directory() . '/assets/inc/email.php');
-	
-	// custom post types
-	load_template(get_template_directory() . '/assets/inc/post-types.php');
-
-	// widgets and sidebars
-	load_template(get_template_directory() . '/assets/inc/widgets.php');
-
-	// cron
-	load_template(get_template_directory() . '/assets/inc/cron.php');
-	
-	// shortcodes
-	if (!is_admin()) { load_template(get_template_directory() . '/assets/inc/shortcodes.php'); }
-	
-	// breadcrumbs - http://wordpress.org/extend/plugins/breadcrumb-trail/
-	if (!is_admin()) { locate_template('/assets/inc/breadcrumbs.php', true, true); }
-
-	// performance
-	if (!is_admin()) { locate_template('/assets/inc/performance.php', true, true); }
-	
-	// table of contents - add settings to attach this to certain post types only
-	//if (!is_admin()) { load_template(get_template_directory() . '/assets/lib/class-toc.php'); }
-
-	// load htaccess code, rewrites etc
-	if (is_admin()) { locate_template('/assets/inc/htaccess.php', true, true); }
-	
-	// only load in admin functions in admin interface
-	if (is_admin()) { locate_template('/assets/inc/admin.php', true, true); }
-
-	// load update code
-	if (is_admin()) { load_template(get_template_directory() . '/assets/inc/update.php'); }
-	
-	// only load front end functions for site
-	if (!is_admin()) { locate_template('/assets/inc/theme.php', true, true); }
-			
+	}		
 ?>

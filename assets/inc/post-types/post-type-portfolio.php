@@ -36,7 +36,7 @@ function null_register_portfolio() {
 		'show_ui'                       => true,
 		'show_in_nav_menus'             => true,
 		'args'                          => array('orderby' => 'term_order'),
-		'rewrite'                       => array('slug' => 'portfolio/portfolio', 'with_front' => false),
+		'rewrite'                       => array('slug' => 'portfolio/category', 'with_front' => false),
 		'query_var'                     => true
 	);
 	

@@ -2,18 +2,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: null\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-11 19:59+0100\n"
-"PO-Revision-Date: 2012-02-11 20:00+0100\n"
-"Last-Translator: @scottsweb <null@scott.ee>\n"
+"POT-Creation-Date: 2013-02-20 20:50-0000\n"
+"PO-Revision-Date: 2013-02-20 20:50-0000\n"
+"Last-Translator: Scott Evans @scottsweb <translate@scott.ee>\n"
 "Language-Team: @scottsweb <null@scott.ee>\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
-"X-Poedit-Basepath: /Volumes/toggle/dropbox/web/framework-wordpress/wp-content/themes/null/\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED KINGDOM\n"
+"X-Poedit-Basepath: /Users/scott/Dropbox/web/framework-wordpress/wp-content/"
+"themes/null\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:8
@@ -21,21 +22,20 @@ msgid "Page Not Found"
 msgstr ""
 
 #: 404.php:13
-msgid "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
+msgid ""
+"The page you are looking for might have been removed, had its name changed, "
+"or is temporarily unavailable."
 msgstr ""
 
-#: archive.php:6
-#: category.php:11
+#: archive.php:6 category.php:11
 msgid "Blog:"
 msgstr ""
 
-#: archive.php:8
+#: archive.php:8 tag.php:11
 msgid "Tag Archive for"
 msgstr ""
 
-#: archive.php:10
-#: archive.php:12
-#: archive.php:14
+#: archive.php:10 archive.php:12 archive.php:14
 msgid "Archive"
 msgstr ""
 
@@ -43,8 +43,7 @@ msgstr ""
 msgid "Search Results"
 msgstr ""
 
-#: archive.php:18
-#: author.php:13
+#: archive.php:18 author.php:13
 msgid "Author Archive"
 msgstr ""
 
@@ -65,42 +64,42 @@ msgstr ""
 msgid "Next Image &raquo;"
 msgstr ""
 
-#: attachment.php:88
-#: loop-single.php:17
+#: attachment.php:88 loop-single.php:17
 #, php-format
 msgid "This entry was posted by %1$s on %2$s and is filed under %3$s. "
 msgstr ""
 
-#: attachment.php:94
-#: loop-single.php:23
+#: attachment.php:94 loop-single.php:23
 #, php-format
-msgid "You can follow any responses to this entry through the %1$sRSS 2.0%2$s feed. "
+msgid ""
+"You can follow any responses to this entry through the %1$sRSS 2.0%2$s feed. "
 msgstr ""
 
-#: attachment.php:103
-#: loop-single.php:32
+#: attachment.php:103 loop-single.php:32
 #, php-format
-msgid "You can <a href=\"#respond\">leave a response</a>, or <a href=\"%1$s\" rel=\"trackback\">trackback</a> from your own site."
+msgid ""
+"You can <a href=\"#respond\">leave a response</a>, or <a href=\"%1$s\" rel="
+"\"trackback\">trackback</a> from your own site."
 msgstr ""
 
-#: attachment.php:111
-#: loop-single.php:40
+#: attachment.php:111 loop-single.php:40
 #, php-format
-msgid "Responses are currently closed, but you can leave a <a href=\"%1$s\" rel=\"trackback\">trackback</a> from your own site."
+msgid ""
+"Responses are currently closed, but you can leave a <a href=\"%1$s\" rel="
+"\"trackback\">trackback</a> from your own site."
 msgstr ""
 
-#: attachment.php:118
-#: loop-single.php:47
-msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+#: attachment.php:118 loop-single.php:47
+msgid ""
+"You can skip to the end and leave a response. Pinging is currently not "
+"allowed."
 msgstr ""
 
-#: attachment.php:123
-#: loop-single.php:52
+#: attachment.php:123 loop-single.php:52
 msgid "Both comments and pings are currently closed."
 msgstr ""
 
-#: attachment.php:137
-#: loop.php:44
+#: attachment.php:137 loop.php:42
 msgid "No Posts Found"
 msgstr ""
 
@@ -124,9 +123,7 @@ msgstr ""
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: comments.php:27
-#: loop-search.php:22
-#: loop.php:26
+#: comments.php:27 loop-search.php:19 loop.php:24
 msgid "No Comments"
 msgstr ""
 
@@ -134,19 +131,15 @@ msgstr ""
 msgid "One Comment"
 msgstr ""
 
-#: comments.php:27
-#: loop-search.php:22
-#: loop.php:26
+#: comments.php:27 loop-search.php:19 loop.php:24
 msgid "% Comments"
 msgstr ""
 
-#: comments.php:32
-#: comments.php:46
+#: comments.php:32 comments.php:46
 msgid "&laquo; Previous Comments"
 msgstr ""
 
-#: comments.php:33
-#: comments.php:47
+#: comments.php:33 comments.php:47
 msgid "Next Comments &raquo;"
 msgstr ""
 
@@ -188,24 +181,20 @@ msgstr ""
 msgid "Logout &raquo;"
 msgstr ""
 
-#: comments.php:93
-#: comments.php:94
+#: comments.php:93 comments.php:94
+#: assets/lib/acf/core/fields/flexible_content.php:410
 msgid "Name"
 msgstr ""
 
-#: comments.php:97
-#: comments.php:98
+#: comments.php:97 comments.php:98
 msgid "Email"
 msgstr ""
 
-#: comments.php:101
-#: comments.php:102
+#: comments.php:101 comments.php:102
 msgid "Website"
 msgstr ""
 
-#: comments.php:106
-#: comments.php:107
-#: comments.php:110
+#: comments.php:106 comments.php:107 comments.php:110
 msgid "Comment"
 msgstr ""
 
@@ -217,62 +206,62 @@ msgstr ""
 msgid "You can use the following tags:"
 msgstr ""
 
-#: header.php:28
+#: functions.php:697
+msgid "The credentials you provided are incorrect."
+msgstr ""
+
+#: header.php:25
 msgid "Skip to content &raquo;"
 msgstr ""
 
-#: header.php:51
+#: header.php:48 assets/inc/breadcrumbs.php:64 assets/inc/theme.php:499
+#: assets/inc/theme.php:918
 msgid "Home"
 msgstr ""
 
-#: loop-page.php:10
-#: loop-single.php:10
+#: loop-page.php:10 loop-single.php:10
 msgid "Page:"
 msgstr ""
 
-#: loop-search.php:18
-#: loop.php:22
+#: loop-search.php:15 loop.php:20
 msgid "By:"
 msgstr ""
 
-#: loop-search.php:19
-#: loop.php:23
+#: loop-search.php:16 loop.php:21
 msgid "Reading time:"
 msgstr ""
 
-#: loop-search.php:20
-#: loop.php:24
+#: loop-search.php:17 loop.php:22
 msgid "Posted in:"
 msgstr ""
 
-#: loop-search.php:21
-#: loop.php:25
+#: loop-search.php:18 loop.php:23
 msgid "Tagged:"
 msgstr ""
 
-#: loop-search.php:22
-#: loop.php:26
+#: loop-search.php:19 loop.php:24
 msgid "1 Comment"
 msgstr ""
 
-#: loop-search.php:41
+#: loop-search.php:38
 msgid "Nothing Found"
 msgstr ""
 
-#: loop-search.php:44
-msgid "Sorry but nothing matched your search. Please try searching again using the form below."
+#: loop-search.php:41
+msgid ""
+"Sorry but nothing matched your search. Please try searching again using the "
+"form below."
 msgstr ""
 
-#: loop-single.php:71
+#: loop-single.php:76
 msgid "Post Not Found"
 msgstr ""
 
-#: loop-single.php:72
-#: loop.php:45
+#: loop-single.php:77 loop.php:43
 msgid "Sorry, but you are looking for something that isn't here."
 msgstr ""
 
-#: loop.php:11
+#: loop.php:8
 msgid "Featured"
 msgstr ""
 
@@ -289,605 +278,851 @@ msgid "Enter your Google Analytics tracking ID: <strong>UA-XXXXX-X</strong>"
 msgstr ""
 
 #: options.php:30
-msgid "Header Meta"
+msgid "Track External Links &amp; Downloads?"
 msgstr ""
 
 #: options.php:31
-msgid "Add custom meta data to the theme header. e.g. Feedburner or Google Webmaster Tools."
+msgid ""
+"Track downloaded files and external links as events in Google Analytics?"
 msgstr ""
 
 #: options.php:38
-msgid "Breadcrumbs"
+msgid "Header Meta"
 msgstr ""
 
 #: options.php:39
-msgid "Toggle to enable breadcrumbs."
+msgid ""
+"Add custom meta data to the theme header. e.g. Feedburner or Google "
+"Webmaster Tools."
 msgstr ""
 
 #: options.php:46
-msgid "Footer Sidebar"
+msgid "Header Tagline"
 msgstr ""
 
 #: options.php:47
-msgid "Toggle to output the <a href=\""
+msgid "Display the site description in the header alongside the logo?"
 msgstr ""
 
 #: options.php:54
-msgid "Footer Meta"
+msgid "Breadcrumbs"
 msgstr ""
 
 #: options.php:55
-msgid "Add custom meta data to the theme footer. e.g. Tracking codes."
+msgid "Toggle to enable breadcrumbs."
 msgstr ""
 
 #: options.php:62
-msgid "WordPress Credit"
+msgid "Footer Sidebar"
 msgstr ""
 
 #: options.php:63
-msgid "Thanks to WordPress."
+msgid "Toggle to output the <a href=\""
+msgstr ""
+
+#: options.php:70
+msgid "Footer Meta"
 msgstr ""
 
 #: options.php:71
+msgid "Add custom meta data to the theme footer. e.g. Tracking codes."
+msgstr ""
+
+#: options.php:78
+msgid "WordPress Credit"
+msgstr ""
+
+#: options.php:79
+msgid "Thanks to WordPress."
+msgstr ""
+
+#: options.php:87
 msgid "Designer Credit"
 msgstr ""
 
-#: options.php:72
+#: options.php:88
 msgid "Leave empty to remove from footer."
 msgstr ""
 
-#: options.php:86
+#: options.php:102 options.php:938
 msgid "Design"
 msgstr ""
 
-#: options.php:93
+#: options.php:109
 msgid "Background Texture"
 msgstr ""
 
-#: options.php:94
-msgid "Choose a background style, courtesy of <a href=\"http://subtlepatterns.com/\">subtlepatterns.com</a>."
-msgstr ""
-
-#: options.php:109
-msgid "Primary Colour"
-msgstr ""
-
 #: options.php:110
-msgid "Primary colour for your website. Available as <strong>@primarycol</strong> in your LESS/CSS."
-msgstr ""
-
-#: options.php:117
-msgid "Link Colour"
-msgstr ""
-
-#: options.php:118
-msgid "Link colour. Available as <strong>@linkcol</strong> in your LESS/CSS."
+msgid ""
+"Choose a background style, courtesy of <a href=\"http://subtlepatterns.com/"
+"\">subtlepatterns.com</a>."
 msgstr ""
 
 #: options.php:125
-msgid "Link Hover Colour"
+msgid "Primary Colour"
 msgstr ""
 
 #: options.php:126
-msgid "Link Hover colour. Available as <strong>@linkhovercol</strong> in your LESS/CSS."
+msgid ""
+"Primary colour for your website. Available as <strong>@primarycol</strong> "
+"in your LESS/CSS."
 msgstr ""
 
 #: options.php:133
-msgid "Logo"
+msgid "Body Colour"
 msgstr ""
 
 #: options.php:134
-msgid "A logo for the theme header."
-msgstr ""
-
-#: options.php:140
-msgid "Favicon"
+msgid ""
+"Colour used for typographic elements. Available as <strong>@bodycol</strong> "
+"in your LESS/CSS."
 msgstr ""
 
 #: options.php:141
-msgid "A 32px by 32px .ico file."
+msgid "Link Colour"
 msgstr ""
 
-#: options.php:147
-msgid "Touch Icon"
+#: options.php:142
+msgid "Link colour. Available as <strong>@linkcol</strong> in your LESS/CSS."
 msgstr ""
 
-#: options.php:148
-msgid "A 114px by 114px .png file for iOS and Android."
+#: options.php:149
+msgid "Link Hover Colour"
 msgstr ""
 
-#: options.php:154
-msgid "Gravatar"
+#: options.php:150
+msgid ""
+"Link Hover colour. Available as <strong>@linkhovercol</strong> in your LESS/"
+"CSS."
 msgstr ""
 
-#: options.php:155
-msgid "Square <a href=\"http://en.gravatar.com/\">gravatar fallback</a>. Max of 512px by 512px."
+#: options.php:157
+msgid "Heading Font"
 msgstr ""
 
-#: options.php:165
-msgid "iPhone App Splash Screen"
+#: options.php:158
+msgid ""
+"Choose your heading font from the <a href=\"http://www.google.com/webfonts"
+"\">Google Web Font</a> directory or default system fonts."
 msgstr ""
 
-#: options.php:166
-msgid "A 320px by 460px .png file for iOS."
+#: options.php:167
+msgid "Body Font"
 msgstr ""
 
-#: options.php:172
-msgid "iPad App Splash Screen (Portrait)"
-msgstr ""
-
-#: options.php:173
-msgid "Portrait image has to be 748px by 1024px."
-msgstr ""
-
-#: options.php:179
-msgid "iPad App Splash Screen (Landscape)"
+#: options.php:168
+msgid ""
+"Choose your body font from the <a href=\"http://www.google.com/webfonts"
+"\">Google Web Font</a> directory or default system fonts."
 msgstr ""
 
 #: options.php:180
-msgid "Landscape image has to be 1024px by 748px."
+msgid "Logo"
+msgstr ""
+
+#: options.php:181
+msgid "A logo for the theme header."
+msgstr ""
+
+#: options.php:187
+msgid "Favicon"
+msgstr ""
+
+#: options.php:188
+msgid "A 32px by 32px .ico file."
 msgstr ""
 
 #: options.php:194
-msgid "WordPress"
+msgid "Touch Icon"
 msgstr ""
 
-#: options.php:208
-msgid "Disable Admin Bar"
+#: options.php:195
+msgid "A 144px by 144px .png file for iOS and Android."
 msgstr ""
 
-#: options.php:209
-msgid "Disable the admin bar on the front end for the toggled user roles."
+#: options.php:201
+msgid "Gravatar"
 msgstr ""
 
-#: options.php:216
-msgid "Admin Bar Attachment"
+#: options.php:202
+msgid ""
+"Square <a href=\"http://en.gravatar.com/\">gravatar fallback</a>. Max of "
+"512px by 512px."
 msgstr ""
 
-#: options.php:217
-msgid "Change how the admin bar attaches to the browser."
+#: options.php:214
+msgid "iPhone App Splash Screen"
 msgstr ""
 
-#: options.php:223
-msgid "Fixed (default)"
+#: options.php:215
+msgid "A 320px by 460px .png file for iOS."
 msgstr ""
 
-#: options.php:224
-msgid "Absolute"
+#: options.php:221
+msgid "iPad App Splash Screen (Portrait)"
+msgstr ""
+
+#: options.php:222
+msgid "Portrait image has to be 748px by 1024px."
+msgstr ""
+
+#: options.php:228
+msgid "iPad App Splash Screen (Landscape)"
 msgstr ""
 
 #: options.php:229
-msgid "Howdy?"
-msgstr ""
-
-#: options.php:230
-msgid "Change the admin bar welcome message."
-msgstr ""
-
-#: options.php:238
-msgid "Dashboard Widgets"
+msgid "Landscape image has to be 1024px by 748px."
 msgstr ""
 
 #: options.php:239
-msgid "Toggle WordPress dashboard widgets."
+msgid "IE9+ Pinned Application Colour"
 msgstr ""
 
-#: options.php:254
-msgid "Browser Upgrade Notification (Browse Happy)"
+#: options.php:240
+msgid "Used for browser buttons and for the Windows 8 touch tile."
 msgstr ""
 
 #: options.php:255
-msgid "Plugins Widget"
-msgstr ""
-
-#: options.php:256
-msgid "Right Now Widget"
-msgstr ""
-
-#: options.php:257
-#: options.php:349
-msgid "Recent Comments Widget"
-msgstr ""
-
-#: options.php:258
-msgid "Incoming Links Widget"
-msgstr ""
-
-#: options.php:259
-msgid "Primary RSS Widget"
+msgid "Social"
 msgstr ""
 
 #: options.php:260
-msgid "Secondary RSS Widget"
+msgid "Delicious"
 msgstr ""
 
-#: options.php:261
-msgid "Quick Press Widget"
-msgstr ""
-
-#: options.php:262
-msgid "Recent Drafts Widget"
-msgstr ""
-
-#: options.php:267
-msgid "Post Formats"
+#: options.php:261 options.php:269 options.php:277 options.php:285
+#: options.php:293 options.php:301 options.php:309 options.php:317
+#: options.php:325 options.php:333 options.php:349 options.php:357
+msgid "URL to your profile beginning with http://"
 msgstr ""
 
 #: options.php:268
-msgid "Enable support for <a href=\"http://codex.wordpress.org/Post_Formats\">WordPress post formats</a>."
-msgstr ""
-
-#: options.php:275
-msgid "Post Format Types"
+msgid "Dribbble"
 msgstr ""
 
 #: options.php:276
-msgid "Which <a href=\"http://codex.wordpress.org/Post_Formats#Supported_Formats\">post format types</a> would you like to support?"
+msgid "Facebook"
 msgstr ""
 
-#: options.php:291
-msgid "Aside"
+#: options.php:284
+msgid "Flickr"
 msgstr ""
 
 #: options.php:292
-msgid "Chat"
+msgid "GitHub"
 msgstr ""
 
-#: options.php:293
-msgid "Gallery"
+#: options.php:300
+msgid "Google+"
 msgstr ""
 
-#: options.php:294
-msgid "Image"
+#: options.php:308
+msgid "LinkedIn"
 msgstr ""
 
-#: options.php:295
-msgid "Link"
+#: options.php:316
+msgid "Pinterest"
 msgstr ""
 
-#: options.php:296
-msgid "Quote"
+#: options.php:324
+msgid "SoundCloud"
 msgstr ""
 
-#: options.php:297
-msgid "Status"
+#: options.php:332
+msgid "Twitter"
 msgstr ""
 
-#: options.php:298
-msgid "Video"
+#: options.php:340
+msgid "Twitter @Username"
 msgstr ""
 
-#: options.php:299
-msgid "Audio"
-msgstr ""
-
-#: options.php:304
-msgid "Additional Post Types"
-msgstr ""
-
-#: options.php:305
-msgid "Toggle additional post types. Additional post types are found in the <strong>/null/assets/inc/post-types/</strong> folder or the same folder in your child theme."
-msgstr ""
-
-#: options.php:313
-msgid "Shortcodes"
-msgstr ""
-
-#: options.php:314
-msgid "Toggle shortcode support. Additional shortcodes are found in the <strong>/null/assets/inc/shortcodes/</strong> folder or the same folder in your child theme."
-msgstr ""
-
-#: options.php:322
-msgid "WordPress Widgets"
-msgstr ""
-
-#: options.php:323
-msgid "Toggle default WordPress widgets."
-msgstr ""
-
-#: options.php:342
-msgid "Archives Widget"
-msgstr ""
-
-#: options.php:343
-msgid "Calendar Widget"
-msgstr ""
-
-#: options.php:344
-msgid "Categories Widget"
-msgstr ""
-
-#: options.php:345
-msgid "Custom Menu Widget"
-msgstr ""
-
-#: options.php:346
-msgid "Links Widget"
-msgstr ""
-
-#: options.php:347
-msgid "Meta Widget"
+#: options.php:341
+msgid "Username beginning with @"
 msgstr ""
 
 #: options.php:348
-msgid "Pages Widget"
+msgid "Vimeo"
 msgstr ""
 
-#: options.php:350
-msgid "Recent Posts Widget"
+#: options.php:356
+msgid "YouTube"
 msgstr ""
 
-#: options.php:351
-msgid "RSS Widget"
+#: options.php:370
+msgid "WordPress"
 msgstr ""
 
-#: options.php:352
-msgid "Search Widget"
+#: options.php:384
+msgid "Disable Admin Bar"
 msgstr ""
 
-#: options.php:353
-msgid "Tag Cloud Widget"
+#: options.php:385
+msgid "Disable the admin bar on the front end for the toggled user roles."
 msgstr ""
 
-#: options.php:354
-msgid "Text Widget"
+#: options.php:392
+msgid "Admin Bar Attachment"
 msgstr ""
 
-#: options.php:359
-msgid "Additional Widgets"
+#: options.php:393
+msgid "Change how the admin bar attaches to the browser."
 msgstr ""
 
-#: options.php:360
-msgid "Toggle additional widgets. Additional widgets are found in the <strong>/null/assets/inc/widgets/</strong> folder or the same folder in your child theme."
+#: options.php:399
+msgid "Fixed (default)"
 msgstr ""
 
-#: options.php:374
-msgid "E-Mail"
+#: options.php:400
+msgid "Absolute"
 msgstr ""
 
-#: options.php:379
-msgid "Email From"
-msgstr ""
-
-#: options.php:380
-msgid "Personalise outgoing e-mail with a from name."
-msgstr ""
-
-#: options.php:387
-msgid "Email From Address"
-msgstr ""
-
-#: options.php:388
-msgid "WordPress should send email from this address."
-msgstr ""
-
-#: options.php:401
-msgid "Performance"
+#: options.php:405
+msgid "Howdy?"
 msgstr ""
 
 #: options.php:406
-msgid "What's Going On Here?"
+msgid "Change the admin bar welcome message."
 msgstr ""
 
-#: options.php:407
-msgid "This little framework has ambitions to be the fastest theme framework for Wordpress. We are still working out the best way to achieve this ambition, so for now we recommend using a full featured cache plugin such as <a href=\"http://wordpress.org/extend/plugins/w3-total-cache/\">W3 Total Cache</a> or <a href=\"http://wordpress.org/extend/plugins/wp-super-cache/\">WP Super Cache</a>."
+#: options.php:414
+msgid "Dashboard Widgets"
 msgstr ""
 
-#: options.php:412
-msgid "HTML Compression"
-msgstr ""
-
-#: options.php:413
-msgid "Compress HTML output (more options when toggled on)."
-msgstr ""
-
-#: options.php:420
-msgid "HTML Compression Options"
-msgstr ""
-
-#: options.php:421
-msgid "Which HTML features would you like to compress?"
+#: options.php:415
+msgid "Toggle WordPress dashboard widgets."
 msgstr ""
 
 #: options.php:430
-msgid "Inline CSS"
+msgid "Browser Upgrade Notification (Browse Happy)"
 msgstr ""
 
 #: options.php:431
-msgid "Inline JS"
+msgid "Plugins Widget"
 msgstr ""
 
 #: options.php:432
-msgid "HTML Comments"
+msgid "Right Now Widget"
+msgstr ""
+
+#: options.php:433 options.php:525
+msgid "Recent Comments Widget"
+msgstr ""
+
+#: options.php:434
+msgid "Incoming Links Widget"
+msgstr ""
+
+#: options.php:435
+msgid "Primary RSS Widget"
+msgstr ""
+
+#: options.php:436
+msgid "Secondary RSS Widget"
+msgstr ""
+
+#: options.php:437
+msgid "Quick Press Widget"
+msgstr ""
+
+#: options.php:438
+msgid "Recent Drafts Widget"
 msgstr ""
 
 #: options.php:443
-msgid "Advanced"
+msgid "Post Formats"
 msgstr ""
 
-#: options.php:448
-msgid "Login Redirect URL"
+#: options.php:444
+msgid ""
+"Enable support for <a href=\"http://codex.wordpress.org/Post_Formats"
+"\">WordPress post formats</a>."
 msgstr ""
 
-#: options.php:449
-msgid "Change the default <a href=\"http://codex.wordpress.org/Function_Reference/wp_login_url\">login URL</a> redirect for WordPress. Can be left blank for default functionality."
+#: options.php:451
+msgid "Post Format Types"
 msgstr ""
 
-#: options.php:456
-msgid "Logout Redirect URL"
+#: options.php:452
+msgid ""
+"Which <a href=\"http://codex.wordpress.org/Post_Formats#Supported_Formats"
+"\">post format types</a> would you like to support?"
 msgstr ""
 
-#: options.php:457
-msgid "Change the default <a href=\"http://codex.wordpress.org/Function_Reference/wp_logout\">logout URL</a> redirect for WordPress. Can be left blank for default functionality."
+#: options.php:467
+msgid "Aside"
 msgstr ""
 
-#: options.php:464
-msgid "WordPress Header Meta"
+#: options.php:468
+msgid "Chat"
 msgstr ""
 
-#: options.php:465
-msgid "Toggle certain WordPress meta data found in the theme header."
+#: options.php:469
+#: assets/inc/options-framework/options-medialibrary-uploader.php:282
+#: assets/lib/acf/core/fields/gallery.php:25
+msgid "Gallery"
 msgstr ""
 
-#: options.php:479
-msgid "Really Simple Discovery / XML-RPC"
+#: options.php:470 assets/lib/acf/core/fields/image.php:21
+msgid "Image"
+msgstr ""
+
+#: options.php:471
+msgid "Link"
+msgstr ""
+
+#: options.php:472
+msgid "Quote"
+msgstr ""
+
+#: options.php:473 assets/lib/class-tgm-plugin-activation.php:1300
+msgid "Status"
+msgstr ""
+
+#: options.php:474
+msgid "Video"
+msgstr ""
+
+#: options.php:475
+msgid "Audio"
 msgstr ""
 
 #: options.php:480
-msgid "Windows Live Tag"
+msgid "Additional Post Types"
 msgstr ""
 
 #: options.php:481
-msgid "Generator Tag"
+msgid ""
+"Toggle additional post types. Additional post types are found in the "
+"<strong>/null/assets/inc/post-types/</strong> folder or the same folder in "
+"your child theme."
 msgstr ""
 
-#: options.php:482
-msgid "RSS Feed Links"
+#: options.php:489
+msgid "Shortcodes"
 msgstr ""
 
-#: options.php:483
-msgid "Extra Feed Links (Categories etc)"
+#: options.php:490
+msgid ""
+"Toggle shortcode support. Additional shortcodes are found in the <strong>/"
+"null/assets/inc/shortcodes/</strong> folder or the same folder in your child "
+"theme."
 msgstr ""
 
-#: options.php:484
-msgid "Shortlink"
+#: options.php:498
+msgid "WordPress Widgets"
 msgstr ""
 
-#: options.php:485
-msgid "Canonical"
+#: options.php:499
+msgid "Toggle default WordPress widgets."
 msgstr ""
 
-#: options.php:486
-msgid "Related Posts"
-msgstr ""
-
-#: options.php:492
-msgid "Advanced Header Meta"
-msgstr ""
-
-#: options.php:493
-msgid "Toggle advanced meta data in the theme header."
-msgstr ""
-
-#: options.php:500
-msgid "iOS Web App (if enabled set custom splash images in Design tab)"
-msgstr ""
-
-#: options.php:505
-msgid "Polyfills "
-msgstr ""
-
-#: options.php:506
-msgid "Patch up certain browsers with <a href=\"https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills\">JavaScript polyfills</a>?"
+#: options.php:518
+msgid "Archives Widget"
 msgstr ""
 
 #: options.php:519
-msgid "Screen Rotation Scale Bug (iOS)"
+msgid "Calendar Widget"
 msgstr ""
 
 #: options.php:520
-msgid "Selectivizr CSS3 Selectors (IE6,IE7,IE8)"
+msgid "Categories Widget"
 msgstr ""
 
 #: options.php:521
-msgid "Superfish (primarily IE6 but improves menus on all browsers)"
+msgid "Custom Menu Widget"
 msgstr ""
 
 #: options.php:522
-msgid "HTML5 Forms (standardise form behaviour across all browsers)"
+msgid "Links Widget"
 msgstr ""
 
 #: options.php:523
-msgid "Fluid Images (IE6,IE7,IE8)"
+msgid "Meta Widget"
 msgstr ""
 
 #: options.php:524
-msgid "Transparent PNG Support (IE6)"
+msgid "Pages Widget"
 msgstr ""
 
-#: options.php:525
-msgid "Chrome Frame Prompt (IE6)"
+#: options.php:526
+msgid "Recent Posts Widget"
+msgstr ""
+
+#: options.php:527
+msgid "RSS Widget"
+msgstr ""
+
+#: options.php:528
+msgid "Search Widget"
+msgstr ""
+
+#: options.php:529
+msgid "Tag Cloud Widget"
 msgstr ""
 
 #: options.php:530
-msgid "Disable RSS"
+msgid "Text Widget"
 msgstr ""
 
-#: options.php:531
-msgid "Disable access to all RSS feeds."
+#: options.php:535
+msgid "Additional Widgets"
 msgstr ""
 
-#: options.php:538
-msgid "Page Break"
+#: options.php:536
+msgid ""
+"Toggle additional widgets. Additional widgets are found in the <strong>/null/"
+"assets/inc/widgets/</strong> folder or the same folder in your child theme."
 msgstr ""
 
-#: options.php:539
-msgid "Enable support for page breaks. Adds a new button to the editor."
-msgstr ""
-
-#: options.php:546
-msgid "Custom Background"
-msgstr ""
-
-#: options.php:547
-msgid "Enable support for setting a custom <a href=\"http://codex.wordpress.org/Function_Reference/add_custom_background\">theme background</a> within WordPress."
-msgstr ""
-
-#: options.php:554
-msgid "All Settings"
+#: options.php:550
+msgid "E-Mail"
 msgstr ""
 
 #: options.php:555
-msgid "Enable the hidden <strong>All Settings</strong> WordPress menu for administrators."
+msgid "Email From"
 msgstr ""
 
-#: options.php:562
-msgid "Disable Update Notifications"
+#: options.php:556
+msgid "Personalise outgoing e-mail with a from name."
 msgstr ""
 
-#: options.php:563
-msgid "Disable update notifications for any user that is not an administrator (ties into the update_plugins capability)."
+#: options.php:564
+msgid "Email From Address"
 msgstr ""
 
-#: options.php:572
-msgid "Cleanup URLs"
+#: options.php:565
+msgid "WordPress should send email from this address."
 msgstr ""
 
 #: options.php:573
-msgid "Rewrite WordPress URLs for cleaner HTML (e.g. /assets/, /uploads/ etc)."
+msgid "Email Encoding / Anti Spam"
 msgstr ""
 
-#: options.php:581
-msgid "Force Rewrite"
+#: options.php:574
+msgid "Encode email addresses added to the content editor?"
 msgstr ""
 
-#: options.php:582
-msgid "On some servers WordPress incorrectly detects rewrite functionality (e.g. Nginx). Checking this will force rewrite features."
+#: options.php:587
+msgid "Performance"
 msgstr ""
 
-#: options.php:589
-msgid "Development Mode"
+#: options.php:592
+msgid "Performance?"
 msgstr ""
 
-#: options.php:590
-msgid "Development mode outputs memory and performance data in the footer of your HTML. For a comprehensive development tool try <a href=\"http://wordpress.org/extend/plugins/debug-bar/\">debug bar</a> and add define('WP_DEBUG', true); to your wp-config.php file."
-msgstr ""
-
-#: options.php:597
-msgid "Holmes"
+#: options.php:593
+msgid "Please refer to the <a href=\""
 msgstr ""
 
 #: options.php:598
-msgid "Highlight HTML problems  with <a href=\"http://www.red-root.com/sandbox/holmes/\">holmes</a>, the CSS markup detective."
+msgid "HTML Compression"
+msgstr ""
+
+#: options.php:599
+msgid "Compress HTML output (more options when toggled on)."
+msgstr ""
+
+#: options.php:606
+msgid "HTML Compression Options"
+msgstr ""
+
+#: options.php:607
+msgid "Which HTML features would you like to compress?"
+msgstr ""
+
+#: options.php:616
+msgid "Inline CSS"
+msgstr ""
+
+#: options.php:617
+msgid "Inline JS"
+msgstr ""
+
+#: options.php:618
+msgid "HTML Comments"
+msgstr ""
+
+#: options.php:629
+msgid "Advanced"
+msgstr ""
+
+#: options.php:634
+msgid "Login Redirect URL"
+msgstr ""
+
+#: options.php:635
+msgid ""
+"Change the default <a href=\"http://codex.wordpress.org/Function_Reference/"
+"wp_login_url\">login URL</a> redirect for WordPress. Can be left blank for "
+"default functionality."
+msgstr ""
+
+#: options.php:643
+msgid "Logout Redirect URL"
+msgstr ""
+
+#: options.php:644
+msgid ""
+"Change the default <a href=\"http://codex.wordpress.org/Function_Reference/"
+"wp_logout\">logout URL</a> redirect for WordPress. Can be left blank for "
+"default functionality."
+msgstr ""
+
+#: options.php:652
+msgid "WordPress Header Meta"
+msgstr ""
+
+#: options.php:653
+msgid "Toggle certain WordPress meta data found in the theme header."
+msgstr ""
+
+#: options.php:667
+msgid "Really Simple Discovery / XML-RPC"
+msgstr ""
+
+#: options.php:668
+msgid "Windows Live Tag"
+msgstr ""
+
+#: options.php:669
+msgid "Generator Tag"
+msgstr ""
+
+#: options.php:670
+msgid "RSS Feed Links"
+msgstr ""
+
+#: options.php:671
+msgid "Extra Feed Links (Categories etc)"
+msgstr ""
+
+#: options.php:672
+msgid "Shortlink"
+msgstr ""
+
+#: options.php:673
+msgid "Canonical"
+msgstr ""
+
+#: options.php:674 assets/inc/shortcodes/shortcode-related-posts.php:23
+msgid "Related Posts"
+msgstr ""
+
+#: options.php:682
+msgid "Advanced Header Meta"
+msgstr ""
+
+#: options.php:683
+msgid "Toggle advanced meta data in the theme header."
+msgstr ""
+
+#: options.php:691
+msgid "iOS Web App (if enabled set custom splash images in Design tab)"
+msgstr ""
+
+#: options.php:692
+msgid "IE9+ Pinned Application (if enabled set colour in Design tab)"
+msgstr ""
+
+#: options.php:697
+msgid "Polyfills "
+msgstr ""
+
+#: options.php:698
+msgid ""
+"Patch up certain browsers with <a href=\"https://github.com/Modernizr/"
+"Modernizr/wiki/HTML5-Cross-Browser-Polyfills\">JavaScript polyfills</a>?"
+msgstr ""
+
+#: options.php:708
+msgid "Screen Rotation Scale Bug (iOS)"
+msgstr ""
+
+#: options.php:709
+msgid "Selectivizr CSS3 Selectors (IE7,IE8)"
+msgstr ""
+
+#: options.php:710
+msgid "HTML5 Forms (standardise form behaviour across all browsers)"
+msgstr ""
+
+#: options.php:711
+msgid "Fluid Images (IE7,IE8)"
+msgstr ""
+
+#: options.php:718
+msgid "Disable Comments"
+msgstr ""
+
+#: options.php:719
+msgid ""
+"This will remove meta boxes, comment related table columns and the <a href=\""
+msgstr ""
+
+#: options.php:727
+msgid "Disable RSS"
+msgstr ""
+
+#: options.php:728
+msgid "Disable access to all RSS feeds."
+msgstr ""
+
+#: options.php:735
+msgid "Disable Search"
+msgstr ""
+
+#: options.php:736
+msgid "Disable WordPress search functionality."
+msgstr ""
+
+#: options.php:743
+msgid "Disable Welcome Message"
+msgstr ""
+
+#: options.php:744
+msgid ""
+"Disable the friendly welcome message for first-time users in WordPress 3.3+."
+msgstr ""
+
+#: options.php:751
+msgid "Disable Pointer Tips"
+msgstr ""
+
+#: options.php:752
+msgid "Disable the pointer / new feature tooltips in WordPress 3.3+."
+msgstr ""
+
+#: options.php:760
+msgid "Disable WP App Store"
+msgstr ""
+
+#: options.php:761
+msgid "Unload the <a href=\"http://wpappstore.com/\">WP App Store</a>."
+msgstr ""
+
+#: options.php:769
+msgid "Disable Dragging Meta Boxes"
+msgstr ""
+
+#: options.php:770
+msgid "Disable the ability to re-order and drag meta boxes."
+msgstr ""
+
+#: options.php:777
+msgid "Page Break"
+msgstr ""
+
+#: options.php:778
+msgid "Enable support for page breaks. Adds a new button to the editor."
+msgstr ""
+
+#: options.php:785
+msgid "Custom Header"
+msgstr ""
+
+#: options.php:786
+msgid ""
+"Enable support for setting a custom <a href=\"http://codex.wordpress.org/"
+"Custom_Headers\">theme header</a> within WordPress."
+msgstr ""
+
+#: options.php:793
+msgid "Custom Background"
+msgstr ""
+
+#: options.php:794
+msgid ""
+"Enable support for setting a custom <a href=\"http://codex.wordpress.org/"
+"Custom_Backgrounds\">theme background</a> within WordPress."
+msgstr ""
+
+#: options.php:801 assets/inc/admin.php:924
+msgid "All Settings"
+msgstr ""
+
+#: options.php:802
+msgid ""
+"Enable the hidden <strong>All Settings</strong> WordPress menu for "
+"administrators."
+msgstr ""
+
+#: options.php:809
+msgid "Disable Update Notifications"
+msgstr ""
+
+#: options.php:810
+msgid ""
+"Disable update notifications for any user that is not an administrator (ties "
+"into the update_plugins capability)."
+msgstr ""
+
+#: options.php:818
+msgid "Disable PHP LESS compiler"
+msgstr ""
+
+#: options.php:819
+msgid ""
+"Disable the built in PHP LESS compiler. Modifications to your less will "
+"require re-compiling by a <a href=\"http://incident57.com/less/\">third "
+"party application</a>."
+msgstr ""
+
+#: options.php:828
+msgid "Cleanup URLs"
+msgstr ""
+
+#: options.php:829
+msgid "Rewrite WordPress URLs for cleaner HTML (e.g. /assets/, /uploads/ etc)."
+msgstr ""
+
+#: options.php:837
+msgid "Force Rewrite"
+msgstr ""
+
+#: options.php:838
+msgid ""
+"On some servers WordPress incorrectly detects rewrite functionality (e.g. "
+"Nginx). Checking this will force rewrite features."
+msgstr ""
+
+#: options.php:845
+msgid "Development Mode"
+msgstr ""
+
+#: options.php:846
+msgid ""
+"Development mode outputs memory and performance data in the footer of your "
+"HTML. For a comprehensive development tool try <a href=\"http://wordpress."
+"org/extend/plugins/debug-bar/\">debug bar</a> and add define('WP_DEBUG', "
+"true); to your wp-config.php file."
+msgstr ""
+
+#: options.php:853
+msgid "Holmes"
+msgstr ""
+
+#: options.php:854
+msgid ""
+"Highlight HTML problems  with <a href=\"http://www.red-root.com/sandbox/"
+"holmes/\">holmes</a>, the CSS markup detective."
+msgstr ""
+
+#: options.php:887 assets/lib/acf/core/fields/flexible_content.php:382
+#: assets/lib/acf/core/fields/radio.php:160
+#: assets/lib/acf/core/fields/repeater.php:527
+msgid "Layout"
 msgstr ""
 
 #: search.php:5
-msgid "Search Results for:"
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:4
-#: searchform.php:5
-#: searchform.php:6
+#: searchform.php:4 assets/inc/widgets.php:15
+#: assets/inc/widgets/widget-search-category.php:18
+#: assets/inc/widgets/widget-search-category.php:25
+#: assets/inc/widgets/widget-search-post-type.php:18
+#: assets/lib/acf/core/fields/relationship.php:294
 msgid "Search"
 msgstr ""
 
@@ -896,7 +1131,9 @@ msgid "null successfully re-activated."
 msgstr ""
 
 #: assets/inc/activation.php:27
-msgid "null successfully activated. Before you get started setting up your new website would you like us to configure WordPress for you?"
+msgid ""
+"null successfully activated. Before you get started setting up your website "
+"would you like null to configure WordPress for you?"
 msgstr ""
 
 #: assets/inc/activation.php:28
@@ -907,15 +1144,48 @@ msgstr ""
 msgid "No Thanks"
 msgstr ""
 
-#: assets/inc/activation.php:143
+#: assets/inc/activation.php:150
 msgid "WordPress setup complete."
 msgstr ""
 
-#: assets/inc/activation.php:144
+#: assets/inc/activation.php:151
+#: assets/inc/options-framework/options-framework.php:163
+#: assets/inc/options-framework/options-framework.php:380
 msgid "Theme Options"
 msgstr ""
 
-#: assets/inc/admin.php:362
+#: assets/inc/admin.php:329
+msgid "Compatible &amp; Recommended Plugins"
+msgstr ""
+
+#: assets/inc/admin.php:330
+msgid "Compatible Plugins"
+msgstr ""
+
+#: assets/inc/admin.php:331 assets/lib/class-tgm-plugin-activation.php:166
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: assets/inc/admin.php:332
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: assets/inc/admin.php:343
+msgid "Return to Theme Plugins Installer"
+msgstr ""
+
+#: assets/inc/admin.php:344 assets/lib/class-tgm-plugin-activation.php:179
+#: assets/lib/class-tgm-plugin-activation.php:1846
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: assets/inc/admin.php:345
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: assets/inc/admin.php:910
 msgid "Custom Avatar"
 msgstr ""
 
@@ -940,22 +1210,18 @@ msgstr ""
 msgid "g a"
 msgstr ""
 
-#: assets/inc/breadcrumbs.php:329
-#: assets/inc/breadcrumbs.php:335
-#: assets/inc/breadcrumbs.php:340
-#: assets/inc/breadcrumbs.php:345
+#: assets/inc/breadcrumbs.php:329 assets/inc/breadcrumbs.php:335
+#: assets/inc/breadcrumbs.php:340 assets/inc/breadcrumbs.php:345
 #: assets/inc/breadcrumbs.php:410
 msgid "Y"
 msgstr ""
 
-#: assets/inc/breadcrumbs.php:330
-#: assets/inc/breadcrumbs.php:341
+#: assets/inc/breadcrumbs.php:330 assets/inc/breadcrumbs.php:341
 #: assets/inc/breadcrumbs.php:414
 msgid "F"
 msgstr ""
 
-#: assets/inc/breadcrumbs.php:331
-#: assets/inc/breadcrumbs.php:418
+#: assets/inc/breadcrumbs.php:331 assets/inc/breadcrumbs.php:418
 msgid "d"
 msgstr ""
 
@@ -973,35 +1239,45 @@ msgstr ""
 msgid "404 Not Found"
 msgstr ""
 
-#: assets/inc/htaccess.php:18
+#: assets/inc/cron.php:12
+msgid "Once Every Half an Hour"
+msgstr ""
+
+#: assets/inc/cron.php:13
+msgid "Once Weekly"
+msgstr ""
+
+#: assets/inc/cron.php:14
+msgid "Once Monthly"
+msgstr ""
+
+#: assets/inc/htaccess.php:20
 #, php-format
 msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
 msgstr ""
 
-#: assets/inc/theme.php:117
+#: assets/inc/theme.php:119
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: assets/inc/theme.php:302
+#: assets/inc/theme.php:304
 msgid "RSS is currently disabled. Please visit our <a href=\""
 msgstr ""
 
-#: assets/inc/theme.php:542
-#: assets/inc/theme.php:556
+#: assets/inc/theme.php:632 assets/inc/theme.php:646
 msgid " &hellip;Continue reading &raquo;"
 msgstr ""
 
-#: assets/inc/theme.php:662
+#: assets/inc/theme.php:752
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: assets/inc/theme.php:668
-#: assets/inc/theme.php:680
+#: assets/inc/theme.php:758 assets/inc/theme.php:770
 msgid "Moderate"
 msgstr ""
 
-#: assets/inc/theme.php:680
+#: assets/inc/theme.php:770
 msgid "Pingback:"
 msgstr ""
 
@@ -1021,122 +1297,461 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: assets/inc/options-framework/options-framework.php:228
+#: assets/inc/wp-app-store.php:155
+msgid ""
+"Sorry, we could not reach the WP App Store to setup the auto installer. "
+"Please try again later."
+msgstr ""
+
+#: assets/inc/wp-app-store.php:156
+msgid ""
+"In the meantime, you can try checking us out at <a href=\"http://wpappstore."
+"com/\">http://wpappstore.com/</a>."
+msgstr ""
+
+#: assets/inc/options-framework/options-framework.php:196
+msgid "Clear"
+msgstr ""
+
+#: assets/inc/options-framework/options-framework.php:197
+msgid "Default"
+msgstr ""
+
+#: assets/inc/options-framework/options-framework.php:198
+msgid "Select Color"
+msgstr ""
+
+#: assets/inc/options-framework/options-framework.php:244
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
 
-#: assets/inc/options-framework/options-framework.php:260
+#: assets/inc/options-framework/options-framework.php:276
 msgid "Default options restored."
 msgstr ""
 
-#: assets/inc/options-framework/options-framework.php:301
+#: assets/inc/options-framework/options-framework.php:330
 msgid "Options saved."
 msgstr ""
 
 #: assets/inc/options-framework/options-medialibrary-uploader.php:26
-msgid "Options Framework Internal Container"
+msgid "Theme Options Media"
 msgstr ""
 
-#: assets/inc/options-framework/options-medialibrary-uploader.php:128
+#: assets/inc/options-framework/options-medialibrary-uploader.php:126
 msgid "Upload"
 msgstr ""
 
-#: assets/inc/options-framework/options-medialibrary-uploader.php:151
+#: assets/inc/options-framework/options-medialibrary-uploader.php:149
 msgid "View File"
 msgstr ""
 
-#: assets/inc/options-framework/options-medialibrary-uploader.php:288
+#: assets/inc/options-framework/options-medialibrary-uploader.php:282
 msgid "Previously Uploaded"
 msgstr ""
 
+#: assets/inc/options-framework/options-sanitize.php:232
+msgid "No Repeat"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:235
+msgid "Repeat All"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:248
+msgid "Top Left"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:249
+msgid "Top Center"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:250
+msgid "Top Right"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:251
+msgid "Middle Left"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:252
+msgid "Middle Center"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:253
+msgid "Middle Right"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:344
+msgid "Normal"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:345
+msgid "Italic"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:346
+msgid "Bold"
+msgstr ""
+
+#: assets/inc/options-framework/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:16
+#: assets/inc/post-types/post-type-portfolio.php:32
 #: assets/inc/post-types/post-type-products.php:16
-#: assets/inc/post-types/post-type-products.php:30
-msgid "Collections"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:17
-msgid "Collection"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:18
-#: assets/inc/post-types/post-type-products.php:21
-msgid "New Collection"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:19
-msgid "Add New Collection"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:20
-msgid "Edit Collection"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:22
-msgid "View"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:23
-msgid "Search Collections"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:24
-msgid "No collections found"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:25
-msgid "No collections found in Trash"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:58
+#: assets/inc/post-types/post-type-products.php:32
 msgid "Categories"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:59
-msgid "Category"
+#: assets/inc/post-types/post-type-portfolio.php:17
+msgid "Portfolio Category"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:60
-msgid "Search Categories"
+#: assets/inc/post-types/post-type-portfolio.php:18
+msgid "Search Portfolio Categories"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:61
+#: assets/inc/post-types/post-type-portfolio.php:19
+#: assets/inc/post-types/post-type-products.php:19
 msgid "Popular Categories"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:62
-msgid "All Categories"
+#: assets/inc/post-types/post-type-portfolio.php:20
+msgid "All Portfolio Categories"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:65
-msgid "Edit Category"
+#: assets/inc/post-types/post-type-portfolio.php:21
+#: assets/inc/post-types/post-type-products.php:21
+msgid "Parent Category"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:66
-msgid "Update Category"
+#: assets/inc/post-types/post-type-portfolio.php:22
+msgid "Edit Portfolio Category"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:67
-msgid "Add New Category"
+#: assets/inc/post-types/post-type-portfolio.php:23
+msgid "Update Portfolio Category"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:68
-msgid "New Category Name"
+#: assets/inc/post-types/post-type-portfolio.php:24
+msgid "Add New Portfolio Category"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:69
+#: assets/inc/post-types/post-type-portfolio.php:25
+msgid "New Portfolio Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:26
+#: assets/inc/post-types/post-type-products.php:26
 msgid "Separate categories with commas"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:70
-msgid "Add or remove categories"
+#: assets/inc/post-types/post-type-portfolio.php:27
+msgid "Add or remove Portfolio Categories"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:71
-msgid "Choose from the most used categories"
+#: assets/inc/post-types/post-type-portfolio.php:28
+msgid "Choose from most used Portfolio Categories"
 msgstr ""
 
-#: assets/inc/post-types/post-type-products.php:75
-msgid "Collection Category"
+#: assets/inc/post-types/post-type-portfolio.php:46
+msgid "Projects"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:47
+msgid "Portfolio Project"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:48
+#: assets/inc/post-types/post-type-portfolio.php:49
+msgid "Add Project"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:50
+msgid "Edit Project"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:51
+msgid "New Project"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:52
+#: assets/inc/post-types/post-type-staff.php:52
+msgid "View"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:53
+msgid "Search Projects"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:54
+msgid "No projects found"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:55
+msgid "No projects found in Trash"
+msgstr ""
+
+#: assets/inc/post-types/post-type-portfolio.php:57
+#: assets/inc/post-types/post-type-portfolio.php:62
+msgid "Portfolio"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:17
+msgid "Product Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:18
+msgid "Search Product Categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:20
+msgid "All Product Categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:22
+msgid "Edit Product Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:23
+msgid "Update Product Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:24
+msgid "Add New Product Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:25
+msgid "New Product Category"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:27
+msgid "Add or remove Product Categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:28
+msgid "Choose from most used Product Categories"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:46
+#: assets/inc/post-types/post-type-products.php:62
+msgid "Features"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:47
+msgid "Product Features"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:48
+msgid "Search Product Features"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:49
+msgid "Popular Features"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:50
+msgid "All Product Features"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:51
+msgid "Parent Product Feature"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:52
+msgid "Edit Product Feature"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:53
+msgid "Update Product Feature"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:54
+msgid "Add New Product Feature"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:55
+msgid "New Product Feature"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:56
+msgid "Separate features with commas"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:57
+msgid "Add or remove Product Features"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:58
+msgid "Choose from most used Product Features"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:76
+#: assets/inc/post-types/post-type-products.php:91
+msgid "Products"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:77
+msgid "Product"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:78
+msgid "Add Product"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:79
+msgid "Add New Product"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:80
+msgid "Edit Product"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:81
+msgid "New Product"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:82
+msgid "View Product"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:83
+msgid "Search Products"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:84
+msgid "No products found"
+msgstr ""
+
+#: assets/inc/post-types/post-type-products.php:85
+msgid "No products found in Trash"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:16
+#: assets/inc/post-types/post-type-staff.php:32
+msgid "Departments"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:17
+msgid "Department"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:18
+msgid "Search Departments"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:19
+msgid "Popular Departments"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:20
+msgid "All Departments"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:21
+msgid "Parent Department"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:22
+msgid "Edit Department"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:23
+msgid "Update Department"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:24
+msgid "Add New Department"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:25
+msgid "New Department"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:26
+msgid "Separate Departments with commas"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:27
+msgid "Add or remove Departments"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:28
+msgid "Choose from most used Departments"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:46
+#: assets/inc/post-types/post-type-staff.php:47
+#: assets/inc/post-types/post-type-staff.php:61
+msgid "Staff"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:48
+#: assets/inc/post-types/post-type-staff.php:49
+msgid "Add Staff"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:50
+msgid "Edit Staff"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:51
+msgid "New Staff"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:53
+msgid "Search Staff"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:54
+msgid "No staff found"
+msgstr ""
+
+#: assets/inc/post-types/post-type-staff.php:55
+msgid "No staff found in Trash"
+msgstr ""
+
+#: assets/inc/shortcodes/shortcode-map.php:105
+#, php-format
+msgid "Unable to parse entered address. API response code: %s"
+msgstr ""
+
+#: assets/inc/shortcodes/shortcode-map.php:107
+#, php-format
+msgid "XML parsing error. Please try again later. API response code: %s"
+msgstr ""
+
+#: assets/inc/shortcodes/shortcode-map.php:111
+msgid "Unable to contact Google API service."
 msgstr ""
 
 #: assets/inc/shortcodes/shortcode-paypal-donate.php:16
@@ -1147,31 +1762,8 @@ msgstr ""
 msgid "QR Code for: "
 msgstr ""
 
-#: assets/inc/shortcodes/shortcode-related-posts.php:47
+#: assets/inc/shortcodes/shortcode-related-posts.php:49
 msgid "No related posts found."
-msgstr ""
-
-#: assets/inc/shortcodes/shortcode-tabs.php:37
-#, php-format
-msgid "Tab %d"
-msgstr ""
-
-#: assets/inc/widgets/widget-featured.php:11
-msgid "Displays featured posts from one category"
-msgstr ""
-
-#: assets/inc/widgets/widget-featured.php:12
-msgid "Featured Posts"
-msgstr ""
-
-#: assets/inc/widgets/widget-featured.php:118
-#: assets/inc/widgets/widget-flickr.php:45
-#: assets/inc/widgets/widget-twitter.php:63
-msgid "Title"
-msgstr ""
-
-#: assets/inc/widgets/widget-featured.php:120
-msgid "Number of Posts"
 msgstr ""
 
 #: assets/inc/widgets/widget-flickr.php:11
@@ -1180,6 +1772,13 @@ msgstr ""
 
 #: assets/inc/widgets/widget-flickr.php:12
 msgid "Flickr Feed"
+msgstr ""
+
+#: assets/inc/widgets/widget-flickr.php:45
+#: assets/inc/widgets/widget-twitter.php:62
+#: assets/lib/acf/core/fields/gallery.php:201
+#: assets/lib/acf/core/fields/gallery.php:252
+msgid "Title"
 msgstr ""
 
 #: assets/inc/widgets/widget-flickr.php:46
@@ -1196,6 +1795,41 @@ msgstr ""
 
 #: assets/inc/widgets/widget-flickr.php:48
 msgid "Link Text"
+msgstr ""
+
+#: assets/inc/widgets/widget-search-category.php:11
+msgid "Search a particular WordPress category"
+msgstr ""
+
+#: assets/inc/widgets/widget-search-category.php:12
+msgid "Search (Category)"
+msgstr ""
+
+#: assets/inc/widgets/widget-search-category.php:46
+#: assets/inc/widgets/widget-search-post-type.php:44
+msgid "Title:"
+msgstr ""
+
+#: assets/inc/widgets/widget-search-category.php:48
+msgid "Category to search:"
+msgstr ""
+
+#: assets/inc/widgets/widget-search-category.php:49
+#: assets/lib/acf/core/fields/text.php:89
+#: assets/lib/acf/core/fields/textarea.php:88
+msgid "None"
+msgstr ""
+
+#: assets/inc/widgets/widget-search-post-type.php:11
+msgid "Search a particular WordPress custom post type."
+msgstr ""
+
+#: assets/inc/widgets/widget-search-post-type.php:12
+msgid "Search (Post Type)"
+msgstr ""
+
+#: assets/inc/widgets/widget-search-post-type.php:46
+msgid "Post type to search:"
 msgstr ""
 
 #: assets/inc/widgets/widget-taxonomy.php:27
@@ -1238,19 +1872,19 @@ msgstr ""
 msgid "Twitter Feed"
 msgstr ""
 
-#: assets/inc/widgets/widget-twitter.php:57
+#: assets/inc/widgets/widget-twitter.php:56
 msgid "Latest Tweets"
 msgstr ""
 
-#: assets/inc/widgets/widget-twitter.php:64
+#: assets/inc/widgets/widget-twitter.php:63
 msgid "Username"
 msgstr ""
 
-#: assets/inc/widgets/widget-twitter.php:65
+#: assets/inc/widgets/widget-twitter.php:64
 msgid "Number of Tweets"
 msgstr ""
 
-#: assets/inc/widgets/widget-twitter.php:66
+#: assets/inc/widgets/widget-twitter.php:65
 msgid "Text Link"
 msgstr ""
 
@@ -1286,3 +1920,899 @@ msgstr ""
 msgid "Email:"
 msgstr ""
 
+#: assets/lib/class-tgm-plugin-activation.php:164
+msgid "Install Required Plugins"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:165
+msgid "Install Plugins"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:167
+msgid "Something went wrong."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:178
+#: assets/lib/class-tgm-plugin-activation.php:490
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:517
+#: assets/lib/class-tgm-plugin-activation.php:2058
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:545
+#, php-format
+msgid "The following plugin was activated successfully: %s."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:704
+msgid "Dismiss this notice"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1091
+msgid "External Link"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1096
+msgid "Private Repository"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1099
+msgid "Pre-Packaged"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1103
+msgid "WordPress Repository"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1106
+msgid "Required"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1106
+msgid "Recommended"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1109
+msgid "Not Installed"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1111
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1281
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1297
+msgid "Plugin"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1298
+msgid "Source"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1299
+msgid "Type"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1318
+msgid "Install"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1319
+msgid "Activate"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1829
+msgid "Install package not available."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1830
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1831
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1832
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1833
+msgid "Plugin install failed."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1834
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1845
+msgid "Plugin activation failed."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1955
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1956
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1956
+#: assets/lib/class-tgm-plugin-activation.php:1965
+msgid "Show Details"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1956
+#: assets/lib/class-tgm-plugin-activation.php:1965
+msgid "Hide Details"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1957
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1958
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1962
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1963
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1964
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1965
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1966
+msgid "All installations have been completed."
+msgstr ""
+
+#: assets/lib/class-tgm-plugin-activation.php:1967
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: assets/lib/acf/acf-lite.php:56
+msgid "Options"
+msgstr ""
+
+#: assets/lib/acf/acf-lite.php:550
+msgid "Error: Field Type does not exist!"
+msgstr ""
+
+#: assets/lib/acf/acf-lite.php:1113
+msgid "Thumbnail"
+msgstr ""
+
+#: assets/lib/acf/acf-lite.php:1114
+msgid "Medium"
+msgstr ""
+
+#: assets/lib/acf/acf-lite.php:1115
+msgid "Large"
+msgstr ""
+
+#: assets/lib/acf/acf-lite.php:1116
+msgid "Full"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/input.php:563
+msgid "Validation Failed. One or more fields below are required."
+msgstr ""
+
+#: assets/lib/acf/core/controllers/input.php:565
+msgid "Maximum values reached ( {max} values )"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/input.php:575
+msgid "Add Image to Gallery"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/input.php:576
+msgid "Edit Image"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/options_page.php:130
+msgid "Options Updated"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/options_page.php:268
+msgid "No Custom Field Group found for the options page"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/options_page.php:268
+msgid "Create a Custom Field Group"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/options_page.php:279
+msgid "Publish"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/options_page.php:283
+msgid "Save Options"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:21
+msgid "Checkbox"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:55
+#: assets/lib/acf/core/fields/radio.php:50
+#: assets/lib/acf/core/fields/select.php:59
+msgid "No choices to choose from"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:113
+#: assets/lib/acf/core/fields/radio.php:119
+#: assets/lib/acf/core/fields/select.php:185
+msgid "Choices"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:114
+#: assets/lib/acf/core/fields/radio.php:120
+#: assets/lib/acf/core/fields/select.php:186
+msgid "Enter your choices one per line"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:116
+#: assets/lib/acf/core/fields/radio.php:122
+#: assets/lib/acf/core/fields/select.php:188
+msgid "Red"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:117
+#: assets/lib/acf/core/fields/radio.php:123
+#: assets/lib/acf/core/fields/select.php:189
+msgid "Blue"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:119
+#: assets/lib/acf/core/fields/radio.php:125
+#: assets/lib/acf/core/fields/select.php:191
+msgid "red : Red"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:120
+#: assets/lib/acf/core/fields/radio.php:126
+#: assets/lib/acf/core/fields/select.php:192
+msgid "blue : Blue"
+msgstr ""
+
+#: assets/lib/acf/core/fields/color_picker.php:21
+msgid "Color Picker"
+msgstr ""
+
+#: assets/lib/acf/core/fields/color_picker.php:67
+#: assets/lib/acf/core/fields/number.php:65
+#: assets/lib/acf/core/fields/radio.php:144
+#: assets/lib/acf/core/fields/select.php:208
+#: assets/lib/acf/core/fields/text.php:65
+#: assets/lib/acf/core/fields/textarea.php:64
+#: assets/lib/acf/core/fields/wysiwyg.php:114
+msgid "Default Value"
+msgstr ""
+
+#: assets/lib/acf/core/fields/color_picker.php:68
+msgid "eg: #ffffff"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:21
+msgid "File"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:50
+msgid "File Updated."
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:169
+#: assets/lib/acf/core/fields/flexible_content.php:466
+#: assets/lib/acf/core/fields/gallery.php:223
+#: assets/lib/acf/core/fields/gallery.php:274
+#: assets/lib/acf/core/fields/image.php:166
+#: assets/lib/acf/core/fields/repeater.php:357
+msgid "Edit"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:170
+#: assets/lib/acf/core/fields/gallery.php:222
+#: assets/lib/acf/core/fields/gallery.php:273
+#: assets/lib/acf/core/fields/image.php:165
+msgid "Remove"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:177
+msgid "No File Selected"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:177
+msgid "Add File"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:210
+#: assets/lib/acf/core/fields/image.php:202
+msgid "Return Value"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:221
+msgid "File Object"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:222
+msgid "File URL"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:223
+msgid "File ID"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:263
+#: assets/lib/acf/core/fields/image.php:274
+msgid "Media attachment updated."
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:421
+msgid "No files selected"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:562
+msgid "Add Selected Files"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:595
+msgid "Select File"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:598
+msgid "Update File"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:21
+msgid "Flexible Content"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:41
+msgid "+ Add Row"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:337
+#: assets/lib/acf/core/fields/repeater.php:48
+#: assets/lib/acf/core/fields/repeater.php:289
+msgid "Add Row"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:372
+#: assets/lib/acf/core/fields/repeater.php:303
+msgid "New Field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:373
+#: assets/lib/acf/core/fields/repeater.php:304
+msgid "new_field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:384
+msgid "Reorder Layout"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:384
+msgid "Reorder"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:385
+msgid "Delete Layout"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:385
+#: assets/lib/acf/core/fields/flexible_content.php:469
+#: assets/lib/acf/core/fields/repeater.php:360
+msgid "Delete"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:389
+msgid "Add New Layout"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:389
+msgid "Add New"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:390
+msgid "Duplicate Layout"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:390
+#: assets/lib/acf/core/fields/flexible_content.php:468
+#: assets/lib/acf/core/fields/repeater.php:359
+msgid "Duplicate"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:400
+msgid "Label"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:420
+msgid "Display"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:427
+#: assets/lib/acf/core/fields/repeater.php:538
+msgid "Row"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:428
+msgid "Table"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:441
+#: assets/lib/acf/core/fields/repeater.php:332
+msgid "Field Order"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:442
+#: assets/lib/acf/core/fields/flexible_content.php:484
+#: assets/lib/acf/core/fields/repeater.php:333
+#: assets/lib/acf/core/fields/repeater.php:376
+msgid "Field Label"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:443
+#: assets/lib/acf/core/fields/flexible_content.php:500
+#: assets/lib/acf/core/fields/repeater.php:334
+#: assets/lib/acf/core/fields/repeater.php:392
+msgid "Field Name"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:444
+#: assets/lib/acf/core/fields/flexible_content.php:515
+#: assets/lib/acf/core/fields/repeater.php:335
+#: assets/lib/acf/core/fields/repeater.php:407
+msgid "Field Type"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:452
+#: assets/lib/acf/core/fields/repeater.php:343
+msgid ""
+"No fields. Click the \"+ Add Sub Field button\" to create your first field."
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:463
+#: assets/lib/acf/core/fields/flexible_content.php:466
+#: assets/lib/acf/core/fields/repeater.php:354
+#: assets/lib/acf/core/fields/repeater.php:357
+msgid "Edit this Field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:467
+#: assets/lib/acf/core/fields/repeater.php:358
+msgid "Read documentation for this field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:467
+#: assets/lib/acf/core/fields/repeater.php:358
+msgid "Docs"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:468
+#: assets/lib/acf/core/fields/repeater.php:359
+msgid "Duplicate this Field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:469
+#: assets/lib/acf/core/fields/repeater.php:360
+msgid "Delete this Field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:485
+#: assets/lib/acf/core/fields/repeater.php:377
+msgid "This is the name which will appear on the EDIT page"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:501
+#: assets/lib/acf/core/fields/repeater.php:393
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:529
+#: assets/lib/acf/core/fields/repeater.php:421
+msgid "Field Instructions"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:549
+#: assets/lib/acf/core/fields/repeater.php:441
+msgid "Column Width"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:550
+#: assets/lib/acf/core/fields/repeater.php:442
+msgid "Leave blank for auto"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:579
+#: assets/lib/acf/core/fields/repeater.php:471
+msgid "Save Field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:584
+#: assets/lib/acf/core/fields/repeater.php:476
+msgid "Close Field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:584
+#: assets/lib/acf/core/fields/repeater.php:476
+msgid "Close Sub Field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:598
+#: assets/lib/acf/core/fields/repeater.php:491
+msgid "Drag and drop to reorder"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:599
+#: assets/lib/acf/core/fields/repeater.php:492
+msgid "+ Add Sub Field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/flexible_content.php:606
+#: assets/lib/acf/core/fields/repeater.php:546
+msgid "Button Label"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:113
+#: assets/lib/acf/core/fields/image.php:222
+msgid "Preview Size"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:114
+msgid "Thumbnail is advised"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:151
+msgid "Image Updated"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:205
+#: assets/lib/acf/core/fields/gallery.php:256
+msgid "Alternate Text"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:209
+#: assets/lib/acf/core/fields/gallery.php:260
+msgid "Caption"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:213
+#: assets/lib/acf/core/fields/gallery.php:264
+msgid "Description"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:234
+#: assets/lib/acf/core/fields/gallery.php:667
+#: assets/lib/acf/core/fields/image.php:172
+msgid "Add Image"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:235
+msgid "Grid"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:236
+msgid "List"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:238
+#: assets/lib/acf/core/fields/image.php:425
+msgid "No images selected"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:238
+msgid "1 image selected"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:238
+msgid "{count} images selected"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:590
+msgid "Added"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:610
+msgid "Image already exists in gallery"
+msgstr ""
+
+#: assets/lib/acf/core/fields/gallery.php:670
+#: assets/lib/acf/core/fields/image.php:599
+msgid "Update Image"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:53
+msgid "Image Updated."
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:172
+msgid "No image selected"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:212
+msgid "Image Object"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:213
+msgid "Image URL"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:214
+msgid "Image ID"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:567
+msgid "Add Selected Images"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:596
+msgid "Select Image"
+msgstr ""
+
+#: assets/lib/acf/core/fields/number.php:21
+msgid "Number"
+msgstr ""
+
+#: assets/lib/acf/core/fields/page_link.php:21
+msgid "Page Link"
+msgstr ""
+
+#: assets/lib/acf/core/fields/page_link.php:70
+#: assets/lib/acf/core/fields/post_object.php:223
+#: assets/lib/acf/core/fields/relationship.php:400
+msgid "Post Type"
+msgstr ""
+
+#: assets/lib/acf/core/fields/page_link.php:76
+#: assets/lib/acf/core/fields/post_object.php:229
+#: assets/lib/acf/core/fields/post_object.php:253
+#: assets/lib/acf/core/fields/relationship.php:406
+#: assets/lib/acf/core/fields/relationship.php:435
+msgid "All"
+msgstr ""
+
+#: assets/lib/acf/core/fields/page_link.php:94
+#: assets/lib/acf/core/fields/post_object.php:272
+#: assets/lib/acf/core/fields/select.php:222
+msgid "Allow Null?"
+msgstr ""
+
+#: assets/lib/acf/core/fields/page_link.php:104
+#: assets/lib/acf/core/fields/page_link.php:125
+#: assets/lib/acf/core/fields/post_object.php:282
+#: assets/lib/acf/core/fields/post_object.php:303
+#: assets/lib/acf/core/fields/select.php:231
+#: assets/lib/acf/core/fields/select.php:250
+#: assets/lib/acf/core/fields/wysiwyg.php:170
+#: assets/lib/acf/core/fields/wysiwyg.php:191
+msgid "Yes"
+msgstr ""
+
+#: assets/lib/acf/core/fields/page_link.php:105
+#: assets/lib/acf/core/fields/page_link.php:126
+#: assets/lib/acf/core/fields/post_object.php:283
+#: assets/lib/acf/core/fields/post_object.php:304
+#: assets/lib/acf/core/fields/select.php:232
+#: assets/lib/acf/core/fields/select.php:251
+#: assets/lib/acf/core/fields/wysiwyg.php:171
+#: assets/lib/acf/core/fields/wysiwyg.php:192
+msgid "No"
+msgstr ""
+
+#: assets/lib/acf/core/fields/page_link.php:115
+#: assets/lib/acf/core/fields/post_object.php:293
+#: assets/lib/acf/core/fields/select.php:241
+msgid "Select multiple values?"
+msgstr ""
+
+#: assets/lib/acf/core/fields/post_object.php:21
+msgid "Post Object"
+msgstr ""
+
+#: assets/lib/acf/core/fields/post_object.php:247
+#: assets/lib/acf/core/fields/relationship.php:429
+msgid "Filter from Taxonomy"
+msgstr ""
+
+#: assets/lib/acf/core/fields/radio.php:21
+msgid "Radio Button"
+msgstr ""
+
+#: assets/lib/acf/core/fields/radio.php:171
+msgid "Vertical"
+msgstr ""
+
+#: assets/lib/acf/core/fields/radio.php:172
+msgid "Horizontal"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:21
+msgid "Relationship"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:452
+msgid "Maximum posts"
+msgstr ""
+
+#: assets/lib/acf/core/fields/repeater.php:21
+msgid "Repeater"
+msgstr ""
+
+#: assets/lib/acf/core/fields/repeater.php:324
+msgid "Repeater Fields"
+msgstr ""
+
+#: assets/lib/acf/core/fields/repeater.php:499
+msgid "Minimum Rows"
+msgstr ""
+
+#: assets/lib/acf/core/fields/repeater.php:513
+msgid "Maximum Rows"
+msgstr ""
+
+#: assets/lib/acf/core/fields/repeater.php:537
+msgid "Table (default)"
+msgstr ""
+
+#: assets/lib/acf/core/fields/select.php:21
+msgid "Select"
+msgstr ""
+
+#: assets/lib/acf/core/fields/tab.php:21
+msgid "Tab"
+msgstr ""
+
+#: assets/lib/acf/core/fields/tab.php:57
+msgid "Instructions"
+msgstr ""
+
+#: assets/lib/acf/core/fields/tab.php:60
+msgid ""
+"All fields proceeding this \"tab field\" (or until another \"tab field\"  is "
+"defined) will appear grouped on the edit screen."
+msgstr ""
+
+#: assets/lib/acf/core/fields/tab.php:61
+msgid "You can use multiple tabs to break up your fields into sections."
+msgstr ""
+
+#: assets/lib/acf/core/fields/text.php:21
+msgid "Text"
+msgstr ""
+
+#: assets/lib/acf/core/fields/text.php:79
+#: assets/lib/acf/core/fields/textarea.php:78
+msgid "Formatting"
+msgstr ""
+
+#: assets/lib/acf/core/fields/text.php:80
+msgid "Define how to render html tags"
+msgstr ""
+
+#: assets/lib/acf/core/fields/text.php:90
+#: assets/lib/acf/core/fields/textarea.php:90
+msgid "HTML"
+msgstr ""
+
+#: assets/lib/acf/core/fields/textarea.php:21
+msgid "Text Area"
+msgstr ""
+
+#: assets/lib/acf/core/fields/textarea.php:79
+msgid "Define how to render html tags / new lines"
+msgstr ""
+
+#: assets/lib/acf/core/fields/textarea.php:89
+msgid "auto &lt;br /&gt;"
+msgstr ""
+
+#: assets/lib/acf/core/fields/true_false.php:21
+msgid "True / False"
+msgstr ""
+
+#: assets/lib/acf/core/fields/true_false.php:68
+msgid "Message"
+msgstr ""
+
+#: assets/lib/acf/core/fields/true_false.php:69
+msgid "eg. Show extra content"
+msgstr ""
+
+#: assets/lib/acf/core/fields/wysiwyg.php:21
+msgid "Wysiwyg Editor"
+msgstr ""
+
+#: assets/lib/acf/core/fields/wysiwyg.php:128
+msgid "Toolbar"
+msgstr ""
+
+#: assets/lib/acf/core/fields/wysiwyg.php:160
+msgid "Show Media Upload Buttons?"
+msgstr ""
+
+#: assets/lib/acf/core/fields/wysiwyg.php:179
+msgid "Run filter \"the_content\"?"
+msgstr ""
+
+#: assets/lib/acf/core/fields/wysiwyg.php:180
+msgid "Enable this filter to use shortcodes within the WYSIWYG field"
+msgstr ""
+
+#: assets/lib/acf/core/fields/wysiwyg.php:181
+msgid ""
+"Disable this filter if you encounter recursive template problems with "
+"plugins / themes"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:21
+msgid "Date Picker"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:89
+msgid "Save format"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:90
+msgid ""
+"This format will determin the value saved to the database and returned via "
+"the API"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:91
+msgid "\"yymmdd\" is the most versatile save format. Read more about"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:91
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:101
+msgid "jQuery date formats"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:99
+msgid "Display format"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:100
+msgid "This format will be seen by the user when entering a value"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:101
+msgid ""
+"\"dd/mm/yy\" or \"mm/dd/yy\" are the most used display formats. Read more "
+"about"
+msgstr ""

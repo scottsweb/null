@@ -123,16 +123,22 @@ contents:
 
 .lsf-replace(@fontsize: 18) 
 	{
+	font-family: 'LigatureSymbols';
 	.font-size(@fontsize) ;
 	.antialiased();
 	.optimizelegibility();
-	font-family: 'LigatureSymbols';
+	-webkit-font-feature-settings: "liga" 1, "dlig" 1;
+	-moz-font-feature-settings: "liga=1, dlig=1";
+	-ms-font-feature-settings: "liga" 1, "dlig" 1;
+	-o-font-feature-settings: "liga" 1, "dlig" 1;
+	font-feature-settings: "liga" 1, "dlig" 1;
 	}
 
 .lsf(@fontsize: 18)
 	{
 	&:before 
 		{
+		font-family: 'LigatureSymbols';
 		// had to redeclare font size for !important declarations
 		@rem: @fontsize / 10 !important;
 		font-size: @fontsize * 1px !important;
@@ -142,7 +148,11 @@ contents:
 		content:attr(title);
 		margin-right:0.1em;
 		font-size:130%;
-		font-family: 'LigatureSymbols';
+		-webkit-font-feature-settings: "liga" 1, "dlig" 1;
+		-moz-font-feature-settings: "liga=1, dlig=1";
+		-ms-font-feature-settings: "liga" 1, "dlig" 1;
+		-o-font-feature-settings: "liga" 1, "dlig" 1;
+		font-feature-settings: "liga" 1, "dlig" 1;
 		}
 	}
 

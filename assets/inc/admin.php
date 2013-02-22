@@ -30,136 +30,285 @@ function null_required_plugins() {
     */
     
     // required plugins
-    // advanced custom fields
-    $plugins[] = array(
+	// none are currently required 
+    /*$plugins['acf'] = array(
         'name'      		=> 'Advanced Custom Fields',
         'slug'      		=> 'advanced-custom-fields',
         'required'  		=> true,
-        'force_activation' 	=> true
+        //'force_activation' 	=> true
+    );*/ 
+
+    // optional plugins - from my favourites http://profiles.wordpress.org/scottsweb
+    // advanced custom fields
+    $plugins['acf'] = array(
+        'name'      		=> 'Advanced Custom Fields',
+        'slug'      		=> 'advanced-custom-fields',
+        'required'  		=> false,
     );       
-    
-    // optional plugins
+
+    $plugins['bbpress'] = array(
+        'name'      		=> 'bbPress',
+        'slug'      		=> 'bbpress',
+        'required'  		=> false,
+    );  
+
+    // live edit
+    $plugins['live-edit'] = array(
+        'name'      		=> 'Live Edit',
+        'slug'      		=> 'live-edit',
+        'required'  		=> false,
+        //'force_activation' 	=> true
+    );  
+
+    // regenerate thumbnails
+    $plugins['posts-to-posts'] = array(
+        'name'      => 'Posts 2 Posts',
+        'slug'      => 'posts-to-posts',
+        'required'  => false,
+    );
+
+    // regenerate thumbnails
+    $plugins['regenerate-thumbnails'] = array(
+        'name'      => 'Regenerate Thumbnails',
+        'slug'      => 'regenerate-thumbnails',
+        'required'  => false,
+    );
+
     // wordpress seo
-    $plugins[] = array(
+    $plugins['wordpress-seo'] = array(
         'name'      => 'WordPress SEO',
         'slug'      => 'wordpress-seo',
         'required'  => false,
     );
-    
+
+    // google analyticator
+    $plugins['google-analyticator'] = array(
+        'name'      => 'Google Analyticator',
+        'slug'      => 'google-analyticator',
+        'required'  => false,
+    );
+
     // mobble
-    $plugins[] = array(
+    $plugins['mobble'] = array(
         'name'      => 'mobble',
         'slug'      => 'mobble',
         'required'  => false,
     );
 
-    // simple page ordering
-    $plugins[] = array(
-        'name'      => 'Simple Page Ordering',
-        'slug'      => 'simple-page-ordering',
-        'required'  => false,
-    );
-    
     // duplicate widget
-    $plugins[] = array(
+    $plugins['duplicate-widget'] = array(
         'name'      => 'Duplicate Widget',
         'slug'      => 'duplicate-widget',
         'required'  => false,
     );
 
-    // wordpress file monitor plus
-    $plugins[] = array(
-        'name'      => 'WordPress File Monitor Plus',
-        'slug'      => 'wordpress-file-monitor-plus',
-        'required'  => false,
-    );
-    
-    // wordfence
-    $plugins[] = array(
-        'name'      => 'Wordfence Security',
-        'slug'      => 'wordfence',
-        'required'  => false,
-    );
-    
-    // drag and drop featured image
-    $plugins[] = array(
-        'name'      => 'Drag & Drop Featured Image',
-        'slug'      => 'drag-drop-featured-image',
+    // wp no category base
+    $plugins['wp-no-category-base'] = array(
+        'name'      => 'WP No Category Base',
+        'slug'      => 'wp-no-category-base',
         'required'  => false,
     );
 
     // jetpack
-    $plugins[] = array(
+    $plugins['jetpack'] = array(
         'name'      => 'Jetpack',
         'slug'      => 'jetpack',
         'required'  => false,
     );
-    
+
+    // social - to test
+    /*$plugins['social'] = array(
+        'name'      => 'Social',
+        'slug'      => 'social',
+        'required'  => false,
+    );*/
+
+    // twitter-mentions-as-comments - to test
+    /*$plugins['twitter-mentions-as-comments'] = array(
+        'name'      => 'Twitter Mentions as Comments',
+        'slug'      => 'twitter-mentions-as-comments',
+        'required'  => false,
+    );*/
+
+    // wp-smushit
+    $plugins['wp-smushit'] = array(
+        'name'      => 'WP Smush.it',
+        'slug'      => 'wp-smushit',
+        'required'  => false,
+    );
+
+    // redirection
+    $plugins['redirection'] = array(
+        'name'      => 'Redirection',
+        'slug'      => 'redirection',
+        'required'  => false,
+    );
+
+    // simple history
+    $plugins['simple-history'] = array(
+        'name'      => 'Simple History',
+        'slug'      => 'simple-history',
+        'required'  => false,
+    );
+
+    // shortcode developer - to test
+    /*$plugins['shortcode-developer'] = array(
+        'name'      => 'Shortcode Developer',
+        'slug'      => 'shortcode-developer',
+        'required'  => false,
+    );*/
+
     // relevanssi
-    /*$plugins[] = array(
+    $plugins['relevanssi'] = array(
         'name'      => 'Relevanssi',
         'slug'      => 'relevanssi',
         'required'  => false,
-    );*/
+    );
     
     // search everything
-    $plugins[] = array(
+    $plugins['search-everything'] = array(
         'name'      => 'Search Everything',
         'slug'      => 'search-everything',
         'required'  => false,
     );    
     
+    // performance
     // w3 total cache
-    $plugins[] = array(
+    $plugins['w3-total-cache'] = array(
         'name'      => 'W3 Total Cache',
         'slug'      => 'w3-total-cache',
         'required'  => false,
     ); 
-  
+
+    // members
+    $plugins['members'] = array(
+        'name'      => 'Members',
+        'slug'      => 'members',
+        'required'  => false,
+    );
+
     // wp super cache
-    /*$plugins[] = array(
+    $plugins['wp-super-cache'] = array(
         'name'      => 'WP Super Cache',
         'slug'      => 'wp-super-cache',
         'required'  => false,
-    );*/ 
+    );
+
+	// MinQueue
+	$plugins['minqueue'] = array(
+        'name'      => 'MinQueue',
+        'slug'      => 'minqueue',
+        'required'  => false,
+	);
+
+	// bj lazy load
+	$plugins['bj-lazy-load'] = array(
+        'name'      => 'BJ Lazy Load',
+        'slug'      => 'bj-lazy-load',
+        'required'  => false,
+	);
     
+    // usability
+    // simple page ordering
+    $plugins['spo'] = array(
+        'name'      => 'Simple Page Ordering',
+        'slug'      => 'simple-page-ordering',
+        'required'  => false,
+    );
+
     // wp help
-    $plugins[] = array(
+    $plugins['wphelp'] = array(
         'name'      => 'WP Help',
         'slug'      => 'wp-help',
         'required'  => false,
     ); 
     
-    // backup tool
+    // backup & security
     // if multisite recommend a different backup plugin
     if ( is_multisite() ) {
-	    $plugins[] = array(
+	    $plugins['backwpup'] = array(
 	        'name'      => 'BackWPup',
 	        'slug'      => 'backwpup',
 	        'required'  => false,
 	    ); 
 	} else {
-	    $plugins[] = array(
+	    $plugins['backupwp'] = array(
 	        'name'      => 'BackUpWordPress',
 	        'slug'      => 'backupwordpress',
 	        'required'  => false,
 	    ); 
     }
-    
+
+    // wordfence
+    $plugins['wordfence'] = array(
+        'name'      => 'Wordfence Security',
+        'slug'      => 'wordfence',
+        'required'  => false,
+    );
+
+    // repress
+    $plugins['repress'] = array(
+        'name'      => 'RePress',
+        'slug'      => 'repress',
+        'required'  => false,
+    );
+
+    // akismet
+    $plugins['akismet'] = array(
+        'name'      => 'Akismet',
+        'slug'      => 'akismet',
+        'required'  => false,
+    );
+
+    // cloudflare
+    $plugins['cloudflare'] = array(
+        'name'      => 'CloudFlare',
+        'slug'      => 'cloudflare',
+        'required'  => false,
+    );
+
+    // wordpress file monitor plus
+    $plugins['wordpress-file-monitor-plus'] = array(
+        'name'      => 'WordPress File Monitor Plus',
+        'slug'      => 'wordpress-file-monitor-plus',
+        'required'  => false,
+    );
+
+    // bad behavior
+    $plugins['bad-behavior'] = array(
+        'name'      => 'Bad Behavior',
+        'slug'      => 'bad-behavior',
+        'required'  => false,
+    );
+
     // if development mode is on then recommend some developer plugins
     if (of_get_option('development_mode', '0')) { 
     	
     	// developer
-	    $plugins[] = array(
+	    $plugins['developer'] = array(
 	        'name'      => 'Developer',
 	        'slug'      => 'developer',
 	        'required'  => false,
 	    ); 
     
 	    // theme check
-	    $plugins[] = array(
+	    $plugins['theme-check'] = array(
 	        'name'      => 'Theme-Check',
 	        'slug'      => 'theme-check',
+	        'required'  => false,
+	    );
+
+	    // VIP scanner
+	    $plugins['vip-scanner'] = array(
+	        'name'      => 'VIP Scanner',
+	        'slug'      => 'vip-scanner',
+	        'required'  => false,
+	    );
+
+	    // debug bar transients
+	    $plugins['debug-bar-transients'] = array(
+	        'name'      => 'Debug Bar Transients',
+	        'slug'      => 'debug-bar-transients',
 	        'required'  => false,
 	    );
 	}  
@@ -172,13 +321,13 @@ function null_required_plugins() {
         'default_path'      => '',                           	// default absolute path to pre-packaged plugins
         'parent_menu_slug'  => 'plugins.php',         			// default parent menu slug
         'parent_url_slug'   => 'plugins.php',         			// default parent URL slug
-        'menu'              => 'install-required-plugins',   	// menu slug
-        'has_notices'       => true,                         	// show admin notices or not
+        'menu'              => 'install-compatible-plugins',   	// menu slug
+        'has_notices'       => false,                         	// show admin notices or not
         'is_automatic'      => false,            				// automatically activate plugins after installation or not
         'message'           => '',               				// message to output right before the plugins table
         'strings'           => array(
-            'page_title'                                => __('Required/Recommended Plugins', $theme_text_domain),
-            'menu_title'                                => __('Theme Plugins', $theme_text_domain),
+            'page_title'                                => __('Compatible &amp; Recommended Plugins', $theme_text_domain),
+            'menu_title'                                => __('Compatible Plugins', $theme_text_domain),
             'installing'                                => __('Installing Plugin: %s', $theme_text_domain), // %1$s = plugin name
             'oops'                                      => __('Something went wrong with the plugin API.', $theme_text_domain),
             'notice_can_install_required'               => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.'), // %1$s = plugin name(s)
@@ -646,7 +795,22 @@ jQuery(document).ready(function() {
 </script>
 <?php
 }	
-  
+
+/***************************************************************
+* Function null_wpas_init
+* Bundle the WP App Store
+***************************************************************/
+
+if (!of_get_option('disable_wpas', '0')) {
+	add_action( 'init', 'null_wpas_init' );
+}
+
+function null_wpas_init() {
+    $affiliate_id = '3803';
+    global $null_wpas_installer;
+    $null_wpas_installer = new WP_App_Store_Installer($affiliate_id);
+}
+
 /***************************************************************
 * Class null_user_caps
 * Protect agains user level promotion by shop managers

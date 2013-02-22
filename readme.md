@@ -64,19 +64,17 @@ Credits go to:
 
 I will do my best to keep this updated as the framework develops - please let me know if I have missed you out.
 
-### Do you have any documentation?
+### Documentation?
 
-No yet, but it is planned for version 1.0. When using null as a parent theme there are plenty of hooks and filters to make use of which we need to document, in the meantime browse the code (it is very well commented).
+No yet, but it is planned. When using null as a parent theme there are plenty of hooks and filters to make use of which we need to document, in the meantime browse the code (it is very well commented).
 
 ### What are your plans for future versions?
 
-A roadmap of sorts can be found at the top of the functions.php file. Some of the more ambitious features I hope to add at some point include:
+A roadmap of sorts can be found at the top of functions.php. Some of the more ambitious features I hope to add at some point include:
 
-* Automatic minification of JavaScript
 * Building virtual page templates and grids for use on pages and custom post types
 * Improved typographic control
 * Further integration with the WordPress theme customiser
-* Automatic updates via GitHub
 
 ### Is there a child starter theme available?
 
@@ -94,6 +92,27 @@ Not at the moment. It may never pass as we require the use of file_put_contents 
 Please submit all bugs, questions and suggestions to the [GitHub Issues](https://github.com/scottsweb/null/issues) queue.
 
 ## changelog
+
+#### 0.99
+* Option (on by default) to encode email address in the content editor (tinymce)
+* Update retina media queries
+* Update Ligature Symbols
+* Fix small issue when child theme unsets custom header/background settings
+* Update some incorrect uses of site_url() for home_url()
+* Fixed Undefined index: WP_Widget_Recent_Comments in theme.php on line 169 when recent comments widget is disabled
+* WP App Store now bundled with the framework with option to unload
+* Bundled ACF lite when plugin is not available
+* No longer require any third party plugins (the nag has been removed), more plugins are recommended as compatible
+* Plugin compatibility layer added to better support third party plugins
+* Only include the comments_template() when comments are enabled
+* Update jQuery UI to 1.10.1
+* Update language mo/po files in both null and null-child
+* A few more functions can now be overwritten by the child theme
+* Added filter (null_excerpt) for excerpt more text - one filter will change all occurrences
+* Moved wp_footer() to a more appropriate theme location within footer.php
+* First and last classes on WordPress menus
+* Update .htaccess rules
+* A basic maintenance mode to allow working on your site in private
 
 #### 0.98
 * Moved IE specific styles into a LESS file for simplicity

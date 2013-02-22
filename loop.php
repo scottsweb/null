@@ -1,7 +1,7 @@
 <?php if ( have_posts() ) : ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
-<article <?php post_class() ?> role="article">
+<article <?php post_class() ?> role="article" <?php if (function_exists("live_edit")) { live_edit(apply_filters('null_live_edit_loop', 'post_title, post_excerpt')); } ?>>
 	<header>		
 		<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 		<?php if ( is_sticky() ) : ?>

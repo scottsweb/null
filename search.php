@@ -2,7 +2,7 @@
 
 		<div id="content" role="main">
 
-			<h2 class="page-title"><?php _e('Search Results for:', 'null'); ?> <span><?php the_search_query() ?></span></h2>
+			<h2 class="page-title"><?php printf(__( 'Search Results for: %s', 'null' ), '<span>' . get_search_query() . '</span>'); ?></h2>
 
 			<?php get_template_part('loop', 'search'); ?>
 

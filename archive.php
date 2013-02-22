@@ -13,7 +13,7 @@
 			<?php /** if this is a yearly archive **/ } else if (is_year()) { ?>
 			<h2 class="page-title"><?php the_time('Y'); ?> <?php _e('Archive', 'null'); ?></h2>
 			<?php /** if this is a search **/ } elseif (is_search()) { ?>
-			<h2 class="paeg-title"><?php _e('Search Results', 'null'); ?></h2>
+			<h2 class="page-title"><?php _e('Search Results', 'null'); ?></h2>
 			<?php /** if this is an author archive **/ } else if (is_author()) { ?>
 			<h2 class="page-title"><?php _e('Author Archive', 'null'); ?></h2>
 			<?php /** if this is a paged archive **/ } else if (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>

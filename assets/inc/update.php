@@ -196,7 +196,8 @@ function null_upgrader_source_selection_filter($source, $remote_source, $upgrade
 
 	$theme_info = null_theme_information();
 
-	// only change the source for the github zip file	
+	// only change the source for the github zip file - the source changed in WP3.5 - if this fails, auto updates fail
+	// if your using this code elsewhere then change the string below
 	if (!null_string_search('scottsweb-null', $source)) return $source; 
 	
 	if (isset($source, $remote_source, $theme_info['slug'])) {

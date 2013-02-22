@@ -101,22 +101,25 @@ function null_language_attributes() {
 
 /***************************************************************
 * Function null_title 
-* Calculate title of the current page
+* Calculate title of the current page, can be overwritten by child
 ***************************************************************/
 
-function null_title() {
+if (!function_exists('null_title')) {
 
-	global $page, $paged;
-	
-	wp_title('|', true, 'right');
-	bloginfo('name');
-	
-	$site_description = get_bloginfo('description', 'display');
-	if ($site_description && (is_home() || is_front_page()))
-		echo " | $site_description";
-	
-	if ($paged >= 2 || $page >= 2)
-		echo ' | ' . sprintf(__( 'Page %s', 'null' ), max($paged, $page));
+	function null_title() {
+
+		global $page, $paged;
+		
+		wp_title('|', true, 'right');
+		bloginfo('name');
+		
+		$site_description = get_bloginfo('description', 'display');
+		if ($site_description && (is_home() || is_front_page()))
+			echo " | $site_description";
+		
+		if ($paged >= 2 || $page >= 2)
+			echo ' | ' . sprintf(__( 'Page %s', 'null' ), max($paged, $page));
+	}
 }
 
 /***************************************************************
@@ -166,7 +169,9 @@ add_action('widgets_init', 'null_remove_recent_comments_style', 99);
 
 function null_remove_recent_comments_style() {
 	global $wp_widget_factory;
-	remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+	if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+		remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
+	}
 }
 
 /***************************************************************
@@ -236,7 +241,7 @@ function null_wp_head() {
 	<!-- allow pinned app in ie9+ / metro -->
 	<meta name="application-name" content="<?php bloginfo('name'); ?>" />
 	<meta name="msapplication-tooltip" content="<?php bloginfo('description'); ?>"/>
-	<meta name="msapplication-starturl" content="<?php echo site_url(); ?>"/>
+	<meta name="msapplication-starturl" content="<?php echo home_url(); ?>"/>
 	<?php if ($ie9colour = of_get_option('ie9_colour')) { ?><meta name="msapplication-navbutton-color" content="<?php echo $ie9colour; ?>"><?php echo "\n"; }  ?>
 	<?php
 	}
@@ -264,7 +269,7 @@ function null_wp_head() {
 	}
 	
 	// google analytics  (from general settings)
-	if ($tracking = of_get_option('gat')) {
+	if ($tracking = of_get_option('gat', '')) {
 	?>
 	
 	<!-- google analytics -->
@@ -465,9 +470,9 @@ if (!function_exists('null_logo')) {
 	function null_logo() {
 		
 		if ($logo_image = of_get_option('logo', '0')) {
-			$logo = '<a href="'. site_url() .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg logo"><img src="'. $logo_image .'" alt="'. get_bloginfo('name') .'" /></a>';
+			$logo = '<a href="'. home_url() .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg logo"><img src="'. $logo_image .'" alt="'. get_bloginfo('name') .'" /></a>';
 		} else {
-			$logo = '<a href="'. site_url() .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg no-logo">'. get_bloginfo('name') .'</a>';
+			$logo = '<a href="'. home_url() .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg no-logo">'. get_bloginfo('name') .'</a>';
 		}
 	
 		$output = apply_filters('null_custom_logo', $logo);
@@ -495,6 +500,56 @@ function null_navigation_menu() {
 
 function null_navigation_menu_fallback() { 
 	wp_page_menu('show_home='.__('Home','null')); 
+}
+
+/***************************************************************
+* Function null_filter_menu_class
+* Add first and last classes to menus
+***************************************************************/
+
+add_filter('wp_nav_menu_objects', 'null_filter_menu_class');
+
+function null_filter_menu_class( $objects ) {
+
+ 	// Add first/last classes to nested menu items
+    $ids        = array();
+    $parent_ids = array();
+    $top_ids    = array();
+    foreach ( $objects as $i => $object ) {
+        // If there is no menu item parent, store the ID and skip over the object
+        if ( 0 == $object->menu_item_parent ) {
+            $top_ids[$i] = $object;
+            continue;
+        }
+
+        // Add first item class to nested menus
+        if ( ! in_array( $object->menu_item_parent, $ids ) ) {
+            $objects[$i]->classes[] = 'first-menu-item';
+            $ids[]          = $object->menu_item_parent;
+        }
+
+        // If we have just added the first menu item class, skip over adding the ID
+        if ( in_array( 'first-menu-item', $object->classes ) )
+            continue;
+
+        // Store the menu parent IDs in an array
+        $parent_ids[$i] = $object->menu_item_parent;
+    }
+
+    // Remove any duplicate values and pull out the last menu item
+    $sanitized_parent_ids = array_unique( array_reverse( $parent_ids, true ) );
+
+    // Loop through the IDs and add the last menu item class to the appropriate objects
+    foreach ( $sanitized_parent_ids as $i => $id )
+        $objects[$i]->classes[] = 'last-menu-item';
+
+    // Finish it off by adding classes to the top level menu items
+    $objects[1]->classes[] = 'first-menu-item'; // We can be assured 1 will be the first item in the menu :-)
+    $objects[end( array_keys( $top_ids ) )]->classes[] = 'last-menu-item';
+
+    // Return the menu objects
+    return $objects;
+
 }
 
 /***************************************************************
@@ -611,37 +666,43 @@ if (!function_exists('null_get_time')) {
 
 add_filter('excerpt_length', 'null_excerpt_length');
 
-function null_excerpt_length($length) {
-	return 42;
+if (!function_exists('null_excerpt_length')) {
+	function null_excerpt_length($length) {
+		return 42;
+	}
 }
 
 /***************************************************************
 * Function null_get_excerpt_more 
-* Add the same to excerpt more link to custom excerpts
+* Add the same to excerpt more link to custom excerpts, can be overwritten by child
 ***************************************************************/
 
 add_filter('get_the_excerpt', 'null_get_excerpt_more');
 
-function null_get_excerpt_more( $output ) {
+if (!function_exists('null_get_excerpt_more')) {
+	function null_get_excerpt_more( $output ) {
 
-	global $post;
+		global $post;
 
-	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= 	'<a href="'. get_permalink($post->ID) . '">' . __(' &hellip;Continue reading &raquo;', 'null') . '</a>';
+		if ( has_excerpt() && ! is_attachment() ) {
+			$output .= 	apply_filters('null_except', '<a href="'. get_permalink($post->ID) . '">' . __(' &hellip;Continue reading &raquo;', 'null') . '</a>');
+		}
+		return $output;
 	}
-	return $output;
 }
 
 /***************************************************************
 * Function null_excerpt_more 
-* Set a custom excerpt more link
+* Set a custom excerpt more link, can be overwritten by child
 ***************************************************************/
 
 add_filter('excerpt_more', 'null_excerpt_more');
 
-function null_excerpt_more($more) {
-	global $post;
-	return '<a href="'. get_permalink($post->ID) . '">' . __(' &hellip;Continue reading &raquo;', 'null') . '</a>';
+if (!function_exists('null_excerpt_more')) {
+	function null_excerpt_more($more) {
+		global $post;
+		return apply_filters('null_excerpt', '<a href="'. get_permalink($post->ID) . '">' . __(' &hellip;Continue reading &raquo;', 'null') . '</a>');
+	}
 }
 
 /***************************************************************
@@ -706,16 +767,18 @@ function null_user_posts_count($user_id, $what_to_count = 'post') {
 * Estimate the reading time of a chunk of content
 ***************************************************************/
 
-function null_estimated_reading_time($content) {
-	$word = str_word_count(strip_tags($content));
-	$m = floor($word / 200);
-	$s = floor($word % 200 / (200 / 60));
-	if ($m) {
-		$est = sprintf(_n("%d minute", "%d minutes", $m), $m) . ', ' . sprintf(_n("%d second", "%d seconds", $s), $s);
-	} else {
-		$est = sprintf(_n("%d second", "%d seconds", $s), $s);
+if (!function_exists('null_estimated_reading_time')) {
+	function null_estimated_reading_time($content) {
+		$word = str_word_count(strip_tags($content));
+		$m = floor($word / 200);
+		$s = floor($word % 200 / (200 / 60));
+		if ($m) {
+			$est = sprintf(_n("%d minute", "%d minutes", $m), $m) . ', ' . sprintf(_n("%d second", "%d seconds", $s), $s);
+		} else {
+			$est = sprintf(_n("%d second", "%d seconds", $s), $s);
+		}
+		return $est;
 	}
-	return $est;
 }
 
 /***************************************************************
@@ -939,25 +1002,7 @@ add_action('wp_footer', 'null_wp_footer');
 
 function null_wp_footer() {
 	
-	// wordpress credit
-	if ($wordpress_credit = of_get_option('wordpress_credit')) {
-	?>
-	
-	<!-- wordpress credit -->
-	<span id="generator-link"><?php echo $wordpress_credit; ?></span>
-	<?php
-	}
-	
-	// designer credit
-	if ($theme_credit = of_get_option('theme_credit')) {
-	?>
-	
-	<!-- designer credit -->
-	<span id="theme-link"><?php echo $theme_credit; ?></span>
-	<?php
-	}
-	
-	// custom header meta (from general settings)
+	// custom footer meta (from general settings)
 	if ($meta = of_get_option('custom_footer_meta')) {
 	?>
 	

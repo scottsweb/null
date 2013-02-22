@@ -46,6 +46,7 @@ body
 	background-color: @white;
 	background-image: url(@{stylesheeturi}/assets/images/@{backgroundimage}.png);
 	background-repeat: repeat;
+
 	}
 	
 #wrapper
@@ -55,6 +56,7 @@ body
 	margin: @baseline auto;
 	max-width: 900px;
 	//background: @white url(http://griddle.it/900-@{columns}-@{gutter-width}) repeat-y center top;
+	//background: url('http://www.baselineme.com/32') center top repeat;
 	background: @white;
 	}
 
@@ -588,7 +590,7 @@ body
 		border-bottom: 1px solid @lightergrey;
 		}
 		
-	#wp-footer
+	#null-footer
 		{
 		text-align: center;
 		}
@@ -689,10 +691,14 @@ body
 --------------------------------------------------------------------------------------- */
 
 // retina displays
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), 
-only screen and (min--moz-device-pixel-ratio: 1.5), 
-only screen and (min-device-pixel-ratio: 1.5) 
-    {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 144dpi),
+only screen and (min-resolution: 2dppx)
+	{
 	@import "2x.less"; 
 	} 
 

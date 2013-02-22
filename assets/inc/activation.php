@@ -24,7 +24,7 @@ function null_theme_activated() {
 	// else show hints
 	} else {
 		$output .= '<div id="null-activated" class="updated">';
-		$output .= '<p>'.__('null successfully activated. Before you get started setting up your new website would you like us to configure WordPress for you?', 'null').'</p>';
+		$output .= '<p>'.__('null successfully activated. Before you get started setting up your website would you like null to configure WordPress for you?', 'null').'</p>';
 		$output .= '<p><a class="button-primary" href="' . admin_url('themes.php?setup=true') . '">'.__('Yes! Setup WordPress', 'null').'</a>';
 		$output .= '<a class="button-secondary" href="' . admin_url('themes.php?page=options-framework') . '">'.__('No Thanks','null').'</a></p>';
 		$output .= '</div>';
@@ -96,7 +96,7 @@ function null_activate() {
 	// don't organize uploads by year and month
 	update_option('uploads_use_yearmonth_folders', 0);
 	//update_option('upload_path', 'assets');
-	update_option('upload_url_path', site_url('/uploads'));
+	update_option('upload_url_path', home_url('/uploads'));
 	
 	// automatically create menus and set their locations
 	// add all pages to the Primary Navigation
