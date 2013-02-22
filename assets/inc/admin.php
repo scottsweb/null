@@ -801,7 +801,7 @@ jQuery(document).ready(function() {
 * Bundle the WP App Store
 ***************************************************************/
 
-if (!of_get_option('disable_wpas', '0')) {
+if (!of_get_option('disable_wpas', '0') && !is_multisite()) {
 	add_action( 'init', 'null_wpas_init' );
 }
 
