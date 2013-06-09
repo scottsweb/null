@@ -7,7 +7,7 @@
 define('UPDATE_URL', 'http://scott.ee'); // url to theme site or changelog
 define('UPDATE_API_URL', 'https://api.github.com/repos/scottsweb/null');
 define('UPDATE_RAW_URL', 'https://raw.github.com/scottsweb/null/master');
-define('UPDATE_ZIP_URL', 'https://github.com/scottsweb/null/zipball/master');
+define('UPDATE_ZIP_URL', 'https://github.com/scottsweb/null/archive/master.zip');
 			
 /***************************************************************
 * Function null_hide_theme
