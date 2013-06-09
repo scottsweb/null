@@ -80,6 +80,7 @@
 	to-do: test against the theme guide: http://developer.wordpress.com/themes/
 
 	soon
+	to-do: move product post type to child
 	to-do: cache 
 			- (transients) null_get_extensions?
 			- (transients) menus? - http://www.codeforest.net/wordpress-transients-api-caching-benchmarks

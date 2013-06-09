@@ -7,7 +7,7 @@
 define('UPDATE_URL', 'http://scott.ee'); // url to theme site or changelog
 define('UPDATE_API_URL', 'https://api.github.com/repos/scottsweb/null');
 define('UPDATE_RAW_URL', 'https://raw.github.com/scottsweb/null/master');
-define('UPDATE_ZIP_URL', 'https://github.com/scottsweb/null/archive/master.zip');
+define('UPDATE_ZIP_URL', 'https://codeload.github.com/scottsweb/null/zip/master');
 			
 /***************************************************************
 * Function null_hide_theme
@@ -201,7 +201,8 @@ function null_upgrader_source_selection_filter($source, $remote_source, $upgrade
 	if (strpos($source, 'null-master') === false) return $source;
 	
 	if (isset($source, $remote_source, $theme_info['slug'])) {
-		$corrected_source = $theme_info['slug'];
+		
+		$corrected_source = $remote_source .'/'.$theme_info['slug'].'/';
 		
 		if(@rename($source, $corrected_source)) {
 			
