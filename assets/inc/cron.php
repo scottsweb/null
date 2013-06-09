@@ -5,7 +5,7 @@
 * Add a few more schedules to WordPress cron (add options to enable at some point?)
 ***************************************************************/
 
-add_filter( 'cron_schedules', 'null_cron_schedules' );
+add_filter('cron_schedules', 'null_cron_schedules');
 
 function null_cron_schedules( $param ) {
 	return array(

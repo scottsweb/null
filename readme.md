@@ -93,6 +93,41 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 
 ## changelog
 
+#### 1.0b
+* Updated option framework to be compatible with new media uploader
+* New settings for Windows 8 pinned sites
+* Disabling comments now removes the comments menu
+* Updated Google Map shortcode due to changes in the Google API
+* Flush rewrite rules when saving theme options and altering the registered post types
+* Placeholder text is faded out on focus to improve usability (WebKit)
+* Use a hash of the settings to cache bust the CSS - better save performance using theme customiser
+* Filter for child themes to adjust cache bust variable and pass it into LESS to cache bust CSS images (handy for WPEngine)
+* Allow extension folders (widgets, post types, shortcodes) to be empty 
+* Advanced Custom Fields 4.1.5.1 and an option to disable/unload in theme options
+* [Theme Hook Alliance Compatibility](https://github.com/zamoose/themehookalliance)
+* Ensure of_get_option always has default options
+* Tested against WordPress 3.6
+* Remove last few instances create_function
+* Use core jQuery UI
+* Updated jQuery UI tabs/accordion shortcode due to changes in the API
+* Fix to header meta/RSS options
+* Remove performance options in favour of plugins
+* New static map shortcode [smap center="loc" size="WxH" zoom="14"]
+* New function null_mustache_tags() for passing variables in theme options
+* Remove table of contents code - child theme or plugin territory
+* Improvements to oEmebed (responsive container and options for default player colours and settings)
+* Force TinyMCE editor styles to refresh
+* Use editor styles when null is not used as a parent theme
+* Move null_less_vars to functions so variables are available in admin (for editor styles) and theme
+* Add TinyMCE classes drop down menu to the kitchen sink
+* Validate URLs within theme options
+* Remove the twitter widget due to twitter API changes
+* Remove related posts shortcode as it is not particularly useful and not a good approach
+* Add shortcode interface for TinyMCE
+* Remove QR shortcode as shortcodes are 99% useless
+* Move less important shortcodes to [null-child](https://github.com/scottsweb/null-child)
+* New social profiles widget
+
 #### 0.99
 * Option (on by default) to encode email address in the content editor (tinymce)
 * Update retina media queries
@@ -113,6 +148,7 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 * First and last classes on WordPress menus
 * Update .htaccess rules
 * A basic maintenance mode to allow working on your site in private
+* Update function null_user_posts_count()
 
 #### 0.98
 * Moved IE specific styles into a LESS file for simplicity

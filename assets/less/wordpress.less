@@ -5,6 +5,7 @@ contents:
 
 	1. WordPress - Handy re-usable Wordpress specific classes
 	2. Shortcodes & Widgets
+	3. oEmbed
 	
 */
 
@@ -97,6 +98,32 @@ blockquote.right
 	width: 33%;
 	}
 
+// responsive 
+
+.entry-content img,
+.comment-content img,
+.widget img 
+	{
+    max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
+	}
+
+img[class*="align"],
+img[class*="wp-image-"] 
+	{
+    height: auto; /* Make sure images with WordPress-added height and width >attributes are scaled correctly */
+	}
+
+img.size-full 
+	{
+    max-width: 97.5%;
+    width: auto; /* Prevent stretching of full-size images with height and >>width attributes in IE8 */
+	}
+
+.wp-caption 
+	{ 
+	max-width: 100%;
+	}
+	
 // admin bar settings 
 
 .admin-bar.admin-bar-absolute #wpadminbar
@@ -148,12 +175,18 @@ img.qrcode-shortcode
 .map-shortcode-canvas
 	{
 	margin-bottom: @baseline;
+
+	img
+		{
+		max-width: inherit;
+		}
 	}
 
 // accordion shortcode
 
 .accordion-shortcode
 	{
+	.clearfix();
 	margin-bottom: @baseline;
 	
 	.aheader
@@ -163,22 +196,31 @@ img.qrcode-shortcode
 		background: @lightergrey;
 		cursor: pointer;
 		margin-bottom: 1px;
+		font-weight: bold;
+
+		&:hover
+			{
+			background: @linkcol;
+			color: @white;
+			}
 		}
 
 	.aheader.ui-state-active
 		{
-		background: fadeout(@primarycol, 95%);
-		color: @black;
+		background: @primarycol;
+		color: @white;
 		}
 	
 	.apane
 		{
-		padding: @baseline 0;
+		padding: @baseline/2;
+		background: @lightergrey;
+		margin-bottom: 1px;
 		}
 	
-	.apane:last-child
+	p:last-child
 		{
-		padding-bottom: 0;
+		margin-bottom: 0;
 		}
 	}
 
@@ -197,25 +239,30 @@ img.qrcode-shortcode
 	
 	.tabs li
 		{
+		font-weight: bold;
 		float: left;
 		display: block;
-		padding: @baseline/4 @baseline/2;
-		}
-		
-	.tabs.ui-tabs-nav .ui-tabs-active
-		{
-		background: @primarycol;
-		color: #fff;
+		margin-right: 1px;
 		}
 	
-	.ui-tabs-nav .ui-tabs-active a
+	.ui-tabs-nav .ui-tabs-active a,
+	.ui-tabs-nav .ui-tabs-active a:hover
 		{
-		color: #fff;
+		background: @primarycol;
+		color: @white;
 		}
 		
 	.ui-tabs-nav a
 		{
 		text-decoration: none !important;
+		display: block;
+		padding: @baseline/4 @baseline/2;
+
+		&:hover
+			{
+			background-color: @primarycol;
+			color: @white;
+			}
 		}
 			
 	.ui-tabs-hide
@@ -225,7 +272,13 @@ img.qrcode-shortcode
 	
 	.tpane
 		{
-		margin-top: @baseline;
+		padding: @baseline/2;
+		background: @lightergrey;
+
+		p:last-child
+			{
+			margin-bottom: 0;
+			}
 		}
 	}
 
@@ -237,9 +290,6 @@ img.qrcode-shortcode
 	
 	.toggle-container 
 		{
-		padding: 10px;
-		margin-bottom: 1px;
-		background-color: #fff;
 		}
 		
 	p.trigger 
@@ -253,6 +303,13 @@ img.qrcode-shortcode
 		padding:  @baseline/4 @baseline/2;
 		background: @lightergrey;
 		cursor: pointer;
+		font-weight: bold;
+
+		&:hover
+			{
+			background: @linkcol;
+			color: @white;
+			}
 		}
 	
 	p.trigger a:hover,
@@ -262,8 +319,8 @@ img.qrcode-shortcode
 	
 	p.trigger.active a 
 		{
-		background: fadeout(@primarycol, 95%);
-		color: @black;
+		background: @primarycol;
+		color: @white;
 		}
 	}
 	
@@ -304,5 +361,54 @@ img.qrcode-shortcode
 	.flickr-link
 		{
 		clear: both;
+		}
+	}
+
+/* 3. oEmbed
+--------------------------------------------------------------------------------------- */
+
+.o-container 
+	{
+
+	&.youtube,
+	&.vimeo,
+	&.slidesharenet
+		{
+	    position: relative;
+	    padding-top: @baseline;
+	    padding-bottom: 49.25%;
+	    height: 0;
+		overflow: hidden;
+		}
+
+	&.soundcloud
+		{
+		position: relative;	    
+	    height: 165px;
+		overflow: hidden;
+		background-size: 100px 15px;		
+		}
+
+	&.youtube,
+	&.vimeo,
+	&.slidesharenet,
+	&.soundcloud
+		{
+
+		iframe,
+		object,
+		embed
+			{
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+			}
+		}
+
+	&.instagram img
+		{
+		width: 100%;
 		}
 	}

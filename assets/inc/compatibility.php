@@ -10,17 +10,19 @@ if (!function_exists('is_plugin_active')) { load_template(ABSPATH . 'wp-admin/in
 
 // when loaded uses an extra 1MB of memory - option to turn off for performance?
 
-if (is_plugin_inactive('advanced-custom-fields/acf.php') && !function_exists('get_field')) {
+if (is_plugin_inactive('advanced-custom-fields/acf.php') && !function_exists('get_field') && !of_get_option('disable_acf', '0')) {
 
 	// make sure we are not currently trying to activate ACF
 	if (is_admin()) {
 		$action = (isset($_GET['action']) ? $_GET['action'] : '');
 		$plugin = (isset($_GET['plugin']) ? $_GET['plugin'] : '');
-		if ($action != 'activate' && $plugin != 'advanced-custom-fields') {
-			load_template(get_template_directory() . '/assets/lib/acf/acf-lite.php');
+		if ($action != 'activate' && $plugin != 'advanced-custom-fields/acf.php') {
+			define('ACF_LITE' , true);
+			load_template(get_template_directory() . '/assets/lib/acf/acf.php');
 		}
 	} else {
-		load_template(get_template_directory() . '/assets/lib/acf/acf-lite.php');
+		define('ACF_LITE', true);
+		load_template(get_template_directory() . '/assets/lib/acf/acf.php');
 	}
 }
 
@@ -54,8 +56,24 @@ if (is_plugin_active('google-analyticator/google-analyticator.php')) {
 	}
 }
 
+/***************************************************************
+* Plugin - Google Analytics for WordPress
+* Remove framework options for Google Analytics tracking
+***************************************************************/
+
+if (is_plugin_active('google-analytics-for-wordpress/googleanalytics.php')) {
+
+	add_filter('null_options', 'null_google_analytics_remove_options');
+
+	function null_google_analytics_remove_options($options) {
+		unset($options['gat']);
+		unset($options['gat_external_download']);
+		return $options;
+	}
+}
+
 // wordpress seo 
 // infinite scroll in jetpack - http://jetpack.me/support/infinite-scroll/ & https://github.com/Automattic/_s/blob/master/inc/jetpack.php
-
+// html compression - options to toggle (need filters)
 
 ?>

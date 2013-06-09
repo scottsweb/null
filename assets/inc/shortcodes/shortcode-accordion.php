@@ -1,6 +1,7 @@
 <?php
 /*
-Shortcode Name: jQuery UI Accordion [accordion][atab title="title"][/atab][/accordion]
+Shortcode Name: jQuery UI Accordion 
+Shortcode Template: [accordion][atab title="title"][/atab][/accordion]
 */
 
 /***************************************************************

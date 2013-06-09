@@ -27,19 +27,26 @@
 	----------------------------------------
 	
 	future
-	to-do: http://gridster.net/ - build virtual templates via UI
+	to-do: http://gridster.net/ - build virtual templates via UI (fork coming soon)
+			- http://jsfiddle.net/maxgalbu/UfyjW/
+			- https://github.com/ducksboard/gridster.js/issues/69
+			- http://headwaythemes.com/features/headway-grid/
+			- http://www.webresourcesdepot.com/grid-builder-drag-n-drop-html-grid-generator/
+			- http://app.responsify.it/
+			- https://www.scrollkit.com/
+			- http://mcpants.github.io/jquery.shapeshift/index.html
 	to-do: bundle xml file import for WordPress (use wordpress import/export feature) - theme unit test installer?
-	to-do: option to toggle forced cropping on standard image sizes - better via plugin http://wordpress.org/extend/plugins/scissors/ OR better cropping?
-	to-do: perhaps move to: http://wordpress.org/extend/plugins/option-tree/ for options? - not quite as good yet
-	to-do: potential performance and debug script http://pbl.elgatonaranja.com/home
+	to-do: perhaps move to: http://wordpress.org/extend/plugins/option-tree/ for options?
+			- 	to-do: pre-configured site settings (so buddypress, multi site, multi author, client etc)
 	to-do: a second take on responsive tables -> http://filamentgroup.com/examples/rwd-table-patterns/ / http://consulenza-web.com/jquery/MediaTable/?
-	to-do: pre-configured site settings (so buddypress, multi site, multi author, client etc)
-	to-do: https://github.com/JosephLenton/PHP-Error/ - for debug mode
+			-  http://css-tricks.com/responsive-data-table-roundup/ - more options for responsive tables
 	to-do: font effects? https://developers.google.com/webfonts/docs/getting_started#Effects - shortcode?
 	to-do: explore the gantry-framework http://www.gantry-framework.org/download
-	to-do: ability to disable built in post types and taxonomies (customise the WP menu - already a hook for this and always different?) - http://core.trac.wordpress.org/ticket/14761
-	to-do: bundle psds with zip for icon/image templates
+	to-do: ability to disable built in post types and taxonomies - http://core.trac.wordpress.org/ticket/14761
 	to-do: move to an existing CSS/LESS framework?
+			- clean up gravity forms less and test with some forms (not using GF much)
+			- a beautiful, minimal, responsive design (old scott.ee site?)
+			- http://typeplate.com/ 
 			- https://github.com/clearleft/clearless
 			- http://twitter.github.com/bootstrap/ also http://bootswatch.com/
 			- http://responsablecss.com/ - baseline is not calculated
@@ -49,35 +56,50 @@
 			- http://kushagragour.in/lab/hint/ - css tooltips 
 			- http://necolas.github.com/normalize.css/ - use normalize instead of full reset
 			- investigate this grid system: https://t.co/GaP9MWsZtS
+			- http://coding.smashingmagazine.com/2013/03/08/tips-tricks-print-style-sheets/ - improve print styles
+			- http://gumbyframework.com/
+			- http://www.99lime.com/elements/
+			- http://www.formee.org/
+			- http://simplegrid.info/
+			- http://www.responsivegridsystem.com/
+	to-do: replace modernizr? http://conditionizr.com/
+	to-do: live bind shortcode JS for instant search plugin compatibility - livequery? or .on
+	to-do: compatibilty with live edit - http://wordpress.org/extend/plugins/live-edit/
+			- if (function_exists("live_edit")) { live_edit(apply_filters('null_live_edit_loop', 'post_title, post_excerpt')); }
+	to-do: HiDPI/vector icon post type icons - ready for 3.7 and MP6
+	to-do: create an editable 404?
+	to-do: feature tooltips restricted by user type (same code as with admin bar)
+	to-do: improve gallery shortcode - css and filters tweaks - see chailey - make the built in gallery useful in more projects //http://wordpress.stackexchange.com/questions/4343/how-to-customise-the-output-of-the-wp-image-gallery-shortcode-from-a-plugin
 
 	ongoing
 	to-do: update language files
 	to-do: update modernizr
 	to-do: update ligature symbols
-	to-do: update less compiler 0.3.5+ - hopefully will work again and provide css compression
-	to-do: update acf lite
+	to-do: update less compiler 0.3.9+ / less plugin and grid - hopefully will work again and provide css compression
+	to-do: update acf
+	to-do: test against the theme guide: http://developer.wordpress.com/themes/
 
-	for 1.0
-	to-do: live bind shortcode JS for instant search plugin compatibility
-	to-do: a beautiful, minimal, responsive design 
-	to-do: table of contents generator improvements - choose to include and post type support? get rid of it?
-	to-do: cron schedules to have there own options (enabled / disable)
-	to-do: clean up gravity forms less and test with some forms
-	to-do: a few new widgets (featured posts? - post type and taxonomy choice)
-	to-do: shortcode builder / tinymce button (see md theme or http://wordpress.org/extend/plugins/shortcodes-ultimate/)
-	to-do: improve gallery shortcode - css and filters tweaks - see chailey - make the built in gallery useful in more projects //http://wordpress.stackexchange.com/questions/4343/how-to-customise-the-output-of-the-wp-image-gallery-shortcode-from-a-plugin
+	soon
+	to-do: cache 
+			- (transients) null_get_extensions?
+			- (transients) menus? - http://www.codeforest.net/wordpress-transients-api-caching-benchmarks
+			- cache any wp-query and custom query?
+	to-do: integrate options-framework with google font code (filter of_recognized_font_faces)
+	to-do: filter folder locations for extensions (a plugin could register extension folders?)
+	to-do: Turn on certain extensions by default (child theme ships with X,Y,Z on)
 	to-do: improve nav walker to provide better classes and support for other attributes
-	to-do: test if inline js compression kills analyitcs (it appears to)
-	to-do: create an editable 404?
-	to-do: light firewall security as part of framework? - look at http://wordpress.org/extend/plugins/wp-waf/ - good for performance? or keep as a plugin?
-	to-do: HiDPI post type icons - will the 3.6 icons be staying?
 	to-do: issue - all templates that exist in the parent theme are a pain - if i just want index.php in child theme I have to overwrite category, tag etc etc - move all these to null child?
 		- 	to-do: style and code for various post format types (chat, video, quote etc)
-	to-do: compatibilty with live edit (started in loop-single.php & loop.php) - http://wordpress.org/extend/plugins/live-edit/
-	to-do: feature tooltips restricted by user type (same code as with admin bar)
-	to-do: reduce number of database queries - load acf lite only when necessary - filter so child themes can force this
+		- 	to-do: home.php
+	to-do: Performance for htaccess? http://wp.tutsplus.com/tutorials/hosting/optimizing-wordpress-loading-speed-with-header-php-htaccess/
+	to-do: please make sure your htaccess is writable notice on activation?	
+	to-do: navigation fix for cpt - see MHP
 	to-do: remove more polyfills - chrome frame notice? (see h5bp index.html)
-	to-do: windows 8 tile icon? different to old Win stuff? <meta name="msapplication-TileColor" content="#f01d4f"><meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/assets/images/win8-tile-icon.png">
+			- webp images? - http://webpjs.appspot.com/ - https://developers.google.com/speed/webp/
+			- One tool based on jQuery and modernizr - http://afarkas.github.io/webshim/demos/index.html
+			- http://elclanrs.github.io/jq-idealforms/
+			- https://github.com/louisremi/jquery-smartresize
+	to-do: filter null_mustache_tags - register your own replacements
 
 	*/
 
@@ -95,10 +117,23 @@
 	// force WordPress rewrite - we have mod_rewrite installed on the server
 	if (of_get_option('force_rewrite', '0')) add_filter('got_rewrite', '__return_true');
 	
-	// parse template info from css - version number
+	// parse template info from style.css - version number
 	$theme_data = wp_get_theme();
 	define('NULL_VERSION', $theme_data['Version']);
-		
+
+	// get the theme name from the stylesheet (lowercase and without spaces)
+	$themename = $theme_data['Name'];
+	$themename = preg_replace("/\W/", "", strtolower($themename));
+	define('NULL_OPTION_NAME', $themename);
+
+	// cache bust based on options settings and file gen time of main css - filterable for child themes to add different css filemtime
+	$type = (of_get_option('disable_less', '1') ? 'css' : 'less');	
+	$cachefiles = intval(filemtime(get_template_directory() . '/assets/'.$type.'/screen.'.$type));
+	$cacheoptions = md5(serialize(get_option(NULL_OPTION_NAME, array('0' => '1'))));
+	$cacheoptions = intval($cacheoptions);
+	$cachebust = apply_filters('null_cache_bust', abs(intval($cacheoptions+$cachefiles)));
+	define('NULL_CACHE_BUST', $cachebust);
+
 	// load activation code
 	locate_template('/assets/inc/activation.php', true, true);
 
@@ -121,16 +156,10 @@
 	load_template(get_template_directory() . '/assets/inc/cron.php');
 	
 	// shortcodes
-	if (!is_admin()) { load_template(get_template_directory() . '/assets/inc/shortcodes.php'); }
+	load_template(get_template_directory() . '/assets/inc/shortcodes.php');
 	
 	// breadcrumbs - http://wordpress.org/extend/plugins/breadcrumb-trail/
 	if (!is_admin()) { locate_template('/assets/inc/breadcrumbs.php', true, true); }
-
-	// performance
-	if (!is_admin()) { locate_template('/assets/inc/performance.php', true, true); }
-	
-	// table of contents - add settings to attach this to certain post types only
-	//if (!is_admin()) { load_template(get_template_directory() . '/assets/lib/class-toc.php'); }
 
 	// load htaccess code, rewrites etc
 	if (is_admin()) { locate_template('/assets/inc/htaccess.php', true, true); }
@@ -146,6 +175,9 @@
 	
 	// only load front end functions for site
 	if (!is_admin()) { locate_template('/assets/inc/theme.php', true, true); }
+
+	// load theme hook alliance - https://github.com/zamoose/themehookalliance
+	load_template(get_template_directory() . '/assets/inc/thahooks.php');
 
 	// set content width - see: http://toggl.es/wEBCFs - largely irrelevant with responsive sites?
 	if (!isset($content_width)) $content_width = 656;
@@ -227,10 +259,9 @@
 		}
 			
 		// post-formats
-		if (of_get_option('post_formats', '1')) {
-			add_theme_support('post-formats');
+		if (of_get_option('post_formats', '0')) {
 			
-			$formats = of_get_option('post_format_types');
+			$formats = of_get_option('post_format_types', array());
 			$supported = array();
 			
 			foreach ($formats as $key => $value) {
@@ -246,6 +277,9 @@
 		// setup thumbnail support
 		add_theme_support( 'post-thumbnails' ); 
 		
+		// add theme hook alliance support (https://github.com/zamoose/themehookalliance) - filterable by child theme 
+		add_theme_support('tha_hooks', apply_filters('null_tha_hooks', array('body','head','header','content','entry','comments','sidebar','footer')));
+
 		// set defualt thumbnail size: the_post_thumbnail();
 		set_post_thumbnail_size( 150, 150, true );
 		
@@ -257,8 +291,8 @@
 	    
 		// register navigation menus for this theme
 		register_nav_menus(apply_filters('null_register_menu', array(
-	  		  'navigation' => 'Navigation',
-	  		  'footer' => 'Footer'
+	  		  'navigation' => __('Navigation', 'null'),
+	  		  'footer' => __('Footer', 'null')
 	  		)
 	  	));
 		
@@ -266,7 +300,33 @@
 
 	// load php less parser if enabled
 	if (!of_get_option('disable_less', '1')) { locate_template('/assets/inc/less.php', true, true); }
-		
+
+	/***************************************************************
+	* Function null_less_vars
+	* Parse theme options into less for use in stylesheets
+	***************************************************************/
+
+	if (!of_get_option('disable_less', '0')) {
+		add_filter('less_vars', 'null_less_vars', 10, 2 );
+	}
+
+	function null_less_vars($vars, $handle) {
+	   	
+	   	global $pagenow;
+
+	    // $handle is a reference to the handle used with wp_enqueue_style()
+	    $vars['primarycol'] = of_get_option('primary_colour', '#141414');
+		$vars['bodycol'] = of_get_option('body_colour', '#141414');
+		$vars['linkcol'] = of_get_option('link_colour', '#0000EE');
+		$vars['linkhovercol'] = of_get_option('link_hover_colour', '#551A8B');
+		$vars['backgroundimage'] = of_get_option('background_image', '');
+		$vars['headingfont']  = of_get_option('heading_font', 'Cabin');
+	   	$vars['bodyfont'] = of_get_option('body_font', 'a1');
+	   	$vars['cachebust'] = NULL_CACHE_BUST;
+	    return $vars;
+	    
+	}
+
 	/***************************************************************
 	* Function null_admin_css_setup
 	* Register and enqueue all css/less files backend - http://toggl.es/tSgnfR
@@ -322,14 +382,14 @@
 			wp_register_style('google-font', 'http://fonts.googleapis.com/css?family='.$getfonts, '', null_slugify(NULL_VERSION), 'all'); 
 			wp_enqueue_style('google-font');
 		}		
-		
+
 		// the rest of the styles
-		wp_register_style('null-screen', get_template_directory_uri() . '/assets/'.$type.'/screen.'.$type, array(), filemtime(get_template_directory() . '/assets/'.$type.'/screen.'.$type), 'screen');
-		wp_register_style('holmes', get_template_directory_uri() . '/assets/css/holmes.css', array('null-screen'), filemtime(get_template_directory() . '/assets/css/holmes.css'), 'screen');
-		wp_register_style('null-print', get_template_directory_uri() . '/assets/'.$type.'/print.'.$type, array(), filemtime(get_template_directory() . '/assets/'.$type.'/print.'.$type), 'print');
+		wp_register_style('null-screen', get_template_directory_uri() . '/assets/'.$type.'/screen.'.$type, array(), NULL_CACHE_BUST, 'screen');
+		wp_register_style('holmes', get_template_directory_uri() . '/assets/css/holmes.css', array('null-screen'), NULL_CACHE_BUST, 'screen');
+		wp_register_style('null-print', get_template_directory_uri() . '/assets/'.$type.'/print.'.$type, array(), NULL_CACHE_BUST, 'print');
 		
 		// register ie styles
-		wp_register_style('null-screen-ie', get_template_directory_uri() . '/assets/'.$type.'/screen-ie.'.$type, array(), filemtime(get_template_directory() . '/assets/'.$type.'/screen-ie.'.$type), 'screen');
+		wp_register_style('null-screen-ie', get_template_directory_uri() . '/assets/'.$type.'/screen-ie.'.$type, array(), NULL_CACHE_BUST, 'screen');
 		
 		// all styles for this theme
 		wp_enqueue_style('null-screen');
@@ -393,23 +453,24 @@
 	function null_theme_js_setup() {
 		
 		//  grab settings
-		$polyfills = of_get_option('polyfills');
+		$polyfills = of_get_option('polyfills', array(
+			'ios' 			=> "1",
+			'selectivizr'	=> "0", 
+			'html5_forms'	=> "1",
+			'imgsizer'		=> "0"
+		));
 			
 		// register all scripts			
 		wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/modernizr.js', '', filemtime(get_template_directory() . '/assets/js/modernizr.js'));
-		wp_register_script('jquery-ui', get_template_directory_uri() . '/assets/js/jquery-ui.js', array('jquery'), filemtime(get_template_directory() . '/assets/js/jquery-ui.js'));
 		wp_register_script('html5-forms', get_template_directory_uri() . '/assets/js/forms.js', array('jquery'), filemtime(get_template_directory() . '/assets/js/forms.js'));
 		wp_register_script('null-gat', get_template_directory_uri() . '/assets/js/analytics.js', array('jquery'), filemtime(get_template_directory() . '/assets/js/analytics.js'));
-		wp_register_script('null', get_template_directory_uri() . '/assets/js/onload.js', array('jquery'), filemtime(get_template_directory() . '/assets/js/onload.js'));
+		wp_register_script('null', get_template_directory_uri() . '/assets/js/onload.js', array('jquery', 'jquery-ui-tabs', 'jquery-ui-accordion'), filemtime(get_template_directory() . '/assets/js/onload.js'));
 
 		// comment threading
 		if (is_singular() && get_option('thread_comments')) wp_enqueue_script('comment-reply');
 		
 		// standard shipped jquery
 		wp_enqueue_script('jquery');
-		
-		// jquery ui (custom build to support tab shortcodes, accordions and a few extras)
-		wp_enqueue_script('jquery-ui');
 				
 		// always load modernizr as it contains HTML5 shiv
 		wp_enqueue_script('modernizr');
@@ -418,7 +479,7 @@
 		if ($polyfills['html5_forms'] == "1") wp_enqueue_script('html5-forms');
 		
 		// analytics event tracking
-		if ((of_get_option('gat','') != '') && (of_get_option('gat_external_download', '0'))) wp_enqueue_script('null-gat');
+		if ((of_get_option('gat')) && (of_get_option('gat_external_download', '0'))) wp_enqueue_script('null-gat');
 
 		// the onload/custom js file
 		wp_enqueue_script('null');
@@ -489,7 +550,7 @@
 
 	/***************************************************************
 	* Function null_get_extensions
-	* Helper function for retrieving widgets, shortcodes and post-type extensions
+	* Helper function for retrieving widgets, shortcodes and post-type extensions 
 	***************************************************************/
 	
 	function null_get_extensions($type = 'post-types', $settings = false) {
@@ -502,7 +563,10 @@
 				$folder_base = trailingslashit(get_template_directory() . '/assets/inc/shortcodes');
 				$folder_child = trailingslashit(get_stylesheet_directory() . '/assets/inc/shortcodes');
 				$preg = '|Shortcode Name:(.*)$|mi';
-				
+
+				// for shortcodes we want to check a second header (shortcode template)
+				$pregtemplate = '|Shortcode Template:(.*)$|mi';
+
 			break;
 			
 			// widgets
@@ -538,9 +602,23 @@
 					$name = _cleanup_header_comment($name[1]);
 				}
 				
-				if (!empty($name)) {
-					$extensions[] = array("name" => trim($name), "nicename" => null_slugify(trim($name)), "path" => $file);
-				}	
+				// additional check for shortcodes - rip the template header out too
+				if (isset($pregtemplate)) {
+
+					if (preg_match($pregtemplate, $data, $template)) {
+						$template = _cleanup_header_comment($template[1]);
+					}
+
+					if (!empty($name) && !empty($template)) {
+						$extensions[] = array("name" => trim($name), "nicename" => null_slugify(trim($name)), "path" => $file, "template" => $template);
+					}
+
+				} else {
+
+					if (!empty($name)) {
+						$extensions[] = array("name" => trim($name), "nicename" => null_slugify(trim($name)), "path" => $file);
+					}	
+				}
 			}
 		}
 		
@@ -553,8 +631,22 @@
 					$name = _cleanup_header_comment($name[1]);
 				}
 				
-				if (!empty($name)) {
-					$extensions[] = array("name" => trim($name), "nicename" => null_slugify(trim($name)), "path" => $file);
+				// additional check for shortcodes - rip the template header out too
+				if (isset($pregtemplate)) {
+
+					if (preg_match($pregtemplate, $data, $template)) {
+						$template = _cleanup_header_comment($template[1]);
+					}
+
+					if (!empty($name) && !empty($name)) {
+						$extensions[] = array("name" => trim($name), "nicename" => null_slugify(trim($name)), "path" => $file, "template" => $template);
+					}
+
+				} else {
+
+					if (!empty($name)) {
+						$extensions[] = array("name" => trim($name), "nicename" => null_slugify(trim($name)), "path" => $file);
+					}	
 				}	
 			}
 		}
@@ -568,11 +660,32 @@
 				$settings[$extension['nicename']] = $extension['name'];
 			}
 			
+			// sort
+			ksort($settings);
+
 			return $settings;
 		}
 		
+		// sort
+		$sorted = array();
+		foreach ($extensions as $extension) {
+			$sorted[] = $extension['name'];
+		}
+		array_multisort($sorted, SORT_ASC, $extensions);
+
 		// return an array of extensions
 		return $extensions;
+	}
+
+	/***************************************************************
+	* Function null_extensions_enabled
+	* Simple check to see if any extension is set to on within an extensions array
+	***************************************************************/
+
+	function null_extensions_enabled($extensions) {
+		$tmp = array_filter($extensions);
+		if (empty($tmp)) return false;
+		return true;
 	}
 
 	/***************************************************************
@@ -648,17 +761,10 @@
 	* Determine a unique name for the theme options settings in database
 	***************************************************************/
 	
-	function optionsframework_option_name() {
-	
-		// This gets the theme name from the stylesheet (lowercase and without spaces)
-		$themename = wp_get_theme();
-		$themename = $themename['Name'];
-		$themename = preg_replace("/\W/", "", strtolower($themename) );
-		
+	function optionsframework_option_name() {		
 		$optionsframework_settings = get_option('optionsframework');
-		$optionsframework_settings['id'] = $themename;
+		$optionsframework_settings['id'] = NULL_OPTION_NAME;
 		update_option('optionsframework', $optionsframework_settings);
-	
 	}
 
 	/***************************************************************
@@ -727,11 +833,15 @@
 	***************************************************************/
 	
 	function null_slugify($str) {
-	
+		
+		// $str2 = sanitize_title_with_dashes($str); - replace with?
 	    $str = preg_replace('/[^a-zA-Z0-9 -]/', '', $str);
 	    $str = strtolower(str_replace(' ', '-', trim($str)));
 	    $str = preg_replace('/-+/', '-', $str);
-	    return $str;
-	    
-	}		
+
+	    //if ($str != $str2) echo ('slugs differ ('.$str.' - '.$str2.')<br/>');
+	   	return $str;
+
+	}	
+
 ?>

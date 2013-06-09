@@ -6,7 +6,11 @@ If deleted WordPress will call archive.php instead which supports author (just n
 ?>
 <?php get_header() ?>
 
+		<?php tha_content_before(); ?>
+
 		<div id="content" role="main">
+
+			<?php tha_content_top(); ?>
 			
 			<?php $auth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author')); // grab author data ?>
 
@@ -32,9 +36,13 @@ If deleted WordPress will call archive.php instead which supports author (just n
 	
 			<?php rewind_posts(); ?>
 			
-			<?php get_template_part('loop', 'author'); ?>		
+			<?php get_template_part('loop', 'author'); ?>	
+
+			<?php tha_content_bottom(); ?>	
 					
 		</div><!-- #content -->
+
+		<?php tha_content_after(); ?>
 
 <?php get_sidebar() ?>
 <?php get_footer() ?>

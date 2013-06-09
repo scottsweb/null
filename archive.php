@@ -1,7 +1,11 @@
 <?php get_header() ?>
 
+		<?php tha_content_before(); ?>
+
 		<div id="content" role="main">
-			
+
+			<?php tha_content_top(); ?>
+
 			<?php /** if this is a category archive **/ if (is_category()) { ?>				
 			<h2 class="page-title"><?php _e('Blog:', 'null'); ?> <?php echo single_cat_title(); ?></h2>
 			<?php /** if this is a tag archive **/ } else if (is_tag()) { ?>
@@ -22,7 +26,11 @@
 			
 			<?php get_template_part('loop', 'archive'); ?>
 
+			<?php tha_content_bottom(); ?>
+
 		</div><!-- #content -->
+
+		<?php tha_content_after(); ?>
 
 <?php get_sidebar() ?>
 <?php get_footer() ?>

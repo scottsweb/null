@@ -1,6 +1,24 @@
 <?php
 
 /***************************************************************
+* Function null_optionsframework_after_validate
+* After options framework update flush the rewrite rules to handle new post types
+***************************************************************/
+
+add_action('optionsframework_after_validate', 'null_optionsframework_after_validate');
+
+function null_optionsframework_after_validate($data) {
+
+    // flush rewrite rules to register altered post type settings (checks if new data is different to old data)
+    if (isset($data['additional_post_types'])) {
+        if (of_get_option('additional_post_types', array()) != $data['additional_post_types']) {
+            global $wp_rewrite;
+            $wp_rewrite->flush_rules();   
+        }
+    }
+}
+
+/***************************************************************
 * Function null_required_plugins
 * Does this theme require any plugins to work? can also make plugin recommendations - http://tgmpluginactivation.com/
 ***************************************************************/
@@ -171,14 +189,6 @@ function null_required_plugins() {
         'slug'      => 'search-everything',
         'required'  => false,
     );    
-    
-    // performance
-    // w3 total cache
-    $plugins['w3-total-cache'] = array(
-        'name'      => 'W3 Total Cache',
-        'slug'      => 'w3-total-cache',
-        'required'  => false,
-    ); 
 
     // members
     $plugins['members'] = array(
@@ -186,7 +196,8 @@ function null_required_plugins() {
         'slug'      => 'members',
         'required'  => false,
     );
-
+    
+    // performance
     // wp super cache
     $plugins['wp-super-cache'] = array(
         'name'      => 'WP Super Cache',
@@ -207,6 +218,13 @@ function null_required_plugins() {
         'slug'      => 'bj-lazy-load',
         'required'  => false,
 	);
+
+    // wp html compression
+    $plugins['wp-html-compression'] = array(
+        'name'      => 'WP-HTML-Compression',
+        'slug'      => 'wp-html-compression',
+        'required'  => false,
+    );
     
     // usability
     // simple page ordering
@@ -347,7 +365,7 @@ function null_required_plugins() {
     );
     
     // return the settings and filter them in case a child theme needs to modify the defaults
-    tgmpa(apply_filters('null_required_plugins', $plugins), apply_filters('null_required_plugins_settings', $settings));
+    tgmpa(apply_filters('null_recommended_plugins', $plugins), apply_filters('null_recommended_plugins_settings', $settings));
  
 }
                                          
@@ -430,11 +448,11 @@ function null_admin_body_class( $classes ) {
 if ((!current_user_can('update_plugins')) && (of_get_option('disable_updates','1'))) {  
 	
 	// wordpress version # 3.0:
-	add_filter( 'pre_site_transient_update_core', create_function( '$a', "return null;" ));
+	add_filter('pre_site_transient_update_core', '__return_null');
 	
 	// plugins # 3.0:
-	remove_action('load-update-core.php', 'wp_update_plugins' );
-	add_filter('pre_site_transient_update_plugins', create_function( '$a', "return null;" ));	
+	remove_action('load-update-core.php', 'wp_update_plugins');
+	add_filter('pre_site_transient_update_plugins', '__return_null');	
 	
 }
 
@@ -453,7 +471,9 @@ function null_admin_menu() {
 		load_template(get_template_directory() . '/assets/lib/class-admin-menu.php');
 	}
 	
+    // when comments are disabled remove the discussion options and comments menu
 	if (of_get_option('disable_comments', 0)) {
+        remove_menu_page('edit-comments.php');
 		remove_submenu_page('options-general.php','options-discussion.php');
 	}
 	
@@ -627,21 +647,66 @@ function null_ico_mime($mimes) {
 }
 
 /***************************************************************
-* Function null_attachments_fields_to_edit
-* Remove the default attachment URL for inserted images (will need updating in 3.5?)
+* Function null_mce_editor_buttons & null_mce_editor_styles
+* Add a custom classes drop down to the kitchen sink
 ***************************************************************/
 
-add_filter("attachment_fields_to_edit", 'null_attachment_fields_to_edit', null, 2);
+add_filter('mce_buttons_2', 'null_mce_editor_buttons' );
 
-function null_attachment_fields_to_edit($form_fields, $post) {
+function null_mce_editor_buttons( $buttons ) {
+    array_unshift($buttons, 'styleselect');
+    return $buttons;
+}
 
-	if (!empty($form_fields['url']['html'])) {
-		if ($filtered_html = preg_replace("#(.*?value=').*?(?:jpg|jpeg|png|gif|bmp|tiff|tif)('.*)#i",'$1$2',$form_fields['url']['html'])) {
-			$form_fields['url']['html'] = $filtered_html;
-		}
-	}
+add_filter('tiny_mce_before_init', 'null_mce_editor_styles');
 
-	return $form_fields;
+function null_mce_editor_styles( $settings ) {
+
+    $style_formats = array(
+        array(
+            'title' => __('Error', 'null'),
+            'block' => 'div',
+            'classes' => 'error',
+            'wrapper' => true
+        ),
+        array(
+            'title' => __('Notice', 'null'),
+            'block' => 'div',
+            'classes' => 'notice',
+            'wrapper' => true
+        ),
+        array(
+            'title' => __('Success', 'null'),
+            'block' => 'div',
+            'classes' => 'success',
+            'wrapper' => true
+        ),
+        array(
+            'title' => __('Text Button', 'null'),
+            'selector' => 'a',
+            'classes' => 'a-button'
+        ),
+        array(
+            'title' => __('Loud', 'null'),
+            'inline' => 'span',
+            'classes' => 'loud',
+        ),
+        array(
+            'title' => __('Quiet', 'null'),
+            'inline' => 'span',
+            'classes' => 'quiet',
+        ),
+        array(
+            'title' => __('Highlight', 'null'),
+            'inline' => 'span',
+            'classes' => 'highlight'
+        )
+    );
+
+    $settings['style_formats'] = json_encode($style_formats);
+
+    return $settings;
+
 }
 
 /***************************************************************
@@ -649,13 +714,59 @@ function null_attachment_fields_to_edit($form_fields, $post) {
 * Not added when run as a child theme - add this to child theme instead
 ***************************************************************/
 
-if (get_stylesheet_directory() == get_template_directory()) {
+if (!is_child_theme()) {
 
 	// is less compiling enabled or disabled?
-	$type = (of_get_option('disable_less', '0') ? 'css' : 'less');
-		
+	$type = (of_get_option('disable_less', '0') ? 'css' : 'less');		
 	add_editor_style('assets/'.$type.'/wp-editor.'.$type);
-	//add_editor_style('assets/css/wp-editor.less?' . time());
+
+}
+
+/***************************************************************
+* Function null_editor_style
+* Cache bust TinyMCE editor styles - http://bit.ly/12Yz03u
+***************************************************************/
+
+add_filter('mce_css', 'null_editor_style');
+
+function null_editor_style($css) {
+
+    global $editor_styles;
+
+    if (empty($css) or empty($editor_styles)) {
+        return $css;
+    }
+
+    $mce_css   = array();
+    $style_uri = get_stylesheet_directory_uri();
+    $style_dir = get_stylesheet_directory();
+
+    if (is_child_theme()) {
+        $template_uri = get_template_directory_uri();
+        $template_dir = get_template_directory();
+
+        foreach($editor_styles as $key => $file) {
+            if ($file && file_exists("$template_dir/$file")) {
+                $mce_css[] = add_query_arg(
+                    'version',
+                    filemtime( "$template_dir/$file" ),
+                    "$template_uri/$file"
+                );
+            }
+        }
+    }
+
+    foreach($editor_styles as $file) {
+        if ($file && file_exists( "$style_dir/$file")) {
+            $mce_css[] = add_query_arg(
+                'version',
+                filemtime( "$style_dir/$file" ),
+                "$style_uri/$file"
+            );
+        }
+    }
+
+    return implode( ',', $mce_css );
 }
 
 /***************************************************************
@@ -711,7 +822,7 @@ function null_remove_meta_boxes() {
 }
 
 /***************************************************************
-* Function null_options_santiziation & null_sanitize_text_field & null_sanitize_textarea_field
+* Function null_options_santiziation & null_sanitize_text_field & null_sanitize_textarea_field & null_sanitize_upload
 * Modify the options framework to validate differently
 ***************************************************************/
 
@@ -721,16 +832,37 @@ function null_options_santiziation() {
 
   	// small amounts of html on text inputs
     remove_filter('of_sanitize_text', 'sanitize_text_field');
-	add_filter('of_sanitize_text', 'null_sanitize_text_field');
+	add_filter('of_sanitize_text', 'null_sanitize_text_field', 20, 2);
 	
 	// allow JS in textarea inputs
     remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
     add_filter( 'of_sanitize_textarea', 'null_sanitize_textarea_field' );
-	
+
+    // validate URLs in file upload fields
+	add_filter( 'of_sanitize_upload', 'null_sanitize_upload', 20, 2);
+
 }
  
-function null_sanitize_text_field($input) {
+function null_sanitize_text_field($input, $option) {
+    
     $output = wp_kses_data($input);
+
+    if ($option['id'] == 'delicious') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'dribbble') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'facebook') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'flickr') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'github') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'googleplus') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'instagram') $output = esc_url_raw($input, array('http', 'https'));    
+    if ($option['id'] == 'linkedin') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'pinterest') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'soundcloud') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'twitter') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'vimeo') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'youtube') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'login_redirect_url') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'logout_redirect_url') $output = esc_url_raw($input, array('http', 'https'));
+
     return $output;
 } 
 
@@ -743,6 +875,21 @@ function null_sanitize_textarea_field($input) {
 	);
 	$custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
 	$output = wp_kses( $input, $custom_allowedtags);
+    return $output;
+}
+
+function null_sanitize_upload($input, $option) {
+
+    $output = $input;
+
+    if ($option['id'] == 'logo') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'favicon') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'touchicon') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'gravatar') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'iphone_splash') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'ipad_splash') $output = esc_url_raw($input, array('http', 'https'));
+    if ($option['id'] == 'ipad_splash_landscape') $output = esc_url_raw($input, array('http', 'https'));
+
     return $output;
 }
 
@@ -767,17 +914,6 @@ jQuery(document).ready(function() {
 		jQuery('#section-post_format_types').show();
 	} else {
 		jQuery('#section-post_format_types').hide();
-	}
-
-	// html compression
-	jQuery('#html_compression').click(function() {
-  		jQuery('#section-html_compression_options').fadeToggle(400);
-	});
-	
-	if (jQuery('#html_compression:checked').val() !== undefined) {
-		jQuery('#section-html_compression_options').show();
-	} else {
-		jQuery('#section-html_compression_options').hide();
 	}
 
 	// development mode / holmes

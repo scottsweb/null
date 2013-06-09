@@ -14,16 +14,24 @@ exit;
 ?>
 <?php get_header() ?>
 
+		<?php tha_content_before(); ?>
+
 		<div id="content" role="main">
 
+			<?php tha_content_top(); ?>
+
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	
+
 			<?php if (!empty($post->post_parent)) : // page title ?>
 				<h2 class="page-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr(printf(__('Return to %s', 'null'), get_the_title($post->post_parent))); ?>" rev="attachment" rel="gallery">&laquo; <?php echo get_the_title($post->post_parent); ?></a></h2>
 			<?php endif; ?>
 
+			<?php tha_entry_before(); ?>
+
 		    <article <?php post_class() ?> role="article">
 				
+				<?php tha_entry_top(); ?>
+
 				<header>
 					<h3 class="entry-title"><?php the_title(); ?></h3>
 				</header>
@@ -129,18 +137,36 @@ exit;
 
 	  			<?php comments_template(); ?>
 
+	  			<?php tha_entry_bottom(); ?>
+
 		    </article>
 
- 		<?php endwhile; else: ?>
- 		
+			<?php tha_entry_after(); ?>
+
+ 			<?php endwhile; else: ?>
+ 
+ 			<?php tha_entry_before(); ?>
+
 			<article role="article">
+
+				<?php tha_entry_top(); ?>
+
 				<h3><?php _e('No Posts Found', 'null'); ?></h3>
 				<p class="notice"><?php _e('Sorry, no attachments were found that matched your criteria.', 'null'); ?></p>
-			</article>    		
+			
+				<?php tha_entry_bottom(); ?>
+
+			</article>    
+
+			<?php tha_entry_after(); ?>		
 		
-		<?php endif; ?>
+			<?php endif; ?>
+
+			<?php tha_content_bottom(); ?>
 
 		</div><!-- #content -->
+
+		<?php tha_content_after(); ?>
 		
 <?php get_sidebar() ?>
 <?php get_footer() ?>

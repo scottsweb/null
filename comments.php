@@ -17,6 +17,8 @@
  	
 ?>
 
+<?php tha_comments_before(); ?>
+
 <aside id="comment-wrapper">
 
 <?php if ($comments) : ?>
@@ -121,3 +123,5 @@
 	</section><!-- #respond -->
 	<?php } ?>
 </aside><!-- #comment-wrapper-->
+
+<?php tha_comments_after(); ?>

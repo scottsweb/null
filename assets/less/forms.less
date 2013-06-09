@@ -224,6 +224,12 @@ textarea:-moz-placeholder
 	color: @lightgrey;
 	}
 
+[placeholder]:focus::-webkit-input-placeholder
+	{
+	.transition-all(0.4s);
+	color: fadeout(@lightgrey, 50%);
+	}
+
 ::-webkit-validation-bubble-message 
 	{
     padding: 15px;
@@ -255,6 +261,11 @@ textarea[readonly]
 	margin-bottom: @baseline;
 	padding: @baseline / 2;
 	border: 2px solid #ddd;
+
+	p:last-child
+		{
+		margin-bottom: 0;
+		}
 	}
 
 .error

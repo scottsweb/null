@@ -1,6 +1,7 @@
 <?php
 /*
-Shortcode Name: Blog Info [bloginfo key="template_url"]
+Shortcode Name: Blog Info 
+Shortcode Template: [bloginfo key="template_url"]
 */
 
 /***************************************************************

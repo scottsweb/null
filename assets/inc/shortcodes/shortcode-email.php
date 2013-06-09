@@ -1,6 +1,7 @@
 <?php
 /*
-Shortcode Name: Encode Email [mailto]email@email.com[/mailto]
+Shortcode Name: Encode Email 
+Shortcode Template: [mailto]email@email.com[/mailto]
 */
 
 /***************************************************************

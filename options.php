@@ -84,7 +84,7 @@ function optionsframework_options() {
 	
 	$general_options['wordpress_credit'] = array( 
 		"name" => __('WordPress Credit', 'null'),
-		"desc" => __('Thanks to WordPress.', 'null'),
+		"desc" => __('Available tags: {{year}} {{sitename}} {{copyright}}', 'null'),
 		"id" => "wordpress_credit",
 		"std" => 'Powered by <a href="http://wordpress.org/" title="WordPress" rel="generator">WordPress</a> &amp; the <a href="http://null.scott.ee/" title="null framework">null framework</a>.',
 		"class" => "large",
@@ -93,7 +93,7 @@ function optionsframework_options() {
 
 	$general_options['theme_credit'] = array( 
 		"name" => __('Designer Credit', 'null'),
-		"desc" => __('Leave empty to remove from footer.', 'null'),
+		"desc" => __('Available tags: {{year}} {{sitename}} {{copyright}}', 'null'),
 		"id" => "theme_credit",
 		"std" => 'Designed by <a href="http://scott.ee" title="WordPress website design by Scott Evans." rel="designer">Scott Evans</a>.',
 		"class" => "large",
@@ -175,7 +175,7 @@ function optionsframework_options() {
 		"name" => __('Body Font', 'null'),
 		"desc" => __('Choose your body font from the <a href="http://www.google.com/webfonts">Google Web Font</a> directory or default system fonts.', 'null'),
 		"id" => "body_font",
-		"std" => "Helvetica",
+		"std" => "a1",
 		"type" => "select",
 		"class" => "mini",
 		"options" => null_get_fonts()
@@ -214,7 +214,10 @@ function optionsframework_options() {
 	
 	// only add these settings if ios meta has been enabled
 	
-	$advanced_header_meta = of_get_option('advanced_header_meta');
+	$advanced_header_meta = of_get_option('advanced_header_meta', array(
+		'ios_app'			=> "0",
+		'ie9_app'			=> "1"
+	));
 	
 	if ($advanced_header_meta['ios_app'] == "1") { 
 	
@@ -244,7 +247,7 @@ function optionsframework_options() {
 	if ($advanced_header_meta['ie9_app'] == "1") {
 	 
 		$design_options['ie9_colour'] = array( 
-			"name" => __('IE9+ Pinned Application Colour', 'null'),
+			"name" => __('IE9+/Win8 Pinned Application Colour', 'null'),
 			"desc" => __('Used for browser buttons and for the Windows 8 touch tile.', 'null'),
 			"id" => "ie9_colour",
 			"std" => "#141414",
@@ -266,7 +269,7 @@ function optionsframework_options() {
 
 	$social_options['delicious'] = array( 
 		"name" => __('Delicious', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "delicious",
 		"class" => "large",
 		"type" => "text"
@@ -274,7 +277,7 @@ function optionsframework_options() {
 
 	$social_options['dribbble'] = array( 
 		"name" => __('Dribbble', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "dribbble",
 		"class" => "large",
 		"type" => "text"
@@ -282,7 +285,7 @@ function optionsframework_options() {
 
 	$social_options['facebook'] = array( 
 		"name" => __('Facebook', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "facebook",
 		"class" => "large",
 		"type" => "text"
@@ -290,7 +293,7 @@ function optionsframework_options() {
 	
 	$social_options['flickr'] = array( 
 		"name" => __('Flickr', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "flickr",
 		"class" => "large",
 		"type" => "text"
@@ -298,23 +301,31 @@ function optionsframework_options() {
 
 	$social_options['github'] = array( 
 		"name" => __('GitHub', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "github",
 		"class" => "large",
 		"type" => "text"
 	);
 
-	$social_options[] = array( 
+	$social_options['googleplus'] = array( 
 		"name" => __('Google+', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "googleplus",
+		"class" => "large",
+		"type" => "text"
+	);
+
+	$social_options['instagram'] = array( 
+		"name" => __('Instagram', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
+		"id" => "instagram",
 		"class" => "large",
 		"type" => "text"
 	);
 
 	$social_options['linkedin'] = array( 
 		"name" => __('LinkedIn', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "linkedin",
 		"class" => "large",
 		"type" => "text"
@@ -322,7 +333,7 @@ function optionsframework_options() {
 
 	$social_options['pinterest'] = array( 
 		"name" => __('Pinterest', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "pinterest",
 		"class" => "large",
 		"type" => "text"
@@ -330,7 +341,7 @@ function optionsframework_options() {
 
 	$social_options['soundcloud'] = array( 
 		"name" => __('SoundCloud', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "soundcloud",
 		"class" => "large",
 		"type" => "text"
@@ -338,7 +349,7 @@ function optionsframework_options() {
 
 	$social_options['twitter'] = array( 
 		"name" => __('Twitter', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "twitter",
 		"class" => "large",
 		"type" => "text"
@@ -346,7 +357,7 @@ function optionsframework_options() {
 
 	$social_options['twitterusername'] = array( 
 		"name" => __('Twitter @Username', 'null'),
-		"desc" => __('Username beginning with @', 'null'),
+		"desc" => __('Username beginning with @.', 'null'),
 		"id" => "twitterusername",
 		"class" => "large",
 		"type" => "text"
@@ -354,7 +365,7 @@ function optionsframework_options() {
 
 	$social_options['vimeo'] = array( 
 		"name" => __('Vimeo', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "vimeo",
 		"class" => "large",
 		"type" => "text"
@@ -362,7 +373,7 @@ function optionsframework_options() {
 
 	$social_options['youtube'] = array( 
 		"name" => __('YouTube', 'null'),
-		"desc" => __('URL to your profile beginning with http://', 'null'),
+		"desc" => __('URL to your profile.', 'null'),
 		"id" => "youtube",
 		"class" => "large",
 		"type" => "text"
@@ -388,6 +399,8 @@ function optionsframework_options() {
 		}
 	}
 	
+	ksort($role_list);
+
 	$wordpress_options['admin_bar_disable'] = array( 
 		"name" => __('Disable Admin Bar', 'null'),
 		"desc" => __('Disable the admin bar on the front end for the toggled user roles.', 'null'),
@@ -424,26 +437,26 @@ function optionsframework_options() {
 		"id" => "dashboard_widgets",
 		"std" => array( 
 			'dashboard_browser_nag'		=> "1",
-			'dashboard_plugins' 		=> "0", 
-			'dashboard_right_now'		=> "0", 
-			'dashboard_recent_comments' => "1", 
-			'dashboard_incoming_links'	=> "1", 
-			'dashboard_primary' 		=> "1", 
-			'dashboard_secondary' 		=> "0",
+			'dashboard_incoming_links'	=> "1",
+			'dashboard_plugins' 		=> "0",
+			'dashboard_primary' 		=> "1",  
 			'dashboard_quick_press'		=> "1",
-			'dashboard_recent_drafts'	=> "1"
+			'dashboard_recent_comments' => "1", 
+			'dashboard_recent_drafts'	=> "1",
+			'dashboard_right_now'		=> "0", 
+			'dashboard_secondary' 		=> "0"
 		),
 		"type" => "multicheck",
 		"options" => array( 
 			'dashboard_browser_nag'		=> __('Browser Upgrade Notification (Browse Happy)','null'),
-			'dashboard_plugins' 		=> __('Plugins Widget', 'null'),
-			'dashboard_right_now' 		=> __('Right Now Widget', 'null'),
-			'dashboard_recent_comments' => __('Recent Comments Widget', 'null'),
 			'dashboard_incoming_links' 	=> __('Incoming Links Widget', 'null'),
+			'dashboard_plugins' 		=> __('Plugins Widget', 'null'),
 			'dashboard_primary' 		=> __('Primary RSS Widget', 'null'),
-			'dashboard_secondary' 		=> __('Secondary RSS Widget', 'null'),
 			'dashboard_quick_press' 	=> __('Quick Press Widget', 'null'),
+			'dashboard_recent_comments' => __('Recent Comments Widget', 'null'),
 			'dashboard_recent_drafts' 	=> __('Recent Drafts Widget', 'null'),
+			'dashboard_right_now' 		=> __('Right Now Widget', 'null'),
+			'dashboard_secondary' 		=> __('Secondary RSS Widget', 'null')
 		)
 	);
 		
@@ -460,47 +473,53 @@ function optionsframework_options() {
 		"desc" => __('Which <a href="http://codex.wordpress.org/Post_Formats#Supported_Formats">post format types</a> would you like to support?', 'null'),
 		"id" => "post_format_types",
 		"std" => array( 
-			'aside' 	=> "1", 
+			'aside' 	=> "1",
+			'audio'		=> "1", 
 			'chat'		=> "1", 
 			'gallery' 	=> "1", 
 			'image'		=> "1", 
 			'link' 		=> "1", 
 			'quote' 	=> "1", 
 			'status' 	=> "1", 
-			'video' 	=> "1", 
-			'audio'		=> "1" 
+			'video' 	=> "1" 
 		),
 		"type" => "multicheck",
 		"options" => array( 
 			'aside' 	=> __('Aside', 'null'), 
+			'audio'		=> __('Audio', 'null'),
 			'chat'		=> __('Chat', 'null'), 
 			'gallery' 	=> __('Gallery', 'null'), 
 			'image'		=> __('Image', 'null'), 
 			'link' 		=> __('Link', 'null'), 
 			'quote' 	=> __('Quote', 'null'), 
 			'status' 	=> __('Status', 'null'), 
-			'video' 	=> __('Video', 'null'), 
-			'audio'		=> __('Audio', 'null') 
+			'video' 	=> __('Video', 'null')
 		)
 	);
 	
-	$wordpress_options['additional_post_types'] = array(
-		"name" => __('Additional Post Types', 'null'),
-		"desc" => __('Toggle additional post types. Additional post types are found in the <strong>/null/assets/inc/post-types/</strong> folder or the same folder in your child theme.', 'null'),
-		"id" => "additional_post_types",
-		"std" => array(),
-		"type" => "multicheck",
-		"options" => null_get_extensions('post-types', true)	
-	);
-	
-	$wordpress_options['additional_shortcodes'] = array(
-		"name" => __('Shortcodes', 'null'),
-		"desc" => __('Toggle shortcode support. Additional shortcodes are found in the <strong>/null/assets/inc/shortcodes/</strong> folder or the same folder in your child theme.', 'null'),
-		"id" => "additional_shortcodes",
-		"std" => array(),
-		"type" => "multicheck",
-		"options" => null_get_extensions('shortcodes', true)	
-	);
+	$extension_post_types = null_get_extensions('post-types', true);
+	if (!empty($extension_post_types)) {
+		$wordpress_options['additional_post_types'] = array(
+			"name" => __('Additional Post Types', 'null'),
+			"desc" => __('Toggle additional post types. Additional post types are found in the <strong>/null/assets/inc/post-types/</strong> folder or the same folder in your child theme.', 'null'),
+			"id" => "additional_post_types",
+			"std" => array(),
+			"type" => "multicheck",
+			"options" => $extension_post_types	
+		);
+	}
+
+	$extension_shortcodes = null_get_extensions('shortcodes', true);
+	if (!empty($extension_shortcodes)) {
+		$wordpress_options['additional_shortcodes'] = array(
+			"name" => __('Shortcodes', 'null'),
+			"desc" => __('Toggle shortcode support. Additional shortcodes are found in the <strong>/null/assets/inc/shortcodes/</strong> folder or the same folder in your child theme.', 'null'),
+			"id" => "additional_shortcodes",
+			"std" => array(),
+			"type" => "multicheck",
+			"options" => $extension_shortcodes	
+		);
+	}
 
 	$wordpress_options['wordpress_widgets'] = array(
 		"name" => __('WordPress Widgets', 'null'),
@@ -538,15 +557,18 @@ function optionsframework_options() {
 			'text_widget'				=> __('Text Widget', 'null')
 		)
 	);
-		
-	$wordpress_options['additional_widgets'] = array(
-		"name" => __('Additional Widgets', 'null'),
-		"desc" => __('Toggle additional widgets. Additional widgets are found in the <strong>/null/assets/inc/widgets/</strong> folder or the same folder in your child theme.', 'null'),
-		"id" => "additional_widgets",
-		"std" => array(),
-		"type" => "multicheck",
-		"options" => null_get_extensions('widgets', true)	
-	);	
+
+	$extension_widgets = null_get_extensions('widgets', true);
+	if (!empty($extension_widgets)) {
+		$wordpress_options['additional_widgets'] = array(
+			"name" => __('Additional Widgets', 'null'),
+			"desc" => __('Toggle additional widgets. Additional widgets are found in the <strong>/null/assets/inc/widgets/</strong> folder or the same folder in your child theme.', 'null'),
+			"id" => "additional_widgets",
+			"std" => array(),
+			"type" => "multicheck",
+			"options" => $extension_widgets	
+		);	
+	}
 	
 	$wordpress_options = apply_filters('null_wordpress_options', $wordpress_options);
 
@@ -591,7 +613,7 @@ function optionsframework_options() {
 	// Move these to advanced as these will most likely be the only options going forward?
 	$performance_options = array();
 	
-	$performance_options['performance_heading'] = array( 
+	/*$performance_options['performance_heading'] = array( 
 		"name" => __('Performance', 'null'),
 		"type" => "heading"
 	);
@@ -625,7 +647,7 @@ function optionsframework_options() {
 			'html_js'				=> __('Inline JS','null'),
 			'html_comments'			=> __('HTML Comments','null')		
 		)	
-	);
+	);*/
 
 	$performance_options = apply_filters('null_performance_options', $performance_options);
 					
@@ -661,25 +683,25 @@ function optionsframework_options() {
 		"desc" => __('Toggle certain WordPress meta data found in the theme header.', 'null'),
 		"id" => "header_meta",
 		"std" => array( 
-			'rsd'				=> "1",
-			'windows' 			=> "0", 
-			'generator'			=> "0", 
-			'feed_links' 		=> "1", 
-			'extra_feed_links'	=> "0", 
-			'shortlink' 		=> "0", 
 			'canonical' 		=> "1",
-			'relational'		=> "0"
+			'extra_feed_links'	=> "0",
+			'generator'			=> "0",
+			'rsd'				=> "1",
+			'relational'		=> "0",
+			'feed_links' 		=> "1",
+			'shortlink' 		=> "0",
+			'windows' 			=> "0" 
 		),
 		"type" => "multicheck",
 		"options" => array( 
-			'rsd'				=> __('Really Simple Discovery / XML-RPC','null'),
-			'windows' 			=> __('Windows Live Tag', 'null'), 
-			'generator'			=> __('Generator Tag', 'null'), 
-			'feed_links' 		=> __('RSS Feed Links', 'null'), 
-			'extra_feed_links'	=> __('Extra Feed Links (Categories etc)', 'null'), 
-			'shortlink' 		=> __('Shortlink', 'null'), 
 			'canonical'	 		=> __('Canonical', 'null'),
-			'relational'		=> __('Related Posts', 'null')
+			'extra_feed_links'	=> __('Extra Feed Links (Categories etc)', 'null'),
+			'generator'			=> __('Generator Tag', 'null'), 
+			'rsd'				=> __('Really Simple Discovery / XML-RPC','null'),
+			'relational'		=> __('Related Posts', 'null'),
+			'feed_links' 		=> __('RSS Feed Links', 'null'),
+			'shortlink' 		=> __('Shortlink', 'null'), 
+			'windows' 			=> __('Windows Live Tag', 'null')
 		)
 	);
 	
@@ -691,13 +713,13 @@ function optionsframework_options() {
 		"desc" => __('Toggle advanced meta data in the theme header.', 'null'),
 		"id" => "advanced_header_meta",
 		"std" => array( 
-			'ios_app'			=> "0",
-			'ie9_app'			=> "1"
+			'ie9_app'			=> "1",
+			'ios_app'			=> "0"
 		),
 		"type" => "multicheck",
 		"options" => array( 
-			'ios_app'			=> __('iOS Web App (if enabled set custom splash images in Design tab)','null'),
-			'ie9_app'			=> __('IE9+ Pinned Application (if enabled set colour in Design tab)','null')
+			'ie9_app'			=> __('IE9+ Pinned Application (if enabled set colour in Design tab)','null'),
+			'ios_app'			=> __('iOS Web App (if enabled set custom splash images in Design tab)','null')
 		)
 	);
 
@@ -706,17 +728,17 @@ function optionsframework_options() {
 		"desc" => __('Patch up certain browsers with <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills">JavaScript polyfills</a>?', 'null'),
 		"id" => "polyfills",
 		"std" => array( 
+			'imgsizer'		=> "0",
+			'html5_forms'	=> "1",
 			'ios' 			=> "1",
 			'selectivizr'	=> "0", 
-			'html5_forms'	=> "1",
-			'imgsizer'		=> "0",
 		),
 		"type" => "multicheck",
 		"options" => array( 
-			'ios' 			=> __('Screen Rotation Scale Bug (iOS)', 'null'),
-			'selectivizr'	=> __('Selectivizr CSS3 Selectors (IE7,IE8)', 'null'),
-			'html5_forms' 	=> __('HTML5 Forms (standardise form behaviour across all browsers)', 'null'),
 			'imgsizer'	 	=> __('Fluid Images (IE7,IE8)', 'null'),
+			'html5_forms' 	=> __('HTML5 Forms (standardise form behaviour across all browsers)', 'null'),
+			'ios' 			=> __('Screen Rotation Scale Bug (iOS)', 'null'),
+			'selectivizr'	=> __('Selectivizr CSS3 Selectors (IE7,IE8)', 'null')
 		)
 	);
 
@@ -724,7 +746,7 @@ function optionsframework_options() {
 	if (get_option('default_comment_status') == 'closed' && get_option('default_ping_status') == 'closed') {
 		$advanced_options['disable_comments'] = array(
 			"name" => __('Disable Comments', 'null'),
-			"desc" => __('This will remove meta boxes, comment related table columns and the <a href="'.admin_url('options-discussion.php').'">discussion settings menu</a>.', 'null'),
+			"desc" => __('This will remove meta boxes, comment related table columns, the comments admin menu and the <a href="'.admin_url('options-discussion.php').'">discussion settings menu</a>.', 'null'),
 			"id" => "disable_comments",
 			"std" => "0",
 			"type" => "checkbox"
@@ -760,6 +782,14 @@ function optionsframework_options() {
 		"desc" => __('Disable the pointer / new feature tooltips in WordPress 3.3+.', 'null'),
 		"id" => "disable_pointers",
 		"std" => "1",
+		"type" => "checkbox"
+	);
+
+	$advanced_options['disable_acf'] = array(
+		"name" => __('Disable Advanced Custom Fields Lite', 'null'),
+		"desc" => __('Unload ACF Lite if your theme does not require custom fields.', 'null'),
+		"id" => "disable_acf",
+		"std" => "0",
 		"type" => "checkbox"
 	);
 
@@ -875,17 +905,12 @@ function optionsframework_options() {
 
 /***************************************************************
 * Function null_options_theme_customiser
-* Take some of the settings from above and make them available in the 3.4+ theme customiser - could do with a check to see if setting above exists
+* Take some of the settings from above and make them available in the 3.4+ theme customiser
 ***************************************************************/
 
 add_action('customize_register', 'null_options_theme_customiser');
 
 function null_options_theme_customiser($wp_customize) {
-    
-	// grab our option name from the current theme
-	$themename = wp_get_theme();
-	$themename = $themename['Name'];
-	$themename = preg_replace("/\W/", "", strtolower($themename));
 		
 	// grab our options from above
 	$options = optionsframework_options();
@@ -898,45 +923,45 @@ function null_options_theme_customiser($wp_customize) {
 
 	// tagline
 	if (isset($options['show_tagline'])) {
-	    $wp_customize->add_setting($themename.'[show_tagline]', array(
+	    $wp_customize->add_setting(NULL_OPTION_NAME.'[show_tagline]', array(
 	        'default' => $options['show_tagline']['std'],
 	        'type' => 'option'
 	    ) );
 	    
-	    $wp_customize->add_control( $themename.'_show_tagline', array(
+	    $wp_customize->add_control( NULL_OPTION_NAME.'_show_tagline', array(
 	        'label' => $options['show_tagline']['name'],
 	        'section' => 'null_options_theme_customiser_layout',
-	        'settings' => $themename.'[show_tagline]',
+	        'settings' => NULL_OPTION_NAME.'[show_tagline]',
 	        'type' => $options['show_tagline']['type'],
 	    ) );
     }
     
 	// breadcrumbs
 	if (isset($options['breadcrumbs'])) {
-	    $wp_customize->add_setting($themename.'[breadcrumbs]', array(
+	    $wp_customize->add_setting(NULL_OPTION_NAME.'[breadcrumbs]', array(
 	        'default' => $options['breadcrumbs']['std'],
 	        'type' => 'option'
 	    ) );
 	    
-	    $wp_customize->add_control( $themename.'_breadcrumbs', array(
+	    $wp_customize->add_control( NULL_OPTION_NAME.'_breadcrumbs', array(
 	        'label' => $options['breadcrumbs']['name'],
 	        'section' => 'null_options_theme_customiser_layout',
-	        'settings' => $themename.'[breadcrumbs]',
+	        'settings' => NULL_OPTION_NAME.'[breadcrumbs]',
 	        'type' => $options['breadcrumbs']['type'],
 	    ) );
     }
     
     // footer_sidebar
    	if (isset($options['footer_sidebar'])) {
-	    $wp_customize->add_setting($themename.'[footer_sidebar]', array(
+	    $wp_customize->add_setting(NULL_OPTION_NAME.'[footer_sidebar]', array(
 	        'default' => $options['footer_sidebar']['std'],
 	        'type' => 'option'
 	    ) );
 	    
-	    $wp_customize->add_control( $themename.'_footer_sidebar', array(
+	    $wp_customize->add_control( NULL_OPTION_NAME.'_footer_sidebar', array(
 	        'label' => $options['footer_sidebar']['name'],
 	        'section' => 'null_options_theme_customiser_layout',
-	        'settings' => $themename.'[footer_sidebar]',
+	        'settings' => NULL_OPTION_NAME.'[footer_sidebar]',
 	        'type' => $options['footer_sidebar']['type'],
 	    ) );
 	}
@@ -949,93 +974,93 @@ function null_options_theme_customiser($wp_customize) {
 
 	// logo
 	if (isset($options['logo'])) {
-		$wp_customize->add_setting($themename.'[logo]', array(
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[logo]', array(
 		    //'default' => $options['logo']['std'],
 		    'type' => 'option'
 		) );
 		
-		$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $themename.'_logo', array( 
+		$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, NULL_OPTION_NAME.'_logo', array( 
 			'label' => $options['logo']['name'], 
 			'section' => 'null_options_theme_customiser_design', 
-			'settings' => $themename.'[logo]',
+			'settings' => NULL_OPTION_NAME.'[logo]',
 			'priority' => 1
 		)));
 	}
 	
 	// primary colour
 	if (isset($options['primary_colour'])) {
-		$wp_customize->add_setting($themename.'[primary_colour]', array(
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[primary_colour]', array(
 		    'default' => $options['primary_colour']['std'],
 		    'type' => 'option',
 		    'transport' => 'refresh'
 		) );
 		
-		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $themename.'_primary_colour', array( 
+		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, NULL_OPTION_NAME.'_primary_colour', array( 
 			'label' => $options['primary_colour']['name'], 
 			'section' => 'null_options_theme_customiser_design', 
-			'settings' => $themename.'[primary_colour]',
+			'settings' => NULL_OPTION_NAME.'[primary_colour]',
 			'priority' => 2
 		)));
 	}
 
 	// body colour
 	if (isset($options['body_colour'])) {
-		$wp_customize->add_setting($themename.'[body_colour]', array(
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[body_colour]', array(
 		    'default' => $options['body_colour']['std'],
 		    'type' => 'option',
 		    //'transport' => 'refresh'
 		) );
 		
-		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $themename.'_body_colour', array( 
+		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, NULL_OPTION_NAME.'_body_colour', array( 
 			'label' => $options['body_colour']['name'], 
 			'section' => 'null_options_theme_customiser_design', 
-			'settings' => $themename.'[body_colour]',
+			'settings' => NULL_OPTION_NAME.'[body_colour]',
 			'priority' => 3 
 		)));
 	}
 	
 	// link colour
 	if (isset($options['link_colour'])) {
-		$wp_customize->add_setting($themename.'[link_colour]', array(
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[link_colour]', array(
 		    'default' => $options['link_colour']['std'],
 		    'type' => 'option'
 		) );
 		
-		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $themename.'_link_colour', array( 
+		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, NULL_OPTION_NAME.'_link_colour', array( 
 			'label' => $options['link_colour']['name'], 
 			'section' => 'null_options_theme_customiser_design', 
-			'settings' => $themename.'[link_colour]',
+			'settings' => NULL_OPTION_NAME.'[link_colour]',
 			'priority' => 4 
 		)));
 	}
 
 	// link hover colour
 	if (isset($options['link_hover_colour'])) {
-		$wp_customize->add_setting($themename.'[link_hover_colour]', array(
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[link_hover_colour]', array(
 		    'default' => $options['link_hover_colour']['std'],
 		    'type' => 'option'
 		) );
 		
-		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $themename.'_link_hover_colour', array( 
+		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, NULL_OPTION_NAME.'_link_hover_colour', array( 
 			'label' => $options['link_hover_colour']['name'], 
 			'section' => 'null_options_theme_customiser_design', 
-			'settings' => $themename.'[link_hover_colour]',
+			'settings' => NULL_OPTION_NAME.'[link_hover_colour]',
 			'priority' => 5
 		)));
 	}
 
 	// heading font
 	if (isset($options['heading_font'])) {
-		$wp_customize->add_setting($themename.'[heading_font]', array(
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[heading_font]', array(
 		    'default' => $options['heading_font']['std'],
 		    'type' => 'option',
 		    'transport' => 'refresh'
 		));
 		
-		$wp_customize->add_control($themename.'_heading_font', array( 
+		$wp_customize->add_control(NULL_OPTION_NAME.'_heading_font', array( 
 			'label' => $options['heading_font']['name'], 
 			'section' => 'null_options_theme_customiser_design', 
-			'settings' => $themename.'[heading_font]', 
+			'settings' => NULL_OPTION_NAME.'[heading_font]', 
 	        'type' => $options['heading_font']['type'],
 	        'choices' => $options['heading_font']['options'],
 	        'priority' => 6
@@ -1044,16 +1069,16 @@ function null_options_theme_customiser($wp_customize) {
 
 	// body font	
 	if (isset($options['body_font'])) {
-		$wp_customize->add_setting($themename.'[body_font]', array(
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[body_font]', array(
 		    'default' => $options['body_font']['std'],
 		    'type' => 'option',
 		    'transport' => 'refresh'
 		) );
 		
-		$wp_customize->add_control($themename.'_body_font', array( 
+		$wp_customize->add_control(NULL_OPTION_NAME.'_body_font', array( 
 			'label' => $options['body_font']['name'], 
 			'section' => 'null_options_theme_customiser_design', 
-			'settings' => $themename.'[body_font]', 
+			'settings' => NULL_OPTION_NAME.'[body_font]', 
 	        'type' => $options['body_font']['type'],
 	        'choices' => $options['body_font']['options'],
 	        'priority' => 7

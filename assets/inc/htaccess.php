@@ -6,7 +6,7 @@ global $pagenow;
 if (stristr($_SERVER['SERVER_SOFTWARE'], 'apache') !== false) {
 
 /***************************************************************
-* Function null_htaccess_writable
+* Function null_htaccess_writable & null_htaccess_admin_notice
 * Provide feedback that the .htaccess file is not writable
 ***************************************************************/
 
@@ -16,10 +16,14 @@ if ( is_admin() && isset($_GET['activated']) && $pagenow == "themes.php" ) {
 
 function null_htaccess_writable() {
 	if (!is_writable(get_home_path() . '.htaccess')) {
-		if (current_user_can('administrator')) {
-			add_action('admin_notices', create_function('', "echo '<div class=\"error\"><p>" . sprintf(__('Please make sure your <a href="%s">.htaccess</a> file is writable ', 'null'), admin_url('options-permalink.php')) . "</p></div>';"));
+		if (current_user_can('manage_options')) {
+			add_action('admin_notices', 'null_htaccess_admin_notice');
 		}
 	}
+}
+
+function null_htaccess_admin_notice() {
+	echo '<div class=\"error\"><p>' . sprintf(__('Please make sure your <a href="%s">.htaccess</a> file is writable ', 'null'), admin_url('options-permalink.php')) . '</p></div>';
 }
 
 /***************************************************************

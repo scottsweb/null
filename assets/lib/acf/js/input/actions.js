@@ -7,6 +7,7 @@
 */
 
 var acf = {
+	ajaxurl : '',
 	admin_url : '',
 	wp_version : '0',
 	post_id : 0,
@@ -19,11 +20,13 @@ var acf = {
 		}
 	},
 	helpers : {
+		get_atts : function(){},
 		version_compare : function(){},
 		uniqid : function(){},
 		sortable : function(){},
 		add_message : function(){},
-		is_clone_field : function(){}
+		is_clone_field : function(){},
+		url_to_object : function(){}
 	},
 	conditional_logic : {},
 	media : {
@@ -33,31 +36,16 @@ var acf = {
 		type : function(){}
 	},
 	fields : {
-		color_picker : {
-			farbtastic : null
-		},
-		image : {
-			add : function(){},
-			edit : function(){},
-			remove : function(){},
-			text : {
-				title_add : "Select Image",
-				title_edit : "Edit Image"
-			}
-		},
-		file : {
-			add : function(){},
-			edit : function(){},
-			remove : function(){},
-			text : {
-				title_add : "Select File",
-				title_edit : "Edit File"
-			}
-		},
+		date_picker : {},
+		color_picker : {},
+		image : {},
+		file : {},
 		wysiwyg : {
 			toolbars : {},
+			has_tinymce : function(){},
+			add_tinymce : function(){},
 			add_events : function(){},
-			has_tinymce : function(){}
+			remove_tinymce : function(){}
 		},
 		gallery : {
 			add : function(){},
@@ -75,24 +63,6 @@ var acf = {
 			text : {
 				max : "Maximum values reached ( {max} values )"
 			}
-		},
-		repeater : {
-			update_order : function(){},
-			set_column_widths : function(){},
-			add_sortable : function(){},
-			update_classes : function(){},
-			add_row : function(){},
-			remove_row : function(){},
-			text : {
-				min : "Minimum rows reached ( {min} rows )",
-				max : "Maximum rows reached ( {max} rows )"
-			}
-		},
-		flexible_content : {
-			add_sortable : function(){},
-			update_order : function(){},
-			add_layout : function(){},
-			remove_layout : function(){}
 		}
 	}
 };
@@ -100,6 +70,35 @@ var acf = {
 (function($){
 	
 	
+	/*
+	*  acf.helpers.get_atts
+	*
+	*  description
+	*
+	*  @type	function
+	*  @date	1/06/13
+	*
+	*  @param	{el}		$el
+	*  @return	{object}	atts
+	*/
+	
+	acf.helpers.get_atts = function( $el ){
+		
+		var atts = {};
+		
+		$.each( $el[0].attributes, function( index, attr ) {
+        	
+        	if( attr.name.substr(0, 5) == 'data-' )
+        	{
+	        	atts[ attr.name.replace('data-', '') ] = attr.value;
+        	}
+        });
+        
+        return atts;
+			
+	};
+        
+           
 	/**
 	 * Simply compares two string version values.
 	 * 
@@ -145,7 +144,7 @@ var acf = {
 	
 	
 	/*
-	*  Helper uniqid
+	*  Helper: uniqid
 	*
 	*  @description: 
 	*  @since: 3.5.8
@@ -156,7 +155,33 @@ var acf = {
     {
     	var newDate = new Date;
     	return newDate.getTime();
-    }
+    };
+    
+    
+    /*
+	*  Helper: url_to_object
+	*
+	*  @description: 
+	*  @since: 4.0.0
+	*  @created: 17/01/13
+	*/
+	
+    acf.helpers.url_to_object = function( url ){
+	    
+	    // vars
+	    var obj = {},
+	    	pairs = url.split('&');
+	    
+	    
+		for( i in pairs )
+		{
+		    var split = pairs[i].split('=');
+		    obj[decodeURIComponent(split[0])] = decodeURIComponent(split[1]);
+		}
+		
+		return obj;
+	    
+    };
     
 	
 	/*
@@ -207,49 +232,6 @@ var acf = {
 		return type;
 		
 	};
-	
-	
-	
-	/*
-	*  Document Ready
-	*
-	*  @description: 
-	*  @since: 3.5.8
-	*  @created: 17/01/13
-	*/
-	
-	$(document).ready(function(){
-
-		// add classes
-		$('#poststuff .postbox[id*="acf_"]').addClass('acf_postbox');
-		$('#adv-settings label[for*="acf_"]').addClass('acf_hide_label');
-		
-		// hide acf stuff
-		$('#poststuff .acf_postbox').addClass('acf-hidden');
-		$('#adv-settings .acf_hide_label').hide();
-		
-		// loop through acf metaboxes
-		$('#poststuff .postbox.acf_postbox').each(function(){
-			
-			// vars
-			var options = $(this).find('> .inside > .options'),
-				show = options.attr('data-show'),
-				layout = options.attr('data-layout'),
-				id = $(this).attr('id').replace('acf_', '');
-			
-			// layout
-			$(this).addClass(layout);
-			
-			// show / hide
-			if( show == "1" )
-			{
-				$(this).removeClass('acf-hidden');
-				$('#adv-settings .acf_hide_label[for="acf_' + id + '-hide"]').show();
-			}
-			
-		});
-	
-	});
 
 	
 	/*
@@ -276,8 +258,8 @@ var acf = {
 	*  @created: 17/01/13
 	*/
 	
-	$('form#post').live("submit", function(){
-		
+	$('form#post').live('submit', function(){
+			
 		if( ! save_post )
 		{
 			// do validation
@@ -304,7 +286,7 @@ var acf = {
 		// remove hidden postboxes
 		$('.acf_postbox.acf-hidden').remove();
 		
-		
+
 		// submit the form
 		return true;
 		
@@ -386,13 +368,13 @@ var acf = {
 	acf.conditional_logic.calculate = function( options )
 	{
 		// vars
-		var field = $('.field-' + options.field),
-			toggle = $('.field-' + options.toggle),
+		var field = $('.field_key-' + options.field),
+			toggle = $('.field_key-' + options.toggle),
 			r = false;
 		
 		
 		// compare values
-		if( toggle.hasClass('field-true_false') || toggle.hasClass('field-checkbox') || toggle.hasClass('field-radio') )
+		if( toggle.hasClass('field_type-true_false') || toggle.hasClass('field_type-checkbox') || toggle.hasClass('field_type-radio') )
 		{
 			if( options.operator == "==" )
 			{
@@ -412,16 +394,24 @@ var acf = {
 		}
 		else
 		{
+			// get val and make sure it is an array
+			var val = toggle.find('*[name]:last').val();
+			if( !$.isArray(val) )
+			{
+				val = [ val ];
+			}
+			
+			
 			if( options.operator == "==" )
 			{
-				if( toggle.find('*[name]').val() == options.value )
+				if( $.inArray(options.value, val) > -1 )
 				{
 					r = true;
 				}
 			}
 			else
 			{
-				if( toggle.find('*[name]').val() != options.value )
+				if( $.inArray(options.value, val) < 0 )
 				{
 					r = true;
 				}
@@ -431,6 +421,26 @@ var acf = {
 		
 		return r;
 	}
+	
+	
+	/*
+	*  Document Ready
+	*
+	*  @description: 
+	*  @since: 3.5.8
+	*  @created: 17/01/13
+	*/
+	
+	$(document).ready(function(){
+		
+		// fix for older options page add-on
+		$('.acf_postbox > .inside > .options').each(function(){
+			
+			$(this).closest('.acf_postbox').addClass( $(this).attr('data-layout') );
+			
+		});
+	
+	});
 	
 	
 	/*
@@ -444,7 +454,19 @@ var acf = {
 	$(window).load(function(){
 		
 		setTimeout(function(){
+			
+			// Hack for CPT without a content editor
+			try
+			{
+				wp.media.view.settings.post.id = acf.post_id;	
+			} 
+			catch(e)
+			{
+				// one of the objects was 'undefined'...
+			}
+			
 
+			
 			// setup fields
 			$(document).trigger('acf/setup_fields', $('#poststuff'));
 			

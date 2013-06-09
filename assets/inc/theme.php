@@ -131,7 +131,16 @@ add_action('init', 'null_clean_head');
 
 function null_clean_head() {
 
-	$options = of_get_option('header_meta');
+	$options = of_get_option('header_meta', array( 
+		'rsd'				=> "1",
+		'windows' 			=> "0", 
+		'generator'			=> "0", 
+		'feed_links' 		=> "1", 
+		'extra_feed_links'	=> "0", 
+		'shortlink' 		=> "0", 
+		'canonical' 		=> "1",
+		'relational'		=> "0"
+	));
 	
 	// RSD link 
 	if ($options['rsd'] != "1") remove_action('wp_head', 'rsd_link');
@@ -140,13 +149,13 @@ function null_clean_head() {
 	// remove generator tag			
 	if ($options['generator'] != "1") remove_action('wp_head', 'wp_generator');
 	// remove links to the extra feeds (e.g. category feeds)
-	if ($options['feed_links'] != "1") remove_action('wp_head', 'feed_links_extra', 3 );
+	if ($options['feed_links'] != "1") remove_action('wp_head', 'feed_links', 2);
 	// remove links to the general feeds (e.g. posts and comments)
-	if ($options['extra_feed_links'] != "1") remove_action('wp_head', 'feed_links', 2 );
+	if ($options['extra_feed_links'] != "1") remove_action('wp_head', 'feed_links_extra', 3);
 	// remove rel shortlink
 	if ($options['shortlink'] != "1") remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 	// canoncical
-	if ($options['canonical'] != "1") remove_action('wp_head', 'rel_canonical' );
+	if ($options['canonical'] != "1") remove_action('wp_head', 'rel_canonical');
 	// relational posts
 	if ($options['relational'] != "1") {
 		// remove index link
@@ -201,7 +210,12 @@ function null_wp_head() {
 	<?php
 	
 	// pollyfills
-	$polyfills = of_get_option('polyfills');
+	$polyfills = of_get_option('polyfills', array(
+		'ios' 			=> "1",
+		'selectivizr'	=> "0", 
+		'html5_forms'	=> "1",
+		'imgsizer'		=> "0",
+	));
 
 	//  ios fix
 	if ($polyfills['ios'] == "1") { 
@@ -232,16 +246,21 @@ function null_wp_head() {
 	<?php
 	}
 
-	$advanced_header_meta = of_get_option('advanced_header_meta');
+	$advanced_header_meta = of_get_option('advanced_header_meta', array(
+		'ios_app'			=> "0",
+		'ie9_app'			=> "1"
+	));
 	
 	// ie9+ pinned app
 	if ($advanced_header_meta['ie9_app'] == "1") {
 	?>
 
-	<!-- allow pinned app in ie9+ / metro -->
+	<!-- allow pinned app in ie9+ / windows 8 -->
 	<meta name="application-name" content="<?php bloginfo('name'); ?>" />
 	<meta name="msapplication-tooltip" content="<?php bloginfo('description'); ?>"/>
 	<meta name="msapplication-starturl" content="<?php echo home_url(); ?>"/>
+	<?php if ($touchicon = of_get_option('touchicon')) { ?><meta name="msapplication-TileImage" content="<?php echo $touchicon; ?>"><?php echo "\n"; } ?>
+	<?php if ($ie9colour = of_get_option('ie9_colour')) { ?><meta name="msapplication-TileColor" content="<?php echo $ie9colour; ?>"><?php echo "\n"; } ?>
 	<?php if ($ie9colour = of_get_option('ie9_colour')) { ?><meta name="msapplication-navbutton-color" content="<?php echo $ie9colour; ?>"><?php echo "\n"; }  ?>
 	<?php
 	}
@@ -269,7 +288,7 @@ function null_wp_head() {
 	}
 	
 	// google analytics  (from general settings)
-	if ($tracking = of_get_option('gat', '')) {
+	if ($tracking = of_get_option('gat')) {
 	?>
 	
 	<!-- google analytics -->
@@ -314,7 +333,7 @@ function null_disable_rss_feed() {
 
 if (of_get_option('disable_search', '0')) {
 	add_action('parse_query', 'null_disable_search');
-	//add_filter('get_search_form', create_function( '$a', "return null;" ), 1000);
+	//add_filter('get_search_form', '__return_null', 100);
 }
 
 function null_disable_search( $query, $error = true ) {
@@ -327,29 +346,6 @@ function null_disable_search( $query, $error = true ) {
         if ( $error == true )
             $query->is_404 = true;
     }
-}
-
-/***************************************************************
-* Function null_less_vars
-* Parse theme options into less for use in stylesheets
-***************************************************************/
-
-if (!of_get_option('disable_less', '0')) {
-	add_filter('less_vars', 'null_less_vars', 10, 2 );
-}
-
-function null_less_vars($vars, $handle) {
-   	
-    // $handle is a reference to the handle used with wp_enqueue_style()
-    if ($primary_colour = of_get_option('primary_colour')) { $vars['primarycol'] = $primary_colour; }
-    if ($body_colour = of_get_option('body_colour')) { $vars['bodycol'] = $body_colour; }
-    if ($link_colour = of_get_option('link_colour')) { $vars['linkcol'] = $link_colour; }
-    if ($link_hover_colour = of_get_option('link_hover_colour')) { $vars['linkhovercol'] = $link_hover_colour; }
-    if ($background_image = of_get_option('background_image')) { $vars['backgroundimage'] = $background_image; }
-    if ($heading_font = of_get_option('heading_font')) { $vars['headingfont'] = $heading_font; }
-    if ($body_font = of_get_option('body_font')) { $vars['bodyfont'] = $body_font; }
-        
-    return $vars;
 }
 
 /***************************************************************
@@ -507,7 +503,7 @@ function null_navigation_menu_fallback() {
 * Add first and last classes to menus
 ***************************************************************/
 
-add_filter('wp_nav_menu_objects', 'null_filter_menu_class');
+//add_filter('wp_nav_menu_objects', 'null_filter_menu_class');
 
 function null_filter_menu_class( $objects ) {
 
@@ -545,7 +541,7 @@ function null_filter_menu_class( $objects ) {
 
     // Finish it off by adding classes to the top level menu items
     $objects[1]->classes[] = 'first-menu-item'; // We can be assured 1 will be the first item in the menu :-)
-    $objects[end( array_keys( $top_ids ) )]->classes[] = 'last-menu-item';
+    $objects[]->classes[end(array_keys($top_ids))] = 'last-menu-item';
 
     // Return the menu objects
     return $objects;
@@ -731,7 +727,7 @@ function null_remove_more_skip_link($link) {
 add_filter('the_content', 'null_remove_empty_read_more_span');
 
 function null_remove_empty_read_more_span($content) {
-	return eregi_replace("(<span id=\"more-[0-9]{1,}\"></span>)", "", $content);
+	return preg_replace("(<span id=\"more-[0-9]{1,}\"></span>)", "", $content);
 }
 
 /***************************************************************
@@ -750,16 +746,52 @@ function null_oembed_wmode( $embed ) {
 }
 
 /***************************************************************
-* Function null_user_posts_count
-* Count particular number of posts (pages, comments etc) by a user
+* Functions null_embed_html, null_embed_tweaks, null_oembed_result
+* Wrap oembed in a container for responsive & use custom colours 
 ***************************************************************/
 
-function null_user_posts_count($user_id, $what_to_count = 'post') {
-	global $wpdb;    
-	$where = $what_to_count == 'comment' ? "WHERE comment_approved = 1 AND user_id = {$user_id}" : get_posts_by_author_sql($what_to_count, TRUE, $user_id);
-	$from = "FROM ".(($what_to_count == 'comment') ? $wpdb->comments : $wpdb->posts);    
-	$count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) {$from} {$where}"));
-	return $count;
+add_filter('embed_oembed_html', 'null_embed_html', 10, 4) ;
+ 
+function null_embed_html($html, $url, $attr, $post_ID) {
+	$url = str_replace(array('www.', '.com'), '', parse_url($url, PHP_URL_HOST));
+    $return = '<figure class="o-container '.null_slugify($url).'">'.$html.'</figure>';
+    return $return;
+}
+
+add_filter('oembed_fetch_url', 'null_embed_tweaks', 30, 3);
+
+function null_embed_tweaks($provider, $args, $url) {
+
+	// tweak vimeo colours to match theme settings
+	if (null_string_search('vimeo', $provider)) {
+		$provider = add_query_arg(apply_filters('null_viemo_features', array('color' => str_replace('#','', of_get_option('primary_colour', '#FFFFFF')))), $provider);
+	}
+
+	return $provider;
+}
+
+add_filter('oembed_result','null_oembed_result', 10, 3);
+
+function null_oembed_result($html, $url, $args) {
+
+	// light youtube player
+ 	if (preg_match("/youtube.com\/watch\?v=([^&]+)/i", $url, $match)){
+        return str_replace('http://www.youtube.com/embed/' . $match[1] .'?feature=oembed', add_query_arg(apply_filters('null_youtube_features', array('feature' => 'oembed', 'fs' => 0, 'modestbranding' => 1, 'theme' => 'light', 'showinfo' => 1, 'autohide' => 0, 'rel' => 0)), 'http://www.youtube.com/embed/' . $match[1]), $html);
+    }
+
+    return $html;
+}
+
+/***************************************************************
+* Function null_user_posts_count
+* Count particular number of posts (pages, custom post types etc) by a user
+***************************************************************/
+
+function null_user_posts_count($userid, $post_type = 'post') {
+	global $wpdb; 
+	$where = get_posts_by_author_sql($post_type, TRUE, $userid);
+  	$count = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->posts $where");
+  	return $count;
 }
 
 /***************************************************************
@@ -991,6 +1023,19 @@ function null_clean_wp_page_menu($page_markup) {
 	$new_markup = str_replace($toreplace, '', $page_markup);
 	$new_markup = preg_replace('/^<ul>/i', '<ul class="menu">', $new_markup);
 	return $new_markup; 
+}
+
+
+/***************************************************************
+* Function null_mustache_tags
+* Replace mustache style tags in some theme options
+***************************************************************/
+
+function null_mustache_tags($content) {
+	$content = str_replace('{{year}}', date('Y'), $content);
+	$content = str_replace('{{sitename}}', bloginfo('name'), $content);
+	$content = str_replace('{{copyright}}', '&copy;', $content);
+	return apply_filters('null_mustache_tags', $content);
 }
 
 /***************************************************************

@@ -1,7 +1,11 @@
 <?php if (have_posts()) while (have_posts()) : the_post(); ?>
 
+<?php tha_entry_before(); ?>
+
 <article <?php post_class() ?>>
-	
+
+	<?php tha_entry_top(); ?>
+
 	<header>
 		<h2 class="entry-title"><?php the_title() ?></h2>
 	</header>
@@ -18,6 +22,10 @@
 	}
 	?>
 	
+	<?php tha_entry_bottom(); ?>
+	
 </article>
+
+<?php tha_entry_after(); ?>
 
 <?php endwhile; ?>

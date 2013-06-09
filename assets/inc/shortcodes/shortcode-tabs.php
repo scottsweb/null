@@ -1,6 +1,7 @@
 <?php
 /*
-Shortcode Name: jQuery UI Tabs [tabgroup][tab title="title"]content[/tab][/tabgroup]
+Shortcode Name: jQuery UI Tabs 
+Shortcode Template: [tabgroup][tab title="title"]content[/tab][/tabgroup]
 */
 
 /***************************************************************

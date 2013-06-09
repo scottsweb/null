@@ -1,6 +1,10 @@
+		
+		<?php tha_footer_before(); ?>
 
 		<footer id="footer" role="contentinfo">
 			
+			<?php tha_footer_top(); ?>
+
 			<?php if (of_get_option('footer_sidebar', '1') && is_active_sidebar('sidebar-footer')) { ?>
 			<aside id="sidebar-footer" class="sidebar" role="complementary">
 				<?php dynamic_sidebar('sidebar-'.null_slugify('Footer')); ?>
@@ -18,7 +22,7 @@
 				?>
 
 				<!-- wordpress credit -->
-				<span id="generator-link"><?php echo $wordpress_credit; ?></span>
+				<span id="generator-link"><?php echo null_mustache_tags($wordpress_credit); ?></span>
 				<?php
 				}
 
@@ -27,19 +31,25 @@
 				?>
 
 				<!-- designer credit -->
-				<span id="theme-link"><?php echo $theme_credit; ?></span>
+				<span id="theme-link"><?php echo null_mustache_tags($theme_credit); ?></span>
 				<?php
 				}
 				?>
 			</div>
-		
+			
+			<?php tha_footer_bottom(); ?>
+
 		</footer><!-- #footer -->
-	
+		
+		<?php tha_footer_after(); ?>
+
 	</div><!-- #wrapper .hfeed -->
 
 	<div id="wp-footer">
 		<?php wp_footer(); ?>
 	</div><!-- #wp-footer -->
+
+	<?php tha_body_bottom(); ?>
 
 </body>
 </html>

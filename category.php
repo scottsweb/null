@@ -6,8 +6,12 @@ If deleted WordPress will call archive.php instead which supports category as we
 ?>
 <?php get_header() ?>
 
+		<?php tha_content_before(); ?>
+
 		<div id="content" role="main">
-		
+
+			<?php tha_content_top(); ?>
+
 			<h2 class="page-title"><?php _e('Blog:', 'null'); ?> <?php echo single_cat_title(); ?></h2>
 			
 			<?php // does this category have a description?
@@ -18,8 +22,12 @@ If deleted WordPress will call archive.php instead which supports category as we
 			?>
 	
 			<?php get_template_part('loop', 'category'); ?>		
+
+			<?php tha_content_bottom(); ?>
 	
 		</div><!-- #content -->
+
+		<?php tha_content_after(); ?>
 
 <?php get_sidebar() ?>
 <?php get_footer() ?>

@@ -1,7 +1,12 @@
 <?php if ( have_posts() ) : ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
-<article <?php post_class() ?> role="article" <?php if (function_exists("live_edit")) { live_edit(apply_filters('null_live_edit_loop', 'post_title, post_excerpt')); } ?>>
+<?php tha_entry_before(); ?>
+
+<article <?php post_class() ?> role="article">
+
+	<?php tha_entry_top(); ?>
+
 	<header>		
 		<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 		<?php if ( is_sticky() ) : ?>
@@ -24,7 +29,12 @@
 			<?php if ( comments_open() && ! post_password_required() ) : ?><li class="entry-comments"><?php comments_popup_link(__('No Comments', 'null'), __('1 Comment', 'null'), __('% Comments', 'null')); ?></li><?php endif; ?>
 		</ul>
 	</footer>
+
+	<?php tha_entry_bottom(); ?>
+
 </article>
+
+<?php tha_entry_after(); ?>
 
 <?php endwhile; ?>
 
@@ -38,9 +48,19 @@
 
 <?php else : // no posts found ?>
 
+<?php tha_entry_before(); ?>
+
 <article role="article">
+
+	<?php tha_entry_top(); ?>
+
 	<h3><?php _e('No Posts Found', 'null'); ?></h3>
 	<p class="notice"><?php _e("Sorry, but you are looking for something that isn't here.", 'null'); ?></p>
+
+	<?php tha_entry_bottom(); ?>
+
 </article>
+
+<?php tha_entry_after(); ?>
 
 <?php endif; ?>

@@ -1,6 +1,10 @@
 <?php if (have_posts()) : the_post(); ?>
 
-<article <?php post_class() ?> role="article" <?php if (function_exists("live_edit")) { live_edit(apply_filters('null_live_edit_single_post', 'post_title, post_content')); } ?>>
+<?php tha_entry_before(); ?>
+
+<article <?php post_class() ?> role="article">
+
+	<?php tha_entry_top(); ?>
 
 	<header>
 		<h2 class="entry-title"><?php the_title() ?></h2>
@@ -67,14 +71,28 @@
 		comments_template();
 	}
 	?>
-	
+
+	<?php tha_entry_bottom(); ?>
+
 </article>
+
+<?php tha_entry_after(); ?>
 
 <?php else : // hopfully WordPress will 404 this ?>
 
+<?php tha_entry_before(); ?>
+
 <article role="article">
+
+	<?php tha_entry_top(); ?>
+
 	<h3><?php _e('Post Not Found', 'null'); ?></h3>
 	<p class="notice"><?php _e("Sorry, but you are looking for something that isn't here.", 'null'); ?></p>
+
+	<?php tha_entry_bottom(); ?>
+
 </article>
+
+<?php tha_entry_after(); ?>
 
 <?php endif; ?>

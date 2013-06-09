@@ -1,6 +1,7 @@
 <?php
 /*
-Shortcode Name: jQuery toggle [toggle title="Button text"]content[/toggle]
+Shortcode Name: jQuery toggle 
+Shortcode Template: [toggle title="Button text"]content[/toggle]
 */
 
 /***************************************************************

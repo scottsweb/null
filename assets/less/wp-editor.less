@@ -4,7 +4,6 @@ wp-editor.less
 contents:
 
 	1. Custom editor styles for TinyMCE
-	2. WordPress 
 	
 */
 
@@ -13,92 +12,15 @@ contents:
 
 html .mceContentBody 
 	{
-	/*max-width:640px;*/
+	//max-width:600px;
+	padding: 10px;
 	}
 	
-/* @import url(reset.css); */
-
-/* 2.WordPress
---------------------------------------------------------------------------------------- */
-
-.entry-content img 
-	{
-	margin: 0 0 1.5em 0;
-	}
-	
-.alignleft,
-img.alignleft 
-	{
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-	}
-	
-.alignright,
-img.alignright 
-	{
-	display: inline;
-	float: right;
-  	margin-left: 1.5em;
-	}
-	
-.aligncenter,
-img.aligncenter 
-	{
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	}
-	
-.wp-caption 
-	{
-	text-align: center;
-	margin-bottom: 1.5em;
-	}
-	
-.wp-caption img 
-	{
-	border: 0 none;
-	margin: 0;
-	padding: 0;
-	}
-	
-.wp-caption p.wp-caption-text 
-	{
-	margin: 0;
-	}
-	
-.wp-smiley 
-	{ 
-	max-height: 1em;
-	margin:0 !important;
-	}
-	
-.gallery dl 
-	{
-	margin: 0;
-	}
-	
-.gallery-caption 
-	{
-	margin:-1.5em 0 0 0;
-	}
-
-blockquote.left 
-	{
-	float: left;
-	margin-left: 0;
-	margin-right: 20px;
-	text-align: right;
-	width: 33%;
-	}
-
-blockquote.right 
-	{
-	float: right;
-	margin-left: 20px;
-	margin-right: 0;
-	text-align: left;
-	width: 33%;
-	}
+@import "reset.less";
+@import "variables.less";
+@import "mixins.less";
+@import "typography.less";
+@import "forms.less";
+@import "tables.less";
+@import "classes.less";
+@import "wordpress.less";

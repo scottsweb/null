@@ -1,7 +1,12 @@
 <?php if ( have_posts() ) : ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
+<?php tha_entry_before(); ?>
+
 <article <?php post_class('loop-search') ?> role="article">
+
+	<?php tha_entry_top(); ?>
+
 	<header>
 		<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 		<div class="entry-date"><time class="published" datetime="<?php the_time('Y-m-d\TH:i:s') ?>" pubdate><?php null_time(); ?></time></div>
@@ -19,7 +24,12 @@
 			<?php if ( comments_open() && ! post_password_required() ) : ?><li class="entry-comments"><?php comments_popup_link(__('No Comments', 'null'), __('1 Comment', 'null'), __('% Comments', 'null')); ?></li><?php endif; ?>
 		</ul>
 	</footer>
+
+	<?php tha_entry_bottom(); ?>
+
 </article>
+
+<?php tha_entry_after(); ?>
 
 <?php endwhile; ?>
 
@@ -33,7 +43,12 @@
 
 <?php else : // no search results ?>
 
+<?php tha_entry_before(); ?>
+
 <article id="post-0" class="post no-results not-found">
+	
+	<?php tha_entry_top(); ?>
+
 	<header>
 		<h3 class="entry-title"><?php _e('Nothing Found', 'null'); ?></h3>
 	</header>
@@ -41,6 +56,11 @@
 		<p class="notice"><?php _e('Sorry but nothing matched your search. Please try searching again using the form below.', 'null'); ?></p>
 		<?php get_search_form(); ?>
 	</div>
+	
+	<?php tha_entry_bottom(); ?>
+
 </article>
+
+<?php tha_entry_after(); ?>
 
 <?php endif; ?>

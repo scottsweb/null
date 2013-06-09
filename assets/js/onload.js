@@ -55,7 +55,7 @@ jQuery(document).ready(function() {
 	
 	// accordion shortcode
 	jQuery(".accordion-shortcode").accordion({ 
-		autoHeight: false, 
+		heightStyle: 'content', 
 		collapsible: true, 
 		active: false,
 		header: '.aheader'
@@ -63,9 +63,11 @@ jQuery(document).ready(function() {
 	
 	// tabs shortcode
 	jQuery(".tabs-shortcode").tabs({ 
-		fx: { opacity: 'toggle' },
-		select: function(event, ui) { 
-			window.location.hash = ui.tab.hash;
+		show: { effect: "fadeIn", duration: 400 },
+		hide: { effect: "fadeOut", duration: 400 },
+		activate: function(event, ui) { 
+			// window.location.hash = ui.newPanel.selector; 
+			// to avoid skipping http://stackoverflow.com/questions/8624531/preventing-scroll-when-using-uri-hash-to-identify-tab
 		}
 	});
 	

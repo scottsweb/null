@@ -1,43 +1,57 @@
 <?php
 
-class acf_Wysiwyg extends acf_Field
+class acf_field_wysiwyg extends acf_field
 {
 	
-	/*--------------------------------------------------------------------------------------
+	/*
+	*  __construct
 	*
-	*	Constructor
+	*  Set name / label needed for actions / filters
 	*
-	*	@author Elliot Condon
-	*	@since 1.0.0
-	*	@updated 2.2.0
-	* 
-	*-------------------------------------------------------------------------------------*/
+	*  @since	3.6
+	*  @date	23/01/13
+	*/
 	
-	function __construct($parent)
+	function __construct()
 	{
-    	parent::__construct($parent);
+		// vars
+		$this->name = 'wysiwyg';
+		$this->label = __("Wysiwyg Editor",'acf');
+		$this->category = __("Content",'acf');
+		$this->defaults = array(
+			'toolbar'		=>	'full',
+			'media_upload' 	=>	'yes',
+			'default_value'	=>	'',
+		);
+		
+		
+		// do not delete!
+    	parent::__construct();
     	
-    	$this->name = 'wysiwyg';
-		$this->title = __("Wysiwyg Editor",'acf');
-		
-		add_action( 'acf_head-input', array( $this, 'acf_head') );
-		
-		add_filter( 'acf/fields/wysiwyg/toolbars', array( $this, 'toolbars'), 1, 1 );
-
-   	}
-   	
-   	
-   	/*
-   	*  get_toolbars
-   	*
-   	*  @description: 
-   	*  @since: 3.5.7
-   	*  @created: 10/01/13
-   	*/
-   	
+    	
+    	// filters
+    	add_filter( 'acf/fields/wysiwyg/toolbars', array( $this, 'toolbars'), 1, 1 );
+	}
+	
+	
+	/*
+	*  toolbars()
+	*
+	*  This filter allowsyou to customize the WYSIWYG toolbars
+	*
+	*  @param	$toolbars - an array of toolbars
+	*
+	*  @return	$toolbars - the modified $toolbars
+	*
+	*  @type	filter
+	*  @since	3.6
+	*  @date	23/01/13
+	*/
+	
    	function toolbars( $toolbars )
    	{
    		$editor_id = 'acf_settings';
+   		
    		
    		// Full
    		$toolbars['Full'] = array();
@@ -54,178 +68,61 @@ class acf_Wysiwyg extends acf_Field
    		
    		// Custom - can be added with acf/fields/wysiwyg/toolbars filter
    	
+   		
 	   	return $toolbars;
    	}
    	
-	
-	
-   	/*--------------------------------------------------------------------------------------
+   	
+   	/*
+	*  input_admin_head()
 	*
-	*	admin_head
-	*	- Add the settings for a WYSIWYG editor (as used in wp_editor / wp_tiny_mce)
+	*  This action is called in the admin_head action on the edit screen where your field is created.
+	*  Use this action to add css and javascript to assist your create_field() action.
 	*
-	*	@author Elliot Condon
-	*	@since 3.2.3
-	* 
-	*-------------------------------------------------------------------------------------*/
-	
-   	function acf_head()
+	*  @info	http://codex.wordpress.org/Plugin_API/Action_Reference/admin_head
+	*  @type	action
+	*  @since	3.6
+	*  @date	23/01/13
+	*/
+   	
+   	function input_admin_head()
    	{
    		add_action( 'admin_footer', array( $this, 'admin_footer') );
    	}
    	
-   	
    	function admin_footer()
    	{
 	   	?>
-	   	<div style="display:none;">
-	   	<?php wp_editor( '', 'acf_settings' ); ?>
-	   	</div>
+<div style="display:none;">
+	<?php wp_editor( '', 'acf_settings' ); ?>
+</div>
 	   	<?php
    	}
    	
-
-	
-	/*--------------------------------------------------------------------------------------
+   	
+   	/*
+	*  create_field()
 	*
-	*	create_options
+	*  Create the HTML interface for your field
 	*
-	*	@author Elliot Condon
-	*	@since 2.0.6
-	*	@updated 2.2.0
-	* 
-	*-------------------------------------------------------------------------------------*/
-	
-	function create_options($key, $field)
-	{	
-		// vars
-		$defaults = array(
-			'toolbar'		=>	'full',
-			'media_upload' 	=>	'yes',
-			'the_content' 	=>	'yes',
-			'default_value'	=>	'',
-		);
-		
-		$field = array_merge($defaults, $field);
-		
-		?>
-		<tr class="field_option field_option_<?php echo $this->name; ?>">
-			<td class="label">
-				<label><?php _e("Default Value",'acf'); ?></label>
-			</td>
-			<td>
-				<?php 
-				do_action('acf/create_field', array(
-					'type'	=>	'textarea',
-					'name'	=>	'fields['.$key.'][default_value]',
-					'value'	=>	$field['default_value'],
-				));
-				?>
-			</td>
-		</tr>
-		<tr class="field_option field_option_<?php echo $this->name; ?>">
-			<td class="label">
-				<label><?php _e("Toolbar",'acf'); ?></label>
-			</td>
-			<td>
-				<?php
-				
-				$toolbars = apply_filters( 'acf/fields/wysiwyg/toolbars', array() );
-				$choices = array();
-				
-				if( is_array($toolbars) )
-				{
-					foreach( $toolbars as $k => $v )
-					{
-						$label = $k;
-						$name = sanitize_title( $label );
-						$name = str_replace('-', '_', $name);
-						
-						$choices[ $name ] = $label;
-					}
-				}
-				
-				do_action('acf/create_field', array(
-					'type'	=>	'radio',
-					'name'	=>	'fields['.$key.'][toolbar]',
-					'value'	=>	$field['toolbar'],
-					'layout'	=>	'horizontal',
-					'choices' => $choices
-				));
-				?>
-			</td>
-		</tr>
-		<tr class="field_option field_option_<?php echo $this->name; ?>">
-			<td class="label">
-				<label><?php _e("Show Media Upload Buttons?",'acf'); ?></label>
-			</td>
-			<td>
-				<?php 
-				do_action('acf/create_field', array(
-					'type'	=>	'radio',
-					'name'	=>	'fields['.$key.'][media_upload]',
-					'value'	=>	$field['media_upload'],
-					'layout'	=>	'horizontal',
-					'choices' => array(
-						'yes'	=>	__("Yes",'acf'),
-						'no'	=>	__("No",'acf'),
-					)
-				));
-				?>
-			</td>
-		</tr>
-		<tr class="field_option field_option_<?php echo $this->name; ?>">
-			<td class="label">
-				<label><?php _e("Run filter \"the_content\"?",'acf'); ?></label>
-				<p class="description"><?php _e("Enable this filter to use shortcodes within the WYSIWYG field",'acf'); ?></p>
-				<p class="description"><?php _e("Disable this filter if you encounter recursive template problems with plugins / themes",'acf'); ?></p>
-			</td>
-			<td>
-				<?php 
-				do_action('acf/create_field', array(
-					'type'	=>	'radio',
-					'name'	=>	'fields['.$key.'][the_content]',
-					'value'	=>	$field['the_content'],
-					'layout'	=>	'horizontal',
-					'choices' => array(
-						'yes'	=>	__("Yes",'acf'),
-						'no'	=>	__("No",'acf'),
-					)
-				));
-				?>
-			</td>
-		</tr>
-		<?php
-	}
-	
-	
-	/*--------------------------------------------------------------------------------------
+	*  @param	$field - an array holding all the field's data
 	*
-	*	create_field
-	*
-	*	@author Elliot Condon
-	*	@since 2.0.5
-	*	@updated 2.2.0
-	* 
-	*-------------------------------------------------------------------------------------*/
+	*  @type	action
+	*  @since	3.6
+	*  @date	23/01/13
+	*/
 	
-	function create_field($field)
+	function create_field( $field )
 	{
 		global $wp_version;
 		
 		
 		// vars
-		$defaults = array(
-			'toolbar'		=>	'full',
-			'media_upload' 	=>	'yes',
-		);
-		$field = array_merge($defaults, $field);
-		
-		$id = 'wysiwyg-' . $field['id'];
+		$id = 'wysiwyg-' . $field['id'] . '-' . uniqid();
 		
 		
 		?>
-		<div id="wp-<?php echo $id; ?>-wrap" class="acf_wysiwyg wp-editor-wrap" data-toolbar="<?php echo $field['toolbar']; ?>">
+		<div id="wp-<?php echo $id; ?>-wrap" class="acf_wysiwyg wp-editor-wrap" data-toolbar="<?php echo $field['toolbar']; ?>" data-upload="<?php echo $field['media_upload']; ?>">
 			<?php if($field['media_upload'] == 'yes'): ?>
 				<?php if( version_compare($wp_version, '3.3', '<') ): ?>
 					<div id="editor-toolbar">
@@ -247,44 +144,149 @@ class acf_Wysiwyg extends acf_Field
 		</div>
 		
 		<?php
-
 	}
 	
 	
-	/*--------------------------------------------------------------------------------------
+	/*
+	*  create_options()
 	*
-	*	get_value_for_api
+	*  Create extra options for your field. This is rendered when editing a field.
+	*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
 	*
-	*	@author Elliot Condon
-	*	@since 3.0.0
-	* 
-	*-------------------------------------------------------------------------------------*/
+	*  @type	action
+	*  @since	3.6
+	*  @date	23/01/13
+	*
+	*  @param	$field	- an array holding all the field's data
+	*/
 	
-	function get_value_for_api($post_id, $field)
+	function create_options( $field )
 	{
 		// vars
-		$defaults = array(
-			'the_content' 	=>	'yes',
-		);
-		$field = array_merge($defaults, $field);
-		$value = parent::get_value($post_id, $field);
+		$key = $field['name'];
 		
+		?>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Default Value",'acf'); ?></label>
+	</td>
+	<td>
+		<?php 
+		do_action('acf/create_field', array(
+			'type'	=>	'textarea',
+			'name'	=>	'fields['.$key.'][default_value]',
+			'value'	=>	$field['default_value'],
+		));
+		?>
+	</td>
+</tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Toolbar",'acf'); ?></label>
+	</td>
+	<td>
+		<?php
 		
-		// filter
-		if( $field['the_content'] == 'yes' )
+		$toolbars = apply_filters( 'acf/fields/wysiwyg/toolbars', array() );
+		$choices = array();
+		
+		if( is_array($toolbars) )
 		{
-			$value = apply_filters('the_content',$value); 
+			foreach( $toolbars as $k => $v )
+			{
+				$label = $k;
+				$name = sanitize_title( $label );
+				$name = str_replace('-', '_', $name);
+				
+				$choices[ $name ] = $label;
+			}
 		}
-		else
-		{
-			$value = wpautop( $value );
-		}
-
 		
+		do_action('acf/create_field', array(
+			'type'	=>	'radio',
+			'name'	=>	'fields['.$key.'][toolbar]',
+			'value'	=>	$field['toolbar'],
+			'layout'	=>	'horizontal',
+			'choices' => $choices
+		));
+		?>
+	</td>
+</tr>
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Show Media Upload Buttons?",'acf'); ?></label>
+	</td>
+	<td>
+		<?php 
+		do_action('acf/create_field', array(
+			'type'	=>	'radio',
+			'name'	=>	'fields['.$key.'][media_upload]',
+			'value'	=>	$field['media_upload'],
+			'layout'	=>	'horizontal',
+			'choices' => array(
+				'yes'	=>	__("Yes",'acf'),
+				'no'	=>	__("No",'acf'),
+			)
+		));
+		?>
+	</td>
+</tr>
+		<?php
+	}
+		
+	
+	/*
+	*  format_value_for_api()
+	*
+	*  This filter is appied to the $value after it is loaded from the db and before it is passed back to the api functions such as the_field
+	*
+	*  @type	filter
+	*  @since	3.6
+	*  @date	23/01/13
+	*
+	*  @param	$value	- the value which was loaded from the database
+	*  @param	$post_id - the $post_id from which the value was loaded
+	*  @param	$field	- the field array holding all the field options
+	*
+	*  @return	$value	- the modified value
+	*/
+	
+	function format_value_for_api( $value, $post_id, $field )
+	{
+		
+		// shortcode / wp_embed
+		if(	isset($GLOBALS['wp_embed']) )
+		{
+			add_filter( 'acf_the_content', array( $GLOBALS['wp_embed'], 'run_shortcode' ), 8 );
+			add_filter( 'acf_the_content', array( $GLOBALS['wp_embed'], 'autoembed' ), 8 );
+		}
+		
+		
+		// the_content filters
+		add_filter( 'acf_the_content', 'capital_P_dangit', 11 );
+		add_filter( 'acf_the_content', 'wptexturize' );
+		add_filter( 'acf_the_content', 'convert_smilies' );
+		add_filter( 'acf_the_content', 'convert_chars' );
+		add_filter( 'acf_the_content', 'wpautop' );
+		add_filter( 'acf_the_content', 'shortcode_unautop' );
+		add_filter( 'acf_the_content', 'do_shortcode', 11);
+		
+		
+		// apply filters
+		$value = apply_filters( 'acf_the_content', $value );
+		
+		
+		// follow the_content function in /wp-includes/post-template.php
+		$value = str_replace(']]>', ']]&gt;', $value);
+		
+	
 		return $value;
 	}
 	
-
 }
+
+
+
+new acf_field_wysiwyg();
 
 ?>

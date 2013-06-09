@@ -37,7 +37,21 @@ add_action('widgets_init','null_wordpress_widgets', 1);
 
 function null_wordpress_widgets() {
 
-	$wordpress_widget_settings = of_get_option('wordpress_widgets');
+	$wordpress_widget_settings = of_get_option('wordpress_widgets', array(
+		'archives_widget' 			=> "1", 
+		'calendar_widget'			=> "1",
+		'categories_widget'			=> "1", 
+		'custom_menu_widget'		=> "1",
+		'links_widget'				=> "1",
+		'meta_widget'				=> "1",
+		'pages_widget'		 		=> "1", 	
+		'recent_comments_widget'	=> "1", 
+		'recent_posts_widget' 		=> "1",
+		'rss_widget'				=> "1",
+		'search_widget' 			=> "1",
+		'tag_cloud_widget'			=> "1",
+		'text_widget'				=> "1"
+	));
 
 	// calendar
 	if ($wordpress_widget_settings['calendar_widget'] == "0") { unregister_widget('WP_Widget_Calendar'); }

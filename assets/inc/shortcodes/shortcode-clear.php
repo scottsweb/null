@@ -1,6 +1,7 @@
 <?php
 /*
-Shortcode Name: Clear & Line Break [clear] [clearline]
+Shortcode Name: Clear & Line Break 
+Shortcode Template: [clear] or [clearline]
 */
 
 /***************************************************************

@@ -152,6 +152,35 @@ label[for="wp_welcome_panel-hide"],
 	{
     background-position: 6px 8px !important;
 	}
+
+// shortcodes button
+
+.ui-dialog.null-dialog .ui-dialog-buttonpane
+	{
+	position: relative;
+	background-color: #dedede;
+
+	.ui-dialog-buttonset
+		{
+		position: relative;
+		top: 2px;
+		}
+	}
+
+#null-shortcodes-dialog
+	{
+	padding: 10px 20px 0 17px;
+	
+	p
+		{
+		margin-bottom: 3px;
+		}
+
+	select
+		{
+		width: 303px;
+		}
+	}
 	
 /* 2. Login CSS Tweaks (will likely need to be !important due to loading in footer in 3.3 with the hook login_enqueue_scripts in functions.php)
 --------------------------------------------------------------------------------------- */
