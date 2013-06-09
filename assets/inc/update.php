@@ -133,7 +133,7 @@ function null_theme_information() {
 			'api_url'		=> UPDATE_API_URL,
 			'raw_url' 		=> UPDATE_RAW_URL,
 			'zip_url' 		=> UPDATE_ZIP_URL,
-			'sslverify' 	=> true,
+			'sslverify' 	=> false,
 			'requires'		=> $wp_version,
 			'tested'		=> $wp_version
 		);
