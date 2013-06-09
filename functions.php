@@ -319,7 +319,7 @@
 		$vars['bodycol'] = of_get_option('body_colour', '#141414');
 		$vars['linkcol'] = of_get_option('link_colour', '#0000EE');
 		$vars['linkhovercol'] = of_get_option('link_hover_colour', '#551A8B');
-		$vars['backgroundimage'] = of_get_option('background_image', '');
+		$vars['backgroundimage'] = of_get_option('background_image', get_template_directory_uri().'/assets/images/placeholder.png');
 		$vars['headingfont']  = of_get_option('heading_font', 'Cabin');
 	   	$vars['bodyfont'] = of_get_option('body_font', 'a1');
 	   	$vars['cachebust'] = NULL_CACHE_BUST;
