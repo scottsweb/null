@@ -107,6 +107,8 @@ function swap_admin_menu_sections($from_section,$to_section) {
 function get_admin_menu_section($section) {
 	if (!is_a($section,'WP_AdminMenuSection'))
 		$section = new WP_AdminMenuSection($section);
+	if ( 0 === $section->index )
+		return false;
 	return $section;
 }
 function get_admin_menu_item($section,$item) {
@@ -151,9 +153,11 @@ class WP_AdminMenuSection {
 					}
 					break;
 				}
-				$this->index = $found;
-				if ($found)
+				
+				if ($found) {
+					$this->index = $found;
 					$this->refresh();
+				}
 			}
 		}
 	}
