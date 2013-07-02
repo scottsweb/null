@@ -80,12 +80,10 @@
 	to-do: test against the theme guide: http://developer.wordpress.com/themes/
 
 	soon
-	to-do: move product post type to child
 	to-do: cache 
 			- (transients) null_get_extensions?
 			- (transients) menus? - http://www.codeforest.net/wordpress-transients-api-caching-benchmarks
 			- cache any wp-query and custom query?
-	to-do: integrate options-framework with google font code (filter of_recognized_font_faces)
 	to-do: filter folder locations for extensions (a plugin could register extension folders?)
 	to-do: Turn on certain extensions by default (child theme ships with X,Y,Z on)
 	to-do: improve nav walker to provide better classes and support for other attributes
@@ -95,13 +93,12 @@
 	to-do: Performance for htaccess? http://wp.tutsplus.com/tutorials/hosting/optimizing-wordpress-loading-speed-with-header-php-htaccess/
 	to-do: please make sure your htaccess is writable notice on activation?	
 	to-do: navigation fix for cpt - see MHP
-	to-do: remove more polyfills - chrome frame notice? (see h5bp index.html)
+	to-do: remove more polyfills 
 			- webp images? - http://webpjs.appspot.com/ - https://developers.google.com/speed/webp/
 			- One tool based on jQuery and modernizr - http://afarkas.github.io/webshim/demos/index.html
 			- http://elclanrs.github.io/jq-idealforms/
 			- https://github.com/louisremi/jquery-smartresize
-	to-do: filter null_mustache_tags - register your own replacements
-
+	to-do: customise: https://github.com/devinsays/options-framework-theme/commit/476b24bd24b1f6392a793122e47366a4d3cd9eef
 	*/
 
 	// load the options framework
@@ -115,7 +112,7 @@
 	// set PHP timezone from WordPress settings
 	if ($timezone = get_option('timezone_string')) date_default_timezone_set($timezone);
 		
-	// force WordPress rewrite - we have mod_rewrite installed on the server
+	// force WordPress rewrite if option set
 	if (of_get_option('force_rewrite', '0')) add_filter('got_rewrite', '__return_true');
 	
 	// parse template info from style.css - version number
@@ -739,6 +736,22 @@
 		return $font_list;
 	
 	}	
+
+	/***************************************************************
+	* Function null_of_font_faces
+	* Add Google fonts to the options framework typogrpahy choice
+	***************************************************************/
+
+	add_filter( 'of_recognized_font_faces', 'null_of_font_faces' );
+
+	function null_of_font_faces($faces) {
+
+		$extra_fonts = null_get_fonts();
+		// remove system fonts from the list (a bit of a bug - ideally function above would have sensible array keys but it does not due to LESS issues)
+		unset($extra_fonts['a1'], $extra_fonts['a2'], $extra_fonts['b1'], $extra_fonts['c1'], $extra_fonts['c2'], $extra_fonts['c3'], $extra_fonts['g1'], $extra_fonts['h1'], $extra_fonts['l1'], $extra_fonts['l2'], $extra_fonts['t1'], $extra_fonts['t2'], $extra_fonts['v1']);
+	    return array_merge($faces, $extra_fonts);
+
+	}
 
 	/***************************************************************
 	* Function null_cache_path
