@@ -24,9 +24,9 @@ add_action('init', 'null_cron_events');
 
 function null_cron_events() {
 	
-	// schedule a weekly transient clean up once a week
+	// schedule a daily transient clean up once a week
 	if (!wp_next_scheduled('null_cron_transient_cleanup')) {
-		wp_schedule_event( time(), 'weekly', 'null_cron_transient_cleanup' );
+		wp_schedule_event( time(), 'daily', 'null_cron_transient_cleanup' );
 	}
 	
 	// use to debug the scheduled events above
