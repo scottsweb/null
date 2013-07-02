@@ -62,7 +62,7 @@ add_filter( 'of_sanitize_color', 'of_sanitize_hex' );
 
 /* Uploader */
 
-function of_sanitize_upload($input) {
+function of_sanitize_upload( $input ) {
 	$output = '';
 	$filetype = wp_check_filetype($input);
 	if ( $filetype["ext"] ) {
