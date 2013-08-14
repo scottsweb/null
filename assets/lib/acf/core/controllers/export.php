@@ -267,7 +267,7 @@ class acf_export
 <h3><?php _e("Export to PHP",'acf'); ?></h3>
 <p><?php _e("ACF will create the PHP code to include in your theme.",'acf'); ?></p>
 <p><?php _e("Registered field groups <b>will not</b> appear in the list of editable field groups. This is useful for including fields in themes.",'acf'); ?></p>
-<p><?php _e("Please note that if you export and register field groups within the same WP, you will see duplicate fields on your edit screens. To fix this, please move the origional field group to the trash or remove the code from your functions.php file.",'acf'); ?></p>
+<p><?php _e("Please note that if you export and register field groups within the same WP, you will see duplicate fields on your edit screens. To fix this, please move the original field group to the trash or remove the code from your functions.php file.",'acf'); ?></p>
 <ol>
 	<li><?php _e("Select field group(s) from the list and click \"Create PHP\"",'acf'); ?></li>
 	<li><?php _e("Copy the PHP code generated",'acf'); ?></li>
@@ -308,7 +308,7 @@ class acf_export
 
 <h3><?php _e("Notes",'acf'); ?></h3>
 <p><?php _e("Registered field groups <b>will not</b> appear in the list of editable field groups. This is useful for including fields in themes.",'acf'); ?></p>
-<p><?php _e("Please note that if you export and register field groups within the same WP, you will see duplicate fields on your edit screens. To fix this, please move the origional field group to the trash or remove the code from your functions.php file.",'acf'); ?></p>
+<p><?php _e("Please note that if you export and register field groups within the same WP, you will see duplicate fields on your edit screens. To fix this, please move the original field group to the trash or remove the code from your functions.php file.",'acf'); ?></p>
 
 
 <p><br /></p>
@@ -320,7 +320,7 @@ class acf_export
 include_once('advanced-custom-fields/acf.php');
 </pre>
 
-<p><?php _e("To remove all visual interfaces from the ACF plugin, you can use a constant to enable lite mode. Add the following code to you functions.php file <b>before</b> the include_once code:",'acf'); ?></p>
+<p><?php _e("To remove all visual interfaces from the ACF plugin, you can use a constant to enable lite mode. Add the following code to your functions.php file <b>before</b> the include_once code:",'acf'); ?></p>
 
 <pre>
 define( 'ACF_LITE', true );
@@ -355,30 +355,21 @@ define( 'ACF_LITE', true );
  *  The following code will include all 4 premium Add-Ons in your theme.
  *  Please do not attempt to include a file which does not exist. This will produce an error.
  *  
- *  All fields must be included during the 'acf/register_fields' action.
- *  Other types of Add-ons (like the options page) can be included outside of this action.
- *  
  *  The following code assumes you have a folder 'add-ons' inside your theme.
  *
  *  IMPORTANT
- *  Add-ons may be included in a premium theme as outlined in the terms and conditions.
- *  However, they are NOT to be included in a premium / free plugin.
- *  For more information, please read http://www.advancedcustomfields.com/terms-conditions/
+ *  Add-ons may be included in a premium theme/plugin as outlined in the terms and conditions.
+ *  For more information, please read:
+ *  - http://www.advancedcustomfields.com/terms-conditions/
+ *  - http://www.advancedcustomfields.com/resources/getting-started/including-lite-mode-in-a-plugin-theme/
  */",'acf'); ?>
  
 
-// <?php _e("Fields",'acf'); ?> 
-add_action('acf/register_fields', 'my_register_fields');
-
-function my_register_fields()
-{
-	//include_once('add-ons/acf-repeater/repeater.php');
-	//include_once('add-ons/acf-gallery/gallery.php');
-	//include_once('add-ons/acf-flexible-content/flexible-content.php');
-}
-
-// <?php _e("Options Page",'acf'); ?> 
-//include_once( 'add-ons/acf-options-page/acf-options-page.php' );
+// <?php _e("Add-ons",'acf'); ?> 
+// include_once('add-ons/acf-repeater/acf-repeater.php');
+// include_once('add-ons/acf-gallery/acf-gallery.php');
+// include_once('add-ons/acf-flexible-content/acf-flexible-content.php');
+// include_once( 'add-ons/acf-options-page/acf-options-page.php' );
 
 
 <?php _e("/**
@@ -444,7 +435,7 @@ if(function_exists("register_field_group"))
 	
 	var i = 0;
 	
-	$('textarea.pre').live( 'mousedown', function (){
+	$(document).on('click', 'textarea.pre', function(){
 		
 		if( i == 0 )
 		{
@@ -457,13 +448,13 @@ if(function_exists("register_field_group"))
 				
 	});
 	
+	$(document).on('keyup', 'textarea.pre', function(){
 	
-	$('textarea.pre').live( 'keyup', function (){
 	    $(this).height( 0 );
 	    $(this).height( this.scrollHeight );
+	
 	});
 
-	
 	$(document).ready(function(){
 		
 		$('textarea.pre').trigger('keyup');
@@ -492,7 +483,7 @@ if(function_exists("register_field_group"))
 			foreach( $fields as $i => $field )
 			{
 				// unset unneccessary bits
-				unset( $field['id'], $field['class'], $field['order_no'] );
+				unset( $field['id'], $field['class'], $field['order_no'], $field['field_group'] );
 				
 				
 				// instructions

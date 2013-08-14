@@ -29,11 +29,11 @@ input.ir { border: 0 none; background: none; }
 
 
 #icon-acf {
-	background: url("../images/sprite.png") 0 0 no-repeat;
+	background: url(../images/sprite.png) 0 0 no-repeat;
 }
 
 .acf-loading {
-	background: url("../../../../wp-admin/images/wpspin_light.gif") no-repeat scroll 50% 50% #EAEAEA;
+	background: url(../images/wpspin_light.gif) no-repeat scroll 50% 50% #EAEAEA;
     border-radius: 30px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
     height: 16px;
@@ -105,6 +105,54 @@ input.ir { border: 0 none; background: none; }
 	margin-left: 5px;
 }
 
+
+/* Input append / prepend */
+
+.acf-input-prepend,
+.acf-input-append {
+	font-size: 12px;
+	line-height: 15px;
+	height: 15px;
+	
+	padding: 5px 7px;
+	
+	background: #F4F4F4;
+	border: #DFDFDF solid 1px;
+}
+
+.acf-input-prepend {
+	float: left;
+	border-right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.acf-input-append {
+	float: right;
+	border-left: 0;
+	border-radius: 0 3px 3px 0;
+}
+
+.acf-input-wrap {
+	position: relative;
+	overflow: hidden;
+}
+
+.acf-input-wrap input {
+	height: 27px;
+	margin: 0;
+}
+
+input.acf-is-prepended {
+	border-radius: 0 3px 3px 0 !important;
+}
+
+input.acf-is-appended {
+	border-radius: 3px 0 0 3px !important;
+}
+
+input.acf-is-prepended.acf-is-appended {
+	border-radius: 0 !important;
+}
 
 
 /*--------------------------------------------------------------------------------------------
@@ -233,7 +281,7 @@ table.acf_input {
 }
 
 table.acf_input tbody tr td {
-	padding: 10px;
+	padding: 13px 15px;
 	border-top: 1px solid #f5f5f5;
 	border-bottom: 0 none;
 }
@@ -270,14 +318,14 @@ table.acf_input tbody tr td.label label {
 	font-size: 12px;
 	font-weight: bold;
 	padding: 0;
-	margin: 0 0 6px;
+	margin: 0 0 3px;
 	color: #333;
 }
 
 table.acf_input tbody tr td.label label span.required {
 	color: #f00;
 	display: inline;
-	margin-right: 5px;
+	margin-left: 3px;
 }
 
 
@@ -288,10 +336,11 @@ table.acf_input tbody tr td.label p {
 	margin: 3px 0 0 !important;
 	font-style: normal;
 	line-height: 16px;
-	color: #666;
+	color: #899194;
 }
 
-table.acf_input input[type=text],
+table.acf_input input[type="text"],
+table.acf_input input[type="number"],
 table.acf_input textarea,
 table.acf_input select{
 	width: 99.95%;
@@ -307,14 +356,14 @@ table.acf_input select option {
 	padding: 3px;
 }
 
-table.acf_input input[type=text]:focus,
+table.acf_input input[type="text"]:focus,
 table.acf_input textarea:focus,
 table.acf_input select:focus {
 	border-color:#98B6CB;
 }
 
 
-ul.radio_list,
+ul.acf-radio-list,
 ul.checkbox_list {
 	background: transparent !important;
 	position: relative;
@@ -323,18 +372,18 @@ ul.checkbox_list {
 	margin: 0;
 }
 
-ul.radio_list.horizontal,
+ul.acf-radio-list.horizontal,
 ul.checkbox_list.horizontal {
 	overflow: hidden;
 }
 
-ul.radio_list.horizontal li,
+ul.acf-radio-list.horizontal li,
 ul.checkbox_list.horizontal li {
 	float: left;
 	margin-right: 20px;
 }
 
-ul.radio_list li input,
+ul.acf-radio-list li input,
 ul.checkbox_list li input {
 	margin-top: -1px;
 	margin-right: 5px !important;
@@ -549,7 +598,7 @@ only screen and (                min-resolution: 2dppx) {
 	}
 	
 	.acf-loading {
-		background-image: url("../../../../wp-admin/images/wpspin_light-2x.gif");
+		background-image: url(../images/wpspin_light@2x.gif);
 		background-size: 16px 16px;
 	}
 	

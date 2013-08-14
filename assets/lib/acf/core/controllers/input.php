@@ -10,10 +10,7 @@
 
 class acf_input
 {
-	
-	var $action;
-	
-	
+
 	/*
 	*  __construct
 	*
@@ -24,6 +21,7 @@ class acf_input
 	
 	function __construct()
 	{
+		
 		// actions
 		add_action('admin_enqueue_scripts', array($this,'admin_enqueue_scripts'));
 		
@@ -37,21 +35,9 @@ class acf_input
 		add_action('acf/input/admin_enqueue_scripts', array($this, 'input_admin_enqueue_scripts'));
 		
 		
-		add_action('wp_restore_post_revision', array($this, 'wp_restore_post_revision'), 10, 2 );
-		
-		
-		// filters
-		add_filter('_wp_post_revision_fields', array($this, 'wp_post_revision_fields') );
-		
-		
 		// ajax acf/update_field_groups
 		add_action('wp_ajax_acf/input/render_fields', array($this, 'ajax_render_fields'));
 		add_action('wp_ajax_acf/input/get_style', array($this, 'ajax_get_style'));
-		
-		
-		// edit attachment hooks (used by image / file / gallery)
-		add_action('admin_head-media.php', array($this, 'admin_head_media'));
-		add_action('admin_head-upload.php', array($this, 'admin_head_upload'));
 	}
 	
 	
@@ -114,14 +100,11 @@ class acf_input
 		if( ! $this->validate_page() ){ return; }
 
 		
-		// only "edit post" input pages need the ajax
-		wp_enqueue_script(array(
-			'acf-input-ajax',	
-		));
-		
-		
-		// actions
+		// scripts
 		do_action('acf/input/admin_enqueue_scripts');
+		
+		
+		// head
 		add_action('admin_head', array($this,'admin_head'));
 	}
 	
@@ -451,15 +434,23 @@ class acf_input
 		
 		
 		// verify nonce
-		if( !isset($_POST['acf_nonce']) || !wp_verify_nonce($_POST['acf_nonce'], 'input') )
+		if( !isset($_POST['acf_nonce'], $_POST['fields']) || !wp_verify_nonce($_POST['acf_nonce'], 'input') )
 		{
 			return $post_id;
 		}
-
+		
+		
+		// if save lock contains a value, the save_post action is already running for another post.
+		// this would imply that the user is hooking into an ACF update_value or save_post action and inserting a new post
+		// if this is the case, we do not want to save all the $POST data to this post.
+		if( isset($GLOBALS['acf_save_lock']) && $GLOBALS['acf_save_lock'] )
+		{
+			return $post_id;
+		}
+		
 		
 		// update the post (may even be a revision / autosave preview)
 		do_action('acf/save_post', $post_id);
-        
         
 	}
 	
@@ -493,6 +484,10 @@ class acf_input
 		
 		// l10n
 		$l10n = apply_filters( 'acf/input/admin_l10n', array(
+			'core' => array(
+				'expand_details' => __("Expand Details",'acf'),
+				'collapse_details' => __("Collapse Details",'acf')
+			),
 			'validation' => array(
 				'error' => __("Validation Failed. One or more fields below are required.",'acf')
 			)
@@ -529,20 +524,22 @@ class acf_input
 			
 		?>
 <script type="text/javascript">
+(function($) {
 
-// vars
-acf.post_id = <?php echo is_numeric($post_id) ? $post_id : '"' . $post_id . '"'; ?>;
-acf.nonce = "<?php echo wp_create_nonce( 'acf_nonce' ); ?>";
-acf.admin_url = "<?php echo admin_url(); ?>";
-acf.ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
-acf.wp_version = "<?php echo $wp_version; ?>";
+	// vars
+	acf.post_id = <?php echo is_numeric($post_id) ? $post_id : '"' . $post_id . '"'; ?>;
+	acf.nonce = "<?php echo wp_create_nonce( 'acf_nonce' ); ?>";
+	acf.admin_url = "<?php echo admin_url(); ?>";
+	acf.ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
+	acf.wp_version = "<?php echo $wp_version; ?>";
+	
+	
+	// new vars
+	acf.o = <?php echo json_encode( $o ); ?>;
+	acf.l10n = <?php echo json_encode( $l10n ); ?>;
+	acf.fields.wysiwyg.toolbars = <?php echo json_encode( $t ); ?>;
 
-
-// new vars
-acf.o = <?php echo json_encode( $o ); ?>;
-acf.l10n = <?php echo json_encode( $l10n ); ?>;
-acf.fields.wysiwyg.toolbars = <?php echo json_encode( $t ); ?>;
-
+})(jQuery);	
 </script>
 		<?php
 	}
@@ -566,7 +563,7 @@ acf.fields.wysiwyg.toolbars = <?php echo json_encode( $t ); ?>;
 			'jquery-ui-core',
 			'jquery-ui-tabs',
 			'jquery-ui-sortable',
-			'farbtastic',
+			'wp-color-picker',
 			'thickbox',
 			'media-upload',
 			'acf-input',
@@ -584,237 +581,12 @@ acf.fields.wysiwyg.toolbars = <?php echo json_encode( $t ); ?>;
 		// styles
 		wp_enqueue_style(array(
 			'thickbox',
-			'farbtastic',
+			'wp-color-picker',
 			'acf-global',
 			'acf-input',
 			'acf-datepicker',	
 		));
 	}
-	
-	
-	/*
-	*  admin_head_upload
-	*
-	*  @description: 
-	*  @since 3.2.6
-	*  @created: 3/07/12
-	*/
-	
-	function admin_head_upload()
-	{
-		// vars
-		$defaults = array(
-			'acf_action'	=>	null,
-			'acf_field'		=>	'',
-		);
-		
-		$options = array_merge($defaults, wp_parse_args( wp_get_referer() ));
-		
-		
-		// validate
-		if( $options['acf_action'] != 'edit_attachment')
-		{
-			return false;
-		}
-		
-		
-		// call the apropriate field action
-		do_action('acf_head-update_attachment-' . $options['acf_field']);
-		
-		?>
-<script type="text/javascript">
-
-	// remove tb
-	self.parent.tb_remove();
-	
-</script>
-</head>
-<body>
-	
-</body>
-</html>
-		<?php
-		
-		die;
-	}
-	
-	
-	/*
-	*  admin_head_media
-	*
-	*  @description: 
-	*  @since 3.2.6
-	*  @created: 3/07/12
-	*/
-	
-	function admin_head_media()
-	{
-
-		// vars
-		$defaults = array(
-			'acf_action'	=>	null,
-			'acf_field'		=>	'',
-		);
-		
-		$options = array_merge($defaults, $_GET);
-		
-		
-		// validate
-		if( $options['acf_action'] != 'edit_attachment')
-		{
-			return false;
-		}
-		
-		?>
-<style type="text/css">
-#wpadminbar,
-#adminmenuback,
-#adminmenuwrap,
-#footer,
-#wpfooter,
-#media-single-form > .submit:first-child,
-#media-single-form td.savesend,
-.add-new-h2 {
-	display: none;
-}
-
-#wpcontent {
-	margin-left: 0px !important;
-}
-
-.wrap {
-	margin: 20px 15px;
-}
-
-html.wp-toolbar {
-    padding-top: 0px;
-}
-</style>
-<script type="text/javascript">
-(function($){
-	
-	$(document).ready( function(){
-		
-		$('#media-single-form').append('<input type="hidden" name="acf_action" value="<?php echo $options['acf_action']; ?>" />');
-		$('#media-single-form').append('<input type="hidden" name="acf_field" value="<?php echo $options['acf_field']; ?>" />');
-		
-	});
-		
-})(jQuery);
-</script>
-		<?php
-		
-		do_action('acf_head-edit_attachment');
-	}
-	
-	
-	/*
-	*  wp_restore_post_revision
-	*
-	*  @description: 
-	*  @since 3.4.4
-	*  @created: 4/09/12
-	*/
-	
-	function wp_restore_post_revision( $parent_id, $revision_id )
-	{
-		global $wpdb;
-		
-		
-		// get field from postmeta
-		$rows = $wpdb->get_results( $wpdb->prepare(
-			"SELECT meta_key, meta_value FROM $wpdb->postmeta WHERE post_id = %d AND meta_key NOT LIKE %s", 
-			$revision_id, 
-			'\_%'
-		), ARRAY_A);
-		
-		
-		if( $rows )
-		{
-			foreach( $rows as $row )
-			{
-				update_post_meta( $parent_id, $row['meta_key'], $row['meta_value'] );
-			}
-		}
-			
-	}
-	
-	
-	/*
-	*  wp_post_revision_fields
-	*
-	*  @description: 
-	*  @since 3.4.4
-	*  @created: 4/09/12
-	*/
-	
-	function wp_post_revision_fields( $fields ) {
-		
-		global $post, $wpdb, $revision, $left_revision, $right_revision, $pagenow;
-		
-		
-		if( $pagenow != "revision.php" )
-		{
-			return $fields;
-		}
-		
-		
-		// get field from postmeta
-		$rows = $wpdb->get_results( $wpdb->prepare(
-			"SELECT meta_key, meta_value FROM $wpdb->postmeta WHERE post_id = %d AND meta_key NOT LIKE %s", 
-			$post->ID, 
-			'\_%'
-		), ARRAY_A);
-		
-		
-		if( $rows )
-		{
-			foreach( $rows as $row )
-			{
-				$fields[ $row['meta_key'] ] =  ucwords( str_replace('_', ' ', $row['meta_key']) );
-
-
-				// left vs right
-				if( isset($_GET['left']) && isset($_GET['right']) )
-				{
-					$left = get_metadata( 'post', $_GET['left'], $row['meta_key'], true );
-					$right = get_metadata( 'post', $_GET['right'], $row['meta_key'], true );
-					
-					// format arrays
-					if( is_array($left) )
-					{
-						$left = implode(', ', $left);
-					}
-					if( is_array($right) )
-					{
-						$right = implode(', ', $right);
-					}
-					
-					
-					$left_revision->$row['meta_key'] = $left;
-					$right_revision->$row['meta_key'] = $right;
-				}
-				else
-				{
-					$left = get_metadata( 'post', $revision->ID, $row['meta_key'], true );
-					
-					// format arrays
-					if( is_array($left) )
-					{
-						$left = implode(', ', $left);
-					}
-					
-					$revision->$row['meta_key'] = $left;
-				}
-				
-			}
-		}
-		
-		
-		return $fields;
-	
-	}
-	
 			
 }
 
