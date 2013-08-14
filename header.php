@@ -39,10 +39,9 @@
 
 			<?php tha_header_top(); ?>
 			
-			<hgroup>
-				<h1 id="site-title"><?php null_logo(); ?></h1>
-				<?php if (of_get_option('show_tagline', '1')) { ?><h2 id="site-description"><?php bloginfo('description') ?></h2><?php } ?>
-			</hgroup>
+			<h1 id="site-title"><?php null_logo(); ?></h1>
+			<?php if (of_get_option('show_tagline', '1')) { ?><h2 id="site-description"><?php bloginfo('description') ?></h2><?php } ?>
+
 			<nav id="navigation" role="navigation">
 				<?php null_navigation_menu(); ?>
 			</nav><!--  #navigation -->

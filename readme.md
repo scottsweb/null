@@ -59,7 +59,6 @@ Credits go to:
 * [Class admin menu](https://gist.github.com/792b7aa5b695d1092520) - for making it easy to customise WordPress menus.
 * [Holmes CSS](https://github.com/redroot/holmes) - for visual markup debugging.
 * [Modernizr](http://www.modernizr.com/) - for all sorts of browser shinanigans.
-* [Superfish](http://users.tpg.com.au/j_birch/plugins/superfish/) - for making multi-level menus work on all browsers.
 * [TGM Plugin Activation](http://tgmpluginactivation.com/) - The best way to require plugins for WordPress themes
 
 I will do my best to keep this updated as the framework develops - please let me know if I have missed you out.
@@ -93,6 +92,18 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 
 ## changelog
 
+#### 1.0
+* Fix notice is class-admin-menu.php
+* Update options framework to 1.6
+* Clean transients daily
+* Move product post type to [null-child](https://github.com/scottsweb/null-child)
+* Add Google fonts to options framework typography option
+* Remove WP App Store
+* Replace a handful of the_title() calls with the_title_attribute()
+* Remove all references to hgroup as it is no longer valid HTML5
+* Add filter so child themes can play with content_width
+* Cache WordPress menus for better performance (might be a little rough around the edges)
+
 #### 1.0b
 * Updated option framework to be compatible with new media uploader
 * New settings for Windows 8 pinned sites
@@ -114,6 +125,7 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 * Remove performance options in favour of plugins
 * New static map shortcode [smap center="loc" size="WxH" zoom="14"]
 * New function null_mustache_tags() for passing variables in theme options
+* Filter for null_mustache_tags - register your own replacements
 * Remove table of contents code - child theme or plugin territory
 * Improvements to oEmebed (responsive container and options for default player colours and settings)
 * Force TinyMCE editor styles to refresh
@@ -124,7 +136,7 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 * Remove the twitter widget due to twitter API changes
 * Remove related posts shortcode as it is not particularly useful and not a good approach
 * Add shortcode interface for TinyMCE
-* Remove QR shortcode as shortcodes are 99% useless
+* Remove QR shortcode as QR codes are 99% useless
 * Move less important shortcodes to [null-child](https://github.com/scottsweb/null-child)
 * New social profiles widget
 

@@ -368,8 +368,8 @@ function null_body_class($classes) {
 		}
 	}
 
-	// browsers (if mobble plugin not installed)
-	if (!get_option('mobble_body_class')) {
+	// browsers (only of mobble not enable)
+	if (!function_exists('mobble_settings')) {
 	    if ($is_lynx) $classes[] = 'lynx';
 	    else if ($is_gecko) $classes[] = 'gecko';
 	    else if ($is_IE) $classes[] = 'ie';
@@ -379,7 +379,7 @@ function null_body_class($classes) {
 	    else if ($is_chrome) $classes[] = 'chrome';
 	    else if ($is_iphone) $classes[] = 'iphone';
 	    else $classes[] = 'other';
-    }
+	}
 
 	// date & time
 	$t = time() + ( get_option('gmt_offset') * 3600 );
@@ -484,14 +484,24 @@ if (!function_exists('null_logo')) {
 
 function null_navigation_menu() {
 
-	wp_nav_menu( 
-		array( 
-			'menu' => 'navigation',
-			'theme_location' => 'navigation',
-			'container' => 'false',
-			'fallback_cb' => 'null_navigation_menu_fallback'
-		)
-	);
+    $menu = get_transient('null_navigation_menu');
+ 
+    if (false === $menu) {
+
+		$menu = wp_nav_menu( 
+			array( 
+				'menu' => 'navigation',
+				'theme_location' => 'navigation',
+				'container' => 'false',
+				//'fallback_cb' => 'null_navigation_menu_fallback', - no longer works with transient cache
+				'echo' => false
+			)
+		);
+
+        set_transient('null_navigation_menu', $menu, HOUR_IN_SECONDS*5);
+	}
+
+	echo $menu;
 }
 
 function null_navigation_menu_fallback() { 
@@ -997,17 +1007,27 @@ function null_widget_classes($params) {
 
 function null_footer_menu() {
 
-	wp_nav_menu( 
-		array( 
-			'menu' => 'footer',
-			'theme_location' => 'footer',
-			'container' => 'false',
-			'fallback_cb' => 'null_footer_menu_fallback'
-		)
-	);
+ 	$menu = get_transient('null_footer_menu');
+ 
+    if (false === $menu) {
+
+		$menu = wp_nav_menu( 
+			array( 
+				'menu' => 'footer',
+				'theme_location' => 'footer',
+				'container' => 'false',
+				//'fallback_cb' => 'null_footer_menu_fallback', - no longer works with transient cache
+				'echo' => false
+			)
+		);
+
+        set_transient('null_footer_menu', $menu, HOUR_IN_SECONDS*5);
+	}
+
+	echo $menu;
 }
 
-function null_footer_menu_fallback() { 
+function null_footer_menu_fallback() {
 	wp_page_menu('show_home='.__('Home','null')); 
 }
 

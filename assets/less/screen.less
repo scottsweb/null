@@ -4,10 +4,9 @@ screen.less
 contents:
 
 	1. Import
-	2. Grid Setup
-	3. Layout
-	4. Media Queries
-	5. Device Specific Media Queries
+	2. Layout
+	3. Media Queries
+	4. Device Specific Media Queries
 
 */
 
@@ -15,6 +14,7 @@ contents:
 --------------------------------------------------------------------------------------- */
 
 @import "reset.less";
+@import "grid.less";
 @import "variables.less";
 @import "mixins.less";
 @import "typography.less";
@@ -23,22 +23,8 @@ contents:
 @import "classes.less";
 @import "wordpress.less";
 @import "gravityforms.less";
-@import "grid.less";
 
-/* 2. Grid Setup
---------------------------------------------------------------------------------------- */
-
-// specify the number of columns and set column and gutter widths
-
-@columns: 12;
-@column-width: 60;
-@gutter-width: 20;
-
-// fluid grid
-
-@total-width: 100%;
-
-/* 3. Layout - this is a very quick theme, a very beautiful defaul theme is planned for v1
+/* 2. Layout - this is a very quick theme, a very beautiful defaul theme is planned for v1
 --------------------------------------------------------------------------------------- */
 
 body
@@ -651,7 +637,7 @@ body
 		}
 	}
 
-/* 4. Media Queries
+/* 3. Media Queries
 --------------------------------------------------------------------------------------- */
 
 // larger mobile devices like galaxy note
@@ -686,7 +672,7 @@ body
 
 }
 
-/* 5. Device Specific Media Queries
+/* 4. Device Specific Media Queries
 --------------------------------------------------------------------------------------- */
 
 // retina displays

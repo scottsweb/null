@@ -340,7 +340,7 @@ function null_required_plugins() {
         'parent_menu_slug'  => 'plugins.php',         			// default parent menu slug
         'parent_url_slug'   => 'plugins.php',         			// default parent URL slug
         'menu'              => 'install-compatible-plugins',   	// menu slug
-        'has_notices'       => false,                         	// show admin notices or not
+        'has_notices'       => true,                         	// show admin notices or not
         'is_automatic'      => false,            				// automatically activate plugins after installation or not
         'message'           => '',               				// message to output right before the plugins table
         'strings'           => array(
@@ -822,6 +822,21 @@ function null_remove_meta_boxes() {
 }
 
 /***************************************************************
+* Function null_flush_menus
+* Flush our WordPress menu transients when menus or posts or taxonomies are updated
+* to-do: check the menus are in use? - bugs may exist here
+***************************************************************/
+
+add_action('wp_update_nav_menu', 'null_flush_menus' );
+add_action('save_post', 'null_flush_menus' );
+add_action('clean_term_cache', 'null_flush_menus' );
+
+function null_flush_menus() {
+    delete_transient('null_navigation_menu');
+    delete_transient('null_footer_menu');
+} 
+
+/***************************************************************
 * Function null_options_santiziation & null_sanitize_text_field & null_sanitize_textarea_field & null_sanitize_upload
 * Modify the options framework to validate differently
 ***************************************************************/
@@ -931,21 +946,6 @@ jQuery(document).ready(function() {
 </script>
 <?php
 }	
-
-/***************************************************************
-* Function null_wpas_init
-* Bundle the WP App Store
-***************************************************************/
-
-if (!of_get_option('disable_wpas', '0') && !is_multisite()) {
-	add_action( 'init', 'null_wpas_init' );
-}
-
-function null_wpas_init() {
-    $affiliate_id = '3803';
-    global $null_wpas_installer;
-    $null_wpas_installer = new WP_App_Store_Installer($affiliate_id);
-}
 
 /***************************************************************
 * Class null_user_caps

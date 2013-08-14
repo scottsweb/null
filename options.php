@@ -19,7 +19,7 @@ function optionsframework_options() {
 
 	$general_options['maintenance_mode'] = array(
 		"name" => __('Enable Maintenance Mode?', 'null'),
-		"desc" => __('Will bring down your site for the public (users that are not logged in and cannot edit_theme_options. wp-login is still accessible).', 'null'),
+		"desc" => __('Will bring down your site for the public (users that are not logged in and cannot edit_theme_options. /wp-admin is still accessible).', 'null'),
 		"id" => "maintenance_mode",
 		"std" => "0",
 		"type" => "checkbox"
@@ -792,16 +792,6 @@ function optionsframework_options() {
 		"std" => "0",
 		"type" => "checkbox"
 	);
-
-	if (!is_multisite()) {
-		$advanced_options['disable_wpas'] = array(
-			"name" => __('Disable WP App Store', 'null'),
-			"desc" => __('Unload the <a href="http://wpappstore.com/">WP App Store</a>.', 'null'),
-			"id" => "disable_wpas",
-			"std" => "0",
-			"type" => "checkbox"
-		);
-	}
 
 	$advanced_options['disable_drag_meta'] = array(
 		"name" => __('Disable Dragging Meta Boxes', 'null'),

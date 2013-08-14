@@ -82,7 +82,6 @@
 	soon
 	to-do: cache 
 			- (transients) null_get_extensions?
-			- (transients) menus? - http://www.codeforest.net/wordpress-transients-api-caching-benchmarks
 			- cache any wp-query and custom query?
 	to-do: filter folder locations for extensions (a plugin could register extension folders?)
 	to-do: Turn on certain extensions by default (child theme ships with X,Y,Z on)
@@ -99,6 +98,9 @@
 			- http://elclanrs.github.io/jq-idealforms/
 			- https://github.com/louisremi/jquery-smartresize
 	to-do: customise: https://github.com/devinsays/options-framework-theme/commit/476b24bd24b1f6392a793122e47366a4d3cd9eef
+	to-do: https://github.com/mboynes/super-cpt
+	to-do: null_get_fonts - wp_remote_post (see comment)
+	to-do: beef up our mixins http://lesselements.com/ - https://github.com/drublic/less-mixins
 	*/
 
 	// load the options framework
@@ -167,28 +169,28 @@
 
 	// load update code
 	if (is_admin()) { load_template(get_template_directory() . '/assets/inc/update.php'); }
-	
-	// wp app store
-	if (is_admin() && !class_exists('WP_App_Store_Installer') && !of_get_option('disable_wpas', '0') && !is_multisite()) { load_template(get_template_directory() . '/assets/inc/wp-app-store.php'); }
-	
+		
 	// only load front end functions for site
 	if (!is_admin()) { locate_template('/assets/inc/theme.php', true, true); }
 
 	// load theme hook alliance - https://github.com/zamoose/themehookalliance
 	load_template(get_template_directory() . '/assets/inc/thahooks.php');
 
-	// set content width - see: http://toggl.es/wEBCFs - largely irrelevant with responsive sites?
-	if (!isset($content_width)) $content_width = 656;
+	// set content width - see: http://toggl.es/wEBCFs - largely irrelevant with responsive sites.. set it to the maximum possible width
+	if (!isset($content_width)) $content_width = apply_filters('null_content_width', 656);
 
 	/***************************************************************
 	* Maintenance Mode
 	* Take the front end of the site down for users that are not logged in and cannot manage optionsframework
 	***************************************************************/
 
-	global $pagenow;
-	if (!is_user_logged_in() && !current_user_can('edit_theme_options') && $pagenow != 'wp-login.php' && of_get_option('maintenance_mode', '0')) { 
-		header('Retry-After: 600'); // 600 seconds/10 minutes
-		wp_die(__('Website is down for maintenance.', 'null'), get_bloginfo('name').' | '.__('Maintenance (503)', 'null'), array('response' => 503)); 
+	add_action('template_redirect', 'null_maintenance_mode');
+
+	function null_maintenance_mode() {
+		if (!is_user_logged_in() && !current_user_can('edit_theme_options') && of_get_option('maintenance_mode', '0')) { 
+			header('Retry-After: 600'); // 600 seconds/10 minutes
+			wp_die(__('Website is down for maintenance.', 'null'), get_bloginfo('name').' | '.__('Maintenance (503)', 'null'), array('response' => 503)); 
+		}
 	}
 
 	/***************************************************************
@@ -240,20 +242,12 @@
  
  		// add support for custom header if setup
 		if (of_get_option('custom_header', '0')) {
-			if (is_wp_version( '3.4' )) {
-				add_theme_support('custom-header'); 
-			} else { 
-				add_custom_image_header();
-			}
+			add_theme_support('custom-header'); 
 		}
 			
 		// add support for custom backgrounds if setup
 		if (of_get_option('custom_background', '0')) {
-			if (is_wp_version( '3.4' )) {
-				add_theme_support('custom-background'); 
-			} else { 
-				add_custom_background();
-			}
+			add_theme_support('custom-background');
 		}
 			
 		// post-formats
@@ -310,7 +304,7 @@
 
 	function null_less_vars($vars, $handle) {
 	   	
-	   	global $pagenow;
+	   	global $pagenow, $content_width;
 
 	    // $handle is a reference to the handle used with wp_enqueue_style()
 	    $vars['primarycol'] = of_get_option('primary_colour', '#141414');
@@ -321,6 +315,7 @@
 		$vars['headingfont']  = of_get_option('heading_font', 'Cabin');
 	   	$vars['bodyfont'] = of_get_option('body_font', 'a1');
 	   	$vars['cachebust'] = NULL_CACHE_BUST;
+	   	$vars['contentwidth'] = $content_width;
 	    return $vars;
 	    
 	}
@@ -720,6 +715,7 @@
 			// google fonts
 			$api_key = 'AIzaSyCTTbK5s0or8LmQfUCNhndMfSvyz-f6jqk';
 			$gwf_uri = "https://www.googleapis.com/webfonts/v1/webfonts?key=" . $api_key . "&sort=" . $sort;
+			// should use wp_remote_post
 			$raw = file_get_contents($gwf_uri, 0, null, null );
 			$fonts = json_decode($raw);
 						

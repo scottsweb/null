@@ -12,11 +12,12 @@ contents:
 
 html .mceContentBody 
 	{
-	//max-width:600px;
+	max-width: e("@{contentwidth}px");
 	padding: 10px;
 	}
 	
 @import "reset.less";
+@import "grid.less";
 @import "variables.less";
 @import "mixins.less";
 @import "typography.less";

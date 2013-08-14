@@ -64,7 +64,7 @@ exit;
 						?>
 						
 						<p class="attachment">
-							<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment">
+							<a href="<?php echo $next_attachment_url; ?>" title="<?php the_title_attribute(); ?>" rel="attachment">
 							<?php echo wp_get_attachment_image( $post->ID, 'large' ); ?>
 							</a>
 						</p>
@@ -79,7 +79,7 @@ exit;
 					<?php else : ?>
 						
 						<p class="attachment">
-							<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
+							<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
 						</p>
 						
 					<?php endif; ?>			
