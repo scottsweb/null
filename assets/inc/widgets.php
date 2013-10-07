@@ -12,13 +12,19 @@ function null_register_sidebars() {
 	if (!function_exists('register_sidebars'))
 		return;
 	
-	$sidebars = apply_filters('null_sidebars', array(__('Homepage', 'null'), __('Page', 'null'), __('Posts/Blog', 'null'), __('Search', 'null'), __('Footer', 'null')));
+	$sidebars = apply_filters('null_sidebars', array(
+		'home' =>	__('Homepage', 'null'), 
+		'page' =>	__('Page', 'null'), 
+		'posts' =>	__('Posts/Blog', 'null'),
+		'search' => __('Search', 'null'),
+		'footer' => __('Footer', 'null')
+	));
 	
-	foreach ($sidebars as $sidebar) {
+	foreach ($sidebars as $key => $sidebar) {
 		register_sidebar(
 			array(
 				'name' 			=> $sidebar,
-				'id'			=> 'sidebar-'.null_slugify($sidebar),
+				'id'			=> $key,
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section><!-- .widget -->',
 				'before_title'  => '<h4 class="widgettitle">',
