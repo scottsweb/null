@@ -822,21 +822,6 @@ function null_remove_meta_boxes() {
 }
 
 /***************************************************************
-* Function null_flush_menus
-* Flush our WordPress menu transients when menus or posts or taxonomies are updated
-* to-do: check the menus are in use? - bugs may exist here
-***************************************************************/
-
-add_action('wp_update_nav_menu', 'null_flush_menus' );
-add_action('save_post', 'null_flush_menus' );
-add_action('clean_term_cache', 'null_flush_menus' );
-
-function null_flush_menus() {
-    delete_transient('null_navigation_menu');
-    delete_transient('null_footer_menu');
-} 
-
-/***************************************************************
 * Function null_options_santiziation & null_sanitize_text_field & null_sanitize_textarea_field & null_sanitize_upload
 * Modify the options framework to validate differently
 ***************************************************************/

@@ -484,24 +484,15 @@ if (!function_exists('null_logo')) {
 
 function null_navigation_menu() {
 
-    $menu = get_transient('null_navigation_menu');
- 
-    if (false === $menu) {
-
-		$menu = wp_nav_menu( 
-			array( 
-				'menu' => 'navigation',
-				'theme_location' => 'navigation',
-				'container' => 'false',
-				//'fallback_cb' => 'null_navigation_menu_fallback', - no longer works with transient cache
-				'echo' => false
-			)
-		);
-
-        set_transient('null_navigation_menu', $menu, HOUR_IN_SECONDS*5);
-	}
-
-	echo $menu;
+	wp_nav_menu( 
+		array( 
+			'menu' => 'navigation',
+			'theme_location' => 'navigation',
+			'container' => 'false',
+			'fallback_cb' => 'null_navigation_menu_fallback',
+			'depth' => 2
+		)
+	);
 }
 
 function null_navigation_menu_fallback() { 
@@ -1007,24 +998,15 @@ function null_widget_classes($params) {
 
 function null_footer_menu() {
 
- 	$menu = get_transient('null_footer_menu');
- 
-    if (false === $menu) {
-
-		$menu = wp_nav_menu( 
-			array( 
-				'menu' => 'footer',
-				'theme_location' => 'footer',
-				'container' => 'false',
-				//'fallback_cb' => 'null_footer_menu_fallback', - no longer works with transient cache
-				'echo' => false
-			)
-		);
-
-        set_transient('null_footer_menu', $menu, HOUR_IN_SECONDS*5);
-	}
-
-	echo $menu;
+	wp_nav_menu( 
+		array( 
+			'menu' => 'footer',
+			'theme_location' => 'footer',
+			'container' => 'false',
+			'fallback_cb' => 'null_footer_menu_fallback',
+			'depth' => 1
+		)
+	);
 }
 
 function null_footer_menu_fallback() {
