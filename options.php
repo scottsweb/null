@@ -601,7 +601,7 @@ function optionsframework_options() {
 
 	$email_options['email_encode'] = array(
 		"name" => __('Email Encoding / Anti Spam', 'null'),
-		"desc" => __('Encode email addresses added to the content editor?', 'null'),
+		"desc" => __('Encode email addresses added to the content editor (TinyMCE) ?', 'null'),
 		"id" => "email_encode",
 		"std" => "1",
 		"type" => "checkbox"

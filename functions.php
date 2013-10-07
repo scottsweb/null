@@ -101,6 +101,11 @@
 	to-do: https://github.com/mboynes/super-cpt
 	to-do: null_get_fonts - wp_remote_post (see comment)
 	to-do: beef up our mixins http://lesselements.com/ - https://github.com/drublic/less-mixins
+
+
+// extra labels on cpts
+'menu_name'						=> __('Q&amp;A', 'null'),
+    'all_items'						=> __('All Questions', 'null'),
 	*/
 
 	// load the options framework
@@ -371,6 +376,7 @@
 		}
 		
 		if (!empty($gfonts)) { 
+			$gfonts = array_unique($gfonts);
 			$getfonts = implode('|', $gfonts);
 			wp_register_style('google-font', 'http://fonts.googleapis.com/css?family='.$getfonts, '', null_slugify(NULL_VERSION), 'all'); 
 			wp_enqueue_style('google-font');
