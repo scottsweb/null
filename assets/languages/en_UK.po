@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: null\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-22 17:36-0000\n"
-"PO-Revision-Date: 2013-04-22 17:38-0000\n"
+"POT-Creation-Date: 2013-12-14 22:22-0000\n"
+"PO-Revision-Date: 2013-12-14 22:23-0000\n"
 "Last-Translator: Scott Evans @scottsweb <translate@scott.ee>\n"
 "Language-Team: @scottsweb <null@scott.ee>\n"
 "Language: en_GB\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Basepath: /Users/scott/Dropbox/web/framework-wordpress/wp-content/"
 "themes/null\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.6.2\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:16
@@ -206,15 +206,23 @@ msgstr ""
 msgid "You can use the following tags:"
 msgstr ""
 
-#: functions.php:190
+#: functions.php:201
 msgid "Website is down for maintenance."
 msgstr ""
 
-#: functions.php:190
+#: functions.php:201
 msgid "Maintenance (503)"
 msgstr ""
 
-#: functions.php:739
+#: functions.php:298
+msgid "Navigation"
+msgstr ""
+
+#: functions.php:299 assets/inc/widgets.php:20
+msgid "Footer"
+msgstr ""
+
+#: functions.php:839
 msgid "The credentials you provided are incorrect."
 msgstr ""
 
@@ -222,8 +230,8 @@ msgstr ""
 msgid "Skip to content &raquo;"
 msgstr ""
 
-#: header.php:64 assets/inc/breadcrumbs.php:64 assets/inc/theme.php:524
-#: assets/inc/theme.php:1000
+#: header.php:63 assets/inc/breadcrumbs.php:64 assets/inc/theme.php:499
+#: assets/inc/theme.php:1013
 msgid "Home"
 msgstr ""
 
@@ -284,7 +292,7 @@ msgstr ""
 #: options.php:22
 msgid ""
 "Will bring down your site for the public (users that are not logged in and "
-"cannot edit_theme_options. wp-login is still accessible)."
+"cannot edit_theme_options. /wp-admin is still accessible)."
 msgstr ""
 
 #: options.php:29
@@ -350,19 +358,15 @@ msgstr ""
 msgid "WordPress Credit"
 msgstr ""
 
-#: options.php:87
-msgid "Thanks to WordPress."
+#: options.php:87 options.php:96
+msgid "Available tags: {{year}} {{sitename}} {{copyright}}"
 msgstr ""
 
 #: options.php:95
 msgid "Designer Credit"
 msgstr ""
 
-#: options.php:96
-msgid "Leave empty to remove from footer."
-msgstr ""
-
-#: options.php:110 options.php:966
+#: options.php:110 options.php:961
 msgid "Design"
 msgstr ""
 
@@ -510,8 +514,9 @@ msgstr ""
 
 #: options.php:272 options.php:280 options.php:288 options.php:296
 #: options.php:304 options.php:312 options.php:320 options.php:328
-#: options.php:336 options.php:344 options.php:360 options.php:368
-msgid "URL to your profile beginning with http://"
+#: options.php:336 options.php:344 options.php:352 options.php:368
+#: options.php:376
+msgid "URL to your profile."
 msgstr ""
 
 #: options.php:279
@@ -535,455 +540,450 @@ msgid "Google+"
 msgstr ""
 
 #: options.php:319
-msgid "LinkedIn"
+msgid "Instagram"
 msgstr ""
 
 #: options.php:327
-msgid "Pinterest"
+msgid "LinkedIn"
 msgstr ""
 
 #: options.php:335
-msgid "SoundCloud"
+msgid "Pinterest"
 msgstr ""
 
 #: options.php:343
-msgid "Twitter"
+msgid "SoundCloud"
 msgstr ""
 
 #: options.php:351
-msgid "Twitter @Username"
-msgstr ""
-
-#: options.php:352
-msgid "Username beginning with @"
+msgid "Twitter"
 msgstr ""
 
 #: options.php:359
-msgid "Vimeo"
+msgid "Twitter @Username"
+msgstr ""
+
+#: options.php:360
+msgid "Username beginning with @."
 msgstr ""
 
 #: options.php:367
+msgid "Vimeo"
+msgstr ""
+
+#: options.php:375
 msgid "YouTube"
 msgstr ""
 
-#: options.php:381
+#: options.php:389
 msgid "WordPress"
 msgstr ""
 
-#: options.php:395
+#: options.php:405
 msgid "Disable Admin Bar"
 msgstr ""
 
-#: options.php:396
+#: options.php:406
 msgid "Disable the admin bar on the front end for the toggled user roles."
 msgstr ""
 
-#: options.php:403
+#: options.php:413
 msgid "Admin Bar Attachment"
 msgstr ""
 
-#: options.php:404
+#: options.php:414
 msgid "Change how the admin bar attaches to the browser."
 msgstr ""
 
-#: options.php:410
+#: options.php:420
 msgid "Fixed (default)"
 msgstr ""
 
-#: options.php:411
+#: options.php:421
 msgid "Absolute"
 msgstr ""
 
-#: options.php:416
+#: options.php:426
 msgid "Howdy?"
 msgstr ""
 
-#: options.php:417
+#: options.php:427
 msgid "Change the admin bar welcome message."
 msgstr ""
 
-#: options.php:425
+#: options.php:435
 msgid "Dashboard Widgets"
 msgstr ""
 
-#: options.php:426
+#: options.php:436
 msgid "Toggle WordPress dashboard widgets."
 msgstr ""
 
-#: options.php:441
+#: options.php:451
 msgid "Browser Upgrade Notification (Browse Happy)"
 msgstr ""
 
-#: options.php:442
-msgid "Plugins Widget"
-msgstr ""
-
-#: options.php:443
-msgid "Right Now Widget"
-msgstr ""
-
-#: options.php:444 options.php:542
-msgid "Recent Comments Widget"
-msgstr ""
-
-#: options.php:445
+#: options.php:452
 msgid "Incoming Links Widget"
 msgstr ""
 
-#: options.php:446
-msgid "Primary RSS Widget"
-msgstr ""
-
-#: options.php:447
-msgid "Secondary RSS Widget"
-msgstr ""
-
-#: options.php:448
-msgid "Quick Press Widget"
-msgstr ""
-
-#: options.php:449
-msgid "Recent Drafts Widget"
+#: options.php:453
+msgid "Plugins Widget"
 msgstr ""
 
 #: options.php:454
-msgid "Post Formats"
+msgid "Primary RSS Widget"
 msgstr ""
 
 #: options.php:455
+msgid "Quick Press Widget"
+msgstr ""
+
+#: options.php:456 options.php:552
+msgid "Recent Comments Widget"
+msgstr ""
+
+#: options.php:457
+msgid "Recent Drafts Widget"
+msgstr ""
+
+#: options.php:458
+msgid "Right Now Widget"
+msgstr ""
+
+#: options.php:459
+msgid "Secondary RSS Widget"
+msgstr ""
+
+#: options.php:464
+msgid "Post Formats"
+msgstr ""
+
+#: options.php:465
 msgid ""
 "Enable support for <a href=\"http://codex.wordpress.org/Post_Formats"
 "\">WordPress post formats</a>."
 msgstr ""
 
-#: options.php:462
+#: options.php:472
 msgid "Post Format Types"
 msgstr ""
 
-#: options.php:463
+#: options.php:473
 msgid ""
 "Which <a href=\"http://codex.wordpress.org/Post_Formats#Supported_Formats"
 "\">post format types</a> would you like to support?"
 msgstr ""
 
-#: options.php:478
+#: options.php:488
 msgid "Aside"
 msgstr ""
 
-#: options.php:479
-msgid "Chat"
-msgstr ""
-
-#: options.php:480
-#: assets/inc/options-framework/options-medialibrary-uploader.php:282
-msgid "Gallery"
-msgstr ""
-
-#: options.php:481 assets/lib/acf/core/fields/image.php:19
-msgid "Image"
-msgstr ""
-
-#: options.php:482
-msgid "Link"
-msgstr ""
-
-#: options.php:483
-msgid "Quote"
-msgstr ""
-
-#: options.php:484 assets/lib/class-tgm-plugin-activation.php:1300
-msgid "Status"
-msgstr ""
-
-#: options.php:485
-msgid "Video"
-msgstr ""
-
-#: options.php:486
+#: options.php:489
 msgid "Audio"
 msgstr ""
 
+#: options.php:490
+msgid "Chat"
+msgstr ""
+
+#: options.php:491
+msgid "Gallery"
+msgstr ""
+
+#: options.php:492 assets/lib/acf/core/fields/image.php:19
+msgid "Image"
+msgstr ""
+
 #: options.php:493
-msgid "Additional Post Types"
+msgid "Link"
 msgstr ""
 
 #: options.php:494
+msgid "Quote"
+msgstr ""
+
+#: options.php:495 assets/lib/class-tgm-plugin-activation.php:1300
+msgid "Status"
+msgstr ""
+
+#: options.php:496
+msgid "Video"
+msgstr ""
+
+#: options.php:503
+msgid "Additional Post Types"
+msgstr ""
+
+#: options.php:504
 msgid ""
 "Toggle additional post types. Additional post types are found in the "
 "<strong>/null/assets/inc/post-types/</strong> folder or the same folder in "
 "your child theme."
 msgstr ""
 
-#: options.php:505
+#: options.php:515
 msgid "Shortcodes"
 msgstr ""
 
-#: options.php:506
+#: options.php:516
 msgid ""
 "Toggle shortcode support. Additional shortcodes are found in the <strong>/"
 "null/assets/inc/shortcodes/</strong> folder or the same folder in your child "
 "theme."
 msgstr ""
 
-#: options.php:515
+#: options.php:525
 msgid "WordPress Widgets"
 msgstr ""
 
-#: options.php:516
+#: options.php:526
 msgid "Toggle default WordPress widgets."
 msgstr ""
 
-#: options.php:535
+#: options.php:545
 msgid "Archives Widget"
 msgstr ""
 
-#: options.php:536
+#: options.php:546
 msgid "Calendar Widget"
 msgstr ""
 
-#: options.php:537
+#: options.php:547
 msgid "Categories Widget"
 msgstr ""
 
-#: options.php:538
+#: options.php:548
 msgid "Custom Menu Widget"
 msgstr ""
 
-#: options.php:539
+#: options.php:549
 msgid "Links Widget"
 msgstr ""
 
-#: options.php:540
+#: options.php:550
 msgid "Meta Widget"
 msgstr ""
 
-#: options.php:541
+#: options.php:551
 msgid "Pages Widget"
 msgstr ""
 
-#: options.php:543
+#: options.php:553
 msgid "Recent Posts Widget"
 msgstr ""
 
-#: options.php:544
+#: options.php:554
 msgid "RSS Widget"
 msgstr ""
 
-#: options.php:545
+#: options.php:555
 msgid "Search Widget"
 msgstr ""
 
-#: options.php:546
+#: options.php:556
 msgid "Tag Cloud Widget"
 msgstr ""
 
-#: options.php:547
+#: options.php:557
 msgid "Text Widget"
 msgstr ""
 
-#: options.php:554
+#: options.php:564
 msgid "Additional Widgets"
 msgstr ""
 
-#: options.php:555
+#: options.php:565
 msgid ""
 "Toggle additional widgets. Additional widgets are found in the <strong>/null/"
 "assets/inc/widgets/</strong> folder or the same folder in your child theme."
 msgstr ""
 
-#: options.php:570
+#: options.php:580
 msgid "E-Mail"
 msgstr ""
 
-#: options.php:575
+#: options.php:585
 msgid "Email From"
 msgstr ""
 
-#: options.php:576
+#: options.php:586
 msgid "Personalise outgoing e-mail with a from name."
 msgstr ""
 
-#: options.php:584
+#: options.php:594
 msgid "Email From Address"
 msgstr ""
 
-#: options.php:585
+#: options.php:595
 msgid "WordPress should send email from this address."
 msgstr ""
 
-#: options.php:593
+#: options.php:603
 msgid "Email Encoding / Anti Spam"
 msgstr ""
 
-#: options.php:594
-msgid "Encode email addresses added to the content editor?"
+#: options.php:604
+msgid "Encode email addresses added to the content editor (TinyMCE) ?"
 msgstr ""
 
-#: options.php:649
+#: options.php:659
 msgid "Advanced"
 msgstr ""
 
-#: options.php:654
+#: options.php:664
 msgid "Login Redirect URL"
 msgstr ""
 
-#: options.php:655
+#: options.php:665
 msgid ""
 "Change the default <a href=\"http://codex.wordpress.org/Function_Reference/"
 "wp_login_url\">login URL</a> redirect for WordPress. Can be left blank for "
 "default functionality."
 msgstr ""
 
-#: options.php:663
+#: options.php:673
 msgid "Logout Redirect URL"
 msgstr ""
 
-#: options.php:664
+#: options.php:674
 msgid ""
 "Change the default <a href=\"http://codex.wordpress.org/Function_Reference/"
 "wp_logout\">logout URL</a> redirect for WordPress. Can be left blank for "
 "default functionality."
 msgstr ""
 
-#: options.php:672
+#: options.php:682
 msgid "WordPress Header Meta"
 msgstr ""
 
-#: options.php:673
+#: options.php:683
 msgid "Toggle certain WordPress meta data found in the theme header."
 msgstr ""
 
-#: options.php:687
-msgid "Really Simple Discovery / XML-RPC"
-msgstr ""
-
-#: options.php:688
-msgid "Windows Live Tag"
-msgstr ""
-
-#: options.php:689
-msgid "Generator Tag"
-msgstr ""
-
-#: options.php:690
-msgid "RSS Feed Links"
-msgstr ""
-
-#: options.php:691
-msgid "Extra Feed Links (Categories etc)"
-msgstr ""
-
-#: options.php:692
-msgid "Shortlink"
-msgstr ""
-
-#: options.php:693
+#: options.php:697
 msgid "Canonical"
 msgstr ""
 
-#: options.php:694 assets/inc/shortcodes/shortcode-related-posts.php:23
+#: options.php:698
+msgid "Extra Feed Links (Categories etc)"
+msgstr ""
+
+#: options.php:699
+msgid "Generator Tag"
+msgstr ""
+
+#: options.php:700
+msgid "Really Simple Discovery / XML-RPC"
+msgstr ""
+
+#: options.php:701
 msgid "Related Posts"
 msgstr ""
 
 #: options.php:702
-msgid "Advanced Header Meta"
+msgid "RSS Feed Links"
 msgstr ""
 
 #: options.php:703
-msgid "Toggle advanced meta data in the theme header."
+msgid "Shortlink"
 msgstr ""
 
-#: options.php:711
-msgid "iOS Web App (if enabled set custom splash images in Design tab)"
+#: options.php:704
+msgid "Windows Live Tag"
 msgstr ""
 
 #: options.php:712
+msgid "Advanced Header Meta"
+msgstr ""
+
+#: options.php:713
+msgid "Toggle advanced meta data in the theme header."
+msgstr ""
+
+#: options.php:721
 msgid "IE9+ Pinned Application (if enabled set colour in Design tab)"
 msgstr ""
 
-#: options.php:717
+#: options.php:722
+msgid "iOS Web App (if enabled set custom splash images in Design tab)"
+msgstr ""
+
+#: options.php:727
 msgid "Polyfills "
 msgstr ""
 
-#: options.php:718
+#: options.php:728
 msgid ""
 "Patch up certain browsers with <a href=\"https://github.com/Modernizr/"
 "Modernizr/wiki/HTML5-Cross-Browser-Polyfills\">JavaScript polyfills</a>?"
 msgstr ""
 
-#: options.php:728
-msgid "Screen Rotation Scale Bug (iOS)"
-msgstr ""
-
-#: options.php:729
-msgid "Selectivizr CSS3 Selectors (IE7,IE8)"
-msgstr ""
-
-#: options.php:730
-msgid "HTML5 Forms (standardise form behaviour across all browsers)"
-msgstr ""
-
-#: options.php:731
+#: options.php:738
 msgid "Fluid Images (IE7,IE8)"
 msgstr ""
 
-#: options.php:738
+#: options.php:739
+msgid "HTML5 Forms (standardise form behaviour across all browsers)"
+msgstr ""
+
+#: options.php:740
+msgid "Screen Rotation Scale Bug (iOS)"
+msgstr ""
+
+#: options.php:741
+msgid "Selectivizr CSS3 Selectors (IE7,IE8)"
+msgstr ""
+
+#: options.php:748
 msgid "Disable Comments"
 msgstr ""
 
-#: options.php:739
+#: options.php:749
 msgid ""
 "This will remove meta boxes, comment related table columns, the comments "
 "admin menu and the <a href=\""
 msgstr ""
 
-#: options.php:747
+#: options.php:757
 msgid "Disable RSS"
 msgstr ""
 
-#: options.php:748
+#: options.php:758
 msgid "Disable access to all RSS feeds."
 msgstr ""
 
-#: options.php:755
+#: options.php:765
 msgid "Disable Search"
 msgstr ""
 
-#: options.php:756
+#: options.php:766
 msgid "Disable WordPress search functionality."
 msgstr ""
 
-#: options.php:763
+#: options.php:773
 msgid "Disable Welcome Message"
 msgstr ""
 
-#: options.php:764
+#: options.php:774
 msgid ""
 "Disable the friendly welcome message for first-time users in WordPress 3.3+."
 msgstr ""
 
-#: options.php:771
+#: options.php:781
 msgid "Disable Pointer Tips"
 msgstr ""
 
-#: options.php:772
+#: options.php:782
 msgid "Disable the pointer / new feature tooltips in WordPress 3.3+."
 msgstr ""
 
-#: options.php:779
+#: options.php:789
 msgid "Disable Advanced Custom Fields Lite"
 msgstr ""
 
-#: options.php:780
+#: options.php:790
 msgid "Unload ACF Lite if your theme does not require custom fields."
-msgstr ""
-
-#: options.php:788
-msgid "Disable WP App Store"
-msgstr ""
-
-#: options.php:789
-msgid "Unload the <a href=\"http://wpappstore.com/\">WP App Store</a>."
 msgstr ""
 
 #: options.php:797
@@ -1022,7 +1022,7 @@ msgid ""
 "Custom_Backgrounds\">theme background</a> within WordPress."
 msgstr ""
 
-#: options.php:829 assets/inc/admin.php:933
+#: options.php:829 assets/inc/admin.php:1045
 msgid "All Settings"
 msgstr ""
 
@@ -1093,8 +1093,9 @@ msgid ""
 "holmes/\">holmes</a>, the CSS markup detective."
 msgstr ""
 
-#: options.php:915 assets/lib/acf/core/fields/message.php:20
-#: assets/lib/acf/core/fields/radio.php:162
+#: options.php:910 assets/lib/acf/core/fields/checkbox.php:174
+#: assets/lib/acf/core/fields/message.php:20
+#: assets/lib/acf/core/fields/radio.php:209
 #: assets/lib/acf/core/fields/tab.php:20
 msgid "Layout"
 msgstr ""
@@ -1104,11 +1105,11 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:4 assets/inc/widgets.php:15
+#: searchform.php:4 assets/inc/widgets.php:19
 #: assets/inc/widgets/widget-search-category.php:18
 #: assets/inc/widgets/widget-search-category.php:25
 #: assets/inc/widgets/widget-search-post-type.php:18
-#: assets/lib/acf/core/fields/relationship.php:290
+#: assets/lib/acf/core/fields/relationship.php:647
 msgid "Search"
 msgstr ""
 
@@ -1135,43 +1136,73 @@ msgid "WordPress setup complete."
 msgstr ""
 
 #: assets/inc/activation.php:151
-#: assets/inc/options-framework/options-framework.php:163
-#: assets/inc/options-framework/options-framework.php:378
+#: assets/inc/options-framework/includes/class-options-framework-admin.php:85
+#: assets/inc/options-framework/includes/class-options-framework-admin.php:86
+#: assets/inc/options-framework/includes/class-options-framework-admin.php:305
 msgid "Theme Options"
 msgstr ""
 
-#: assets/inc/admin.php:354
+#: assets/inc/admin.php:347
 msgid "Compatible &amp; Recommended Plugins"
 msgstr ""
 
-#: assets/inc/admin.php:355
+#: assets/inc/admin.php:348
 msgid "Compatible Plugins"
 msgstr ""
 
-#: assets/inc/admin.php:356 assets/lib/class-tgm-plugin-activation.php:166
+#: assets/inc/admin.php:349 assets/lib/class-tgm-plugin-activation.php:166
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: assets/inc/admin.php:357
+#: assets/inc/admin.php:350
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: assets/inc/admin.php:368
+#: assets/inc/admin.php:361
 msgid "Return to Theme Plugins Installer"
 msgstr ""
 
-#: assets/inc/admin.php:369 assets/lib/class-tgm-plugin-activation.php:179
+#: assets/inc/admin.php:362 assets/lib/class-tgm-plugin-activation.php:179
 #: assets/lib/class-tgm-plugin-activation.php:1846
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: assets/inc/admin.php:370
+#: assets/inc/admin.php:363
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: assets/inc/admin.php:919
+#: assets/inc/admin.php:667 assets/lib/acf/core/actions/export.php:23
+#: assets/lib/acf/core/views/meta_box_fields.php:58
+msgid "Error"
+msgstr ""
+
+#: assets/inc/admin.php:673
+msgid "Notice"
+msgstr ""
+
+#: assets/inc/admin.php:679
+msgid "Success"
+msgstr ""
+
+#: assets/inc/admin.php:685
+msgid "Text Button"
+msgstr ""
+
+#: assets/inc/admin.php:690
+msgid "Loud"
+msgstr ""
+
+#: assets/inc/admin.php:695
+msgid "Quiet"
+msgstr ""
+
+#: assets/inc/admin.php:700
+msgid "Highlight"
+msgstr ""
+
+#: assets/inc/admin.php:1031
 msgid "Custom Avatar"
 msgstr ""
 
@@ -1242,6 +1273,10 @@ msgstr ""
 msgid "Please make sure your <a href=\"%s\">.htaccess</a> file is writable "
 msgstr ""
 
+#: assets/inc/shortcodes.php:108
+msgid "Select a shortcode:"
+msgstr ""
+
 #: assets/inc/theme.php:121
 #, php-format
 msgid "Page %s"
@@ -1251,192 +1286,151 @@ msgstr ""
 msgid "RSS is currently disabled. Please visit our <a href=\""
 msgstr ""
 
-#: assets/inc/theme.php:710 assets/inc/theme.php:726
+#: assets/inc/theme.php:685 assets/inc/theme.php:701
 msgid " &hellip;Continue reading &raquo;"
 msgstr ""
 
-#: assets/inc/theme.php:834
+#: assets/inc/theme.php:846
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: assets/inc/theme.php:840 assets/inc/theme.php:852
+#: assets/inc/theme.php:852 assets/inc/theme.php:864
 msgid "Moderate"
 msgstr ""
 
-#: assets/inc/theme.php:852
+#: assets/inc/theme.php:864
 msgid "Pingback:"
 msgstr ""
 
-#: assets/inc/widgets.php:15
+#: assets/inc/widgets.php:16
 msgid "Homepage"
 msgstr ""
 
-#: assets/inc/widgets.php:15
-#: assets/lib/acf/core/views/meta_box_location.php:51
-#: assets/lib/acf/core/views/meta_box_location.php:52
+#: assets/inc/widgets.php:17
+#: assets/lib/acf/core/views/meta_box_location.php:78
+#: assets/lib/acf/core/views/meta_box_location.php:79
 msgid "Page"
 msgstr ""
 
-#: assets/inc/widgets.php:15
+#: assets/inc/widgets.php:18
 msgid "Posts/Blog"
 msgstr ""
 
-#: assets/inc/widgets.php:15
-msgid "Footer"
-msgstr ""
-
-#: assets/inc/wp-app-store.php:155
-msgid ""
-"Sorry, we could not reach the WP App Store to setup the auto installer. "
-"Please try again later."
-msgstr ""
-
-#: assets/inc/wp-app-store.php:156
-msgid ""
-"In the meantime, you can try checking us out at <a href=\"http://wpappstore."
-"com/\">http://wpappstore.com/</a>."
-msgstr ""
-
-#: assets/inc/options-framework/options-framework.php:194
-msgid "Clear"
-msgstr ""
-
-#: assets/inc/options-framework/options-framework.php:195
-msgid "Default"
-msgstr ""
-
-#: assets/inc/options-framework/options-framework.php:196
-msgid "Select Color"
-msgstr ""
-
-#: assets/inc/options-framework/options-framework.php:242
+#: assets/inc/options-framework/includes/class-options-framework-admin.php:172
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr ""
 
-#: assets/inc/options-framework/options-framework.php:274
+#: assets/inc/options-framework/includes/class-options-framework-admin.php:203
 msgid "Default options restored."
 msgstr ""
 
-#: assets/inc/options-framework/options-framework.php:328
+#: assets/inc/options-framework/includes/class-options-framework-admin.php:257
 msgid "Options saved."
 msgstr ""
 
-#: assets/inc/options-framework/options-media-uploader.php:51
+#: assets/inc/options-framework/includes/class-options-media-uploader.php:63
 msgid "No file chosen"
 msgstr ""
 
-#: assets/inc/options-framework/options-media-uploader.php:54
-#: assets/inc/options-framework/options-media-uploader.php:107
-#: assets/inc/options-framework/options-medialibrary-uploader.php:126
+#: assets/inc/options-framework/includes/class-options-media-uploader.php:66
+#: assets/inc/options-framework/includes/class-options-media-uploader.php:119
 msgid "Upload"
 msgstr ""
 
-#: assets/inc/options-framework/options-media-uploader.php:56
-#: assets/inc/options-framework/options-media-uploader.php:108
-#: assets/lib/acf/core/fields/file.php:77
-#: assets/lib/acf/core/fields/image.php:75
+#: assets/inc/options-framework/includes/class-options-media-uploader.php:68
+#: assets/inc/options-framework/includes/class-options-media-uploader.php:120
+#: assets/lib/acf/core/fields/image.php:83
 msgid "Remove"
 msgstr ""
 
-#: assets/inc/options-framework/options-media-uploader.php:59
+#: assets/inc/options-framework/includes/class-options-media-uploader.php:71
 msgid "Upgrade your version of WordPress for full media support."
 msgstr ""
 
-#: assets/inc/options-framework/options-media-uploader.php:83
-#: assets/inc/options-framework/options-medialibrary-uploader.php:149
+#: assets/inc/options-framework/includes/class-options-media-uploader.php:95
 msgid "View File"
 msgstr ""
 
-#: assets/inc/options-framework/options-medialibrary-uploader.php:26
-msgid "Theme Options Media"
-msgstr ""
-
-#: assets/inc/options-framework/options-medialibrary-uploader.php:282
-msgid "Previously Uploaded"
-msgstr ""
-
-#: assets/inc/options-framework/options-sanitize.php:232
+#: assets/inc/options-framework/includes/class-options-sanitization.php:241
 msgid "No Repeat"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:233
+#: assets/inc/options-framework/includes/class-options-sanitization.php:242
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:234
+#: assets/inc/options-framework/includes/class-options-sanitization.php:243
 msgid "Repeat Vertically"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:235
+#: assets/inc/options-framework/includes/class-options-sanitization.php:244
 msgid "Repeat All"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:248
+#: assets/inc/options-framework/includes/class-options-sanitization.php:257
 msgid "Top Left"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:249
+#: assets/inc/options-framework/includes/class-options-sanitization.php:258
 msgid "Top Center"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:250
+#: assets/inc/options-framework/includes/class-options-sanitization.php:259
 msgid "Top Right"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:251
+#: assets/inc/options-framework/includes/class-options-sanitization.php:260
 msgid "Middle Left"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:252
+#: assets/inc/options-framework/includes/class-options-sanitization.php:261
 msgid "Middle Center"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:253
+#: assets/inc/options-framework/includes/class-options-sanitization.php:262
 msgid "Middle Right"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:254
+#: assets/inc/options-framework/includes/class-options-sanitization.php:263
 msgid "Bottom Left"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:255
+#: assets/inc/options-framework/includes/class-options-sanitization.php:264
 msgid "Bottom Center"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:256
+#: assets/inc/options-framework/includes/class-options-sanitization.php:265
 msgid "Bottom Right"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:269
+#: assets/inc/options-framework/includes/class-options-sanitization.php:278
 msgid "Scroll Normally"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:270
+#: assets/inc/options-framework/includes/class-options-sanitization.php:279
 msgid "Fixed in Place"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:344
-#: assets/lib/acf/core/views/meta_box_options.php:50
+#: assets/inc/options-framework/includes/class-options-sanitization.php:353
+#: assets/lib/acf/core/views/meta_box_options.php:52
 msgid "Normal"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:345
+#: assets/inc/options-framework/includes/class-options-sanitization.php:354
 msgid "Italic"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:346
+#: assets/inc/options-framework/includes/class-options-sanitization.php:355
 msgid "Bold"
 msgstr ""
 
-#: assets/inc/options-framework/options-sanitize.php:347
+#: assets/inc/options-framework/includes/class-options-sanitization.php:356
 msgid "Bold Italic"
 msgstr ""
 
 #: assets/inc/post-types/post-type-portfolio.php:16
 #: assets/inc/post-types/post-type-portfolio.php:32
-#: assets/inc/post-types/post-type-products.php:16
-#: assets/inc/post-types/post-type-products.php:32
-#: assets/lib/acf/core/views/meta_box_options.php:102
+#: assets/lib/acf/core/views/meta_box_options.php:104
 msgid "Categories"
 msgstr ""
 
@@ -1449,7 +1443,6 @@ msgid "Search Portfolio Categories"
 msgstr ""
 
 #: assets/inc/post-types/post-type-portfolio.php:19
-#: assets/inc/post-types/post-type-products.php:19
 msgid "Popular Categories"
 msgstr ""
 
@@ -1458,7 +1451,6 @@ msgid "All Portfolio Categories"
 msgstr ""
 
 #: assets/inc/post-types/post-type-portfolio.php:21
-#: assets/inc/post-types/post-type-products.php:21
 msgid "Parent Category"
 msgstr ""
 
@@ -1479,7 +1471,6 @@ msgid "New Portfolio Category"
 msgstr ""
 
 #: assets/inc/post-types/post-type-portfolio.php:26
-#: assets/inc/post-types/post-type-products.php:26
 msgid "Separate categories with commas"
 msgstr ""
 
@@ -1532,136 +1523,6 @@ msgstr ""
 #: assets/inc/post-types/post-type-portfolio.php:57
 #: assets/inc/post-types/post-type-portfolio.php:62
 msgid "Portfolio"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:17
-msgid "Product Category"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:18
-msgid "Search Product Categories"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:20
-msgid "All Product Categories"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:22
-msgid "Edit Product Category"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:23
-msgid "Update Product Category"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:24
-msgid "Add New Product Category"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:25
-msgid "New Product Category"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:27
-msgid "Add or remove Product Categories"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:28
-msgid "Choose from most used Product Categories"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:46
-#: assets/inc/post-types/post-type-products.php:62
-msgid "Features"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:47
-msgid "Product Features"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:48
-msgid "Search Product Features"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:49
-msgid "Popular Features"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:50
-msgid "All Product Features"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:51
-msgid "Parent Product Feature"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:52
-msgid "Edit Product Feature"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:53
-msgid "Update Product Feature"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:54
-msgid "Add New Product Feature"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:55
-msgid "New Product Feature"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:56
-msgid "Separate features with commas"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:57
-msgid "Add or remove Product Features"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:58
-msgid "Choose from most used Product Features"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:76
-#: assets/inc/post-types/post-type-products.php:91
-msgid "Products"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:77
-msgid "Product"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:78
-msgid "Add Product"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:79
-msgid "Add New Product"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:80
-msgid "Edit Product"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:81
-msgid "New Product"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:82
-msgid "View Product"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:83
-msgid "Search Products"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:84
-msgid "No products found"
-msgstr ""
-
-#: assets/inc/post-types/post-type-products.php:85
-msgid "No products found in Trash"
 msgstr ""
 
 #: assets/inc/post-types/post-type-staff.php:16
@@ -1748,30 +1609,18 @@ msgstr ""
 msgid "No staff found in Trash"
 msgstr ""
 
-#: assets/inc/shortcodes/shortcode-map.php:101
+#: assets/inc/shortcodes/shortcode-map.php:102
 #, php-format
 msgid "Unable to parse entered address. API response code: %s"
 msgstr ""
 
-#: assets/inc/shortcodes/shortcode-map.php:103
+#: assets/inc/shortcodes/shortcode-map.php:104
 #, php-format
 msgid "XML parsing error. Please try again later. API response code: %s"
 msgstr ""
 
-#: assets/inc/shortcodes/shortcode-map.php:107
+#: assets/inc/shortcodes/shortcode-map.php:108
 msgid "Unable to contact Google API service."
-msgstr ""
-
-#: assets/inc/shortcodes/shortcode-paypal-donate.php:16
-msgid "Make a donation"
-msgstr ""
-
-#: assets/inc/shortcodes/shortcode-qrcode.php:23
-msgid "QR Code for: "
-msgstr ""
-
-#: assets/inc/shortcodes/shortcode-related-posts.php:49
-msgid "No related posts found."
 msgstr ""
 
 #: assets/inc/widgets/widget-flickr.php:11
@@ -1783,7 +1632,7 @@ msgid "Flickr Feed"
 msgstr ""
 
 #: assets/inc/widgets/widget-flickr.php:45
-#: assets/inc/widgets/widget-twitter.php:62
+#: assets/inc/widgets/widget-social.php:46
 #: assets/lib/acf/core/controllers/field_groups.php:147
 msgid "Title"
 msgstr ""
@@ -1822,10 +1671,8 @@ msgid "Category to search:"
 msgstr ""
 
 #: assets/inc/widgets/widget-search-category.php:49
+#: assets/lib/acf/core/fields/taxonomy.php:211
 #: assets/lib/acf/core/fields/taxonomy.php:220
-#: assets/lib/acf/core/fields/taxonomy.php:229
-#: assets/lib/acf/core/fields/text.php:97
-#: assets/lib/acf/core/fields/textarea.php:97
 msgid "None"
 msgstr ""
 
@@ -1841,10 +1688,22 @@ msgstr ""
 msgid "Post type to search:"
 msgstr ""
 
+#: assets/inc/widgets/widget-social.php:11
+msgid "Displays your social media profiles as icons"
+msgstr ""
+
+#: assets/inc/widgets/widget-social.php:12
+msgid "Social Profiles"
+msgstr ""
+
+#: assets/inc/widgets/widget-social.php:48
+#, php-format
+msgid "Social profiles are managed from your %1$stheme options%2$s."
+msgstr ""
+
 #: assets/inc/widgets/widget-taxonomy.php:27
-#: assets/lib/acf/core/fields/taxonomy.php:22
-#: assets/lib/acf/core/fields/taxonomy.php:286
-#: assets/lib/acf/core/views/meta_box_location.php:61
+#: assets/lib/acf/core/fields/taxonomy.php:18
+#: assets/lib/acf/core/fields/taxonomy.php:276
 msgid "Taxonomy"
 msgstr ""
 
@@ -1874,30 +1733,6 @@ msgstr ""
 
 #: assets/inc/widgets/widget-taxonomy.php:350
 msgid "Y-m-d"
-msgstr ""
-
-#: assets/inc/widgets/widget-twitter.php:11
-msgid "Displays your tweets"
-msgstr ""
-
-#: assets/inc/widgets/widget-twitter.php:12
-msgid "Twitter Feed"
-msgstr ""
-
-#: assets/inc/widgets/widget-twitter.php:56
-msgid "Latest Tweets"
-msgstr ""
-
-#: assets/inc/widgets/widget-twitter.php:63
-msgid "Username"
-msgstr ""
-
-#: assets/inc/widgets/widget-twitter.php:64
-msgid "Number of Tweets"
-msgstr ""
-
-#: assets/inc/widgets/widget-twitter.php:65
-msgid "Text Link"
 msgstr ""
 
 #: assets/inc/widgets/widget-vcard.php:12
@@ -2016,7 +1851,6 @@ msgid "Source"
 msgstr ""
 
 #: assets/lib/class-tgm-plugin-activation.php:1299
-#: assets/lib/acf/core/views/meta_box_location.php:53
 msgid "Type"
 msgstr ""
 
@@ -2117,190 +1951,222 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: assets/lib/acf/acf.php:264
+#: assets/lib/acf/acf.php:342
 msgid "Field&nbsp;Groups"
 msgstr ""
 
-#: assets/lib/acf/acf.php:265
+#: assets/lib/acf/acf.php:343
 #: assets/lib/acf/core/controllers/field_groups.php:214
 msgid "Advanced Custom Fields"
 msgstr ""
 
-#: assets/lib/acf/acf.php:266
+#: assets/lib/acf/acf.php:344
 msgid "Add New"
 msgstr ""
 
-#: assets/lib/acf/acf.php:267
+#: assets/lib/acf/acf.php:345
 msgid "Add New Field Group"
 msgstr ""
 
-#: assets/lib/acf/acf.php:268
+#: assets/lib/acf/acf.php:346
 msgid "Edit Field Group"
 msgstr ""
 
-#: assets/lib/acf/acf.php:269
+#: assets/lib/acf/acf.php:347
 msgid "New Field Group"
 msgstr ""
 
-#: assets/lib/acf/acf.php:270
+#: assets/lib/acf/acf.php:348
 msgid "View Field Group"
 msgstr ""
 
-#: assets/lib/acf/acf.php:271
+#: assets/lib/acf/acf.php:349
 msgid "Search Field Groups"
 msgstr ""
 
-#: assets/lib/acf/acf.php:272
+#: assets/lib/acf/acf.php:350
 msgid "No Field Groups found"
 msgstr ""
 
-#: assets/lib/acf/acf.php:273
+#: assets/lib/acf/acf.php:351
 msgid "No Field Groups found in Trash"
 msgstr ""
 
-#: assets/lib/acf/acf.php:386
-#: assets/lib/acf/core/views/meta_box_options.php:94
+#: assets/lib/acf/acf.php:459
+#: assets/lib/acf/core/views/meta_box_options.php:96
 msgid "Custom Fields"
 msgstr ""
 
-#: assets/lib/acf/acf.php:404 assets/lib/acf/acf.php:407
+#: assets/lib/acf/acf.php:477 assets/lib/acf/acf.php:480
 msgid "Field group updated."
 msgstr ""
 
-#: assets/lib/acf/acf.php:405
+#: assets/lib/acf/acf.php:478
 msgid "Custom field updated."
 msgstr ""
 
-#: assets/lib/acf/acf.php:406
+#: assets/lib/acf/acf.php:479
 msgid "Custom field deleted."
 msgstr ""
 
-#: assets/lib/acf/acf.php:409
+#: assets/lib/acf/acf.php:482
 #, php-format
 msgid "Field group restored to revision from %s"
 msgstr ""
 
-#: assets/lib/acf/acf.php:410
+#: assets/lib/acf/acf.php:483
 msgid "Field group published."
 msgstr ""
 
-#: assets/lib/acf/acf.php:411
+#: assets/lib/acf/acf.php:484
 msgid "Field group saved."
 msgstr ""
 
-#: assets/lib/acf/acf.php:412
+#: assets/lib/acf/acf.php:485
 msgid "Field group submitted."
 msgstr ""
 
-#: assets/lib/acf/acf.php:413
+#: assets/lib/acf/acf.php:486
 msgid "Field group scheduled for."
 msgstr ""
 
-#: assets/lib/acf/acf.php:414
+#: assets/lib/acf/acf.php:487
 msgid "Field group draft updated."
 msgstr ""
 
-#: assets/lib/acf/acf.php:549
+#: assets/lib/acf/acf.php:622
 msgid "Thumbnail"
 msgstr ""
 
-#: assets/lib/acf/acf.php:550
+#: assets/lib/acf/acf.php:623
 msgid "Medium"
 msgstr ""
 
-#: assets/lib/acf/acf.php:551
+#: assets/lib/acf/acf.php:624
 msgid "Large"
 msgstr ""
 
-#: assets/lib/acf/acf.php:552
+#: assets/lib/acf/acf.php:625
 msgid "Full"
 msgstr ""
 
-#: assets/lib/acf/core/actions/export.php:22
+#: assets/lib/acf/core/api.php:1094
+msgid "Update"
+msgstr ""
+
+#: assets/lib/acf/core/api.php:1095
+msgid "Post updated"
+msgstr ""
+
+#: assets/lib/acf/core/actions/export.php:30
 msgid "No ACF groups selected"
 msgstr ""
 
 #: assets/lib/acf/core/controllers/addons.php:42
-msgid "Add-Ons"
+#: assets/lib/acf/core/controllers/export.php:368
+#: assets/lib/acf/core/controllers/field_groups.php:311
+msgid "Add-ons"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/addons.php:139
+#: assets/lib/acf/core/controllers/addons.php:130
+#: assets/lib/acf/core/controllers/field_groups.php:432
+msgid "Repeater Field"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:131
+msgid "Create infinite rows of repeatable data with this versatile interface!"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:137
+#: assets/lib/acf/core/controllers/field_groups.php:440
+msgid "Gallery Field"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:138
+msgid "Create image galleries in a simple and intuitive interface!"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:144
+#: assets/lib/acf/core/controllers/field_groups.php:448
+msgid "Options Page"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:145
+msgid "Create global data to use throughout your website!"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:151
+msgid "Flexible Content Field"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:152
+msgid "Create unique designs with a flexible content layout manager!"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:161
+msgid "Gravity Forms Field"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:162
+msgid "Creates a select field populated with Gravity Forms!"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:168
+msgid "Date & Time Picker"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:169
+msgid "jQuery date & time picker"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:175
+msgid "Location Field"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:176
+msgid "Find addresses and coordinates of a desired location"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:182
+msgid "Contact Form 7 Field"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:183
+msgid "Assign one or more contact form 7 forms to a post"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/addons.php:193
 msgid "Advanced Custom Fields Add-Ons"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/addons.php:141
+#: assets/lib/acf/core/controllers/addons.php:196
 msgid ""
 "The following Add-ons are available to increase the functionality of the "
 "Advanced Custom Fields plugin."
 msgstr ""
 
-#: assets/lib/acf/core/controllers/addons.php:142
+#: assets/lib/acf/core/controllers/addons.php:197
 msgid ""
 "Each Add-on can be installed as a separate plugin (receives updates) or "
 "included in your theme (does not receive updates)."
 msgstr ""
 
-#: assets/lib/acf/core/controllers/addons.php:145
-msgid "Just updated to version 4?"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:145
-msgid ""
-"Activation codes have changed to plugins! Download your purchased add-ons"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:145
-msgid "here"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:153
-#: assets/lib/acf/core/controllers/field_groups.php:432
-msgid "Repeater Field"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:154
-msgid "Create infinite rows of repeatable data with this versatile interface!"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:158
-#: assets/lib/acf/core/controllers/addons.php:174
-#: assets/lib/acf/core/controllers/addons.php:190
-#: assets/lib/acf/core/controllers/addons.php:206
+#: assets/lib/acf/core/controllers/addons.php:219
+#: assets/lib/acf/core/controllers/addons.php:240
 msgid "Installed"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/addons.php:160
-#: assets/lib/acf/core/controllers/addons.php:176
-#: assets/lib/acf/core/controllers/addons.php:192
-#: assets/lib/acf/core/controllers/addons.php:208
+#: assets/lib/acf/core/controllers/addons.php:221
 msgid "Purchase & Install"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/addons.php:169
-#: assets/lib/acf/core/controllers/field_groups.php:440
-msgid "Gallery Field"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:170
-msgid "Create image galleries in a simple and intuitive interface!"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:185
-#: assets/lib/acf/core/controllers/export.php:380
-#: assets/lib/acf/core/controllers/field_groups.php:448
-msgid "Options Page"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:186
-msgid "Create global data to use throughout your website!"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:201
-msgid "Flexible Content Field"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/addons.php:202
-msgid "Create unique designs with a flexible content layout manager!"
+#: assets/lib/acf/core/controllers/addons.php:242
+#: assets/lib/acf/core/controllers/field_groups.php:425
+#: assets/lib/acf/core/controllers/field_groups.php:434
+#: assets/lib/acf/core/controllers/field_groups.php:442
+#: assets/lib/acf/core/controllers/field_groups.php:450
+#: assets/lib/acf/core/controllers/field_groups.php:458
+msgid "Download"
 msgstr ""
 
 #: assets/lib/acf/core/controllers/export.php:50
@@ -2386,8 +2252,8 @@ msgstr ""
 msgid ""
 "Please note that if you export and register field groups within the same WP, "
 "you will see duplicate fields on your edit screens. To fix this, please move "
-"the origional field group to the trash or remove the code from your "
-"functions.php file."
+"the original field group to the trash or remove the code from your functions."
+"php file."
 msgstr ""
 
 #: assets/lib/acf/core/controllers/export.php:272
@@ -2414,7 +2280,7 @@ msgid "Export Field Groups to PHP"
 msgstr ""
 
 #: assets/lib/acf/core/controllers/export.php:300
-#: assets/lib/acf/core/fields/tab.php:64
+#: assets/lib/acf/core/fields/tab.php:65
 msgid "Instructions"
 msgstr ""
 
@@ -2436,7 +2302,7 @@ msgstr ""
 #: assets/lib/acf/core/controllers/export.php:323
 msgid ""
 "To remove all visual interfaces from the ACF plugin, you can use a constant "
-"to enable lite mode. Add the following code to you functions.php file "
+"to enable lite mode. Add the following code to your functions.php file "
 "<b>before</b> the include_once code:"
 msgstr ""
 
@@ -2453,30 +2319,20 @@ msgid ""
 " *  Please do not attempt to include a file which does not exist. This will "
 "produce an error.\n"
 " *  \n"
-" *  All fields must be included during the 'acf/register_fields' action.\n"
-" *  Other types of Add-ons (like the options page) can be included outside "
-"of this action.\n"
-" *  \n"
 " *  The following code assumes you have a folder 'add-ons' inside your "
 "theme.\n"
 " *\n"
 " *  IMPORTANT\n"
-" *  Add-ons may be included in a premium theme as outlined in the terms and "
-"conditions.\n"
-" *  However, they are NOT to be included in a premium / free plugin.\n"
-" *  For more information, please read http://www.advancedcustomfields.com/"
-"terms-conditions/\n"
+" *  Add-ons may be included in a premium theme/plugin as outlined in the "
+"terms and conditions.\n"
+" *  For more information, please read:\n"
+" *  - http://www.advancedcustomfields.com/terms-conditions/\n"
+" *  - http://www.advancedcustomfields.com/resources/getting-started/"
+"including-lite-mode-in-a-plugin-theme/\n"
 " */"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/export.php:370
-#: assets/lib/acf/core/controllers/field_group.php:357
-#: assets/lib/acf/core/controllers/field_group.php:419
-#: assets/lib/acf/core/controllers/field_groups.php:148
-msgid "Fields"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/export.php:384
+#: assets/lib/acf/core/controllers/export.php:375
 msgid ""
 "/**\n"
 " *  Register Field Groups\n"
@@ -2488,52 +2344,125 @@ msgid ""
 " */"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/export.php:435
+#: assets/lib/acf/core/controllers/export.php:426
 msgid "No field groups were selected"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/field_group.php:358
+#: assets/lib/acf/core/controllers/field_group.php:375
+#: assets/lib/acf/core/controllers/field_group.php:437
+#: assets/lib/acf/core/controllers/field_groups.php:148
+msgid "Fields"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:376
 msgid "Location"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/field_group.php:359
-#: assets/lib/acf/core/views/meta_box_location.php:160
+#: assets/lib/acf/core/controllers/field_group.php:377
 msgid "Options"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/field_group.php:601
+#: assets/lib/acf/core/controllers/field_group.php:439
+msgid "Show Field Key:"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:440
+#: assets/lib/acf/core/fields/page_link.php:138
+#: assets/lib/acf/core/fields/page_link.php:159
+#: assets/lib/acf/core/fields/post_object.php:328
+#: assets/lib/acf/core/fields/post_object.php:349
+#: assets/lib/acf/core/fields/select.php:224
+#: assets/lib/acf/core/fields/select.php:243
+#: assets/lib/acf/core/fields/taxonomy.php:341
+#: assets/lib/acf/core/fields/user.php:285
+#: assets/lib/acf/core/fields/wysiwyg.php:229
+#: assets/lib/acf/core/views/meta_box_fields.php:209
+#: assets/lib/acf/core/views/meta_box_fields.php:232
+msgid "No"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:441
+#: assets/lib/acf/core/fields/page_link.php:137
+#: assets/lib/acf/core/fields/page_link.php:158
+#: assets/lib/acf/core/fields/post_object.php:327
+#: assets/lib/acf/core/fields/post_object.php:348
+#: assets/lib/acf/core/fields/select.php:223
+#: assets/lib/acf/core/fields/select.php:242
+#: assets/lib/acf/core/fields/taxonomy.php:340
+#: assets/lib/acf/core/fields/user.php:284
+#: assets/lib/acf/core/fields/wysiwyg.php:228
+#: assets/lib/acf/core/views/meta_box_fields.php:208
+#: assets/lib/acf/core/views/meta_box_fields.php:231
+msgid "Yes"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:618
 msgid "Front Page"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/field_group.php:602
+#: assets/lib/acf/core/controllers/field_group.php:619
 msgid "Posts Page"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/field_group.php:603
+#: assets/lib/acf/core/controllers/field_group.php:620
 msgid "Top Level Page (parent of 0)"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/field_group.php:604
+#: assets/lib/acf/core/controllers/field_group.php:621
 msgid "Parent Page (has children)"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/field_group.php:605
+#: assets/lib/acf/core/controllers/field_group.php:622
 msgid "Child Page (has parent)"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/field_group.php:613
+#: assets/lib/acf/core/controllers/field_group.php:630
 msgid "Default Template"
 msgstr ""
 
 #: assets/lib/acf/core/controllers/field_group.php:707
-#: assets/lib/acf/core/controllers/field_group.php:728
-#: assets/lib/acf/core/controllers/field_group.php:735
-#: assets/lib/acf/core/fields/page_link.php:84
-#: assets/lib/acf/core/fields/post_object.php:236
-#: assets/lib/acf/core/fields/post_object.php:260
-#: assets/lib/acf/core/fields/relationship.php:407
-#: assets/lib/acf/core/fields/relationship.php:431
-#: assets/lib/acf/core/fields/user.php:239
+msgid "Publish"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:708
+msgid "Pending Review"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:709
+msgid "Draft"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:710
+msgid "Future"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:711
+msgid "Private"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:712
+msgid "Revision"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:713
+msgid "Trash"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:726
+msgid "Super Admin"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/field_group.php:741
+#: assets/lib/acf/core/controllers/field_group.php:762
+#: assets/lib/acf/core/controllers/field_group.php:769
+#: assets/lib/acf/core/fields/file.php:186
+#: assets/lib/acf/core/fields/image.php:170
+#: assets/lib/acf/core/fields/page_link.php:109
+#: assets/lib/acf/core/fields/post_object.php:274
+#: assets/lib/acf/core/fields/post_object.php:298
+#: assets/lib/acf/core/fields/relationship.php:595
+#: assets/lib/acf/core/fields/relationship.php:619
+#: assets/lib/acf/core/fields/user.php:229
 msgid "All"
 msgstr ""
 
@@ -2571,6 +2500,7 @@ msgid "Actions"
 msgstr ""
 
 #: assets/lib/acf/core/controllers/field_groups.php:225
+#: assets/lib/acf/core/fields/relationship.php:638
 msgid "Filters"
 msgstr ""
 
@@ -2612,10 +2542,6 @@ msgstr ""
 
 #: assets/lib/acf/core/controllers/field_groups.php:259
 msgid "Download Add-ons"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/field_groups.php:311
-msgid "Add-ons"
 msgstr ""
 
 #: assets/lib/acf/core/controllers/field_groups.php:313
@@ -2699,7 +2625,7 @@ msgstr ""
 
 #: assets/lib/acf/core/controllers/field_groups.php:353
 msgid ""
-"All actions & filters have recieved a major facelift to make customizing ACF "
+"All actions & filters have received a major facelift to make customizing ACF "
 "even easier! Please"
 msgstr ""
 
@@ -2764,7 +2690,7 @@ msgstr ""
 #: assets/lib/acf/core/controllers/field_groups.php:369
 msgid ""
 "If you updated the ACF plugin without prior knowledge of such changes, "
-"Please roll back to the latest"
+"please roll back to the latest"
 msgstr ""
 
 #: assets/lib/acf/core/controllers/field_groups.php:369
@@ -2826,14 +2752,6 @@ msgstr ""
 msgid "Activation Code"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/field_groups.php:425
-#: assets/lib/acf/core/controllers/field_groups.php:434
-#: assets/lib/acf/core/controllers/field_groups.php:442
-#: assets/lib/acf/core/controllers/field_groups.php:450
-#: assets/lib/acf/core/controllers/field_groups.php:458
-msgid "Download"
-msgstr ""
-
 #: assets/lib/acf/core/controllers/field_groups.php:456
 msgid "Flexible Content"
 msgstr ""
@@ -2876,94 +2794,113 @@ msgstr ""
 msgid "Awesome. Let's get to work"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/input.php:480
+#: assets/lib/acf/core/controllers/input.php:488
+msgid "Expand Details"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/input.php:489
+msgid "Collapse Details"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/input.php:492
 msgid "Validation Failed. One or more fields below are required."
 msgstr ""
 
-#: assets/lib/acf/core/controllers/input.php:482
-msgid "Maximum values reached ( {max} values )"
-msgstr ""
-
-#: assets/lib/acf/core/controllers/upgrade.php:79
+#: assets/lib/acf/core/controllers/upgrade.php:86
 msgid "Upgrade"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/upgrade.php:623
+#: assets/lib/acf/core/controllers/upgrade.php:139
+msgid "What's new"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/upgrade.php:150
+msgid "credits"
+msgstr ""
+
+#: assets/lib/acf/core/controllers/upgrade.php:684
 msgid "Modifying field group options 'show on page'"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/upgrade.php:677
+#: assets/lib/acf/core/controllers/upgrade.php:738
 msgid "Modifying field option 'taxonomy'"
 msgstr ""
 
-#: assets/lib/acf/core/controllers/upgrade.php:774
+#: assets/lib/acf/core/controllers/upgrade.php:835
 msgid "Moving user custom fields from wp_options to wp_usermeta'"
 msgstr ""
 
-#: assets/lib/acf/core/fields/_base.php:120
-#: assets/lib/acf/core/views/meta_box_location.php:47
+#: assets/lib/acf/core/fields/_base.php:124
+#: assets/lib/acf/core/views/meta_box_location.php:74
 msgid "Basic"
 msgstr ""
 
 #: assets/lib/acf/core/fields/checkbox.php:19
-#: assets/lib/acf/core/fields/taxonomy.php:327
+#: assets/lib/acf/core/fields/taxonomy.php:317
 msgid "Checkbox"
 msgstr ""
 
 #: assets/lib/acf/core/fields/checkbox.php:20
-#: assets/lib/acf/core/fields/radio.php:20
-#: assets/lib/acf/core/fields/select.php:20
+#: assets/lib/acf/core/fields/radio.php:19
+#: assets/lib/acf/core/fields/select.php:19
 #: assets/lib/acf/core/fields/true_false.php:20
 msgid "Choice"
 msgstr ""
 
-#: assets/lib/acf/core/fields/checkbox.php:121
-#: assets/lib/acf/core/fields/radio.php:121
-#: assets/lib/acf/core/fields/select.php:181
+#: assets/lib/acf/core/fields/checkbox.php:137
+#: assets/lib/acf/core/fields/radio.php:144
+#: assets/lib/acf/core/fields/select.php:177
 msgid "Choices"
 msgstr ""
 
-#: assets/lib/acf/core/fields/checkbox.php:122
-#: assets/lib/acf/core/fields/radio.php:122
-#: assets/lib/acf/core/fields/select.php:182
-msgid "Enter your choices one per line"
+#: assets/lib/acf/core/fields/checkbox.php:138
+#: assets/lib/acf/core/fields/select.php:178
+msgid "Enter each choice on a new line."
 msgstr ""
 
-#: assets/lib/acf/core/fields/checkbox.php:124
-#: assets/lib/acf/core/fields/radio.php:124
-#: assets/lib/acf/core/fields/select.php:184
-msgid "Red"
+#: assets/lib/acf/core/fields/checkbox.php:139
+#: assets/lib/acf/core/fields/select.php:179
+msgid "For more control, you may specify both a value and label like this:"
 msgstr ""
 
-#: assets/lib/acf/core/fields/checkbox.php:125
-#: assets/lib/acf/core/fields/radio.php:125
-#: assets/lib/acf/core/fields/select.php:185
-msgid "Blue"
-msgstr ""
-
-#: assets/lib/acf/core/fields/checkbox.php:127
-#: assets/lib/acf/core/fields/radio.php:127
-#: assets/lib/acf/core/fields/select.php:187
+#: assets/lib/acf/core/fields/checkbox.php:140
+#: assets/lib/acf/core/fields/radio.php:150
+#: assets/lib/acf/core/fields/select.php:180
 msgid "red : Red"
 msgstr ""
 
-#: assets/lib/acf/core/fields/checkbox.php:128
-#: assets/lib/acf/core/fields/radio.php:128
-#: assets/lib/acf/core/fields/select.php:188
+#: assets/lib/acf/core/fields/checkbox.php:140
+#: assets/lib/acf/core/fields/radio.php:151
+#: assets/lib/acf/core/fields/select.php:180
 msgid "blue : Blue"
 msgstr ""
 
-#: assets/lib/acf/core/fields/checkbox.php:146
-#: assets/lib/acf/core/fields/color_picker.php:73
-#: assets/lib/acf/core/fields/email.php:71
-#: assets/lib/acf/core/fields/number.php:71
-#: assets/lib/acf/core/fields/radio.php:146
-#: assets/lib/acf/core/fields/select.php:204
-#: assets/lib/acf/core/fields/text.php:73
-#: assets/lib/acf/core/fields/textarea.php:73
-#: assets/lib/acf/core/fields/true_false.php:104
-#: assets/lib/acf/core/fields/wysiwyg.php:179
+#: assets/lib/acf/core/fields/checkbox.php:157
+#: assets/lib/acf/core/fields/color_picker.php:89
+#: assets/lib/acf/core/fields/email.php:106
+#: assets/lib/acf/core/fields/number.php:116
+#: assets/lib/acf/core/fields/radio.php:193
+#: assets/lib/acf/core/fields/select.php:197
+#: assets/lib/acf/core/fields/text.php:116
+#: assets/lib/acf/core/fields/textarea.php:96
+#: assets/lib/acf/core/fields/true_false.php:94
+#: assets/lib/acf/core/fields/wysiwyg.php:171
 msgid "Default Value"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:158
+#: assets/lib/acf/core/fields/select.php:198
+msgid "Enter each default value on a new line"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:185
+#: assets/lib/acf/core/fields/radio.php:220
+msgid "Vertical"
+msgstr ""
+
+#: assets/lib/acf/core/fields/checkbox.php:186
+#: assets/lib/acf/core/fields/radio.php:221
+msgid "Horizontal"
 msgstr ""
 
 #: assets/lib/acf/core/fields/color_picker.php:19
@@ -2971,16 +2908,64 @@ msgid "Color Picker"
 msgstr ""
 
 #: assets/lib/acf/core/fields/color_picker.php:20
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:20
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:23
 msgid "jQuery"
-msgstr ""
-
-#: assets/lib/acf/core/fields/color_picker.php:74
-msgid "eg: #ffffff"
 msgstr ""
 
 #: assets/lib/acf/core/fields/dummy.php:19
 msgid "Dummy"
+msgstr ""
+
+#: assets/lib/acf/core/fields/email.php:107
+#: assets/lib/acf/core/fields/number.php:117
+#: assets/lib/acf/core/fields/text.php:117
+#: assets/lib/acf/core/fields/textarea.php:97
+#: assets/lib/acf/core/fields/wysiwyg.php:172
+msgid "Appears when creating a new post"
+msgstr ""
+
+#: assets/lib/acf/core/fields/email.php:123
+#: assets/lib/acf/core/fields/number.php:133
+#: assets/lib/acf/core/fields/password.php:105
+#: assets/lib/acf/core/fields/text.php:131
+#: assets/lib/acf/core/fields/textarea.php:111
+msgid "Placeholder Text"
+msgstr ""
+
+#: assets/lib/acf/core/fields/email.php:124
+#: assets/lib/acf/core/fields/number.php:134
+#: assets/lib/acf/core/fields/password.php:106
+#: assets/lib/acf/core/fields/text.php:132
+#: assets/lib/acf/core/fields/textarea.php:112
+msgid "Appears within the input"
+msgstr ""
+
+#: assets/lib/acf/core/fields/email.php:138
+#: assets/lib/acf/core/fields/number.php:148
+#: assets/lib/acf/core/fields/password.php:120
+#: assets/lib/acf/core/fields/text.php:146
+msgid "Prepend"
+msgstr ""
+
+#: assets/lib/acf/core/fields/email.php:139
+#: assets/lib/acf/core/fields/number.php:149
+#: assets/lib/acf/core/fields/password.php:121
+#: assets/lib/acf/core/fields/text.php:147
+msgid "Appears before the input"
+msgstr ""
+
+#: assets/lib/acf/core/fields/email.php:153
+#: assets/lib/acf/core/fields/number.php:163
+#: assets/lib/acf/core/fields/password.php:135
+#: assets/lib/acf/core/fields/text.php:161
+msgid "Append"
+msgstr ""
+
+#: assets/lib/acf/core/fields/email.php:154
+#: assets/lib/acf/core/fields/number.php:164
+#: assets/lib/acf/core/fields/password.php:136
+#: assets/lib/acf/core/fields/text.php:162
+msgid "Appears after the input"
 msgstr ""
 
 #: assets/lib/acf/core/fields/file.php:19
@@ -2993,118 +2978,124 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: assets/lib/acf/core/fields/file.php:76
-#: assets/lib/acf/core/fields/image.php:76
-#: assets/lib/acf/core/views/meta_box_fields.php:113
-msgid "Edit"
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:84
-msgid "No File Selected"
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:84
-msgid "Add File"
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:119
-#: assets/lib/acf/core/fields/image.php:116
-#: assets/lib/acf/core/fields/taxonomy.php:375
-msgid "Return Value"
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:130
-msgid "File Object"
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:131
-msgid "File URL"
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:132
-msgid "File ID"
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:243
-msgid "File Updated."
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:335
-#: assets/lib/acf/core/fields/image.php:374
-msgid "Media attachment updated."
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:493
-msgid "No files selected"
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:634
-msgid "Add Selected Files"
-msgstr ""
-
-#: assets/lib/acf/core/fields/file.php:667
+#: assets/lib/acf/core/fields/file.php:26
 msgid "Select File"
 msgstr ""
 
-#: assets/lib/acf/core/fields/file.php:670
+#: assets/lib/acf/core/fields/file.php:27
+msgid "Edit File"
+msgstr ""
+
+#: assets/lib/acf/core/fields/file.php:28
 msgid "Update File"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:82
-msgid "No image selected"
+#: assets/lib/acf/core/fields/file.php:29
+#: assets/lib/acf/core/fields/image.php:30
+msgid "uploaded to this post"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:82
-msgid "Add Image"
+#: assets/lib/acf/core/fields/file.php:123
+msgid "No File Selected"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:126
-msgid "Image Object"
+#: assets/lib/acf/core/fields/file.php:123
+msgid "Add File"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:127
-msgid "Image URL"
+#: assets/lib/acf/core/fields/file.php:153
+#: assets/lib/acf/core/fields/image.php:118
+#: assets/lib/acf/core/fields/taxonomy.php:365
+msgid "Return Value"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:128
-msgid "Image ID"
+#: assets/lib/acf/core/fields/file.php:164
+msgid "File Object"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:136
-msgid "Preview Size"
+#: assets/lib/acf/core/fields/file.php:165
+msgid "File URL"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:283
-msgid "Image Updated."
+#: assets/lib/acf/core/fields/file.php:166
+msgid "File ID"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:525
-msgid "No images selected"
+#: assets/lib/acf/core/fields/file.php:175
+#: assets/lib/acf/core/fields/image.php:158
+msgid "Library"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:667
-msgid "Add Selected Images"
+#: assets/lib/acf/core/fields/file.php:187
+#: assets/lib/acf/core/fields/image.php:171
+msgid "Uploaded to post"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:696
+#: assets/lib/acf/core/fields/image.php:27
 msgid "Select Image"
 msgstr ""
 
-#: assets/lib/acf/core/fields/image.php:699
+#: assets/lib/acf/core/fields/image.php:28
+msgid "Edit Image"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:29
 msgid "Update Image"
 msgstr ""
 
+#: assets/lib/acf/core/fields/image.php:84
+#: assets/lib/acf/core/views/meta_box_fields.php:122
+msgid "Edit"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:90
+msgid "No image selected"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:90
+msgid "Add Image"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:119
+#: assets/lib/acf/core/fields/relationship.php:570
+msgid "Specify the returned value on front end"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:129
+msgid "Image Object"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:130
+msgid "Image URL"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:131
+msgid "Image ID"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:139
+msgid "Preview Size"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:140
+msgid "Shown when entering data"
+msgstr ""
+
+#: assets/lib/acf/core/fields/image.php:159
+msgid "Limit the media library choice"
+msgstr ""
+
 #: assets/lib/acf/core/fields/message.php:19
-#: assets/lib/acf/core/fields/message.php:71
-#: assets/lib/acf/core/fields/true_false.php:89
+#: assets/lib/acf/core/fields/message.php:70
+#: assets/lib/acf/core/fields/true_false.php:79
 msgid "Message"
 msgstr ""
 
-#: assets/lib/acf/core/fields/message.php:72
+#: assets/lib/acf/core/fields/message.php:71
 msgid "Text &amp; HTML entered here will appear inline with the fields"
 msgstr ""
 
-#: assets/lib/acf/core/fields/message.php:73
+#: assets/lib/acf/core/fields/message.php:72
 msgid "Please note that all text will first be passed through the wp function "
 msgstr ""
 
@@ -3112,64 +3103,49 @@ msgstr ""
 msgid "Number"
 msgstr ""
 
-#: assets/lib/acf/core/fields/page_link.php:19
+#: assets/lib/acf/core/fields/number.php:178
+msgid "Minimum Value"
+msgstr ""
+
+#: assets/lib/acf/core/fields/number.php:194
+msgid "Maximum Value"
+msgstr ""
+
+#: assets/lib/acf/core/fields/number.php:210
+msgid "Step Size"
+msgstr ""
+
+#: assets/lib/acf/core/fields/page_link.php:18
 msgid "Page Link"
 msgstr ""
 
-#: assets/lib/acf/core/fields/page_link.php:20
-#: assets/lib/acf/core/fields/post_object.php:20
-#: assets/lib/acf/core/fields/relationship.php:20
-#: assets/lib/acf/core/fields/taxonomy.php:23
-#: assets/lib/acf/core/fields/user.php:23
+#: assets/lib/acf/core/fields/page_link.php:19
+#: assets/lib/acf/core/fields/post_object.php:19
+#: assets/lib/acf/core/fields/relationship.php:19
+#: assets/lib/acf/core/fields/taxonomy.php:19
+#: assets/lib/acf/core/fields/user.php:19
 msgid "Relational"
 msgstr ""
 
-#: assets/lib/acf/core/fields/page_link.php:78
-#: assets/lib/acf/core/fields/post_object.php:230
-#: assets/lib/acf/core/fields/relationship.php:401
-#: assets/lib/acf/core/views/meta_box_location.php:48
+#: assets/lib/acf/core/fields/page_link.php:103
+#: assets/lib/acf/core/fields/post_object.php:268
+#: assets/lib/acf/core/fields/relationship.php:589
+#: assets/lib/acf/core/fields/relationship.php:668
+#: assets/lib/acf/core/views/meta_box_location.php:75
 msgid "Post Type"
 msgstr ""
 
-#: assets/lib/acf/core/fields/page_link.php:102
-#: assets/lib/acf/core/fields/post_object.php:280
-#: assets/lib/acf/core/fields/select.php:218
-#: assets/lib/acf/core/fields/taxonomy.php:341
-#: assets/lib/acf/core/fields/user.php:286
+#: assets/lib/acf/core/fields/page_link.php:127
+#: assets/lib/acf/core/fields/post_object.php:317
+#: assets/lib/acf/core/fields/select.php:214
+#: assets/lib/acf/core/fields/taxonomy.php:331
+#: assets/lib/acf/core/fields/user.php:275
 msgid "Allow Null?"
 msgstr ""
 
-#: assets/lib/acf/core/fields/page_link.php:112
-#: assets/lib/acf/core/fields/page_link.php:133
-#: assets/lib/acf/core/fields/post_object.php:290
-#: assets/lib/acf/core/fields/post_object.php:311
-#: assets/lib/acf/core/fields/select.php:227
-#: assets/lib/acf/core/fields/select.php:246
-#: assets/lib/acf/core/fields/taxonomy.php:350
-#: assets/lib/acf/core/fields/user.php:295
-#: assets/lib/acf/core/fields/wysiwyg.php:235
-#: assets/lib/acf/core/views/meta_box_fields.php:198
-#: assets/lib/acf/core/views/meta_box_fields.php:221
-msgid "Yes"
-msgstr ""
-
-#: assets/lib/acf/core/fields/page_link.php:113
-#: assets/lib/acf/core/fields/page_link.php:134
-#: assets/lib/acf/core/fields/post_object.php:291
-#: assets/lib/acf/core/fields/post_object.php:312
-#: assets/lib/acf/core/fields/select.php:228
-#: assets/lib/acf/core/fields/select.php:247
-#: assets/lib/acf/core/fields/taxonomy.php:351
-#: assets/lib/acf/core/fields/user.php:296
-#: assets/lib/acf/core/fields/wysiwyg.php:236
-#: assets/lib/acf/core/views/meta_box_fields.php:199
-#: assets/lib/acf/core/views/meta_box_fields.php:222
-msgid "No"
-msgstr ""
-
-#: assets/lib/acf/core/fields/page_link.php:123
-#: assets/lib/acf/core/fields/post_object.php:301
-#: assets/lib/acf/core/fields/select.php:237
+#: assets/lib/acf/core/fields/page_link.php:148
+#: assets/lib/acf/core/fields/post_object.php:338
+#: assets/lib/acf/core/fields/select.php:233
 msgid "Select multiple values?"
 msgstr ""
 
@@ -3177,38 +3153,101 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: assets/lib/acf/core/fields/post_object.php:19
+#: assets/lib/acf/core/fields/post_object.php:18
 msgid "Post Object"
 msgstr ""
 
-#: assets/lib/acf/core/fields/post_object.php:254
-#: assets/lib/acf/core/fields/relationship.php:425
+#: assets/lib/acf/core/fields/post_object.php:292
+#: assets/lib/acf/core/fields/relationship.php:613
 msgid "Filter from Taxonomy"
 msgstr ""
 
-#: assets/lib/acf/core/fields/radio.php:19
+#: assets/lib/acf/core/fields/radio.php:18
 msgid "Radio Button"
 msgstr ""
 
-#: assets/lib/acf/core/fields/radio.php:173
-msgid "Vertical"
+#: assets/lib/acf/core/fields/radio.php:102
+#: assets/lib/acf/core/views/meta_box_location.php:91
+msgid "Other"
 msgstr ""
 
-#: assets/lib/acf/core/fields/radio.php:174
-msgid "Horizontal"
+#: assets/lib/acf/core/fields/radio.php:145
+msgid "Enter your choices one per line"
 msgstr ""
 
-#: assets/lib/acf/core/fields/relationship.php:19
+#: assets/lib/acf/core/fields/radio.php:147
+msgid "Red"
+msgstr ""
+
+#: assets/lib/acf/core/fields/radio.php:148
+msgid "Blue"
+msgstr ""
+
+#: assets/lib/acf/core/fields/radio.php:172
+msgid "Add 'other' choice to allow for custom values"
+msgstr ""
+
+#: assets/lib/acf/core/fields/radio.php:184
+msgid "Save 'other' values to the field's choices"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:18
 msgid "Relationship"
 msgstr ""
 
-#: assets/lib/acf/core/fields/relationship.php:451
+#: assets/lib/acf/core/fields/relationship.php:29
+msgid "Maximum values reached ( {max} values )"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:425
+msgid "Search..."
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:436
+msgid "Filter by post type"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:569
+msgid "Return Format"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:580
+msgid "Post Objects"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:581
+msgid "Post IDs"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:648
+msgid "Post Type Select"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:656
+msgid "Elements"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:657
+msgid "Selected elements will be displayed in each result"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:666
+#: assets/lib/acf/core/views/meta_box_options.php:103
+msgid "Featured Image"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:667
+msgid "Post Title"
+msgstr ""
+
+#: assets/lib/acf/core/fields/relationship.php:679
 msgid "Maximum posts"
 msgstr ""
 
-#: assets/lib/acf/core/fields/select.php:19
-#: assets/lib/acf/core/fields/taxonomy.php:332
-#: assets/lib/acf/core/fields/user.php:277
+#: assets/lib/acf/core/fields/select.php:18
+#: assets/lib/acf/core/fields/select.php:109
+#: assets/lib/acf/core/fields/taxonomy.php:322
+#: assets/lib/acf/core/fields/user.php:266
 msgid "Select"
 msgstr ""
 
@@ -3216,56 +3255,56 @@ msgstr ""
 msgid "Tab"
 msgstr ""
 
-#: assets/lib/acf/core/fields/tab.php:67
+#: assets/lib/acf/core/fields/tab.php:68
 msgid ""
 "All fields proceeding this \"tab field\" (or until another \"tab field\"  is "
 "defined) will appear grouped on the edit screen."
 msgstr ""
 
-#: assets/lib/acf/core/fields/tab.php:68
+#: assets/lib/acf/core/fields/tab.php:69
 msgid "You can use multiple tabs to break up your fields into sections."
 msgstr ""
 
-#: assets/lib/acf/core/fields/taxonomy.php:316
-#: assets/lib/acf/core/fields/user.php:261
-#: assets/lib/acf/core/views/meta_box_fields.php:82
-#: assets/lib/acf/core/views/meta_box_fields.php:163
+#: assets/lib/acf/core/fields/taxonomy.php:306
+#: assets/lib/acf/core/fields/user.php:251
+#: assets/lib/acf/core/views/meta_box_fields.php:91
+#: assets/lib/acf/core/views/meta_box_fields.php:173
 msgid "Field Type"
 msgstr ""
 
-#: assets/lib/acf/core/fields/taxonomy.php:326
-#: assets/lib/acf/core/fields/user.php:271
+#: assets/lib/acf/core/fields/taxonomy.php:316
+#: assets/lib/acf/core/fields/user.php:260
 msgid "Multiple Values"
 msgstr ""
 
-#: assets/lib/acf/core/fields/taxonomy.php:328
-#: assets/lib/acf/core/fields/user.php:273
+#: assets/lib/acf/core/fields/taxonomy.php:318
+#: assets/lib/acf/core/fields/user.php:262
 msgid "Multi Select"
 msgstr ""
 
-#: assets/lib/acf/core/fields/taxonomy.php:330
-#: assets/lib/acf/core/fields/user.php:275
+#: assets/lib/acf/core/fields/taxonomy.php:320
+#: assets/lib/acf/core/fields/user.php:264
 msgid "Single Value"
 msgstr ""
 
-#: assets/lib/acf/core/fields/taxonomy.php:331
+#: assets/lib/acf/core/fields/taxonomy.php:321
 msgid "Radio Buttons"
 msgstr ""
 
-#: assets/lib/acf/core/fields/taxonomy.php:360
+#: assets/lib/acf/core/fields/taxonomy.php:350
 msgid "Load & Save Terms to Post"
 msgstr ""
 
-#: assets/lib/acf/core/fields/taxonomy.php:368
+#: assets/lib/acf/core/fields/taxonomy.php:358
 msgid ""
 "Load value based on the post's terms and update the post's terms on save"
 msgstr ""
 
-#: assets/lib/acf/core/fields/taxonomy.php:385
+#: assets/lib/acf/core/fields/taxonomy.php:375
 msgid "Term Object"
 msgstr ""
 
-#: assets/lib/acf/core/fields/taxonomy.php:386
+#: assets/lib/acf/core/fields/taxonomy.php:376
 msgid "Term ID"
 msgstr ""
 
@@ -3273,45 +3312,58 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: assets/lib/acf/core/fields/text.php:87
-#: assets/lib/acf/core/fields/textarea.php:87
+#: assets/lib/acf/core/fields/text.php:176
+#: assets/lib/acf/core/fields/textarea.php:141
 msgid "Formatting"
 msgstr ""
 
-#: assets/lib/acf/core/fields/text.php:88
-msgid "Define how to render html tags"
+#: assets/lib/acf/core/fields/text.php:177
+#: assets/lib/acf/core/fields/textarea.php:142
+msgid "Effects value on front end"
 msgstr ""
 
-#: assets/lib/acf/core/fields/text.php:98
-#: assets/lib/acf/core/fields/textarea.php:99
-msgid "HTML"
+#: assets/lib/acf/core/fields/text.php:186
+#: assets/lib/acf/core/fields/textarea.php:151
+msgid "No formatting"
+msgstr ""
+
+#: assets/lib/acf/core/fields/text.php:187
+#: assets/lib/acf/core/fields/textarea.php:153
+msgid "Convert HTML into tags"
+msgstr ""
+
+#: assets/lib/acf/core/fields/text.php:195
+#: assets/lib/acf/core/fields/textarea.php:126
+msgid "Character Limit"
+msgstr ""
+
+#: assets/lib/acf/core/fields/text.php:196
+#: assets/lib/acf/core/fields/textarea.php:127
+msgid "Leave blank for no limit"
 msgstr ""
 
 #: assets/lib/acf/core/fields/textarea.php:19
 msgid "Text Area"
 msgstr ""
 
-#: assets/lib/acf/core/fields/textarea.php:88
-msgid "Define how to render html tags / new lines"
-msgstr ""
-
-#: assets/lib/acf/core/fields/textarea.php:98
-msgid "auto &lt;br /&gt;"
+#: assets/lib/acf/core/fields/textarea.php:152
+msgid "Convert new lines into &lt;br /&gt; tags"
 msgstr ""
 
 #: assets/lib/acf/core/fields/true_false.php:19
 msgid "True / False"
 msgstr ""
 
-#: assets/lib/acf/core/fields/true_false.php:90
+#: assets/lib/acf/core/fields/true_false.php:80
 msgid "eg. Show extra content"
 msgstr ""
 
-#: assets/lib/acf/core/fields/user.php:22
+#: assets/lib/acf/core/fields/user.php:18
+#: assets/lib/acf/core/views/meta_box_location.php:94
 msgid "User"
 msgstr ""
 
-#: assets/lib/acf/core/fields/user.php:234
+#: assets/lib/acf/core/fields/user.php:224
 msgid "Filter by role"
 msgstr ""
 
@@ -3319,342 +3371,361 @@ msgstr ""
 msgid "Wysiwyg Editor"
 msgstr ""
 
-#: assets/lib/acf/core/fields/wysiwyg.php:193
+#: assets/lib/acf/core/fields/wysiwyg.php:186
 msgid "Toolbar"
 msgstr ""
 
-#: assets/lib/acf/core/fields/wysiwyg.php:225
+#: assets/lib/acf/core/fields/wysiwyg.php:218
 msgid "Show Media Upload Buttons?"
 msgstr ""
 
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:19
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:22
 msgid "Date Picker"
 msgstr ""
 
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:96
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:30
+msgid "Done"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:31
+msgid "Today"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:34
+msgid "Show a different month"
+msgstr ""
+
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:105
 msgid "Save format"
 msgstr ""
 
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:97
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:106
 msgid ""
 "This format will determin the value saved to the database and returned via "
 "the API"
 msgstr ""
 
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:98
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:107
 msgid "\"yymmdd\" is the most versatile save format. Read more about"
 msgstr ""
 
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:98
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:114
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:107
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:123
 msgid "jQuery date formats"
 msgstr ""
 
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:112
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:121
 msgid "Display format"
 msgstr ""
 
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:113
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:122
 msgid "This format will be seen by the user when entering a value"
 msgstr ""
 
-#: assets/lib/acf/core/fields/date_picker/date_picker.php:114
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:123
 msgid ""
 "\"dd/mm/yy\" or \"mm/dd/yy\" are the most used display formats. Read more "
 "about"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:23
-msgid "New Field"
+#: assets/lib/acf/core/fields/date_picker/date_picker.php:137
+msgid "Week Starts On"
 msgstr ""
 
 #: assets/lib/acf/core/views/meta_box_fields.php:24
-msgid "new_field"
+msgid "New Field"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:57
-msgid "Error"
-msgstr ""
-
-#: assets/lib/acf/core/views/meta_box_fields.php:57
+#: assets/lib/acf/core/views/meta_box_fields.php:58
 msgid "Field type does not exist"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:64
+#: assets/lib/acf/core/views/meta_box_fields.php:63
 msgid "Move to trash. Are you sure?"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:65
+#: assets/lib/acf/core/views/meta_box_fields.php:64
 msgid "checked"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:66
+#: assets/lib/acf/core/views/meta_box_fields.php:65
 msgid "No toggle fields available"
+msgstr ""
+
+#: assets/lib/acf/core/views/meta_box_fields.php:66
+msgid "Field group title is required"
 msgstr ""
 
 #: assets/lib/acf/core/views/meta_box_fields.php:67
 msgid "copy"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:79
+#: assets/lib/acf/core/views/meta_box_fields.php:68
+#: assets/lib/acf/core/views/meta_box_location.php:62
+#: assets/lib/acf/core/views/meta_box_location.php:159
+msgid "or"
+msgstr ""
+
+#: assets/lib/acf/core/views/meta_box_fields.php:88
 msgid "Field Order"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:80
-#: assets/lib/acf/core/views/meta_box_fields.php:132
+#: assets/lib/acf/core/views/meta_box_fields.php:89
+#: assets/lib/acf/core/views/meta_box_fields.php:141
 msgid "Field Label"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:81
-#: assets/lib/acf/core/views/meta_box_fields.php:148
+#: assets/lib/acf/core/views/meta_box_fields.php:90
+#: assets/lib/acf/core/views/meta_box_fields.php:157
 msgid "Field Name"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:83
+#: assets/lib/acf/core/views/meta_box_fields.php:92
 msgid "Field Key"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:95
+#: assets/lib/acf/core/views/meta_box_fields.php:104
 msgid ""
 "No fields. Click the <strong>+ Add Field</strong> button to create your "
 "first field."
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:110
-#: assets/lib/acf/core/views/meta_box_fields.php:113
+#: assets/lib/acf/core/views/meta_box_fields.php:119
+#: assets/lib/acf/core/views/meta_box_fields.php:122
 msgid "Edit this Field"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:114
+#: assets/lib/acf/core/views/meta_box_fields.php:123
 msgid "Read documentation for this field"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:114
+#: assets/lib/acf/core/views/meta_box_fields.php:123
 msgid "Docs"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:115
+#: assets/lib/acf/core/views/meta_box_fields.php:124
 msgid "Duplicate this Field"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:115
+#: assets/lib/acf/core/views/meta_box_fields.php:124
 msgid "Duplicate"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:116
+#: assets/lib/acf/core/views/meta_box_fields.php:125
 msgid "Delete this Field"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:116
+#: assets/lib/acf/core/views/meta_box_fields.php:125
 msgid "Delete"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:133
+#: assets/lib/acf/core/views/meta_box_fields.php:142
 msgid "This is the name which will appear on the EDIT page"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:149
+#: assets/lib/acf/core/views/meta_box_fields.php:158
 msgid "Single word, no spaces. Underscores and dashes allowed"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:177
+#: assets/lib/acf/core/views/meta_box_fields.php:187
 msgid "Field Instructions"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:178
+#: assets/lib/acf/core/views/meta_box_fields.php:188
 msgid "Instructions for authors. Shown when submitting data"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:190
+#: assets/lib/acf/core/views/meta_box_fields.php:200
 msgid "Required?"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:213
+#: assets/lib/acf/core/views/meta_box_fields.php:223
 msgid "Conditional Logic"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:264
-#: assets/lib/acf/core/views/meta_box_location.php:99
+#: assets/lib/acf/core/views/meta_box_fields.php:274
+#: assets/lib/acf/core/views/meta_box_location.php:117
 msgid "is equal to"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:265
-#: assets/lib/acf/core/views/meta_box_location.php:100
+#: assets/lib/acf/core/views/meta_box_fields.php:275
+#: assets/lib/acf/core/views/meta_box_location.php:118
 msgid "is not equal to"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:283
+#: assets/lib/acf/core/views/meta_box_fields.php:293
 msgid "Show this field when"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:289
-#: assets/lib/acf/core/views/meta_box_location.php:144
+#: assets/lib/acf/core/views/meta_box_fields.php:299
 msgid "all"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:290
-#: assets/lib/acf/core/views/meta_box_location.php:145
+#: assets/lib/acf/core/views/meta_box_fields.php:300
 msgid "any"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:293
+#: assets/lib/acf/core/views/meta_box_fields.php:303
 msgid "these rules are met"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:307
+#: assets/lib/acf/core/views/meta_box_fields.php:317
 msgid "Close Field"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:320
+#: assets/lib/acf/core/views/meta_box_fields.php:330
 msgid "Drag and drop to reorder"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_fields.php:321
+#: assets/lib/acf/core/views/meta_box_fields.php:331
 msgid "+ Add Field"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:35
+#: assets/lib/acf/core/views/meta_box_location.php:48
 msgid "Rules"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:36
+#: assets/lib/acf/core/views/meta_box_location.php:49
 msgid ""
 "Create a set of rules to determine which edit screens will use these "
 "advanced custom fields"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:49
+#: assets/lib/acf/core/views/meta_box_location.php:60
+msgid "Show this field group if"
+msgstr ""
+
+#: assets/lib/acf/core/views/meta_box_location.php:76
 msgid "Logged in User Type"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:54
-msgid "Parent"
+#: assets/lib/acf/core/views/meta_box_location.php:80
+msgid "Page Type"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:55
-msgid "Template"
+#: assets/lib/acf/core/views/meta_box_location.php:81
+msgid "Page Parent"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:57
-#: assets/lib/acf/core/views/meta_box_location.php:58
+#: assets/lib/acf/core/views/meta_box_location.php:82
+msgid "Page Template"
+msgstr ""
+
+#: assets/lib/acf/core/views/meta_box_location.php:84
+#: assets/lib/acf/core/views/meta_box_location.php:85
 msgid "Post"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:59
-msgid "Category"
+#: assets/lib/acf/core/views/meta_box_location.php:86
+msgid "Post Category"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:60
-#: assets/lib/acf/core/views/meta_box_options.php:100
-msgid "Format"
+#: assets/lib/acf/core/views/meta_box_location.php:87
+msgid "Post Format"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:63
-msgid "Other"
+#: assets/lib/acf/core/views/meta_box_location.php:88
+msgid "Post Status"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:64
-msgid "Taxonomy Term (Add / Edit)"
+#: assets/lib/acf/core/views/meta_box_location.php:89
+msgid "Post Taxonomy"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:65
-msgid "User (Add / Edit)"
+#: assets/lib/acf/core/views/meta_box_location.php:92
+msgid "Attachment"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:66
-msgid "Media Attachment (Edit)"
+#: assets/lib/acf/core/views/meta_box_location.php:93
+msgid "Term"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_location.php:138
-msgid "match"
-msgstr ""
-
-#: assets/lib/acf/core/views/meta_box_location.php:148
-msgid "of the above"
+#: assets/lib/acf/core/views/meta_box_location.php:146
+msgid "and"
 msgstr ""
 
 #: assets/lib/acf/core/views/meta_box_location.php:161
-msgid "Unlock options add-on with an activation code"
+msgid "Add rule group"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:23
+#: assets/lib/acf/core/views/meta_box_options.php:25
 msgid "Order No."
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:24
+#: assets/lib/acf/core/views/meta_box_options.php:26
 msgid "Field groups are created in order <br />from lowest to highest"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:40
+#: assets/lib/acf/core/views/meta_box_options.php:42
 msgid "Position"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:51
+#: assets/lib/acf/core/views/meta_box_options.php:53
 msgid "Side"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:60
+#: assets/lib/acf/core/views/meta_box_options.php:62
 msgid "Style"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:70
+#: assets/lib/acf/core/views/meta_box_options.php:72
 msgid "No Metabox"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:71
+#: assets/lib/acf/core/views/meta_box_options.php:73
 msgid "Standard Metabox"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:80
+#: assets/lib/acf/core/views/meta_box_options.php:82
 msgid "Hide on screen"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:81
+#: assets/lib/acf/core/views/meta_box_options.php:83
 msgid "<b>Select</b> items to <b>hide</b> them from the edit screen"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:82
+#: assets/lib/acf/core/views/meta_box_options.php:84
 msgid ""
 "If multiple field groups appear on an edit screen, the first field group's "
 "options will be used. (the one with the lowest order number)"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:92
+#: assets/lib/acf/core/views/meta_box_options.php:94
 msgid "Content Editor"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:93
+#: assets/lib/acf/core/views/meta_box_options.php:95
 msgid "Excerpt"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:95
+#: assets/lib/acf/core/views/meta_box_options.php:97
 msgid "Discussion"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:96
+#: assets/lib/acf/core/views/meta_box_options.php:98
 msgid "Comments"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:97
+#: assets/lib/acf/core/views/meta_box_options.php:99
 msgid "Revisions"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:98
+#: assets/lib/acf/core/views/meta_box_options.php:100
 msgid "Slug"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:99
+#: assets/lib/acf/core/views/meta_box_options.php:101
 msgid "Author"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:101
-msgid "Featured Image"
+#: assets/lib/acf/core/views/meta_box_options.php:102
+msgid "Format"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:103
+#: assets/lib/acf/core/views/meta_box_options.php:105
 msgid "Tags"
 msgstr ""
 
-#: assets/lib/acf/core/views/meta_box_options.php:104
+#: assets/lib/acf/core/views/meta_box_options.php:106
 msgid "Send Trackbacks"
 msgstr ""
