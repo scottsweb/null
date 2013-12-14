@@ -103,7 +103,6 @@
 			- https://github.com/louisremi/jquery-smartresize
 	to-do: customise: https://github.com/devinsays/options-framework-theme/commit/476b24bd24b1f6392a793122e47366a4d3cd9eef
 	to-do: https://github.com/mboynes/super-cpt
-	to-do: null_get_fonts - wp_remote_post (see comment)
 	to-do: beef up our mixins http://lesselements.com/ - https://github.com/drublic/less-mixins
 	to-do: update IE8 pinned info http://www.buildmypinnedsite.com/en
 
@@ -729,14 +728,17 @@
 			// google fonts
 			$api_key = 'AIzaSyCTTbK5s0or8LmQfUCNhndMfSvyz-f6jqk';
 			$gwf_uri = "https://www.googleapis.com/webfonts/v1/webfonts?key=" . $api_key . "&sort=" . $sort;
-			// should use wp_remote_post
-			$raw = file_get_contents($gwf_uri, 0, null, null );
-			$fonts = json_decode($raw);
+			$raw = wp_remote_get( $gwf_uri );
+
+			// if an error is detected then fail
+			if ( is_wp_error( $raw ) ) { return false; }
+
+			$fonts = json_decode($raw['body']);
 						
 			foreach ($fonts->items as $font) {
 				$font_list[$font->family] = $font->family;
 			}
-			
+
 			// cache for 3 days
 			set_transient('null_google_fonts_' . $sort, $font_list, 60 * 60 * 24 * 3);
 		
