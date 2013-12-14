@@ -62,6 +62,8 @@
 			- http://www.formee.org/
 			- http://simplegrid.info/
 			- http://www.responsivegridsystem.com/
+			- http://getpreboot.com/
+			- http://www.fitgrd.com/
 	to-do: replace modernizr? http://conditionizr.com/
 	to-do: live bind shortcode JS for instant search plugin compatibility - livequery? or .on
 	to-do: compatibilty with live edit - http://wordpress.org/extend/plugins/live-edit/
@@ -70,7 +72,8 @@
 	to-do: create an editable 404?
 	to-do: feature tooltips restricted by user type (same code as with admin bar)
 	to-do: improve gallery shortcode - css and filters tweaks - see chailey - make the built in gallery useful in more projects //http://wordpress.stackexchange.com/questions/4343/how-to-customise-the-output-of-the-wp-image-gallery-shortcode-from-a-plugin
-
+	to-do: remove htaccess gubbins in favour of : https://github.com/roots/wp-h5bp-htaccess/
+	
 	ongoing
 	to-do: update language files
 	to-do: update modernizr
@@ -78,6 +81,7 @@
 	to-do: update less compiler 0.3.9+ / less plugin and grid - hopefully will work again and provide css compression
 	to-do: update acf
 	to-do: test against the theme guide: http://developer.wordpress.com/themes/
+	to-do: theme options framework
 
 	soon
 	to-do: cache 
@@ -101,6 +105,8 @@
 	to-do: https://github.com/mboynes/super-cpt
 	to-do: null_get_fonts - wp_remote_post (see comment)
 	to-do: beef up our mixins http://lesselements.com/ - https://github.com/drublic/less-mixins
+	to-do: add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
+	to-do: update IE8 pinned info http://www.buildmypinnedsite.com/en
 
 
 // extra labels on cpts

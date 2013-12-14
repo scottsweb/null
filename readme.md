@@ -102,7 +102,8 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 * Replace a handful of the_title() calls with the_title_attribute()
 * Remove all references to hgroup as it is no longer valid HTML5
 * Add filter so child themes can play with content_width
-* Cache WordPress menus for better performance (might be a little rough around the edges)
+* Set depth on WordPress menus
+* Change sidebar registration to use array keys
 
 #### 1.0b
 * Updated option framework to be compatible with new media uploader
