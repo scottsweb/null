@@ -105,7 +105,6 @@
 	to-do: https://github.com/mboynes/super-cpt
 	to-do: null_get_fonts - wp_remote_post (see comment)
 	to-do: beef up our mixins http://lesselements.com/ - https://github.com/drublic/less-mixins
-	to-do: add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
 	to-do: update IE8 pinned info http://www.buildmypinnedsite.com/en
 
 
@@ -279,7 +278,10 @@
 	
 		// setup thumbnail support
 		add_theme_support( 'post-thumbnails' ); 
-		
+
+		// html5 all the things
+		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
+
 		// add theme hook alliance support (https://github.com/zamoose/themehookalliance) - filterable by child theme 
 		add_theme_support('tha_hooks', apply_filters('null_tha_hooks', array('body','head','header','content','entry','comments','sidebar','footer')));
 
