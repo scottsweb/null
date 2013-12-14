@@ -43,36 +43,37 @@ function null_register_portfolio() {
 	register_taxonomy('portfolio_category', 'portfolio', $args);
 	
 	$labels = array(
-	    'name' 							=> __('Projects', 'null'),
-	    'singular_name' 				=> __('Portfolio Project', 'null'),
-	    'add_new' 						=> __('Add Project', 'null'),
-	    'add_new_item' 					=> __('Add Project', 'null'),
-	    'edit_item' 					=> __('Edit Project', 'null'),
-	    'new_item' 						=> __('New Project', 'null'),
-	    'view_item' 					=> __('View', 'null'),
-	    'search_items' 					=> __('Search Projects', 'null'),
-	    'not_found' 					=> __('No projects found','null'),
-	    'not_found_in_trash' 			=> __('No projects found in Trash','null'),
-	    'parent_item_colon' 			=> '',
-	    'menu_name' 					=> __('Portfolio','null')
+		'name' 							=> __('Projects', 'null'),
+		'singular_name' 				=> __('Portfolio Project', 'null'),
+		'add_new' 						=> __('Add Project', 'null'),
+		'add_new_item' 					=> __('Add Project', 'null'),
+		'edit_item' 					=> __('Edit Project', 'null'),
+		'new_item' 						=> __('New Project', 'null'),
+		'view_item' 					=> __('View', 'null'),
+		'search_items' 					=> __('Search Projects', 'null'),
+		'not_found' 					=> __('No projects found','null'),
+		'not_found_in_trash' 			=> __('No projects found in Trash','null'),
+		'parent_item_colon' 			=> '',
+		'menu_name' 					=> __('Portfolio','null'),
+		'all_items'						=> __('Projects', 'null')
 	);
 	
 	$args = array(
 		//'menu_position' 				=> 8,
-	    'label' 						=> __('Portfolio','null'),
-	    'labels' 						=> $labels,
-	    'public' 						=> true,
-	    'can_export'					=> true,
-	    'show_ui' 						=> true,
-	    '_builtin' 						=> false,
-	    '_edit_link' 					=> 'post.php?post=%d',
-	    'menu_icon' 					=> 'dashicons-format-gallery',
-	    'hierarchical'					=> true,
-	    'rewrite' 						=> array( "slug" => "portfolio", "with_front" => false ),
-	    'supports'						=> array('title', 'editor', 'thumbnail', 'revisions'),
-	    'taxonomies' 					=> array('portfolio_category'),
-	    'show_in_nav_menus' 			=> true,
-	    'has_archive' 					=> true
+		'label' 						=> __('Portfolio','null'),
+		'labels' 						=> $labels,
+		'public' 						=> true,
+		'can_export'					=> true,
+		'show_ui' 						=> true,
+		'_builtin' 						=> false,
+		'_edit_link' 					=> 'post.php?post=%d',
+		'menu_icon' 					=> 'dashicons-format-gallery',
+		'hierarchical'					=> true,
+		'rewrite' 						=> array( "slug" => "portfolio", "with_front" => false ),
+		'supports'						=> array('title', 'editor', 'thumbnail', 'revisions'),
+		'taxonomies' 					=> array('portfolio_category'),
+		'show_in_nav_menus' 			=> true,
+		'has_archive' 					=> true
 	);
 	
 	register_post_type('portfolio', $args);

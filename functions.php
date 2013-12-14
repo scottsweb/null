@@ -105,11 +105,6 @@
 	to-do: https://github.com/mboynes/super-cpt
 	to-do: beef up our mixins http://lesselements.com/ - https://github.com/drublic/less-mixins
 	to-do: update IE8 pinned info http://www.buildmypinnedsite.com/en
-
-
-// extra labels on cpts
-'menu_name'						=> __('Q&amp;A', 'null'),
-    'all_items'						=> __('All Questions', 'null'),
 	*/
 
 	// load the options framework

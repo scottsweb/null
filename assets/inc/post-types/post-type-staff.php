@@ -43,35 +43,37 @@ function null_register_staff() {
 	register_taxonomy('departments', 'staff', $args);
 	
 	$labels = array(
-	    'name' 							=> __('Staff', 'null'),
-	    'singular_name' 				=> __('Staff', 'null'),
-	    'add_new' 						=> __('Add Staff', 'null'),
-	    'add_new_item' 					=> __('Add Staff', 'null'),
-	    'edit_item' 					=> __('Edit Staff', 'null'),
-	    'new_item' 						=> __('New Staff', 'null'),
-	    'view_item' 					=> __('View', 'null'),
-	    'search_items' 					=> __('Search Staff', 'null'),
-	    'not_found' 					=> __('No staff found','null'),
-	    'not_found_in_trash' 			=> __('No staff found in Trash','null'),
-	    'parent_item_colon' 			=> ''
+		'name' 							=> __('Staff', 'null'),
+		'singular_name' 				=> __('Staff', 'null'),
+		'add_new' 						=> __('Add Staff', 'null'),
+		'add_new_item' 					=> __('Add Staff', 'null'),
+		'edit_item' 					=> __('Edit Staff', 'null'),
+		'new_item' 						=> __('New Staff', 'null'),
+		'view_item' 					=> __('View', 'null'),
+		'search_items' 					=> __('Search Staff', 'null'),
+		'not_found' 					=> __('No staff found','null'),
+		'not_found_in_trash' 			=> __('No staff found in Trash','null'),
+		'parent_item_colon' 			=> '',
+		'menu_name' 					=> __('Staff','null'),
+		'all_items'						=> __('Staff', 'null')
 	);
 	
 	$args = array(
 		//'menu_position' 				=> 8,
-	    'label' 						=> __('Staff','null'),
-	    'labels' 						=> $labels,
-	    'public' 						=> true,
-	    'can_export'					=> true,
-	    'show_ui' 						=> true,
-	    '_builtin' 						=> false,
-	    '_edit_link' 					=> 'post.php?post=%d',
-	    'menu_icon' 					=> 'dashicons-groups',
-	    'hierarchical'					=> true,
-	    'rewrite' 						=> array( "slug" => "staff", "with_front" => false ),
-	    'supports'						=> array('title', 'editor', 'thumbnail', 'revisions'),
-	    'taxonomies' 					=> array('departments'),
-	    'show_in_nav_menus' 			=> true,
-	    'has_archive' 					=> true
+		'label' 						=> __('Staff','null'),
+		'labels' 						=> $labels,
+		'public' 						=> true,
+		'can_export'					=> true,
+		'show_ui' 						=> true,
+		'_builtin' 						=> false,
+		'_edit_link' 					=> 'post.php?post=%d',
+		'menu_icon' 					=> 'dashicons-groups',
+		'hierarchical'					=> true,
+		'rewrite' 						=> array( "slug" => "staff", "with_front" => false ),
+		'supports'						=> array('title', 'editor', 'thumbnail', 'revisions'),
+		'taxonomies' 					=> array('departments'),
+		'show_in_nav_menus' 			=> true,
+		'has_archive' 					=> true
 	);
 	
 	register_post_type('staff', $args);
