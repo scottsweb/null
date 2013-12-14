@@ -65,7 +65,7 @@ function null_register_staff() {
 	    'show_ui' 						=> true,
 	    '_builtin' 						=> false,
 	    '_edit_link' 					=> 'post.php?post=%d',
-	    'menu_icon' 					=> get_template_directory_uri() .'/assets/images/icon-post-type-staff.png',
+	    'menu_icon' 					=> 'dashicons-groups',
 	    'hierarchical'					=> true,
 	    'rewrite' 						=> array( "slug" => "staff", "with_front" => false ),
 	    'supports'						=> array('title', 'editor', 'thumbnail', 'revisions'),

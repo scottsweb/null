@@ -66,7 +66,7 @@ function null_register_portfolio() {
 	    'show_ui' 						=> true,
 	    '_builtin' 						=> false,
 	    '_edit_link' 					=> 'post.php?post=%d',
-	    'menu_icon' 					=> get_template_directory_uri() .'/assets/images/icon-post-type-portfolio.png',
+	    'menu_icon' 					=> 'dashicons-format-gallery',
 	    'hierarchical'					=> true,
 	    'rewrite' 						=> array( "slug" => "portfolio", "with_front" => false ),
 	    'supports'						=> array('title', 'editor', 'thumbnail', 'revisions'),
