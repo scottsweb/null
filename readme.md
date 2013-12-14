@@ -92,7 +92,7 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 
 ## changelog
 
-#### 1.0
+#### 1.0-beta2
 * Fix notice is class-admin-menu.php
 * Update options framework to 1.6
 * Clean transients daily
@@ -104,8 +104,15 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 * Add filter so child themes can play with content_width
 * Set depth on WordPress menus
 * Change sidebar registration to use array keys
+* Do not cache menus (bad idea)
+* Options framework 1.7.1
+* Theme supports HTML5
+* ACF 4.3.2
+* WordPress 3.8 testing, dash icons and visual tweaks
+* Add composer.json
+* A few other minor things (see commit history)
 
-#### 1.0b
+#### 1.0-beta
 * Updated option framework to be compatible with new media uploader
 * New settings for Windows 8 pinned sites
 * Disabling comments now removes the comments menu
