@@ -1,0 +1,23 @@
+{
+        "name"       : "scottsweb/null",
+        "description": "WordPress parent or starter theme framework.",
+        "keywords"   : ["wordpress"],
+        "type"       : "wordpress-theme",
+        "homepage"   : "https://github.com/scottsweb/null",
+        "license"    : "GPL-2.0",
+        "authors"    : [
+                {
+                        "name"    : "Scott Evans",
+                        "email"   : "git@scott.ee",
+                        "homepage": "http://scott.ee"
+                }
+        ],
+        "support"    : {
+                "issues": "https://github.com/scottsweb/null/issues",
+                "source": "https://github.com/scottsweb/null"
+        },
+        "require"    : {
+                "php": ">=5.2.4",
+                "composer/installers": "~1.0"
+        }
+}
