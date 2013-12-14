@@ -42,18 +42,20 @@
 
 .acf_postbox .field {
 	position: relative;
-	padding: 15px 10px;
-	border-bottom: #e8e8e8 solid 1px;
 	color: #333333;
 }
 
-.acf_postbox .field:last-child {
-	border-bottom: none;
+.acf_postbox > .inside > .field {
+	padding: 15px 10px;
+	border-top: #e8e8e8 solid 1px;
 }
 
-.acf_postbox.no_box .field { 
+.acf_postbox > .inside > .field:first-child {
+	border-top: none;
+}
+
+.acf_postbox.no_box > .inside > .field { 
     border-top: 0 none;
-    border-bottom: 0 none;
     padding-left: 0;
     padding-right: 0;
 }
@@ -61,28 +63,57 @@
 
 /* Field Error */
 .acf_postbox .field.error {
-	margin: 0;
 	border: #CC0000 solid 1px !important;
-	border-radius: 0;
+	background: #FFEBE8 !important;
 }
 
-.acf_postbox.no_box .field.error { 
-	padding-left: 10px;
-	padding-right: 10px;
-} 
-
-
-.acf_postbox .field.error + .error {
-	border-top: 0 none !important;
+.acf_postbox .field .acf-error-message {
+	display: none;
+	position: relative;
+	
+	background: #CC0000;
+	color: #fff;
+	text-shadow: none;
+	
+	border-radius: 3px;
+	padding: 5px 10px;
+	
+	font-size: 12px;
+	line-height: 14px;
+	
+	margin: 5px 0 0;
 }
 
-.acf_postbox .field.error:last-child {
-    border-bottom: #CC0000 solid 1px;
+.acf_postbox .field .acf-error-message .bit {
+	width: 0;
+	height: 0;
+	border: transparent 5px solid;
+	border-bottom-color: #CC0000;
+	
+	display: block;
+	position: absolute;
+	top: -10px;
+	left: 10px;
+}
+
+.acf_postbox .field.error .acf-error-message {
+	display: inline-block;
 }
 
 .acf_postbox .field.error label.field_label {
 	color: #CC0000;
 }
+
+.acf_postbox.no_box > .inside > .field.error { 
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.acf_postbox > .inside > .field.error + .field.error {
+	border-top: 0 none !important;
+}
+
+
 
 
 /* Field Label */
@@ -643,11 +674,11 @@
 	padding-left: 6px;
 }
 
-ul.checkbox_list {
+ul.acf-checkbox-list {
 	background: transparent !important;
 }
 
-#createuser ul.checkbox_list input {
+#createuser ul.acf-checkbox-list input {
     width: auto;
 }
 
@@ -939,10 +970,10 @@ td.acf_input-wrap {
 
 .field_type-tab {
 	display: none !important;
-	
 }
 
 .acf-tab-group {
+	border-top: #E8E8E8 solid 1px;
 	border-bottom: #DFDFDF solid 1px;
 	margin: 0 0 10px;
 	padding: 10px 4px 0 10px;
@@ -986,6 +1017,9 @@ td.acf_input-wrap {
     border-bottom-color: #F7F7F7;
 }
 
+.acf_postbox > .inside > .field_type-tab + .field {
+	border-top: 0 none;
+}
 
 
 /*
@@ -994,6 +1028,7 @@ td.acf_input-wrap {
 
 .acf_postbox.no_box .acf-tab-group {
 	padding-left: 0;
+	border-top: 0 none;
 	border-bottom-color: #CCC;
 	background: transparent;
 }
@@ -1060,13 +1095,38 @@ tr.acf-tab_group-show {
 *	
 *-------------------------------------------------------------------------*/
 
+/* Show */
 .acf-conditional_logic-show {
 	display: block;
 }
+
 tr.acf-conditional_logic-show {
 	display: table-row;
 }
-.acf-conditional_logic-hide {
+
+td.acf-conditional_logic-show,
+th.acf-conditional_logic-show {
+    display: table-cell;
+}
+
+
+/* Hide */
+.acf-conditional_logic-hide,
+tr.acf-conditional_logic-hide,
+td.acf-conditional_logic-hide,
+th.acf-conditional_logic-hide {
+    display: none;
+}
+
+
+/* Hide (show blank) */
+td.acf-conditional_logic-hide.acf-show-blank,
+th.acf-conditional_logic-hide.acf-show-blank {
+    display: table-cell;
+}
+
+td.acf-conditional_logic-hide.acf-show-blank .inner,
+th.acf-conditional_logic-hide.acf-show-blank .inner {
 	display: none;
 }
 
@@ -1125,6 +1185,96 @@ tr.acf-conditional_logic-show {
 .compat-item .field .acf-color_picker .button {
 	height: 24px;
 	padding: 0 10px 1px;
+}
+
+
+/*--------------------------------------------------------------------------
+*
+*	Field: Location
+*	
+*-------------------------------------------------------------------------*/
+
+.acf-google-map {
+	position: relative;
+	border: #DFDFDF solid 1px;
+	background: #fff;
+}
+
+.acf-google-map .title {
+	position: relative;
+	border-bottom: #DFDFDF solid 1px;
+}
+
+.acf-google-map .has-value { display: none; }
+.acf-google-map .no-value { display: block; }
+
+.acf-google-map.active .has-value { display: block; }
+.acf-google-map.active .no-value { display: none; }
+
+.acf-google-map .title h4,
+.acf-google-map .title input[type="text"] {
+	margin: 0;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 10px;
+	border: 0 none;
+	box-shadow: none;
+	border-radius: 0;
+	font-family: inherit;
+	cursor: text;
+}
+
+.acf-google-map .title input[type="text"] {
+	height: 36px;
+	line-height: normal;
+}
+
+.acf-google-map .title .search {
+	height: auto;
+	border: 0 none;
+}
+
+.acf-google-map .acf-sprite-remove,
+.acf-google-map .acf-sprite-locate {
+	right: 7px;
+	top: 7px;
+	position: absolute;
+}
+
+.acf-google-map .acf-sprite-remove {
+	background-position: -71px -221px;
+	height: 9px;
+	width: 9px;
+	border: 6px solid transparent;
+}
+.acf-google-map .acf-sprite-remove:hover { background-position: -71px -271px; }
+
+.acf-google-map .acf-sprite-locate {
+	background-position: -50px -300px;
+	width: 13px;
+	height: 13px;
+	border: 5px solid transparent;
+}
+.acf-google-map .acf-sprite-locate:hover { background-position: -50px -350px; }
+
+.acf-google-map .canvas {
+	height: 400px;
+}
+
+.pac-container {
+	margin-left: -1px;
+	margin-top: -1px;
+	padding: 5px 0;
+	border-color: #DFDFDF;
+}
+
+.pac-container:after {
+	display: none;
+}
+
+.pac-container .pac-item {
+	padding: 5px;
+	margin: 0 5px;
 }
 
 /*--------------------------------------------------------------------------

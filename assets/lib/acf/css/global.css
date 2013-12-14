@@ -105,9 +105,19 @@ input.ir { border: 0 none; background: none; }
 	margin-left: 5px;
 }
 
+/* icon */
+[class^="acf-sprite"], 
+[class*=" acf-sprite"] {
+	display: block;
+	width: 16px;
+	height: 16px;
+	float: left;
+	background: url(../images/sprite.png);
+	margin: 0;
+}
+
 
 /* Input append / prepend */
-
 .acf-input-prepend,
 .acf-input-append {
 	font-size: 12px;
@@ -364,7 +374,7 @@ table.acf_input select:focus {
 
 
 ul.acf-radio-list,
-ul.checkbox_list {
+ul.acf-checkbox-list {
 	background: transparent !important;
 	position: relative;
 	display: block;
@@ -373,18 +383,18 @@ ul.checkbox_list {
 }
 
 ul.acf-radio-list.horizontal,
-ul.checkbox_list.horizontal {
+ul.acf-checkbox-list.horizontal {
 	overflow: hidden;
 }
 
 ul.acf-radio-list.horizontal li,
-ul.checkbox_list.horizontal li {
+ul.acf-checkbox-list.horizontal li {
 	float: left;
 	margin-right: 20px;
 }
 
 ul.acf-radio-list li input,
-ul.checkbox_list li input {
+ul.acf-checkbox-list li input {
 	margin-top: -1px;
 	margin-right: 5px !important;
 	width: auto !important;
@@ -491,6 +501,10 @@ a.acf-button-big {
 	padding: 13px;
 }
 
+div.error a.acf-button {
+	color: #fff;
+}
+
 /*--------------------------------------------------------------------------
 *
 *	ACF add / remove
@@ -592,7 +606,9 @@ only screen and (                min-resolution: 2dppx) {
 	.acf-button-add,
 	.acf-button-remove,
 	.acf-button-edit,
-	.acf-button-delete {
+	.acf-button-delete,
+	[class^="acf-sprite"], 
+	[class*=" acf-sprite"] {
 		background-image: url(../images/sprite@2x.png);
 		background-size: 100px 600px;
 	}

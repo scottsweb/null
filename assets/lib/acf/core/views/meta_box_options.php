@@ -49,9 +49,11 @@ $options = apply_filters('acf/field_group/get_options', array(), $post->ID);
 				'name'	=>	'options[position]',
 				'value'	=>	$options['position'],
 				'choices' => array(
-					'normal'	=>	__("Normal",'acf'),
-					'side'		=>	__("Side",'acf'),
-				)
+					'acf_after_title'	=>	__("High (after title)",'acf'),
+					'normal'			=>	__("Normal (after content)",'acf'),
+					'side'				=>	__("Side",'acf'),
+				),
+				'default_value' => 'normal'
 			));
 
 			?>
@@ -77,7 +79,7 @@ $options = apply_filters('acf/field_group/get_options', array(), $post->ID);
 			?>
 		</td>
 	</tr>
-	<tr>
+	<tr id="hide-on-screen">
 		<td class="label">
 			<label for="post_type"><?php _e("Hide on screen",'acf'); ?></label>
 			<p class="description"><?php _e("<b>Select</b> items to <b>hide</b> them from the edit screen",'acf'); ?></p>
@@ -91,6 +93,7 @@ $options = apply_filters('acf/field_group/get_options', array(), $post->ID);
 				'name'	=>	'options[hide_on_screen]',
 				'value'	=>	$options['hide_on_screen'],
 				'choices' => array(
+					'permalink'			=>	__("Permalink"),
 					'the_content'		=>	__("Content Editor",'acf'),
 					'excerpt'			=>	__("Excerpt"),
 					'custom_fields'		=>	__("Custom Fields"),

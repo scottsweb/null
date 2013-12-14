@@ -170,7 +170,10 @@ class acf_field_relationship extends acf_field
 		{
 			global $sitepress;
 			
-			$sitepress->switch_lang( $options['lang'] );
+			if( !empty($sitepress) )
+			{
+				$sitepress->switch_lang( $options['lang'] );
+			}
 		}
 		
 		
@@ -265,7 +268,7 @@ class acf_field_relationship extends acf_field
 		
 		// filters
 		$options = apply_filters('acf/fields/relationship/query', $options, $field, $the_post);
-		$options = apply_filters('acf/fields/relationship/query/name=' . $field['name'], $options, $field, $the_post );
+		$options = apply_filters('acf/fields/relationship/query/name=' . $field['_name'], $options, $field, $the_post );
 		$options = apply_filters('acf/fields/relationship/query/key=' . $field['key'], $options, $field, $the_post );
 		
 		
@@ -322,7 +325,7 @@ class acf_field_relationship extends acf_field
 			
 			// filters
 			$title = apply_filters('acf/fields/relationship/result', $title, $post, $field, $the_post);
-			$title = apply_filters('acf/fields/relationship/result/name=' . $field['name'] , $title, $post, $field, $the_post);
+			$title = apply_filters('acf/fields/relationship/result/name=' . $field['_name'] , $title, $post, $field, $the_post);
 			$title = apply_filters('acf/fields/relationship/result/key=' . $field['key'], $title, $post, $field, $the_post);
 			
 			
@@ -521,7 +524,7 @@ class acf_field_relationship extends acf_field
 				
 				// filters
 				$title = apply_filters('acf/fields/relationship/result', $title, $p, $field, $post);
-				$title = apply_filters('acf/fields/relationship/result/name=' . $field['name'] , $title, $p, $field, $post);
+				$title = apply_filters('acf/fields/relationship/result/name=' . $field['_name'] , $title, $p, $field, $post);
 				$title = apply_filters('acf/fields/relationship/result/key=' . $field['key'], $title, $p, $field, $post);
 				
 				
@@ -712,32 +715,25 @@ class acf_field_relationship extends acf_field
 	function format_value( $value, $post_id, $field )
 	{
 		// empty?
-		if( !$value )
+		if( !empty($value) )
 		{
-			return $value;
+			// Pre 3.3.3, the value is a string coma seperated
+			if( is_string($value) )
+			{
+				$value = explode(',', $value);
+			}
+			
+			
+			// convert to integers
+			if( is_array($value) )
+			{
+				$value = array_map('intval', $value);
+				
+				// convert into post objects
+				$value = $this->get_posts( $value );
+			}
+			
 		}
-		
-		
-		// Pre 3.3.3, the value is a string coma seperated
-		if( is_string($value) )
-		{
-			$value = explode(',', $value);
-		}
-		
-		
-		// empty?
-		if( !is_array($value) || empty($value) )
-		{
-			return $value;
-		}
-		
-		
-		// convert to integers
-		$value = array_map('intval', $value);
-		
-		
-		// convert into post objects
-		$value = $this->get_posts( $value );
 		
 		
 		// return value
@@ -830,7 +826,7 @@ class acf_field_relationship extends acf_field
 		$posts = get_posts(array(
 			'numberposts'	=>	-1,
 			'post__in'		=>	$post_ids,
-			'post_type'		=>	'any',
+			'post_type'		=>	apply_filters('acf/get_post_types', array()),
 			'post_status'	=>	'any',
 		));
 
@@ -877,17 +873,43 @@ class acf_field_relationship extends acf_field
 	
 	function update_value( $value, $post_id, $field )
 	{
-		// array?
-		if( is_array($value) ){ foreach( $value as $k => $v ){
+		// validate
+		if( empty($value) )
+		{
+			return $value;
+		}
+		
+		
+		if( is_string($value) )
+		{
+			// string
+			$value = explode(',', $value);
 			
-			// object?
-			if( is_object($v) && isset($v->ID) )
-			{
-				$value[ $k ] = $v->ID;
+		}
+		elseif( is_object($value) && isset($value->ID) )
+		{
+			// object
+			$value = array( $value->ID );
+			
+		}
+		elseif( is_array($value) )
+		{
+			// array
+			foreach( $value as $k => $v ){
+			
+				// object?
+				if( is_object($v) && isset($v->ID) )
+				{
+					$value[ $k ] = $v->ID;
+				}
 			}
 			
-		}}
-				
+		}
+		
+		
+		// save value as strings, so we can clearly search for them in SQL LIKE statements
+		$value = array_map('strval', $value);
+						
 		
 		return $value;
 	}
