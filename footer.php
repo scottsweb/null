@@ -5,9 +5,9 @@
 			
 			<?php tha_footer_top(); ?>
 
-			<?php if (of_get_option('footer_sidebar', '1') && is_active_sidebar('sidebar-footer')) { ?>
+			<?php if (of_get_option('footer_sidebar', '1') && is_active_sidebar('footer')) { ?>
 			<aside id="sidebar-footer" class="sidebar" role="complementary">
-				<?php dynamic_sidebar('sidebar-'.null_slugify('Footer')); ?>
+				<?php dynamic_sidebar('footer'); ?>
 			</aside>
 			<?php } ?>
 			

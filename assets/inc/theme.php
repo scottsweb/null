@@ -932,13 +932,13 @@ if (!function_exists('null_sidebar')) {
 		$post_type = get_post_type($post);
 
 		if (is_front_page()) {
-			dynamic_sidebar('sidebar-'.null_slugify('Homepage')); 
+			dynamic_sidebar('homepage'); 
 		} else if (is_page()) {
-			dynamic_sidebar('sidebar-'.null_slugify('Page')); 
+			dynamic_sidebar('page'); 
 		} else if (is_search()) {
-			dynamic_sidebar('sidebar-'.null_slugify('Search')); 
+			dynamic_sidebar('search'); 
 		} else if (((is_archive()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ($post_type == 'post')) { // essentially an is_blog() conditional
-			dynamic_sidebar('sidebar-'.null_slugify('Posts/Blog')); 
+			dynamic_sidebar('posts'); 
 		}
 	}
 }
