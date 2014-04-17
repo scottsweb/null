@@ -64,6 +64,8 @@
 			- http://www.responsivegridsystem.com/
 			- http://getpreboot.com/
 			- http://www.fitgrd.com/
+			- http://www.getuikit.com/
+			- https://github.com/mojotech/jeet
 	to-do: replace modernizr? http://conditionizr.com/
 	to-do: live bind shortcode JS for instant search plugin compatibility - livequery? or .on
 	to-do: compatibilty with live edit - http://wordpress.org/extend/plugins/live-edit/
@@ -105,6 +107,9 @@
 	to-do: https://github.com/mboynes/super-cpt
 	to-do: beef up our mixins http://lesselements.com/ - https://github.com/drublic/less-mixins
 	to-do: update IE8 pinned info http://www.buildmypinnedsite.com/en
+	to-do: option to remove http://aahacreative.com/2013/08/05/remove-jquery-migrate-wordpress-36/
+	to-do: http://wptheming.com/2013/11/optimizing-responsive-layouts/
+	to-do: http://lessphp.gpeasy.com/ - move to this?
 	*/
 
 	// load the options framework
@@ -274,7 +279,13 @@
 		add_theme_support( 'post-thumbnails' ); 
 
 		// html5 all the things
-		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
+		add_theme_support( 'html5', array( 
+			'comment-list', 
+			'comment-form', 
+			'search-form',
+			'gallery',
+			'captions' 
+		) );
 
 		// add theme hook alliance support (https://github.com/zamoose/themehookalliance) - filterable by child theme 
 		add_theme_support('tha_hooks', apply_filters('null_tha_hooks', array('body','head','header','content','entry','comments','sidebar','footer')));
