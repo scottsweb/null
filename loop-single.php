@@ -20,7 +20,7 @@
 		<?php 
 		printf(__('This entry was posted by %1$s on %2$s and is filed under %3$s. ', 'null'), 
 			get_the_author(),
-			'<time datetime="'.get_the_time('Y-m-d').'" pubdate>'.null_get_time('l, F jS, Y @ g:ia').'</time>',
+			'<time datetime="'.get_the_time('Y-m-d').'">'.null_get_time('l, F jS, Y @ g:ia').'</time>',
 			get_the_category_list(', ')
 		);
 		

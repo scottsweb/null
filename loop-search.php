@@ -9,7 +9,7 @@
 
 	<header>
 		<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-		<div class="entry-date"><time class="published" datetime="<?php the_time('Y-m-d\TH:i:s') ?>" pubdate><?php null_time(); ?></time></div>
+		<div class="entry-date"><time class="published" datetime="<?php the_time('Y-m-d\TH:i:s') ?>"><?php null_time(); ?></time></div>
 	</header>
 	<div class="entry-content">
 		<?php the_excerpt() ?>

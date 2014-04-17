@@ -12,7 +12,7 @@
 		<?php if ( is_sticky() ) : ?>
 		<div class="entry-sticky"><?php _e( 'Featured', 'null' ); ?></div>
 		<?php else : ?>
-		<div class="entry-date"><time class="published" datetime="<?php the_time('Y-m-d\TH:i:s') ?>" pubdate><?php null_time(); ?></time></div>
+		<div class="entry-date"><time class="published" datetime="<?php the_time('Y-m-d\TH:i:s') ?>"><?php null_time(); ?></time></div>
 		<?php endif; ?>
 		<?php if (has_post_thumbnail()) { the_post_thumbnail('thumbnail', array('class' => 'alignright')); } ?>
 	</header>
