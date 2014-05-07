@@ -1035,7 +1035,7 @@ function null_clean_wp_page_menu($page_markup) {
 
 function null_mustache_tags($content) {
 	$content = str_replace('{{year}}', date('Y'), $content);
-	$content = str_replace('{{sitename}}', bloginfo('name'), $content);
+	$content = str_replace('{{sitename}}', get_bloginfo('name'), $content);
 	$content = str_replace('{{copyright}}', '&copy;', $content);
 	return apply_filters('null_mustache_tags', $content);
 }
