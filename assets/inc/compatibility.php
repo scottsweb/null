@@ -14,15 +14,11 @@ if (is_plugin_inactive('advanced-custom-fields/acf.php') && !function_exists('ge
 
 	// make sure we are not currently trying to activate ACF
 	if (is_admin()) {
-		$action = (isset($_GET['action']) ? $_GET['action'] : '');
-		$plugin = (isset($_GET['plugin']) ? $_GET['plugin'] : '');
 		if ($action != 'activate' && $plugin != 'advanced-custom-fields/acf.php') {
 			define('ACF_LITE' , true);
-			load_template(get_template_directory() . '/assets/lib/acf/acf.php');
 		}
 	} else {
 		define('ACF_LITE', true);
-		load_template(get_template_directory() . '/assets/lib/acf/acf.php');
 	}
 }
 
