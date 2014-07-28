@@ -4,7 +4,7 @@
  * @author    Devin Price <devin@wptheming.com>
  * @license   GPL-2.0+
  * @link      http://wptheming.com
- * @copyright 2013 WP Theming
+ * @copyright 2010-2014 WP Theming
  */
 
 class Options_Framework_Admin {
@@ -31,7 +31,7 @@ class Options_Framework_Admin {
     	if ( $options ) {
 
 			// Add the options page and menu item.
-			add_action( 'admin_menu', array( $this, 'add_options_page' ) );
+			add_action( 'admin_menu', array( $this, 'add_custom_options_page' ) );
 
 			// Add the required scripts and styles
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
@@ -66,7 +66,7 @@ class Options_Framework_Admin {
     }
 
 	/*
-	 * Define menu options (still limited to appearance section)
+	 * Define menu options
 	 *
 	 * Examples usage:
 	 *
@@ -82,10 +82,21 @@ class Options_Framework_Admin {
 	static function menu_settings() {
 
 		$menu = array(
-			'page_title' => __( 'Theme Options', 'textdomain' ),
-			'menu_title' => __( 'Theme Options', 'textdomain' ),
+
+			// Modes: submenu, menu
+            'mode' => 'submenu',
+
+            // Submenu default settings
+            'page_title' => __( 'Theme Options', 'textdomain'),
+			'menu_title' => __('Theme Options', 'textdomain'),
 			'capability' => 'edit_theme_options',
-			'menu_slug' => 'options-framework'
+			'menu_slug' => 'options-framework',
+            'parent_slug' => 'themes.php',
+
+            // Menu default settings
+            'icon_url' => 'dashicons-admin-generic',
+            'position' => '61'
+
 		);
 
 		return apply_filters( 'optionsframework_menu', $menu );
@@ -96,10 +107,22 @@ class Options_Framework_Admin {
      *
      * @since 1.7.0
      */
-	function add_options_page() {
+	function add_custom_options_page() {
 
 		$menu = $this->menu_settings();
-		$this->options_screen = add_theme_page( $menu['page_title'], $menu['menu_title'], $menu['capability'], $menu['menu_slug'], array( $this, 'options_page' ) );
+
+		// If you want a top level menu, see this Gist:
+		// https://gist.github.com/devinsays/884d6abe92857a329d99
+
+		// Code removed because it conflicts with .org theme check.
+
+		$this->options_screen = add_theme_page(
+            	$menu['page_title'],
+            	$menu['menu_title'],
+            	$menu['capability'],
+            	$menu['menu_slug'],
+            	array( $this, 'options_page' )
+        );
 
 	}
 
@@ -108,8 +131,13 @@ class Options_Framework_Admin {
      *
      * @since 1.7.0
      */
-	function enqueue_admin_styles() {
-		wp_enqueue_style( 'optionsframework', OPTIONS_FRAMEWORK_DIRECTORY . 'css/optionsframework.css', array(), Options_Framework::VERSION );
+
+	function enqueue_admin_styles( $hook ) {
+
+		if ( $this->options_screen != $hook )
+	        return;
+
+		wp_enqueue_style( 'optionsframework', OPTIONS_FRAMEWORK_DIRECTORY . 'css/optionsframework.css', array(),  Options_Framework::VERSION );
 		wp_enqueue_style( 'wp-color-picker' );
 	}
 
@@ -120,9 +148,7 @@ class Options_Framework_Admin {
      */
 	function enqueue_admin_scripts( $hook ) {
 
-		$menu = $this->menu_settings();
-
-		if ( 'appearance_page_' . $menu['menu_slug'] != $hook )
+		if ( $this->options_screen != $hook )
 	        return;
 
 		// Enqueue custom option panel JS
@@ -297,14 +323,23 @@ class Options_Framework_Admin {
 	function optionsframework_admin_bar() {
 
 		$menu = $this->menu_settings();
+
 		global $wp_admin_bar;
 
-		$wp_admin_bar->add_menu( array(
+		if ( 'menu' == $menu['mode'] ) {
+			$href = admin_url( 'admin.php?page=' . $menu['menu_slug'] );
+		} else {
+			$href = admin_url( 'themes.php?page=' . $menu['menu_slug'] );
+		}
+
+		$args = array(
 			'parent' => 'appearance',
 			'id' => 'of_theme_options',
-			'title' => __( 'Theme Options', 'textdomain' ),
-			'href' => admin_url( 'themes.php?page=' . $menu['menu_slug'] )
-		) );
+			'title' => $menu['menu_title'],
+			'href' => $href
+		);
+
+		$wp_admin_bar->add_menu( apply_filters( 'optionsframework_admin_bar', $args ) );
 	}
 
 }

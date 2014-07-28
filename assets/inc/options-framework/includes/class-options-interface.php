@@ -4,7 +4,7 @@
  * @author    Devin Price <devin@wptheming.com>
  * @license   GPL-2.0+
  * @link      http://wptheming.com
- * @copyright 2013 WP Theming
+ * @copyright 2010-2014 WP Theming
  */
 
 class Options_Framework_Interface {
@@ -109,6 +109,12 @@ class Options_Framework_Interface {
 				$explain_value = $value['desc'];
 			}
 
+			// Set the placeholder if one exists
+			$placeholder = '';
+			if ( isset( $value['placeholder'] ) ) {
+				$placeholder = ' placeholder="' . esc_attr( $value['placeholder'] ) . '"';
+			}
+
 			if ( has_filter( 'optionsframework_' . $value['type'] ) ) {
 				$output .= apply_filters( 'optionsframework_' . $value['type'], $option_name, $value, $val );
 			}
@@ -118,7 +124,7 @@ class Options_Framework_Interface {
 
 			// Basic text input
 			case 'text':
-				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '" />';
+				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '"' . $placeholder . ' />';
 				break;
 
 			// Password input
@@ -138,7 +144,7 @@ class Options_Framework_Interface {
 				}
 
 				$val = stripslashes( $val );
-				$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '">' . esc_textarea( $val ) . '</textarea>';
+				$output .= '<textarea id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" rows="' . $rows . '"' . $placeholder . '>' . esc_textarea( $val ) . '</textarea>';
 				break;
 
 			// Select Box
@@ -382,8 +388,8 @@ class Options_Framework_Interface {
 				if ( isset($value['name']) ) {
 					$output .= '<h4 class="heading">' . esc_html( $value['name'] ) . '</h4>' . "\n";
 				}
-				if ( $value['desc'] ) {
-					$output .= apply_filters('of_sanitize_info', $value['desc'] ) . "\n";
+				if ( isset( $value['desc'] ) ) {
+					$output .= $value['desc'] . "\n";
 				}
 				$output .= '</div>' . "\n";
 				break;
