@@ -27,7 +27,7 @@ function null_register_portfolio() {
 		'add_or_remove_items'           => __('Add or remove Portfolio Categories', 'null'),
 		'choose_from_most_used'         => __('Choose from most used Portfolio Categories', 'null')
 	);
-	
+
 	$args = array(
 		'label'							=> __('Categories', 'null'),
 		'labels'                        => $labels,
@@ -39,9 +39,9 @@ function null_register_portfolio() {
 		'rewrite'                       => array('slug' => 'portfolio/category', 'with_front' => false),
 		'query_var'                     => true
 	);
-	
+
 	register_taxonomy('portfolio_category', 'portfolio', $args);
-	
+
 	$labels = array(
 		'name' 							=> __('Projects', 'null'),
 		'singular_name' 				=> __('Portfolio Project', 'null'),
@@ -57,7 +57,7 @@ function null_register_portfolio() {
 		'menu_name' 					=> __('Portfolio','null'),
 		'all_items'						=> __('Projects', 'null')
 	);
-	
+
 	$args = array(
 		//'menu_position' 				=> 8,
 		'label' 						=> __('Portfolio','null'),
@@ -75,7 +75,7 @@ function null_register_portfolio() {
 		'show_in_nav_menus' 			=> true,
 		'has_archive' 					=> true
 	);
-	
+
 	register_post_type('portfolio', $args);
 }
 

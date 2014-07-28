@@ -27,7 +27,7 @@ function null_register_staff() {
 		'add_or_remove_items'           => __('Add or remove Departments', 'null'),
 		'choose_from_most_used'         => __('Choose from most used Departments', 'null')
 	);
-	
+
 	$args = array(
 		'label'							=> __('Departments', 'null'),
 		'labels'                        => $labels,
@@ -39,9 +39,9 @@ function null_register_staff() {
 		'rewrite'                       => array('slug' => 'staff/department', 'with_front' => false),
 		'query_var'                     => true
 	);
-	
+
 	register_taxonomy('departments', 'staff', $args);
-	
+
 	$labels = array(
 		'name' 							=> __('Staff', 'null'),
 		'singular_name' 				=> __('Staff', 'null'),
@@ -57,7 +57,7 @@ function null_register_staff() {
 		'menu_name' 					=> __('Staff','null'),
 		'all_items'						=> __('Staff', 'null')
 	);
-	
+
 	$args = array(
 		//'menu_position' 				=> 8,
 		'label' 						=> __('Staff','null'),
@@ -75,7 +75,7 @@ function null_register_staff() {
 		'show_in_nav_menus' 			=> true,
 		'has_archive' 					=> true
 	);
-	
+
 	register_post_type('staff', $args);
 }
 
