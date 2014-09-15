@@ -9,7 +9,7 @@ if (!is_multisite() && !is_child_theme() && of_get_option('cleanup', '0')) {
 	add_filter('plugins_url', 'null_clean_plugins');
 	add_filter('bloginfo', 'null_clean_assets');
 	add_filter('stylesheet_directory_uri', 'null_clean_assets');
-	add_filter('template_directory_uri', 'null_clean_assets'); 
+	add_filter('template_directory_uri', 'null_clean_assets');
 	add_filter('script_loader_src', 'null_clean_plugins');
 	add_filter('style_loader_src', 'null_clean_plugins');
 }
@@ -42,9 +42,9 @@ if (get_option('blog_public')) {
 
 if (!function_exists('null_robots')) {
 	function null_robots() {
-	
+
 		if (is_robots()) {
-	
+
 			$output = "User-agent: *\n";
 			$output .= "Disallow: /cgi-bin/\n";
 			$output .= "Disallow: /wp-admin/\n";
@@ -54,14 +54,14 @@ if (!function_exists('null_robots')) {
 			$output .= "Disallow: /wp-content/themes/\n";
 			$output .= "Disallow: /wp-login.php\n";
 			$output .= "Disallow: /wp-register.php\n";
-		
+
 			if ( file_exists($_SERVER['DOCUMENT_ROOT'].'/sitemap.xml.gz') )
 				$output .= 'Sitemap: http://'.$_SERVER['HTTP_HOST'].'/sitemap.xml.gz';
 			else if ( file_exists($_SERVER['DOCUMENT_ROOT'].'/sitemap.xml') )
 				$output .= 'Sitemap: http://'.$_SERVER['HTTP_HOST'].'/sitemap.xml';
 			elseif ( class_exists('WPSEO_Sitemaps'))
 				$output .= 'Sitemap: http://'.$_SERVER['HTTP_HOST'].'/sitemap_index.xml';
-		
+
 			header('Status: 200 OK', true, 200);
 			header('Content-type: text/plain; charset='.get_bloginfo('charset'));
 			echo $output;
@@ -80,27 +80,27 @@ add_filter('language_attributes', 'null_language_attributes');
 function null_language_attributes() {
 	$attributes = array();
 	$output = '';
-	
+
 	if (function_exists('is_rtl')) {
 		if (is_rtl() == 'rtl') {
 			$attributes[] = 'dir="rtl"';
 		}
 	}
-	
+
 	$lang = get_bloginfo('language');
 	if ($lang && $lang !== 'en-US') {
 		$attributes[] = "lang=\"$lang\"";
 	} else {
 		$attributes[] = 'lang="en"';
 	}
-	
+
 	$output = implode(' ', $attributes);
 	$output = apply_filters('null_language_attributes', $output);
 	return $output;
 }
 
 /***************************************************************
-* Function null_title 
+* Function null_title
 * Calculate title of the current page, can be overwritten by child
 ***************************************************************/
 
@@ -109,21 +109,21 @@ if (!function_exists('null_title')) {
 	function null_title() {
 
 		global $page, $paged;
-		
+
 		wp_title('|', true, 'right');
 		bloginfo('name');
-		
+
 		$site_description = get_bloginfo('description', 'display');
 		if ($site_description && (is_home() || is_front_page()))
 			echo " | $site_description";
-		
+
 		if ($paged >= 2 || $page >= 2)
 			echo ' | ' . sprintf(__( 'Page %s', 'null' ), max($paged, $page));
 	}
 }
 
 /***************************************************************
-* Function null_clean_head 
+* Function null_clean_head
 * Remove unwanted links and tags in <head>
 ***************************************************************/
 
@@ -131,22 +131,22 @@ add_action('init', 'null_clean_head');
 
 function null_clean_head() {
 
-	$options = of_get_option('header_meta', array( 
+	$options = of_get_option('header_meta', array(
 		'rsd'				=> "1",
-		'windows' 			=> "0", 
-		'generator'			=> "0", 
-		'feed_links' 		=> "1", 
-		'extra_feed_links'	=> "0", 
-		'shortlink' 		=> "0", 
+		'windows' 			=> "0",
+		'generator'			=> "0",
+		'feed_links' 		=> "1",
+		'extra_feed_links'	=> "0",
+		'shortlink' 		=> "0",
 		'canonical' 		=> "1",
 		'relational'		=> "0"
 	));
-	
-	// RSD link 
+
+	// RSD link
 	if ($options['rsd'] != "1") remove_action('wp_head', 'rsd_link');
 	// remove windows live generator tag
-	if ($options['windows'] != "1") remove_action('wp_head', 'wlwmanifest_link');	
-	// remove generator tag			
+	if ($options['windows'] != "1") remove_action('wp_head', 'wlwmanifest_link');
+	// remove generator tag
 	if ($options['generator'] != "1") remove_action('wp_head', 'wp_generator');
 	// remove links to the extra feeds (e.g. category feeds)
 	if ($options['feed_links'] != "1") remove_action('wp_head', 'feed_links', 2);
@@ -184,63 +184,63 @@ function null_remove_recent_comments_style() {
 }
 
 /***************************************************************
-* Function null_wp_head 
+* Function null_wp_head
 * Output null ployfills, custom code etc to wp_head
 ***************************************************************/
 
 add_action('wp_head', 'null_wp_head');
 
 function null_wp_head() {
-	
+
 	// pingback
 	if (get_option('default_ping_status') == "open") {
 	?>
-	
+
 	<!-- pingback -->
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<?php
 	}
-	
+
 	// icons
 	?>
-	
+
 	<!-- icons -->
 	<link rel="shortcut icon" type="image/x-icon" href="<?php if ($favicon = of_get_option('favicon')) { echo $favicon; } else { echo get_template_directory_uri() . '/assets/images/favicon.ico'; } ?>" />
 	<link rel="apple-touch-icon-precomposed" href="<?php if ($touchicon = of_get_option('touchicon')) { echo $touchicon; } else { echo get_template_directory_uri() . '/assets/images/apple-touch-icon-precomposed.png'; } ?>" />
 	<?php
-	
+
 	// pollyfills
 	$polyfills = of_get_option('polyfills', array(
 		'ios' 			=> "1",
-		'selectivizr'	=> "0", 
+		'selectivizr'	=> "0",
 		'html5_forms'	=> "1",
 		'imgsizer'		=> "0",
 	));
 
 	//  ios fix
-	if ($polyfills['ios'] == "1") { 
+	if ($polyfills['ios'] == "1") {
 	?>
-	
+
 	<!-- ios rotation fix -->
 	<script type="text/javascript">
 		(function(a){var b='addEventListener',type='gesturestart',qsa='querySelectorAll',scales=[1,1],meta=qsa in a?a[qsa]('meta[name=viewport]'):[];function fix(){meta.content='width=device-width,minimum-scale='+scales[0]+',maximum-scale='+scales[1];a.removeEventListener(type,fix,true)}if((meta=meta[meta.length-1])&&b in a){fix();scales=[.25,1.6];a[b](type,fix,true)}}(document));
 	</script>
 	<?php
 	}
-	
+
 	//  selectivizr
-	if ($polyfills['selectivizr'] == "1") { 
+	if ($polyfills['selectivizr'] == "1") {
 	?>
-	
+
 	<!-- selectivizr -->
 	<!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/assets/js/selectivizr.js"></script><![endif]-->
 	<?php
 	}
-	
+
 	//  fluid images
-	if ($polyfills['imgsizer'] == "1") { 
+	if ($polyfills['imgsizer'] == "1") {
 	?>
-	
+
 	<!-- fluid images -->
 	<!--[if lt IE 9]><script src="<?php echo get_template_directory_uri(); ?>/assets/js/imgsizer.js"></script><![endif]-->
 	<?php
@@ -250,7 +250,7 @@ function null_wp_head() {
 		'ios_app'			=> "0",
 		'ie9_app'			=> "1"
 	));
-	
+
 	// ie9+ pinned app
 	if ($advanced_header_meta['ie9_app'] == "1") {
 	?>
@@ -264,11 +264,11 @@ function null_wp_head() {
 	<?php if ($ie9colour = of_get_option('ie9_colour')) { ?><meta name="msapplication-navbutton-color" content="<?php echo $ie9colour; ?>"><?php echo "\n"; }  ?>
 	<?php
 	}
-	
+
 	// ios app
-	if ($advanced_header_meta['ios_app'] == "1") { 
+	if ($advanced_header_meta['ios_app'] == "1") {
 	?>
-	
+
 	<!-- ios app -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -281,34 +281,34 @@ function null_wp_head() {
 	// custom header meta (from general settings)
 	if ($meta = of_get_option('custom_header_meta')) {
 	?>
-	
+
 	<!-- custom header meta -->
 	<?php echo $meta . "\n"; ?>
 	<?php
 	}
-	
+
 	// google analytics  (from general settings)
 	if ($tracking = of_get_option('gat')) {
 	?>
-	
+
 	<!-- google analytics -->
 	<script type="text/javascript">
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', '<?php echo $tracking; ?>']);
 	_gaq.push(['_trackPageview']);
-	
+
 	(function() {
 		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 	</script>
-	<?php 
+	<?php
 	}
-	
+
 	echo "\n";
 }
-	 	
+
 /***************************************************************
 * Function null_disable_rss_feed
 * Disable RSS in WordPress
@@ -341,7 +341,7 @@ function null_disable_search( $query, $error = true ) {
         $query->is_search = false;
         $query->query_vars['s'] = false;
         $query->query['s'] = false;
- 
+
         // 404 error
         if ( $error == true )
             $query->is_404 = true;
@@ -356,13 +356,13 @@ function null_disable_search( $query, $error = true ) {
 add_filter('body_class','null_body_class');
 
 function null_body_class($classes) {
-	
+
 	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone, $wpdb, $post, $blog_id;
-	
-	// multisite site id and child-site	
+
+	// multisite site id and child-site
 	if (isset($blog_id)) {
 		$classes[] = 'site-'.$blog_id;
-		
+
 		if($blog_id != 1) {
 			$classes[] = 'child-site';
 		}
@@ -387,7 +387,7 @@ function null_body_class($classes) {
 	$classes[] = 'm' . gmdate( 'm', $t ); // Month
 	$classes[] = 'd' . gmdate( 'd', $t ); // Day
 	$classes[] = 'h' . gmdate( 'H', $t ); // Hour
-	
+
 	// parent section
     if (is_page()) {
         if ($post->post_parent) {
@@ -398,13 +398,13 @@ function null_body_class($classes) {
         $post_data = get_post($parent, ARRAY_A);
         $classes[] = 'section-' . $post_data['post_name'];
     }
-	
+
 	// post/page name/slug
-	if (is_page() || is_single()) { 
+	if (is_page() || is_single()) {
 		$classes[] = $post->post_name;
 	}
 
-	// footer sidebar activated 
+	// footer sidebar activated
 	if (of_get_option('footer_sidebar', '1') && is_active_sidebar('sidebar-footer')) {
 		$classes[] = "sidebar-footer";
 	}
@@ -418,12 +418,22 @@ function null_body_class($classes) {
 	if (of_get_option('admin_bar_attachment', 'fixed') == 'absolute') {
 		$classes[] = 'admin-bar-absolute';
 	}
-	
+
 	// multi author site
 	if (is_multi_author()) {
 		$classes[] = 'group-site';
 	}
-	
+
+	// activation page
+	if ( null_string_search( 'wp-activate.php', current_url() ) ) {
+		$classes[] = 'activation';
+	}
+
+	// signup page
+	if ( null_string_search( 'wp-signup.php', current_url() ) ) {
+		$classes[] = 'signup';
+	}
+
 	return $classes;
 }
 
@@ -435,12 +445,12 @@ function null_body_class($classes) {
 add_filter('show_admin_bar', 'null_disable_admin_bar');
 
 function null_disable_admin_bar() {
-	
+
 	global $wp_roles;
-	
+
 	if (isset($wp_roles)) {
 		$disabled = of_get_option('admin_bar_disable');
-				
+
 		foreach ($wp_roles->role_names as $role_nice => $role_name) {
 			if ($role_name != "Pending") {
 				if (current_user_can($role_nice) && $disabled[$role_nice] == "1") {
@@ -449,7 +459,7 @@ function null_disable_admin_bar() {
 			}
 		}
 	}
-	
+
 	if (is_user_logged_in()) {
 		return true;
 	} else {
@@ -464,16 +474,16 @@ function null_disable_admin_bar() {
 
 if (!function_exists('null_logo')) {
 	function null_logo() {
-		
+
 		if ($logo_image = of_get_option('logo', '0')) {
 			$logo = '<a href="'. home_url() .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg logo"><img src="'. $logo_image .'" alt="'. get_bloginfo('name') .'" /></a>';
 		} else {
 			$logo = '<a href="'. home_url() .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg no-logo">'. get_bloginfo('name') .'</a>';
 		}
-	
+
 		$output = apply_filters('null_custom_logo', $logo);
 		echo $output;
-	
+
 	}
 }
 
@@ -484,8 +494,8 @@ if (!function_exists('null_logo')) {
 
 function null_navigation_menu() {
 
-	wp_nav_menu( 
-		array( 
+	wp_nav_menu(
+		array(
 			'menu' => 'navigation',
 			'theme_location' => 'navigation',
 			'container' => 'false',
@@ -495,8 +505,8 @@ function null_navigation_menu() {
 	);
 }
 
-function null_navigation_menu_fallback() { 
-	wp_page_menu('show_home='.__('Home','null')); 
+function null_navigation_menu_fallback() {
+	wp_page_menu('show_home='.__('Home','null'));
 }
 
 /***************************************************************
@@ -557,7 +567,7 @@ function null_filter_menu_class( $objects ) {
 add_filter('breadcrumb_trail_textdomain','null_breadcrumb_textdomain');
 
 function null_breadcrumb_textdomain($domain) {
-	
+
 	$domain = 'null';
 	return $domain;
 
@@ -571,30 +581,30 @@ function null_breadcrumb_textdomain($domain) {
 add_filter('post_class', 'null_post_class', 20);
 
 function null_post_class($classes){
-	
+
 	global $wp_query, $post;
-	
+
 	// apply only to archives not single posts
 	if (!is_single()) {
-	
+
 		// loop
 		$classes[] = 'loop';
-		
+
 		// first and last
-		if ($wp_query->current_post+1 == 1) $classes[] = 'loop-first'; 
+		if ($wp_query->current_post+1 == 1) $classes[] = 'loop-first';
 		if (($wp_query->current_post+1) == $wp_query->post_count) $classes[] = 'loop-last';
-	
+
 		// odd and even
-		if ($wp_query->current_post+1 & 1) { $classes[] = "loop-odd"; } else { $classes[] = "loop-even"; } 
-	
+		if ($wp_query->current_post+1 & 1) { $classes[] = "loop-odd"; } else { $classes[] = "loop-even"; }
+
 		// counter
 		$count = $wp_query->current_post+1;
 		$classes[] = 'loop-'.$count;
-	
+
 		// per row? a filterable row count based on post type (think toggle shop). Perhaps wrap in a <div class="row"></div>
-	
+
 	}
-	
+
 	// featured image
 	if (has_post_thumbnail($post->ID)) $classes[] = "featured-image";
 
@@ -608,22 +618,22 @@ function null_post_class($classes){
 
 if (!function_exists('null_time')) {
 	function null_time($format='') {
-		
+
 		global $post;
-		
+
 		// parse a custom stamp format e.g. F jS, Y &#8212; H:i
 		if ($format) {
 			the_time($format);
 			return;
 		}
-		
+
 		if ((get_option('date_format') != '') && (get_option('time_format') != '')) {
 			the_time(get_option('date_format'));
 			echo " - ";
 			the_time();
 			return;
 		}
-	
+
 		if ((get_option('date_format') != '') && (get_option('time_format') == '')) {
 			the_time(get_option('date_format'));
 			return;
@@ -638,18 +648,18 @@ if (!function_exists('null_time')) {
 
 if (!function_exists('null_get_time')) {
 	function null_get_time($format='') {
-		
+
 		global $post;
-		
+
 		// parse a custom stamp format e.g. F jS, Y &#8212; H:i
 		if ($format) {
 			return get_the_time($format);
 		}
-		
+
 		if ((get_option('date_format') != '') && (get_option('time_format') != '')) {
 			return get_the_time(get_option('date_format')) . " - " . get_the_time();
 		}
-	
+
 		if ((get_option('date_format') != '') && (get_option('time_format') == '')) {
 			return get_the_time(get_option('date_format'));
 		}
@@ -657,7 +667,7 @@ if (!function_exists('null_get_time')) {
 }
 
 /***************************************************************
-* Function null_excerpt_length 
+* Function null_excerpt_length
 * Set a custom excerpt length for posts without an excerpt
 ***************************************************************/
 
@@ -670,7 +680,7 @@ if (!function_exists('null_excerpt_length')) {
 }
 
 /***************************************************************
-* Function null_get_excerpt_more 
+* Function null_get_excerpt_more
 * Add the same to excerpt more link to custom excerpts, can be overwritten by child
 ***************************************************************/
 
@@ -689,7 +699,7 @@ if (!function_exists('null_get_excerpt_more')) {
 }
 
 /***************************************************************
-* Function null_excerpt_more 
+* Function null_excerpt_more
 * Set a custom excerpt more link, can be overwritten by child
 ***************************************************************/
 
@@ -703,7 +713,7 @@ if (!function_exists('null_excerpt_more')) {
 }
 
 /***************************************************************
-* Function null_remove_more_skip_link 
+* Function null_remove_more_skip_link
 * Removes url hash to avoid the jump link
 ***************************************************************/
 
@@ -721,7 +731,7 @@ function null_remove_more_skip_link($link) {
 }
 
 /***************************************************************
-* Function null_remove_more_skip_link 
+* Function null_remove_more_skip_link
 * Removes empty span for skip link above
 ***************************************************************/
 
@@ -748,11 +758,11 @@ function null_oembed_wmode( $embed ) {
 
 /***************************************************************
 * Functions null_embed_html, null_embed_tweaks, null_oembed_result
-* Wrap oembed in a container for responsive & use custom colours 
+* Wrap oembed in a container for responsive & use custom colours
 ***************************************************************/
 
 add_filter('embed_oembed_html', 'null_embed_html', 10, 4) ;
- 
+
 function null_embed_html($html, $url, $attr, $post_ID) {
 	$url = str_replace(array('www.', '.com'), '', parse_url($url, PHP_URL_HOST));
     $return = '<figure class="o-container '.null_slugify($url).'">'.$html.'</figure>';
@@ -789,7 +799,7 @@ function null_oembed_result($html, $url, $args) {
 ***************************************************************/
 
 function null_user_posts_count($userid, $post_type = 'post') {
-	global $wpdb; 
+	global $wpdb;
 	$where = get_posts_by_author_sql($post_type, TRUE, $userid);
   	$count = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->posts $where");
   	return $count;
@@ -821,37 +831,37 @@ if (!function_exists('null_estimated_reading_time')) {
 
 if (!function_exists('null_comment')) {
 	function null_comment( $comment, $args, $depth ) {
-		
+
 		global $post;
-		
+
 		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
 		case '' :
 		?>
 		<li>
 		<article <?php comment_class(null_date_classes( mysql2date( 'U', $comment->comment_date ), 'c-' )); ?> id="comment-<?php comment_ID(); ?>" role="article">
-			
+
 			<header class="vcard">
-				
+
 				<?php echo get_avatar( $comment, 70 ); ?>
-				
+
 				<ul class="comment-meta">
 					<li class="comment-author"><span class="fn n"><?php comment_author_link(); ?></span></li>
 					<li class="comment-date"><time class="published" datetime="<?php comment_date('Y-m-d\TH:i:s') ?>"><?php comment_date('F jS, Y') ?> at <?php comment_time('H:i') ?></time></li>
 			  	</ul>
-			  	
+
 			</header>
-			
+
 			<div class="comment-content">
 				<?php if ($comment->comment_approved == '0') : ?><p class="notice"><?php _e('Your comment is awaiting moderation.', 'null'); ?></p><?php endif; ?>
 				<?php comment_text() ?>
 			</div>
-	
+
 			<footer>
 				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 				<?php edit_comment_link(__('Moderate', 'null'),'<span class="entry-edit comment-edit">','</span>'); ?>
 			</footer>
-					
+
 		</article>
 		<?php
 		break;
@@ -866,7 +876,7 @@ if (!function_exists('null_comment')) {
 		<?php
 		break;
 		endswitch;
-		
+
 	}
 }
 
@@ -881,7 +891,7 @@ function null_date_classes( $t, $p = '' ) {
 	$c[] = $p . 'm' . gmdate( 'm', $t ); // Month
 	$c[] = $p . 'd' . gmdate( 'd', $t ); // Day
 	$c[] = $p . 'h' . gmdate( 'H', $t ); // Hour
-	
+
 	return $c;
 }
 
@@ -895,7 +905,7 @@ if (!function_exists('null_paginate')) {
 
 		global $wp_query, $wp_rewrite;
 		$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
-		
+
 		$pagination = array(
 			'base' => @add_query_arg('page','%#%'),
 			'format' => '',
@@ -908,14 +918,14 @@ if (!function_exists('null_paginate')) {
 			'next_text' => '&raquo;',
 			'prev_text' => '&laquo;'
 		);
-		
+
 		if ($wp_rewrite->using_permalinks()) {
 			$pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
 		}
-		
+
 		if (!empty($wp_query->query_vars['s']))
-			$pagination['add_args'] = array( 's' => get_query_var('s'));	
-		
+			$pagination['add_args'] = array( 's' => get_query_var('s'));
+
 		echo paginate_links($pagination);
 	}
 }
@@ -927,18 +937,18 @@ if (!function_exists('null_paginate')) {
 
 if (!function_exists('null_sidebar')) {
 	function null_sidebar() {
-		
+
 		global $post;
 		$post_type = get_post_type($post);
 
 		if (is_front_page()) {
-			dynamic_sidebar('homepage'); 
+			dynamic_sidebar('homepage');
 		} else if (is_page()) {
-			dynamic_sidebar('page'); 
+			dynamic_sidebar('page');
 		} else if (is_search()) {
-			dynamic_sidebar('search'); 
+			dynamic_sidebar('search');
 		} else if (((is_archive()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) && ($post_type == 'post')) { // essentially an is_blog() conditional
-			dynamic_sidebar('posts'); 
+			dynamic_sidebar('posts');
 		}
 	}
 }
@@ -955,30 +965,30 @@ function null_widget_classes($params) {
 	global $my_widget_num;
 
 	// get the id for the current sidebar we're processing
-	$this_id = $params[0]['id']; 
-	
+	$this_id = $params[0]['id'];
+
 	// get an array of ALL registered widgets
-	$arr_registered_widgets = wp_get_sidebars_widgets(); 
-		
+	$arr_registered_widgets = wp_get_sidebars_widgets();
+
 	if (!$my_widget_num) { // If the counter array doesn't exist, create it
 		$my_widget_num = array();
 	}
 
 	// check if the current sidebar has no widgets.. if not bail early
-	if (!isset($arr_registered_widgets[$this_id]) || !is_array($arr_registered_widgets[$this_id])) { 
+	if (!isset($arr_registered_widgets[$this_id]) || !is_array($arr_registered_widgets[$this_id])) {
 		return $params;
 	}
-	
+
 	// see if the counter array has an entry for this sidebar
-	if (isset($my_widget_num[$this_id])) { 
+	if (isset($my_widget_num[$this_id])) {
 		$my_widget_num[$this_id] ++;
 	} else {
 		$my_widget_num[$this_id] = 1;
 	}
 
 	// add a widget number class for additional styling options
-	$class = 'class="widget-' . $my_widget_num[$this_id] . ' '; 
-	
+	$class = 'class="widget-' . $my_widget_num[$this_id] . ' ';
+
 	// first and last classes
 	if ($my_widget_num[$this_id] == 1) {
 		$class .= 'widget-first ';
@@ -998,8 +1008,8 @@ function null_widget_classes($params) {
 
 function null_footer_menu() {
 
-	wp_nav_menu( 
-		array( 
+	wp_nav_menu(
+		array(
 			'menu' => 'footer',
 			'theme_location' => 'footer',
 			'container' => 'false',
@@ -1010,7 +1020,7 @@ function null_footer_menu() {
 }
 
 function null_footer_menu_fallback() {
-	wp_page_menu('show_home='.__('Home','null')); 
+	wp_page_menu('show_home='.__('Home','null'));
 }
 
 /***************************************************************
@@ -1024,7 +1034,7 @@ function null_clean_wp_page_menu($page_markup) {
 	$toreplace = array('<div class="menu">', '</div>');
 	$new_markup = str_replace($toreplace, '', $page_markup);
 	$new_markup = preg_replace('/^<ul>/i', '<ul class="menu">', $new_markup);
-	return $new_markup; 
+	return $new_markup;
 }
 
 
@@ -1048,11 +1058,11 @@ function null_mustache_tags($content) {
 add_action('wp_footer', 'null_wp_footer');
 
 function null_wp_footer() {
-	
+
 	// custom footer meta (from general settings)
 	if ($meta = of_get_option('custom_footer_meta')) {
 	?>
-	
+
 	<!-- custom footer meta -->
 	<?php echo $meta . "\n"; ?>
 	<?php
