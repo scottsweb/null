@@ -1,8 +1,8 @@
-		
+
 		<?php tha_footer_before(); ?>
 
 		<footer id="footer" role="contentinfo">
-			
+
 			<?php tha_footer_top(); ?>
 
 			<?php if (of_get_option('footer_sidebar', '1') && is_active_sidebar('footer')) { ?>
@@ -10,11 +10,11 @@
 				<?php dynamic_sidebar('footer'); ?>
 			</aside>
 			<?php } ?>
-			
+
 			<nav id="footer-navigation" role="navigation">
 				<?php null_footer_menu(); ?>
 			</nav>
-			
+
 			<div id="null-footer">
 				<?php
 				// wordpress credit
@@ -36,11 +36,11 @@
 				}
 				?>
 			</div>
-			
+
 			<?php tha_footer_bottom(); ?>
 
 		</footer><!-- #footer -->
-		
+
 		<?php tha_footer_after(); ?>
 
 	</div><!-- #wrapper .hfeed -->
