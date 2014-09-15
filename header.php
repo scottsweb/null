@@ -30,7 +30,7 @@
 	<div id="accessibility" class="visuallyhidden">
 		<a href="#content" class="skip-link" title="Skip to content"><?php _e('Skip to content &raquo;', 'null'); ?></a>
 	</div><!-- #accessibility -->
-	
+
 	<div id="wrapper" class="hfeed">
 
 		<?php tha_header_before(); ?>
@@ -38,7 +38,7 @@
 		<header id="header" role="banner">
 
 			<?php tha_header_top(); ?>
-			
+
 			<h1 id="site-title"><?php null_logo(); ?></h1>
 			<?php if (of_get_option('show_tagline', '1')) { ?><h2 id="site-description"><?php bloginfo('description') ?></h2><?php } ?>
 
@@ -49,21 +49,21 @@
 			<?php tha_header_bottom(); ?>
 
 		</header><!-- #header -->
-		
+
 		<?php tha_header_after(); ?>
-			
+
 		<?php if (of_get_option('breadcrumbs', '0')) { ?>
 		<nav id="breadcrumbs">
-			<?php 
+			<?php
 			breadcrumb_trail(array(
-				'separator' => '&rsaquo;', 
-				'before' => false, 
-				'after' => false, 
-				'front_page' => true, 
-				'show_home' => __('Home', 'null'), 
+				'separator' => '&rsaquo;',
+				'before' => false,
+				'after' => false,
+				'front_page' => true,
+				'show_home' => __('Home', 'null'),
 				'echo' => true
 				)
-			); 
-			?>		
+			);
+			?>
 		</nav><!-- #breadcrumbs -->
 		<?php } ?>
