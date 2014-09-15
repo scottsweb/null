@@ -7,7 +7,7 @@
 
 	<?php tha_entry_top(); ?>
 
-	<header>		
+	<header>
 		<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 		<?php if ( is_sticky() ) : ?>
 		<div class="entry-sticky"><?php _e( 'Featured', 'null' ); ?></div>
