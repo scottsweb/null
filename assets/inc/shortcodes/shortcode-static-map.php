@@ -1,6 +1,6 @@
 <?php
 /*
-Shortcode Name: Static Google Map 
+Shortcode Name: Static Google Map
 Shortcode Template: [smap center="loc" size="WxH" zoom="14"]
 */
 
@@ -21,10 +21,10 @@ function null_static_map_shortcode( $atts ) {
 		'sensor' => 'false',
 		'maptype' => 'roadmap',
 		'format' => 'png',
-		'markers' => 'London'   
+		'markers' => 'London'
 	), $atts );
 
-	//construct map url with img title and alt attributes using supplied content 
+	// construct map url with img title and alt attributes using supplied content
 	$map_url = '<img title="' . $args['center'] . '" alt="' . $args['center'] . '" src="http://maps.googleapis.com/maps/api/staticmap?';
 
 	foreach($args as $arg => $value){
@@ -35,4 +35,3 @@ function null_static_map_shortcode( $atts ) {
 
 	return $map_url;
 }
-?>

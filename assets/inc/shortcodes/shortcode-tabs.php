@@ -1,6 +1,6 @@
 <?php
 /*
-Shortcode Name: jQuery UI Tabs 
+Shortcode Name: jQuery UI Tabs
 Shortcode Template: [tabgroup][tab title="title"]content[/tab][/tabgroup]
 */
 
@@ -13,7 +13,7 @@ add_shortcode('tabgroup','null_tab_group' );
 add_shortcode('tab','null_tabs');
 
 function null_tab_group($atts, $content = null) {
-	
+
 	global $post;
 
 	$GLOBALS['tab_count'] = 0;
@@ -26,10 +26,10 @@ function null_tab_group($atts, $content = null) {
 			$tabs[] = '<li><a class="" href="#t-'.null_slugify($tab['title']).'">'.$tab['title'].'</a></li>';
 			$panes[] = '<div class="tpane" id="t-'.null_slugify($tab['title']).'">'.$tab['content'].'</div>';
 		}
-		
+
 		$return = "\n<div class=\"tabs-shortcode tabs-shortcode-".$post->ID."\">".'<ul class="tabs">'.implode( "\n", $tabs ).'</ul>'."\n".implode( "\n", $panes ).'</div>'."\n";
 	}
-	
+
 	return $return;
 }
 
@@ -39,6 +39,5 @@ function null_tabs($atts, $content = null) {
 	$x = $GLOBALS['tab_count'];
 	$GLOBALS['tabs'][$x] = array('title' => sprintf($title, $GLOBALS['tab_count']), 'content' =>  do_shortcode($content));
 	$GLOBALS['tab_count']++;
-	
+
 }
-?>

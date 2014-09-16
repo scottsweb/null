@@ -59,7 +59,6 @@ function null_register_portfolio() {
 	);
 
 	$args = array(
-		//'menu_position' 				=> 8,
 		'label' 						=> __('Portfolio','null'),
 		'labels' 						=> $labels,
 		'public' 						=> true,
@@ -78,5 +77,3 @@ function null_register_portfolio() {
 
 	register_post_type('portfolio', $args);
 }
-
-?>

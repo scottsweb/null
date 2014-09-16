@@ -1,6 +1,6 @@
 <?php
 /*
-Shortcode Name: Blog Info 
+Shortcode Name: Blog Info
 Shortcode Template: [bloginfo key="template_url"]
 */
 
@@ -15,7 +15,6 @@ function null_bloginfo($atts, $content = null) {
 
 	do_shortcode( $content );
 	extract(shortcode_atts(array('key' => ''), $atts));
-	return get_bloginfo($key);   
-	
+	return get_bloginfo($key);
+
 }
-?>

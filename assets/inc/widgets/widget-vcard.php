@@ -72,4 +72,3 @@ class null_vcard extends WP_Widget {
 	<?php
 	}
 }
-?>

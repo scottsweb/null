@@ -59,7 +59,6 @@ function null_register_staff() {
 	);
 
 	$args = array(
-		//'menu_position' 				=> 8,
 		'label' 						=> __('Staff','null'),
 		'labels' 						=> $labels,
 		'public' 						=> true,
@@ -78,5 +77,3 @@ function null_register_staff() {
 
 	register_post_type('staff', $args);
 }
-
-?>

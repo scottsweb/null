@@ -6,33 +6,33 @@ Widget Name: Flickr Widget
 register_widget('null_flickr_widget');
 
 class null_flickr_widget extends WP_Widget {
-	
+
 	function null_flickr_widget() {
 		$widget_ops = array('classname' => 'null-flickr-feed', 'description' => __('Displays your flickr photos', "null") );
-		$this->WP_Widget('pw_flickr_feed', __('Flickr Feed', "null"), $widget_ops);	
+		$this->WP_Widget('pw_flickr_feed', __('Flickr Feed', "null"), $widget_ops);
 	}
 
 	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
-		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);	
+		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
 		$UserID = $instance['UserID'];
 		$NumPics = $instance['NumPics'];
 		$link = $instance['link'];
-		
+
 		echo $before_widget;
 	    if(!empty($title)) { echo $before_title . $title . $after_title; };
-		
+
 		$feed = "http://www.flickr.com/badge_code_v2.gne?count=" . $NumPics . "&display=latest&size=s&layout=x&source=user&user=" .$UserID;
-		
+
 		echo '<div id="flickr_tab">';
 		echo '<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=' . $NumPics . '&display=latest&size=s&layout=x&source=user&user=' .$UserID .'"></script>';
 		echo '</div>';
 
 		?>
 	    <p class="clear flickr-link"><a href="http://flickr.com/photos/<?php echo $UserID; ?>"><?php echo $link; ?></a></p>
-	  	<?php  
-		
-		echo $after_widget; 
+	  	<?php
+
+		echo $after_widget;
 	}
 
 	function form($instance) {
@@ -59,4 +59,3 @@ class null_flickr_widget extends WP_Widget {
 		return $instance;
 	}
 }
-?>

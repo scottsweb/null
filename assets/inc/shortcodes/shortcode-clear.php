@@ -1,6 +1,6 @@
 <?php
 /*
-Shortcode Name: Clear & Line Break 
+Shortcode Name: Clear & Line Break
 Shortcode Template: [clear] or [clearline]
 */
 
@@ -15,12 +15,11 @@ add_shortcode('clearline', 'null_linebreak');
 function null_break( $atts, $content = null ) {
 
 	return '<div class="clear"></div>';
-	
+
 }
 
 function null_linebreak( $atts, $content = null ) {
 
 	return '<hr /><div class="clear"></div>';
-	
+
 }
-?>

@@ -6,7 +6,7 @@ Widget Name: Taxonomy Widget
 register_widget( 'null_taxonomy_widget' );
 
 class null_taxonomy_widget extends WP_Widget {
-	
+
 	static $listeners = array();
 	var $templates = array();
 	var $taxonomies = array();
@@ -110,7 +110,7 @@ EOF;
 			$listeners[] = 'document.getElementById( "' . $id . '" ).onchange = changeTaxonomy;';
 		}
 		$listeners = join( "\n", $listeners );
-		
+
 print <<<EOF
 <script type='text/javascript'>
 /* <![CDATA[ */
@@ -143,15 +143,15 @@ EOF;
 				case 'title' :
 					$clean[$key] = trim( strip_tags( $value ) );
 					break;
-				
+
 				/* Taxonomy */
-				case 'taxonomy' :	
+				case 'taxonomy' :
 					$clean[$key] = 'category';
 					if ( array_key_exists( $value, $this->taxonomies ) ) {
 						$clean[$key] = $value;
 					}
 					break;
-				
+
 				/* Template */
 				case 'template' :
 					$clean[$key] = 'ul';
@@ -159,7 +159,7 @@ EOF;
 						$clean[$key] = $value;
 					}
 					break;
-					
+
 				/* Boolean */
 				default :
 					$clean[$key] = (bool) $value;
@@ -246,7 +246,7 @@ EOF;
 				break;
 
 			case 'ol' :
-			case 'ul' : 
+			case 'ul' :
 			default :
 				$tag = 'ul';
 				if ( $template == 'ol' ) {
@@ -267,7 +267,7 @@ EOF;
 
 	function form( $instance ) {
 		extract( $this->clean_args( $instance ) );
-		
+
 		print "\n\t" . '<div class="null-admin">';
 
 		/*
@@ -355,4 +355,3 @@ class Mfields_Walker_Taxonomy_Dropdown extends Walker {
 		$output.= "\t" . '<option' . $selected . ' class="' . esc_attr( $class_name ) . '" value="' . esc_url( $url ) . '">' . esc_html( $text ) . '</option>' . "\n";
 	}
 }
-?>

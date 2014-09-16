@@ -1,6 +1,6 @@
 <?php
 /*
-Shortcode Name: Google Map 
+Shortcode Name: Google Map
 Shortcode Template: [map address="loc" width="px/%" height="px"]
 */
 
@@ -66,13 +66,13 @@ function null_map_shortcode( $atts ) {
 ***************************************************************/
 
 function null_map_get_coordinates( $address, $force_refresh = false ) {
-	
+
     $address_hash = md5( $address );
 
     $coordinates = get_transient( $address_hash );
 
     if ($force_refresh || $coordinates === false) {
-    	
+
     	$url 		= 'http://maps.google.com/maps/api/geocode/xml?address=' . urlencode($address) . '&sensor=false';
      	$response 	= wp_remote_get( $url );
 
@@ -126,4 +126,3 @@ add_action( 'wp_enqueue_scripts', 'null_map_load_scripts' );
 function null_map_load_scripts() {
 	wp_register_script( 'google-maps-api', 'http://maps.google.com/maps/api/js?sensor=false' );
 }
-?>

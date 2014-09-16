@@ -1,6 +1,6 @@
 <?php
 /*
-Shortcode Name: jQuery toggle 
+Shortcode Name: jQuery toggle
 Shortcode Template: [toggle title="Button text"]content[/toggle]
 */
 
@@ -12,11 +12,11 @@ Shortcode Template: [toggle title="Button text"]content[/toggle]
 add_shortcode('toggle', 'null_toggle');
 
 function null_toggle($atts, $content = null) {
-	
+
 	global $post;
-	
+
 	extract(shortcode_atts(array('title' => '', 'style' => 'list'), $atts));
-	
+
 	$output  = '';
 	$output .= '<div class="toggle-shortcode toggle-shortcode-'.$post->ID.' '.$style.'"><p class="trigger"><a href="#">' .$title. '</a></p>';
 	$output .= '<div class="toggle-container"><div class="block">';
@@ -25,4 +25,3 @@ function null_toggle($atts, $content = null) {
 
 	return $output;
 }
-?>
