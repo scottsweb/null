@@ -17,21 +17,21 @@ function null_cron_schedules( $param ) {
 
 /***************************************************************
 * Function null_cron_events
-* Register custom cron events 
+* Register custom cron events
 ***************************************************************/
 
 add_action('init', 'null_cron_events');
 
 function null_cron_events() {
-	
+
 	// schedule a daily transient clean up once a week
 	if (!wp_next_scheduled('null_cron_transient_cleanup')) {
 		wp_schedule_event( time(), 'daily', 'null_cron_transient_cleanup' );
 	}
-	
+
 	// use to debug the scheduled events above
-	//wp_clear_scheduled_hook('null_cron_transient_cleanup');
-	//do_action('null_cron_transient_cleanup');
+	// wp_clear_scheduled_hook('null_cron_transient_cleanup');
+	// do_action('null_cron_transient_cleanup');
 }
 
 /***************************************************************
@@ -56,4 +56,3 @@ function null_transient_cleanup() {
         delete_transient($key);
     }
 }
-?>
