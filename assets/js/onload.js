@@ -17,7 +17,7 @@ if (!window.getComputedStyle) {
 }
 
 jQuery(document).ready(function() {
-	
+
 	// add classes to form elements for consisten styles
 	jQuery("input[type='button']").addClass('button');
 	jQuery("input[type='checkbox']").addClass('checkbox');
@@ -29,7 +29,7 @@ jQuery(document).ready(function() {
 	jQuery("input[type='text']").addClass('text');
 	jQuery("input[type='email']").addClass('text');
 	jQuery("input[type='url']").addClass('text');
-	
+
 	// html5 forms
 	jQuery('#comment-form').html5form({
 		async 		: false,
@@ -37,42 +37,42 @@ jQuery(document).ready(function() {
 		allBrowsers : true,
 		messages	: 'en',
 		responseDiv : '#form-feedback'
-	});    
-	
+	});
+
 	jQuery('#searchform').html5form({
 		async 		: false,
 		labels		: 'hide',
 		allBrowsers : true
 	});
-	
-	// html5 404 search form 
+
+	// html5 404 search form
 	jQuery('#search-form-404').html5form({
 		async 		: false,
 		labels		: 'hide',
 		colorOff	:'#bbb',
 		allBrowsers : true
 	});
-	
+
 	// accordion shortcode
-	jQuery(".accordion-shortcode").accordion({ 
-		heightStyle: 'content', 
-		collapsible: true, 
+	jQuery(".accordion-shortcode").accordion({
+		heightStyle: 'content',
+		collapsible: true,
 		active: false,
 		header: '.aheader'
 	});
-	
+
 	// tabs shortcode
-	jQuery(".tabs-shortcode").tabs({ 
+	jQuery(".tabs-shortcode").tabs({
 		show: { effect: "fadeIn", duration: 400 },
 		hide: { effect: "fadeOut", duration: 400 },
-		activate: function(event, ui) { 
-			// window.location.hash = ui.newPanel.selector; 
+		activate: function(event, ui) {
+			// window.location.hash = ui.newPanel.selector;
 			// to avoid skipping http://stackoverflow.com/questions/8624531/preventing-scroll-when-using-uri-hash-to-identify-tab
 		}
 	});
-	
+
 	// toggle shortcode
-	jQuery(".toggle-container").hide(); 
+	jQuery(".toggle-container").hide();
 	jQuery("p.trigger").click(function(){
 		jQuery(this).toggleClass("active").next().slideToggle("normal");
 		return false;
@@ -80,28 +80,28 @@ jQuery(document).ready(function() {
 
 	// get viewport width
     var responsive_viewport = jQuery(window).width();
-    
+
     // if is below 481px
     if (responsive_viewport < 481) {
-    
-    }
-    
-    // if is larger than 481px
-    if (responsive_viewport > 481) {
-        
-    }
-    
-    // if is above or equal to 768px
-    if (responsive_viewport >= 768) {
-    
 
     }
-    
-    // large screen actions 
-    if (responsive_viewport > 1030) {
-        
+
+    // if is larger than 481px
+    if (responsive_viewport > 481) {
+
     }
-    
+
+    // if is above or equal to 768px
+    if (responsive_viewport >= 768) {
+
+
+    }
+
+    // large screen actions
+    if (responsive_viewport > 1030) {
+
+    }
+
     // responsive tables
 	var switched = false;
 	var updateTables = function() {
@@ -118,10 +118,10 @@ jQuery(document).ready(function() {
 			});
 		}
 	};
-   
+
 	jQuery(window).load(updateTables);
 	jQuery(window).bind("resize", updateTables);
-	
+
 	function splitTable(original) {
 		original.wrap("<div class='table-wrapper' />");
 		var copy = original.clone();
@@ -131,13 +131,13 @@ jQuery(document).ready(function() {
 		copy.wrap("<div class='pinned' />");
 		original.wrap("<div class='scrollable' />");
 	}
-	
+
 	function unsplitTable(original) {
 		original.closest(".table-wrapper").find(".pinned").remove();
 		original.unwrap();
 		original.unwrap();
 	}
-	
+
 });
 
 // wrapper function for logging with console & firebug
