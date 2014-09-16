@@ -13,7 +13,7 @@
 			<?php tha_content_bottom(); ?>
 
 		</div><!-- #content -->
-		
+
 		<?php tha_content_after(); ?>
 
 <?php get_sidebar() ?>
