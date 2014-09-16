@@ -64,27 +64,6 @@ function null_required_plugins() {
 		'required'  		=> false,
 	);
 
-	$plugins['bbpress'] = array(
-		'name'      		=> 'bbPress',
-		'slug'      		=> 'bbpress',
-		'required'  		=> false,
-	);
-
-	// live edit
-	$plugins['live-edit'] = array(
-		'name'      		=> 'Live Edit',
-		'slug'      		=> 'live-edit',
-		'required'  		=> false,
-		//'force_activation' 	=> true
-	);
-
-	// regenerate thumbnails
-	$plugins['posts-to-posts'] = array(
-		'name'      => 'Posts 2 Posts',
-		'slug'      => 'posts-to-posts',
-		'required'  => false,
-	);
-
 	// regenerate thumbnails
 	$plugins['regenerate-thumbnails'] = array(
 		'name'      => 'Regenerate Thumbnails',
@@ -162,33 +141,12 @@ function null_required_plugins() {
 		'required'  => false,
 	);
 
-	// simple history
-	$plugins['simple-history'] = array(
-		'name'      => 'Simple History',
-		'slug'      => 'simple-history',
-		'required'  => false,
-	);
-
 	// shortcode developer - to test
 	/*$plugins['shortcode-developer'] = array(
 		'name'      => 'Shortcode Developer',
 		'slug'      => 'shortcode-developer',
 		'required'  => false,
 	);*/
-
-	// relevanssi
-	$plugins['relevanssi'] = array(
-		'name'      => 'Relevanssi',
-		'slug'      => 'relevanssi',
-		'required'  => false,
-	);
-
-	// search everything
-	$plugins['search-everything'] = array(
-		'name'      => 'Search Everything',
-		'slug'      => 'search-everything',
-		'required'  => false,
-	);
 
 	// members
 	$plugins['members'] = array(
@@ -198,27 +156,6 @@ function null_required_plugins() {
 	);
 
 	// performance
-	// wp super cache
-	$plugins['wp-super-cache'] = array(
-		'name'      => 'WP Super Cache',
-		'slug'      => 'wp-super-cache',
-		'required'  => false,
-	);
-
-	// MinQueue
-	$plugins['minqueue'] = array(
-		'name'      => 'MinQueue',
-		'slug'      => 'minqueue',
-		'required'  => false,
-	);
-
-	// bj lazy load
-	$plugins['bj-lazy-load'] = array(
-		'name'      => 'BJ Lazy Load',
-		'slug'      => 'bj-lazy-load',
-		'required'  => false,
-	);
-
 	// wp html compression
 	$plugins['wp-html-compression'] = array(
 		'name'      => 'WP-HTML-Compression',
@@ -256,34 +193,6 @@ function null_required_plugins() {
 			'required'  => false,
 		);
 	}
-
-	// wordfence
-	$plugins['wordfence'] = array(
-		'name'      => 'Wordfence Security',
-		'slug'      => 'wordfence',
-		'required'  => false,
-	);
-
-	// repress
-	$plugins['repress'] = array(
-		'name'      => 'RePress',
-		'slug'      => 'repress',
-		'required'  => false,
-	);
-
-	// akismet
-	$plugins['akismet'] = array(
-		'name'      => 'Akismet',
-		'slug'      => 'akismet',
-		'required'  => false,
-	);
-
-	// cloudflare
-	$plugins['cloudflare'] = array(
-		'name'      => 'CloudFlare',
-		'slug'      => 'cloudflare',
-		'required'  => false,
-	);
 
 	// wordpress file monitor plus
 	$plugins['wordpress-file-monitor-plus'] = array(
@@ -1028,4 +937,3 @@ function null_all_settings_link() {
 		add_options_page(__('All Settings', 'null'), __('All Settings', 'null'), 'manage_options', 'options.php');
 	}
 }
-?>
