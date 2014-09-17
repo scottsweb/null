@@ -786,8 +786,8 @@ function optionsframework_options() {
 	);
 
 	$advanced_options['disable_acf'] = array(
-		"name" => __('Disable Advanced Custom Fields Lite', 'null'),
-		"desc" => __('Unload ACF Lite if your theme does not require custom fields.', 'null'),
+		"name" => __('Enable ACF Lite Mode', 'null'),
+		"desc" => __('Load Advanced Custom Fields in lite mode. Hides menu entry and disables the ability to manage fields.', 'null'),
 		"id" => "disable_acf",
 		"std" => "0",
 		"type" => "checkbox"

@@ -5,21 +5,13 @@ if (!function_exists('is_plugin_active')) { load_template(ABSPATH . 'wp-admin/in
 
 /***************************************************************
 * Plugin - Advanced Custom Fields (http://www.advancedcustomfields.com/)
-* Determine if to load the lite version of ACF (checks for active plugin and if lite is already bundled)
+* Determine if to load the lite version of ACF
 ***************************************************************/
 
-// when loaded uses an extra 1MB of memory - option to turn off for performance?
+if ( of_get_option('disable_acf', '0') ) {
 
-if (is_plugin_inactive('advanced-custom-fields/acf.php') && !function_exists('get_field') && !of_get_option('disable_acf', '0')) {
+	define('ACF_LITE', true);
 
-	// make sure we are not currently trying to activate ACF
-	if (is_admin()) {
-		if ($action != 'activate' && $plugin != 'advanced-custom-fields/acf.php') {
-			define('ACF_LITE' , true);
-		}
-	} else {
-		define('ACF_LITE', true);
-	}
 }
 
 /***************************************************************
@@ -37,7 +29,7 @@ if (is_plugin_active('minqueue/plugin.php')) {
 }
 
 /***************************************************************
-* Plugin - Google Analyticator 
+* Plugin - Google Analyticator
 * Remove framework options for Google Analytics tracking
 ***************************************************************/
 
@@ -68,7 +60,7 @@ if (is_plugin_active('google-analytics-for-wordpress/googleanalytics.php')) {
 	}
 }
 
-// wordpress seo 
+// wordpress seo
 // infinite scroll in jetpack - http://jetpack.me/support/infinite-scroll/ & https://github.com/Automattic/_s/blob/master/inc/jetpack.php
 // html compression - options to toggle (need filters)
 
