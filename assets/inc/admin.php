@@ -64,6 +64,13 @@ function null_required_plugins() {
 		'required'  		=> false,
 	);
 
+	// custom 404 page
+	$plugins['custom-404-error-page'] = array(
+		'name'      		=> 'Custom 404 Error Page',
+		'slug'      		=> 'custom-404-error-page',
+		'required'  		=> false,
+	);
+
 	// regenerate thumbnails
 	$plugins['regenerate-thumbnails'] = array(
 		'name'      => 'Regenerate Thumbnails',
@@ -82,13 +89,6 @@ function null_required_plugins() {
 	$plugins['google-analyticator'] = array(
 		'name'      => 'Google Analyticator',
 		'slug'      => 'google-analyticator',
-		'required'  => false,
-	);
-
-	// mobble
-	$plugins['mobble'] = array(
-		'name'      => 'mobble',
-		'slug'      => 'mobble',
 		'required'  => false,
 	);
 
@@ -215,20 +215,6 @@ function null_required_plugins() {
 		$plugins['developer'] = array(
 			'name'      => 'Developer',
 			'slug'      => 'developer',
-			'required'  => false,
-		);
-
-		// theme check
-		$plugins['theme-check'] = array(
-			'name'      => 'Theme-Check',
-			'slug'      => 'theme-check',
-			'required'  => false,
-		);
-
-		// VIP scanner
-		$plugins['vip-scanner'] = array(
-			'name'      => 'VIP Scanner',
-			'slug'      => 'vip-scanner',
 			'required'  => false,
 		);
 
