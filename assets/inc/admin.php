@@ -700,6 +700,18 @@ function null_remove_meta_boxes() {
 }
 
 /***************************************************************
+* Function null_filter_options_framework
+* Filter options framework settings
+***************************************************************/
+
+add_filter( 'optionsframework_menu', 'null_filter_options_framework' );
+
+function null_filter_options_framework( $menu ) {
+	$menu['menu_slug'] = 'null-options';
+	return $menu;
+};
+
+/***************************************************************
 * Function null_options_santiziation & null_sanitize_text_field & null_sanitize_textarea_field & null_sanitize_upload
 * Modify the options framework to validate differently
 ***************************************************************/
