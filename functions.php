@@ -288,7 +288,14 @@
 			'search-form',
 			'gallery',
 			'captions',
-			'widgets'
+			'widgets',
+		) );
+
+		// custom logo support
+		add_theme_support( 'custom-logo', array(
+			'height'      => 250,
+			'width'       => 250,
+			'flex-width'  => true,
 		) );
 
 		// add theme hook alliance support (https://github.com/zamoose/themehookalliance) - filterable by child theme
