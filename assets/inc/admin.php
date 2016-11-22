@@ -48,13 +48,14 @@ function null_required_plugins() {
 	*/
 
 	// required plugins
-	// none are currently required
-	/*$plugins['acf'] = array(
-		'name'      		=> 'Advanced Custom Fields',
-		'slug'      		=> 'advanced-custom-fields',
-		'required'  		=> true,
-		//'force_activation' 	=> true
-	);*/
+	// less
+	$plugins['less'] = array(
+		'name'      		=> 'WP LESS',
+		'slug'      		=> 'wp-less',
+		'source'    		=> 'https://github.com/roborourke/wp-less/archive/master.zip',
+		'required'			=> true,
+		'force_activation' 	=> true,
+	);
 
 	// optional plugins - from my favourites http://profiles.wordpress.org/scottsweb
 	// advanced custom fields
