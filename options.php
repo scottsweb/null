@@ -191,13 +191,6 @@ function optionsframework_options() {
 		"type" => "upload"
 	);
 
-	$design_options['favicon'] = array(
-		"name" => __('Favicon', 'null'),
-		"desc" => __('A 32px by 32px .ico file.', 'null'),
-		"id" => "favicon",
-		"type" => "upload"
-	);
-
 	$design_options['touchicon'] = array(
 		"name" => __('Touch Icon', 'null'),
 		"desc" => __('A 144px by 144px .png file for iOS and Android.', 'null'),

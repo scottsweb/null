@@ -205,7 +205,6 @@ function null_wp_head() {
 	?>
 
 	<!-- icons -->
-	<link rel="shortcut icon" type="image/x-icon" href="<?php if ($favicon = of_get_option('favicon')) { echo $favicon; } else { echo get_template_directory_uri() . '/assets/images/favicon.ico'; } ?>" />
 	<link rel="apple-touch-icon-precomposed" href="<?php if ($touchicon = of_get_option('touchicon')) { echo $touchicon; } else { echo get_template_directory_uri() . '/assets/images/apple-touch-icon-precomposed.png'; } ?>" />
 	<?php
 
