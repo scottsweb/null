@@ -349,6 +349,18 @@ function null_disable_search( $query, $error = true ) {
 }
 
 /***************************************************************
+* Function null_dequeue_jquery_migrate
+* Remove jQuery migrate
+***************************************************************/
+
+add_filter( 'wp_default_scripts', 'null_dequeue_jquery_migrate' );
+
+function null_dequeue_jquery_migrate( &$scripts){
+	$scripts->remove( 'jquery');
+	$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+}
+
+/***************************************************************
 * Function null_body_class
 * Improves the body_class function with some extras
 ***************************************************************/
