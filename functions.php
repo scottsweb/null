@@ -281,13 +281,17 @@
 		// setup thumbnail support
 		add_theme_support( 'post-thumbnails' );
 
+		// this theme uses WordPress to supply the title tag
+		add_theme_support( 'title-tag' );
+
 		// html5 all the things
 		add_theme_support( 'html5', array(
 			'comment-list',
 			'comment-form',
 			'search-form',
 			'gallery',
-			'captions'
+			'captions',
+			'widgets'
 		) );
 
 		// add theme hook alliance support (https://github.com/zamoose/themehookalliance) - filterable by child theme

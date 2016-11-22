@@ -23,7 +23,7 @@
 
 </head>
 
-<body <?php body_class()?>>
+<body <?php body_class(); ?>>
 
 	<?php tha_body_top(); ?>
 
