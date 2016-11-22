@@ -233,8 +233,7 @@ function null_required_plugins() {
 	$settings = array(
 		'domain'            => $theme_text_domain,
 		'default_path'      => '',                           	// default absolute path to pre-packaged plugins
-		'parent_menu_slug'  => 'plugins.php',         			// default parent menu slug
-		'parent_url_slug'   => 'plugins.php',         			// default parent URL slug
+		'parent_slug'  		=> 'plugins.php',         			// default parent menu slug
 		'menu'              => 'install-compatible-plugins',   	// menu slug
 		'has_notices'       => true,                         	// show admin notices or not
 		'is_automatic'      => false,            				// automatically activate plugins after installation or not
@@ -833,7 +832,7 @@ $null_user_caps = new null_user_caps();
 class null_user_caps {
 
 	// Add our filters
-	function null_user_caps(){
+	function __construct() {
 		add_filter( 'editable_roles', array(&$this, 'editable_roles'));
 		add_filter( 'map_meta_cap', array(&$this, 'map_meta_cap'),10,4);
 	}

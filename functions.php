@@ -798,7 +798,7 @@
 
 	function optionsframework_option_name() {
 		$optionsframework_settings = get_option('optionsframework');
-		$optionsframework_settings['id'] = NULL_OPTION_NAME;
+		$optionsframework_settings['id'] = 'NULL_OPTION_NAME';
 		update_option('optionsframework', $optionsframework_settings);
 	}
 
