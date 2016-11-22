@@ -10,9 +10,6 @@
 <!-- utf-8 -->
 <meta charset="<?php bloginfo('charset') ?>" />
 
-<!-- title -->
-<title><?php if (function_exists('wpseo_frontend_init') || class_exists('All_in_One_SEO_Pack')) { wp_title('|'); } else { null_title(); } ?></title>
-
 <!-- set mobile viewport // maximum-scale=1.0 for mobile apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
