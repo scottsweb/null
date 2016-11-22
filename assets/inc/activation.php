@@ -96,7 +96,7 @@ function null_activate() {
 	// don't organize uploads by year and month
 	update_option('uploads_use_yearmonth_folders', 0);
 	//update_option('upload_path', 'assets');
-	update_option('upload_url_path', home_url('/uploads'));
+	update_option('upload_url_path', esc_url( home_url('/uploads') ));
 
 	// automatically create menus and set their locations
 	// add all pages to the Primary Navigation

@@ -20,7 +20,7 @@ class null_post_type_search_widget extends WP_Widget {
 
 		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; };
 		?>
-		<form role="search" method="get" id="post_type_search_form" action="<?php echo home_url( '/' ); ?>">
+		<form role="search" method="get" id="post_type_search_form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<input type="text" value="<?php the_search_query() ?>" name="s" id="s" />
 			<input type="submit" id="post_type_search_submit" value="Search" class="button" />
 			<input type="hidden" value="<?php print $post_type; ?>" name="post_type" id="post_type_custom_type" />

@@ -21,7 +21,7 @@ class null_vcard extends WP_Widget {
 		}
 		?>
 		<div class="vcard">
-			<a class="fn org url" href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a><br/>
+			<a class="fn org url" href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo('name'); ?></a><br/>
 			<span class="adr">
 			<span class="street-address"><?php echo $street_address; ?></span><br/>
 			<span class="locality"><?php echo $locality; ?></span>,

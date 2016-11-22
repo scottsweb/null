@@ -257,7 +257,7 @@ function null_wp_head() {
 	<!-- allow pinned app in ie9+ / windows 8 -->
 	<meta name="application-name" content="<?php bloginfo('name'); ?>" />
 	<meta name="msapplication-tooltip" content="<?php bloginfo('description'); ?>"/>
-	<meta name="msapplication-starturl" content="<?php echo home_url(); ?>"/>
+	<meta name="msapplication-starturl" content="<?php echo esc_url( home_url() ); ?>"/>
 	<?php if ($touchicon = of_get_option('touchicon')) { ?><meta name="msapplication-TileImage" content="<?php echo $touchicon; ?>"><?php echo "\n"; } ?>
 	<?php if ($ie9colour = of_get_option('ie9_colour')) { ?><meta name="msapplication-TileColor" content="<?php echo $ie9colour; ?>"><?php echo "\n"; } ?>
 	<?php if ($ie9colour = of_get_option('ie9_colour')) { ?><meta name="msapplication-navbutton-color" content="<?php echo $ie9colour; ?>"><?php echo "\n"; }  ?>
@@ -322,7 +322,7 @@ if (of_get_option('disable_rss', '0')) {
 }
 
 function null_disable_rss_feed() {
-	wp_die( __('RSS is currently disabled. Please visit our <a href="'. home_url() .'">homepage</a>!', 'null'));
+	wp_die( __('RSS is currently disabled. Please visit our <a href="'. esc_url( home_url() ) .'">homepage</a>!', 'null'));
 }
 
 /***************************************************************
@@ -487,9 +487,9 @@ if (!function_exists('null_logo')) {
 	function null_logo() {
 
 		if ($logo_image = of_get_option('logo', '0')) {
-			$logo = '<a href="'. home_url() .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg logo"><img src="'. $logo_image .'" alt="'. get_bloginfo('name') .'" /></a>';
+			$logo = '<a href="'. esc_url( home_url() ) .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg logo"><img src="'. $logo_image .'" alt="'. get_bloginfo('name') .'" /></a>';
 		} else {
-			$logo = '<a href="'. home_url() .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg no-logo">'. get_bloginfo('name') .'</a>';
+			$logo = '<a href="'. esc_url( home_url() ) .'" title="' . esc_html( get_bloginfo('name'), 1 ) .'" rel="home" class="replace png-bg no-logo">'. get_bloginfo('name') .'</a>';
 		}
 
 		$output = apply_filters('null_custom_logo', $logo);

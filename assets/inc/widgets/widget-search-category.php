@@ -20,7 +20,7 @@ class null_category_search_widget extends WP_Widget {
 
 		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; };
 		?>
-		<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+		<form role="search" method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<input type="text" value="<?php the_search_query() ?>" name="s" id="s" />
 			<input type="submit" id="searchsubmit" value="<?php _e('Search', 'null'); ?>" />
 			<?php if ($category != "-1") { ?>
