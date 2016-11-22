@@ -123,9 +123,6 @@
 		load_template(get_template_directory() . '/options.php'); // temporary fix for options framework & theme customiser http://wptheming.com/2012/07/options-framework-theme-customizer/
 	}
 
-	// set PHP timezone from WordPress settings
-	if ($timezone = get_option('timezone_string')) date_default_timezone_set($timezone);
-
 	// force WordPress rewrite if option set
 	if (of_get_option('force_rewrite', '0')) add_filter('got_rewrite', '__return_true');
 
