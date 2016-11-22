@@ -16,7 +16,7 @@ exit;
 
 	<?php tha_content_before(); ?>
 
-	<div id="content" role="main">
+	<main id="content" role="main">
 
 		<?php tha_content_top(); ?>
 
@@ -164,7 +164,7 @@ exit;
 
 		<?php tha_content_bottom(); ?>
 
-	</div><!-- #content -->
+	</main><!-- #content -->
 
 	<?php tha_content_after(); ?>
 
