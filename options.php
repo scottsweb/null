@@ -184,20 +184,6 @@ function optionsframework_options() {
 	// logo font ?
 	// strapline font ?
 
-	$design_options['logo'] = array(
-		"name" => __('Logo', 'null'),
-		"desc" => __('A logo for the theme header.', 'null'),
-		"id" => "logo",
-		"type" => "upload"
-	);
-
-	$design_options['touchicon'] = array(
-		"name" => __('Touch Icon', 'null'),
-		"desc" => __('A 144px by 144px .png file for iOS and Android.', 'null'),
-		"id" => "touchicon",
-		"type" => "upload"
-	);
-
 	$design_options['gravatar'] = array(
 		"name" => __('Gravatar', 'null'),
 		"desc" => __('Square <a href="http://en.gravatar.com/">gravatar fallback</a>. Max of 512px by 512px.', 'null'),

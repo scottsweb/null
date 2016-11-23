@@ -201,13 +201,6 @@ function null_wp_head() {
 	<?php
 	}
 
-	// icons
-	?>
-
-	<!-- icons -->
-	<link rel="apple-touch-icon-precomposed" href="<?php if ($touchicon = of_get_option('touchicon')) { echo $touchicon; } else { echo get_template_directory_uri() . '/assets/images/apple-touch-icon-precomposed.png'; } ?>" />
-	<?php
-
 	// pollyfills
 	$polyfills = of_get_option('polyfills', array(
 		'ios' 			=> "1",
