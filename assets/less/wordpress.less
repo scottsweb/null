@@ -1,4 +1,4 @@
-/* 
+/*
 
 wordpress.less
 contents:
@@ -6,44 +6,44 @@ contents:
 	1. WordPress - Handy re-usable Wordpress specific classes
 	2. Shortcodes & Widgets
 	3. oEmbed
-	
+
 */
 
 
 /* 1. WordPress
 --------------------------------------------------------------------------------------- */
 
-.entry-content img 
+.entry-content img
 	{
 	margin: @baseline 0 @baseline 0;
 	}
-	
+
 .alignleft,
-img.alignleft 
+img.alignleft
 	{
 	display: inline;
 	float: left;
 	margin-right: @baseline;
 	}
-	
+
 .alignright,
-img.alignright 
+img.alignright
 	{
 	display: inline;
 	float: right;
   	margin-left: @baseline;
 	}
-	
+
 .aligncenter,
-img.aligncenter 
+img.aligncenter
 	{
 	clear: both;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	}
-	
-.wp-caption 
+
+.wp-caption
 	{
 	.font-size(15);
 	padding: 5px 0;
@@ -51,36 +51,36 @@ img.aligncenter
 	margin-bottom: @baseline;
 	background: @lightergrey;
 	}
-	
-.wp-caption img 
+
+.wp-caption img
 	{
 	border: 0 none;
 	margin: 0;
 	padding: 0;
 	}
-	
-.wp-caption p.wp-caption-text 
+
+.wp-caption p.wp-caption-text
 	{
 	margin: 0;
 	}
-	
-.wp-smiley 
-	{ 
+
+.wp-smiley
+	{
 	max-height: 1em;
 	margin:0 !important;
 	}
-	
-.gallery dl 
+
+.gallery dl
 	{
 	margin: 0;
 	}
-	
-.gallery-caption 
+
+.gallery-caption
 	{
 	margin:-@baseline 0 0 0;
 	}
 
-blockquote.left 
+blockquote.left
 	{
 	float: left;
 	margin-left: 0;
@@ -89,7 +89,7 @@ blockquote.left
 	width: 33%;
 	}
 
-blockquote.right 
+blockquote.right
 	{
 	float: right;
 	margin-left: 20px;
@@ -98,33 +98,45 @@ blockquote.right
 	width: 33%;
 	}
 
-// responsive 
+.screen-reader-text
+	{
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
+	position: absolute !important;
+	white-space: nowrap;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	}
+
+
+// responsive
 
 .entry-content img,
 .comment-content img,
-.widget img 
+.widget img
 	{
     max-width: 97.5%; /* Fluid images for posts, comments, and widgets */
 	}
 
 img[class*="align"],
-img[class*="wp-image-"] 
+img[class*="wp-image-"]
 	{
     height: auto; /* Make sure images with WordPress-added height and width >attributes are scaled correctly */
 	}
 
-img.size-full 
+img.size-full
 	{
     max-width: 97.5%;
     width: auto; /* Prevent stretching of full-size images with height and >>width attributes in IE8 */
 	}
 
-.wp-caption 
-	{ 
+.wp-caption
+	{
 	max-width: 100%;
 	}
-	
-// admin bar settings 
+
+// admin bar settings
 
 .admin-bar.admin-bar-absolute #wpadminbar
 	{
@@ -188,7 +200,7 @@ img.qrcode-shortcode
 	{
 	.clearfix();
 	margin-bottom: @baseline;
-	
+
 	.aheader
 		{
 		display: block;
@@ -210,14 +222,14 @@ img.qrcode-shortcode
 		background: @primarycol;
 		color: @white;
 		}
-	
+
 	.apane
 		{
 		padding: @baseline/2;
 		background: @lightergrey;
 		margin-bottom: 1px;
 		}
-	
+
 	p:last-child
 		{
 		margin-bottom: 0;
@@ -236,7 +248,7 @@ img.qrcode-shortcode
 		.list-reset;
 		border-bottom: 1px solid @primarycol;
 		}
-	
+
 	.tabs li
 		{
 		font-weight: bold;
@@ -244,14 +256,14 @@ img.qrcode-shortcode
 		display: block;
 		margin-right: 1px;
 		}
-	
+
 	.ui-tabs-nav .ui-tabs-active a,
 	.ui-tabs-nav .ui-tabs-active a:hover
 		{
 		background: @primarycol;
 		color: @white;
 		}
-		
+
 	.ui-tabs-nav a
 		{
 		text-decoration: none !important;
@@ -264,12 +276,12 @@ img.qrcode-shortcode
 			color: @white;
 			}
 		}
-			
+
 	.ui-tabs-hide
-		{ 
-		display: none !important; 
+		{
+		display: none !important;
 		}
-	
+
 	.tpane
 		{
 		padding: @baseline/2;
@@ -287,19 +299,19 @@ img.qrcode-shortcode
 .toggle-shortcode
 	{
 	margin-bottom: @baseline;
-	
-	.toggle-container 
+
+	.toggle-container
 		{
 		}
-		
-	p.trigger 
+
+	p.trigger
 		{
 		margin: 0;
 		}
 
-	p.trigger a 
+	p.trigger a
 		{
-		display: block;	
+		display: block;
 		padding:  @baseline/4 @baseline/2;
 		background: @lightergrey;
 		cursor: pointer;
@@ -311,19 +323,19 @@ img.qrcode-shortcode
 			color: @white;
 			}
 		}
-	
+
 	p.trigger a:hover,
-	p.trigger.active a:hover 
+	p.trigger.active a:hover
 		{
 		}
-	
-	p.trigger.active a 
+
+	p.trigger.active a
 		{
 		background: @primarycol;
 		color: @white;
 		}
 	}
-	
+
 // twitter widget
 
 .null-twitter-feed
@@ -339,12 +351,12 @@ img.qrcode-shortcode
 .null-flickr-feed
 	{
 	.clearfix;
-	
+
 	.flickr_badge_image
 		{
 		float: left;
 		}
-		
+
 	.flickr_badge_image img
 		{
 		margin: 2px;
@@ -352,12 +364,12 @@ img.qrcode-shortcode
 		padding: 2px;
 		border: 1px solid @lightergrey;
 		}
-	
+
 	.flickr_badge_image img:hover
 		{
 		border-color: @lightgrey;
 		}
-		
+
 	.flickr-link
 		{
 		clear: both;
@@ -367,7 +379,7 @@ img.qrcode-shortcode
 /* 3. oEmbed
 --------------------------------------------------------------------------------------- */
 
-.o-container 
+.o-container
 	{
 
 	&.youtube,
@@ -383,10 +395,10 @@ img.qrcode-shortcode
 
 	&.soundcloud
 		{
-		position: relative;	    
+		position: relative;
 	    height: 165px;
 		overflow: hidden;
-		background-size: 100px 15px;		
+		background-size: 100px 15px;
 		}
 
 	&.youtube,
