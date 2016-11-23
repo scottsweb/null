@@ -68,7 +68,7 @@ function optionsframework_options() {
 
 	$general_options['footer_sidebar'] = array(
 		"name" => __('Footer Sidebar', 'null'),
-		"desc" => __('Toggle to output the <a href="' . admin_url('widgets.php') . '">footer sidebar</a> in your site footer.', 'null'),
+		"desc" => sprintf( __('Toggle to output the <a href="$s">footer sidebar</a> in your site footer.', 'null'), admin_url('widgets.php') ),
 		"id" => "footer_sidebar",
 		"std" => "1",
 		"type" => "checkbox"
@@ -739,7 +739,7 @@ function optionsframework_options() {
 	if (get_option('default_comment_status') == 'closed' && get_option('default_ping_status') == 'closed') {
 		$advanced_options['disable_comments'] = array(
 			"name" => __('Disable Comments', 'null'),
-			"desc" => __('This will remove meta boxes, comment related table columns, the comments admin menu and the <a href="'.admin_url('options-discussion.php').'">discussion settings menu</a>.', 'null'),
+			"desc" => sprintf( __('This will remove meta boxes, comment related table columns, the comments admin menu and the <a href="$s">discussion settings menu</a>.', 'null'), admin_url('options-discussion.php') ),
 			"id" => "disable_comments",
 			"std" => "0",
 			"type" => "checkbox"

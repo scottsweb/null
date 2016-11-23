@@ -227,11 +227,9 @@ function null_required_plugins() {
 		);
 	}
 
-	$theme_text_domain = 'null';
-
 	// array of configuration settings
 	$settings = array(
-		'domain'            => $theme_text_domain,
+		'domain'            => 'null',
 		'default_path'      => '',                           	// default absolute path to pre-packaged plugins
 		'parent_slug'  		=> 'plugins.php',         			// default parent menu slug
 		'menu'              => 'install-compatible-plugins',   	// menu slug
@@ -239,23 +237,23 @@ function null_required_plugins() {
 		'is_automatic'      => false,            				// automatically activate plugins after installation or not
 		'message'           => '',               				// message to output right before the plugins table
 		'strings'           => array(
-			'page_title'                                => __('Compatible &amp; Recommended Plugins', $theme_text_domain),
-			'menu_title'                                => __('Compatible Plugins', $theme_text_domain),
-			'installing'                                => __('Installing Plugin: %s', $theme_text_domain), // %1$s = plugin name
-			'oops'                                      => __('Something went wrong with the plugin API.', $theme_text_domain),
-			'notice_can_install_required'               => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.'), // %1$s = plugin name(s)
-			'notice_can_install_recommended'            => _n_noop('This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.'), // %1$s = plugin name(s)
-			'notice_cannot_install'                     => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
-			'notice_can_activate_required'              => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
-			'notice_can_activate_recommended'           => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_activate'                    => _n_noop('Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), // %1$s = plugin name(s)
-			'notice_ask_to_update'                      => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_update'                      => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s)
-			'install_link'                              => _n_noop('Begin installing plugin', 'Begin installing plugins' ),
-			'activate_link'                             => _n_noop('Activate installed plugin', 'Activate installed plugins' ),
-			'return'                                    => __('Return to Theme Plugins Installer', $theme_text_domain ),
-			'plugin_activated'                          => __('Plugin activated successfully.', $theme_text_domain ),
-			'complete'                                  => __('All plugins installed and activated successfully. %s', $theme_text_domain ) // %1$s = dashboard link
+			'page_title'                                => __('Compatible &amp; Recommended Plugins', 'null'),
+			'menu_title'                                => __('Compatible Plugins', 'null'),
+			'installing'                                => __('Installing Plugin: %s', 'null'), // %1$s = plugin name
+			'oops'                                      => __('Something went wrong with the plugin API.', 'null'),
+			'notice_can_install_required'               => _n_noop('This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'null'), // %1$s = plugin name(s)
+			'notice_can_install_recommended'            => _n_noop('This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'null'), // %1$s = plugin name(s)
+			'notice_cannot_install'                     => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'null' ), // %1$s = plugin name(s)
+			'notice_can_activate_required'              => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'null' ), // %1$s = plugin name(s)
+			'notice_can_activate_recommended'           => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'null' ), // %1$s = plugin name(s)
+			'notice_cannot_activate'                    => _n_noop('Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'null' ), // %1$s = plugin name(s)
+			'notice_ask_to_update'                      => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'null' ), // %1$s = plugin name(s)
+			'notice_cannot_update'                      => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'null' ), // %1$s = plugin name(s)
+			'install_link'                              => _n_noop('Begin installing plugin', 'Begin installing plugins', 'null' ),
+			'activate_link'                             => _n_noop('Activate installed plugin', 'Activate installed plugins', 'null' ),
+			'return'                                    => __('Return to Theme Plugins Installer', 'null' ),
+			'plugin_activated'                          => __('Plugin activated successfully.', 'null' ),
+			'complete'                                  => __('All plugins installed and activated successfully. %s', 'null' ) // %1$s = dashboard link
 		)
 	);
 
@@ -639,7 +637,7 @@ function null_editor_style($css) {
 	// cache bust
 	foreach ( $mce_css as & $css ) {
 		if ( false === strpos( $css, 'ver=' ) ) {
-			$css = add_query_arg( 'ver', CFTP_CACHE_BUST, $css );
+			$css = add_query_arg( 'ver', NULL_CACHE_BUST, $css );
 		}
 	}
 
