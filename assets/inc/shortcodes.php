@@ -11,9 +11,9 @@ function null_extension_shortcodes() {
 
 	$shortcodes = null_get_extensions("shortcodes");
 	$shortcode_settings = of_get_option('additional_shortcodes', array());
-	
+
 	foreach($shortcodes as $shortcode) {
-		if (isset($shortcode_settings[$shortcode['nicename']]))	{	
+		if (isset($shortcode_settings[$shortcode['nicename']]))	{
 			if (file_exists($shortcode['path']) && ($shortcode_settings[$shortcode['nicename']])) {
 				load_template($shortcode['path']);
 			}
@@ -26,11 +26,11 @@ function null_extension_shortcodes() {
 * Add a custom button to TinyMCE to simplify the use of shortcodes
 ***************************************************************/
 
-add_action('admin_init', 'null_shortcode_button_init');
+// add_action('admin_init', 'null_shortcode_button_init');
 
 function null_shortcode_button_init() {
 
-  	// abort early if the user will never see TinyMCE
+	// abort early if the user will never see TinyMCE
 	if (!get_user_option('rich_editing')) return;
 
 	// regiser our tinymce plugin
@@ -65,12 +65,12 @@ function null_add_tinymce_button( $buttons ) {
 * Add the button dialog to the footer of the page - might be a better place for it?
 ***************************************************************/
 
-add_action('admin_footer', 'null_shortcode_button_dialog'); 
+add_action('admin_footer', 'null_shortcode_button_dialog');
 
 function null_shortcode_button_dialog() {
 
 	global $pagenow;
-	
+
 	if ($pagenow != 'post.php') return;
 
 	$shortcodes = null_get_extensions('shortcodes');
@@ -83,25 +83,25 @@ function null_shortcode_button_dialog() {
 ?>
 <script type="text/javascript">
 jQuery(function($) {
-    $('#null-shortcodes-dialog').dialog({                   
-        'dialogClass'   : 'wp-dialog null-dialog',           
-        'modal'         : true,
-        'autoOpen'      : false, 
-        'closeOnEscape' : true, 
-        'width'			: 340,    
-        'buttons'       : { 
+	$('#null-shortcodes-dialog').dialog({
+		'dialogClass'   : 'wp-dialog null-dialog',
+		'modal'         : true,
+		'autoOpen'      : false,
+		'closeOnEscape' : true,
+		'width'			: 340,
+		'buttons'       : {
 			Cancel: function() {
-            	$(this).dialog("close");
-            },
-            Insert: function() {
-            	$(this).dialog("close");
-            	if (tinyMCE && tinyMCE.activeEditor) {
+				$(this).dialog("close");
+			},
+			Insert: function() {
+				$(this).dialog("close");
+				if (tinyMCE && tinyMCE.activeEditor) {
 					tinyMCE.activeEditor.selection.setContent($('#null-shortcode').val());
 				}
-            }
-        }
-    });
-});    
+			}
+		}
+	});
+});
 </script>
 <div class="hidden">
 	<div id="null-shortcodes-dialog">
