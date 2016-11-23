@@ -820,15 +820,6 @@ function optionsframework_options() {
 		"type" => "checkbox"
 	);
 
-	// if this is unset from a child theme then the framework will assume that the lessphp is not in use and you will need to use your own LESS compiler
-	$advanced_options['disable_less'] = array(
-		"name" => __('Disable PHP LESS compiler', 'null'),
-		"desc" => __('Disable the built in PHP LESS compiler. Modifications to your less will require re-compiling by a <a href="http://incident57.com/less/">third party application</a>.', 'null'),
-		"id" => "disable_less",
-		"std" => "0",
-		"type" => "checkbox"
-	);
-
 	// only provide cleanup option if not child theme or multisite
 	if (!is_multisite() && !is_child_theme()) {
 		$advanced_options['cleanup'] = array(

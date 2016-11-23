@@ -136,7 +136,7 @@
 	define('NULL_OPTION_NAME', $themename);
 
 	// cache bust based on options settings and file gen time of main css - filterable for child themes to add different css filemtime
-	$type = (of_get_option('disable_less', '1') ? 'css' : 'less');
+	$type = (!class_exists('wp_less') ? 'css' : 'less');
 	$cachefiles = intval(filemtime(get_template_directory() . '/assets/'.$type.'/screen.'.$type));
 	$cacheoptions = md5(serialize(get_option(NULL_OPTION_NAME, array('0' => '1'))));
 	$cacheoptions = intval($cacheoptions);
@@ -324,27 +324,27 @@
 	* Parse theme options into less for use in stylesheets
 	***************************************************************/
 
-	if (!of_get_option('disable_less', '0')) {
+	if (class_exists('wp_less')) {
 		add_filter('less_vars', 'null_less_vars', 10, 2 );
 	}
 
 	function null_less_vars($vars, $handle) {
 
-	   	global $pagenow, $content_width;
+		global $pagenow, $content_width;
 
-	    // $handle is a reference to the handle used with wp_enqueue_style()
-	    $vars['templateuri'] = '~"' . get_template_directory_uri() . '"';
-	    $vars['stylesheeturi'] = '~"' . get_stylesheet_directory_uri() . '"';
-	    $vars['primarycol'] = of_get_option('primary_colour', '#141414');
+		// $handle is a reference to the handle used with wp_enqueue_style()
+		$vars['templateuri'] = '~"' . get_template_directory_uri() . '"';
+		$vars['stylesheeturi'] = '~"' . get_stylesheet_directory_uri() . '"';
+		$vars['primarycol'] = of_get_option('primary_colour', '#141414');
 		$vars['bodycol'] = of_get_option('body_colour', '#141414');
 		$vars['linkcol'] = of_get_option('link_colour', '#0000EE');
 		$vars['linkhovercol'] = of_get_option('link_hover_colour', '#551A8B');
 		$vars['backgroundimage'] = of_get_option('background_image', get_template_directory_uri().'/assets/images/placeholder.png');
 		$vars['headingfont']  = of_get_option('heading_font', 'Cabin');
-	   	$vars['bodyfont'] = of_get_option('body_font', 'a1');
-	   	$vars['cachebust'] = NULL_CACHE_BUST;
-	   	$vars['contentwidth'] = $content_width;
-	    return $vars;
+		$vars['bodyfont'] = of_get_option('body_font', 'a1');
+		$vars['cachebust'] = NULL_CACHE_BUST;
+		$vars['contentwidth'] = $content_width;
+		return $vars;
 
 	}
 
@@ -358,7 +358,7 @@
 	function null_admin_css_setup() {
 
 		// is less compiling enabled or disabled?
-		$type = (of_get_option('disable_less', '1') ? 'css' : 'less');
+		$type = (!class_exists('wp_less') ? 'css' : 'less');
 
 		// custom admin css
 		wp_register_style('null-admin', get_template_directory_uri() . '/assets/'.$type.'/wp-admin.'.$type, '', filemtime(get_template_directory() . '/assets/'.$type.'/wp-admin.'.$type));
@@ -379,7 +379,7 @@
 	function null_theme_css_setup() {
 
 		// is less compiling enabled or disabled?
-		$type = (of_get_option('disable_less', '1') ? 'css' : 'less');
+		$type = (!class_exists('wp_less') ? 'css' : 'less');
 
 		// register all css/less
 		// grab the google font based on font settings
@@ -443,7 +443,7 @@
 	function null_login_css_setup() {
 
 		// is less compiling enabled or disabled?
-		$type = (of_get_option('disable_less', '1') ? 'css' : 'less');
+		$type = (!class_exists('wp_less') ? 'css' : 'less');
 
 		// custom admin css
 		wp_register_style('null-admin', get_template_directory_uri() . '/assets/'.$type.'/wp-admin.'.$type, array(), filemtime(get_template_directory() . '/assets/'.$type.'/wp-admin.'.$type));

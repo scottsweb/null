@@ -610,7 +610,7 @@ function null_mce_editor_styles( $settings ) {
 if (!is_child_theme()) {
 
 	// is less compiling enabled or disabled?
-	$type = (of_get_option('disable_less', '0') ? 'css' : 'less');
+	$type = (!class_exists('wp_less') ? 'css' : 'less');
 	add_editor_style('assets/'.$type.'/wp-editor.'.$type);
 
 }
