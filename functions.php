@@ -26,93 +26,6 @@
 	Notes:
 	----------------------------------------
 
-	future
-	to-do: http://gridster.net/ - build virtual templates via UI (fork coming soon)
-			- http://jsfiddle.net/maxgalbu/UfyjW/
-			- https://github.com/ducksboard/gridster.js/issues/69
-			- http://headwaythemes.com/features/headway-grid/
-			- http://www.webresourcesdepot.com/grid-builder-drag-n-drop-html-grid-generator/
-			- http://app.responsify.it/
-			- https://www.scrollkit.com/
-			- http://mcpants.github.io/jquery.shapeshift/index.html
-	to-do: bundle xml file import for WordPress (use wordpress import/export feature) - theme unit test installer?
-	to-do: perhaps move to: http://wordpress.org/extend/plugins/option-tree/ for options?
-			- 	to-do: pre-configured site settings (so buddypress, multi site, multi author, client etc)
-	to-do: a second take on responsive tables -> http://filamentgroup.com/examples/rwd-table-patterns/ / http://consulenza-web.com/jquery/MediaTable/?
-			-  http://css-tricks.com/responsive-data-table-roundup/ - more options for responsive tables
-	to-do: font effects? https://developers.google.com/webfonts/docs/getting_started#Effects - shortcode?
-	to-do: explore the gantry-framework http://www.gantry-framework.org/download
-	to-do: ability to disable built in post types and taxonomies - http://core.trac.wordpress.org/ticket/14761
-	to-do: move to an existing CSS/LESS framework?
-			- clean up gravity forms less and test with some forms (not using GF much)
-			- a beautiful, minimal, responsive design (old scott.ee site?)
-			- http://typeplate.com/
-			- http://cardinalcss.com/#top
-			- http://twitter.github.com/bootstrap/ also http://bootswatch.com/
-			- http://responsablecss.com/ - baseline is not calculated
-			- http://mateuszkocz.github.com/3l - seo helper is rather nifty
-			- http://compass-style.org/reference/compass/css3/ - less mixin ideas from compass
-			- http://kushagragour.in/lab/hint/ - css tooltips
-			- http://necolas.github.com/normalize.css/ - use normalize instead of full reset
-			- investigate this grid system: https://t.co/GaP9MWsZtS
-			- http://coding.smashingmagazine.com/2013/03/08/tips-tricks-print-style-sheets/ - improve print styles
-			- http://gumbyframework.com/
-			- http://www.99lime.com/elements/
-			- http://www.formee.org/
-			- http://simplegrid.info/
-			- http://www.responsivegridsystem.com/
-			- http://www.fitgrd.com/
-			- http://www.getuikit.com/
-			- https://github.com/mojotech/jeet
-			- https://github.com/believer/mrwhite-less-mixins
-			- https://github.com/chromice/order.less - baseline / typography
-			- http://codepen.io/sturobson/pen/cHDqf?editors=010
-	to-do: replace modernizr? http://conditionizr.com/
-	to-do: live bind shortcode JS for instant search plugin compatibility - livequery? or .on
-	to-do: compatibilty with live edit - http://wordpress.org/extend/plugins/live-edit/
-			- if (function_exists("live_edit")) { live_edit(apply_filters('null_live_edit_loop', 'post_title, post_excerpt')); }
-	to-do: HiDPI/vector icon post type icons - ready for 3.7 and MP6
-	to-do: create an editable 404?
-	to-do: feature tooltips restricted by user type (same code as with admin bar)
-	to-do: improve gallery shortcode - css and filters tweaks - see chailey - make the built in gallery useful in more projects //http://wordpress.stackexchange.com/questions/4343/how-to-customise-the-output-of-the-wp-image-gallery-shortcode-from-a-plugin
-	to-do: remove htaccess gubbins in favour of : https://github.com/roots/wp-h5bp-htaccess/
-	to-do: schema.org markup
-
-	ongoing
-	to-do: update language files
-	to-do: update modernizr
-	to-do: update ligature symbols
-	to-do: update less compiler 0.3.9+ / less plugin and grid - hopefully will work again and provide css compression
-	to-do: update acf
-	to-do: test against the theme guide: http://developer.wordpress.com/themes/
-	to-do: theme options framework
-
-	soon
-	to-do: cache
-			- (transients) null_get_extensions?
-			- cache any wp-query and custom query?
-	to-do: filter folder locations for extensions (a plugin could register extension folders?)
-	to-do: Turn on certain extensions by default (child theme ships with X,Y,Z on)
-	to-do: improve nav walker to provide better classes and support for other attributes
-	to-do: issue - all templates that exist in the parent theme are a pain - if i just want index.php in child theme I have to overwrite category, tag etc etc - move all these to null child?
-		- 	to-do: style and code for various post format types (chat, video, quote etc)
-		- 	to-do: home.php
-	to-do: Performance for htaccess? http://wp.tutsplus.com/tutorials/hosting/optimizing-wordpress-loading-speed-with-header-php-htaccess/
-	to-do: please make sure your htaccess is writable notice on activation?
-	to-do: navigation fix for cpt - see MHP
-	to-do: remove more polyfills
-			- webp images? - http://webpjs.appspot.com/ - https://developers.google.com/speed/webp/
-			- One tool based on jQuery and modernizr - http://afarkas.github.io/webshim/demos/index.html
-			- http://elclanrs.github.io/jq-idealforms/
-			- https://github.com/louisremi/jquery-smartresize
-	to-do: customise: https://github.com/devinsays/options-framework-theme/commit/476b24bd24b1f6392a793122e47366a4d3cd9eef
-	to-do: https://github.com/mboynes/super-cpt
-	to-do: update IE8 pinned info http://www.buildmypinnedsite.com/en
-	to-do: option to remove http://aahacreative.com/2013/08/05/remove-jquery-migrate-wordpress-36/
-	to-do: http://wptheming.com/2013/11/optimizing-responsive-layouts/
-	to-do: http://lessphp.gpeasy.com/ - move to this?
-	to-do: http://gomakethings.com/removing-wordpress-funk/ - remove funk
-	to-do: activation and signup page body classes - see FXB
 	*/
 
 	// load the options framework
@@ -885,5 +798,3 @@
 	   	return $str;
 
 	}
-
-?>
