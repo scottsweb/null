@@ -37,7 +37,7 @@ add_filter('mod_rewrite_rules', 'null_mod_rewrites_www');
 function null_rewrites_www()
 {
 	global $wp_rewrite;
-	
+
 	// determine current theme folder name
 	preg_match("/wp-content\/themes\/(.+)/", get_stylesheet_directory(), $bits);
 
@@ -66,7 +66,7 @@ function null_mod_rewrites_www($rules) {
 	global $wp_filesystem;
 
 	// redirect to www version of url at all times
-	if (null_string_search('www',get_bloginfo('url'))) {
+	if (null_string_search('www',home_url())) {
 		$rules = str_replace('RewriteRule ^x1 /x1 [QSA,L]', "RewriteCond %{HTTPS} !=on\nRewriteCond %{HTTP_HOST} !^www\..+$ [NC]\nRewriteCond %{HTTP_HOST} (.+)$ [NC]", $rules);
 		$rules = str_replace('RewriteRule ^x2 /x2 [QSA,L]', 'RewriteRule ^(.*)$ http://www.%1/$1 [R=301,L]', $rules);
 	// else redirect to non www version
@@ -79,9 +79,9 @@ function null_mod_rewrites_www($rules) {
     if (is_null($wp_filesystem)) WP_Filesystem(array(), ABSPATH);
 
     $filename = dirname(__FILE__) . '/htaccess';
-    
+
     return $rules . $wp_filesystem->get_contents($filename);
-    	
+
 }
 
 /***************************************************************
@@ -92,14 +92,14 @@ function null_mod_rewrites_www($rules) {
 add_action( 'load-themes.php', 'null_flush_htaccess_rules' );
 
 function null_flush_htaccess_rules() {
-	
+
 	global $pagenow, $wp_rewrite;
 
 	if (is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php") {
-		
+
 		// flush/add our rewrite rules to htaccess
 		$wp_rewrite->flush_rules();
-		
+
 	}
 }
 }
