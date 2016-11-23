@@ -257,6 +257,11 @@ function null_wp_head() {
 	<?php
 	}
 
+	// android/chrome theme colour
+	if ( function_exists( 'jetpack_is_mobile' ) && jetpack_is_mobile( 'smart' ) ) {
+		echo '<meta name="theme-color" content="' . $ie9colour .'">';
+	}
+
 	// ios app
 	if ($advanced_header_meta['ios_app'] == "1") {
 	?>

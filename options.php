@@ -226,7 +226,7 @@ function optionsframework_options() {
 	if ($advanced_header_meta['ie9_app'] == "1") {
 
 		$design_options['ie9_colour'] = array(
-			"name" => __('IE9+/Win8 Pinned Application Colour', 'null'),
+			"name" => __('IE9+/Win8/Chrome Android Pinned Application Colour', 'null'),
 			"desc" => __('Used for browser buttons and for the Windows 8 touch tile.', 'null'),
 			"id" => "ie9_colour",
 			"std" => "#141414",
@@ -892,60 +892,60 @@ function null_options_theme_customiser($wp_customize) {
 
 	// tagline
 	if (isset($options['show_tagline'])) {
-	    $wp_customize->add_setting(NULL_OPTION_NAME.'[show_tagline]', array(
-	        'default' => $options['show_tagline']['std'],
-	        'type' => 'option'
-	    ) );
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[show_tagline]', array(
+			'default' => $options['show_tagline']['std'],
+			'type' => 'option'
+		) );
 
-	    $wp_customize->add_control( NULL_OPTION_NAME.'_show_tagline', array(
-	        'label' => $options['show_tagline']['name'],
-	        'section' => 'null_options_theme_customiser_layout',
-	        'settings' => NULL_OPTION_NAME.'[show_tagline]',
-	        'type' => $options['show_tagline']['type'],
-	    ) );
-    }
+		$wp_customize->add_control( NULL_OPTION_NAME.'_show_tagline', array(
+			'label' => $options['show_tagline']['name'],
+			'section' => 'null_options_theme_customiser_layout',
+			'settings' => NULL_OPTION_NAME.'[show_tagline]',
+			'type' => $options['show_tagline']['type'],
+		) );
+	}
 
 	// breadcrumbs
 	if (isset($options['breadcrumbs'])) {
-	    $wp_customize->add_setting(NULL_OPTION_NAME.'[breadcrumbs]', array(
-	        'default' => $options['breadcrumbs']['std'],
-	        'type' => 'option'
-	    ) );
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[breadcrumbs]', array(
+			'default' => $options['breadcrumbs']['std'],
+			'type' => 'option'
+		) );
 
-	    $wp_customize->add_control( NULL_OPTION_NAME.'_breadcrumbs', array(
-	        'label' => $options['breadcrumbs']['name'],
-	        'section' => 'null_options_theme_customiser_layout',
-	        'settings' => NULL_OPTION_NAME.'[breadcrumbs]',
-	        'type' => $options['breadcrumbs']['type'],
-	    ) );
-    }
+		$wp_customize->add_control( NULL_OPTION_NAME.'_breadcrumbs', array(
+			'label' => $options['breadcrumbs']['name'],
+			'section' => 'null_options_theme_customiser_layout',
+			'settings' => NULL_OPTION_NAME.'[breadcrumbs]',
+			'type' => $options['breadcrumbs']['type'],
+		) );
+	}
 
-    // footer_sidebar
-   	if (isset($options['footer_sidebar'])) {
-	    $wp_customize->add_setting(NULL_OPTION_NAME.'[footer_sidebar]', array(
-	        'default' => $options['footer_sidebar']['std'],
-	        'type' => 'option'
-	    ) );
+	// footer_sidebar
+	if (isset($options['footer_sidebar'])) {
+		$wp_customize->add_setting(NULL_OPTION_NAME.'[footer_sidebar]', array(
+			'default' => $options['footer_sidebar']['std'],
+			'type' => 'option'
+		) );
 
-	    $wp_customize->add_control( NULL_OPTION_NAME.'_footer_sidebar', array(
-	        'label' => $options['footer_sidebar']['name'],
-	        'section' => 'null_options_theme_customiser_layout',
-	        'settings' => NULL_OPTION_NAME.'[footer_sidebar]',
-	        'type' => $options['footer_sidebar']['type'],
-	    ) );
+		$wp_customize->add_control( NULL_OPTION_NAME.'_footer_sidebar', array(
+			'label' => $options['footer_sidebar']['name'],
+			'section' => 'null_options_theme_customiser_layout',
+			'settings' => NULL_OPTION_NAME.'[footer_sidebar]',
+			'type' => $options['footer_sidebar']['type'],
+		) );
 	}
 
 	// design section
 	$wp_customize->add_section( 'null_options_theme_customiser_design', array(
-	    'title' => __( 'Design', 'null' ),
-	    'priority' => 200
+		'title' => __( 'Design', 'null' ),
+		'priority' => 200
 	) );
 
 	// logo
 	if (isset($options['logo'])) {
 		$wp_customize->add_setting(NULL_OPTION_NAME.'[logo]', array(
-		    //'default' => $options['logo']['std'],
-		    'type' => 'option'
+			//'default' => $options['logo']['std'],
+			'type' => 'option'
 		) );
 
 		$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, NULL_OPTION_NAME.'_logo', array(
@@ -959,9 +959,9 @@ function null_options_theme_customiser($wp_customize) {
 	// primary colour
 	if (isset($options['primary_colour'])) {
 		$wp_customize->add_setting(NULL_OPTION_NAME.'[primary_colour]', array(
-		    'default' => $options['primary_colour']['std'],
-		    'type' => 'option',
-		    'transport' => 'refresh'
+			'default' => $options['primary_colour']['std'],
+			'type' => 'option',
+			'transport' => 'refresh'
 		) );
 
 		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, NULL_OPTION_NAME.'_primary_colour', array(
@@ -975,9 +975,9 @@ function null_options_theme_customiser($wp_customize) {
 	// body colour
 	if (isset($options['body_colour'])) {
 		$wp_customize->add_setting(NULL_OPTION_NAME.'[body_colour]', array(
-		    'default' => $options['body_colour']['std'],
-		    'type' => 'option',
-		    //'transport' => 'refresh'
+			'default' => $options['body_colour']['std'],
+			'type' => 'option',
+			//'transport' => 'refresh'
 		) );
 
 		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, NULL_OPTION_NAME.'_body_colour', array(
@@ -991,8 +991,8 @@ function null_options_theme_customiser($wp_customize) {
 	// link colour
 	if (isset($options['link_colour'])) {
 		$wp_customize->add_setting(NULL_OPTION_NAME.'[link_colour]', array(
-		    'default' => $options['link_colour']['std'],
-		    'type' => 'option'
+			'default' => $options['link_colour']['std'],
+			'type' => 'option'
 		) );
 
 		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, NULL_OPTION_NAME.'_link_colour', array(
@@ -1006,8 +1006,8 @@ function null_options_theme_customiser($wp_customize) {
 	// link hover colour
 	if (isset($options['link_hover_colour'])) {
 		$wp_customize->add_setting(NULL_OPTION_NAME.'[link_hover_colour]', array(
-		    'default' => $options['link_hover_colour']['std'],
-		    'type' => 'option'
+			'default' => $options['link_hover_colour']['std'],
+			'type' => 'option'
 		) );
 
 		$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, NULL_OPTION_NAME.'_link_hover_colour', array(
@@ -1021,36 +1021,36 @@ function null_options_theme_customiser($wp_customize) {
 	// heading font
 	if (isset($options['heading_font'])) {
 		$wp_customize->add_setting(NULL_OPTION_NAME.'[heading_font]', array(
-		    'default' => $options['heading_font']['std'],
-		    'type' => 'option',
-		    'transport' => 'refresh'
+			'default' => $options['heading_font']['std'],
+			'type' => 'option',
+			'transport' => 'refresh'
 		));
 
 		$wp_customize->add_control(NULL_OPTION_NAME.'_heading_font', array(
 			'label' => $options['heading_font']['name'],
 			'section' => 'null_options_theme_customiser_design',
 			'settings' => NULL_OPTION_NAME.'[heading_font]',
-	        'type' => $options['heading_font']['type'],
-	        'choices' => $options['heading_font']['options'],
-	        'priority' => 6
+			'type' => $options['heading_font']['type'],
+			'choices' => $options['heading_font']['options'],
+			'priority' => 6
 		));
 	}
 
 	// body font
 	if (isset($options['body_font'])) {
 		$wp_customize->add_setting(NULL_OPTION_NAME.'[body_font]', array(
-		    'default' => $options['body_font']['std'],
-		    'type' => 'option',
-		    'transport' => 'refresh'
+			'default' => $options['body_font']['std'],
+			'type' => 'option',
+			'transport' => 'refresh'
 		) );
 
 		$wp_customize->add_control(NULL_OPTION_NAME.'_body_font', array(
 			'label' => $options['body_font']['name'],
 			'section' => 'null_options_theme_customiser_design',
 			'settings' => NULL_OPTION_NAME.'[body_font]',
-	        'type' => $options['body_font']['type'],
-	        'choices' => $options['body_font']['options'],
-	        'priority' => 7
+			'type' => $options['body_font']['type'],
+			'choices' => $options['body_font']['options'],
+			'priority' => 7
 		));
 	}
 }
