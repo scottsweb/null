@@ -1,4 +1,4 @@
-/* 
+/*
 
 screen.less
 contents:
@@ -33,7 +33,7 @@ body
 	background-image: url("@{stylesheeturi}/assets/images/@{backgroundimage}.png?v=@{cachebust}");
 	background-repeat: repeat;
 	}
-	
+
 #wrapper
 	{
 	.clearfix;
@@ -41,7 +41,6 @@ body
 	margin: @baseline auto;
 	max-width: 900px;
 	//background: @white url(http://griddle.it/900-@{columns}-@{gutter-width}) repeat-y center top;
-	//background: url('http://www.baselineme.com/32') center top repeat;
 	background: @white;
 	}
 
@@ -52,36 +51,36 @@ body
 	padding-bottom: @baseline;
 	margin-bottom: @baseline;
 	position: relative;
-	
-	h1 
+
+	h1
 		{
 		.font-size(30);
 		margin: 0;
 		line-height: 1;
 		}
-	
+
 	h1 a
 		{
 		color: @primarycol;
 		}
-	
-	h2 
+
+	h2
 		{
 		.font-size(22);
 		margin: 0 0 -5px 0;
 		color: @lightgrey;
 		}
-	
+
 	nav
 		{
 		//.sans-serif;
-		.font-size(16);		
+		.font-size(16);
 		position: absolute;
 		bottom: 21px;
 		right: 0;
 		z-index: 1000;
 		}
-	
+
 	nav ul li
 		{
 		float: left;
@@ -106,14 +105,14 @@ body
 		left: 0;
 		background: @white;
 		}
-		
+
 	nav ul li ul li
 		{
 		width: auto;
 		float: none;
 		padding: 0;
 		}
-		
+
 	nav ul li ul li a
 		{
 		padding: 5px @baseline/2;
@@ -125,13 +124,13 @@ body
 		{
 		display: block;
 		}
-		
+
 	nav .current-menu-item > a,
 	nav .current-menu-ancestor > a
 		{
 		color: @black;
 		}
-	
+
 	}
 
 #breadcrumbs
@@ -180,42 +179,42 @@ body
 	{
 	margin-bottom: @baseline * 1.5;
 	position: relative;
-	
+
 	h3
 		{
 		margin-bottom: 0;
 		line-height: 1;
 		}
-	
+
 	&.sticky
 		{
 		background-color: fadeout(@primarycol, 95%);
 		padding: @baseline;
 		}
-		
+
 	.entry-date,
 	.entry-sticky
 		{
 		.font-size(16);
-		color: @lightgrey;	
+		color: @lightgrey;
 		margin-bottom: @baseline / 2;
 		}
-			
+
 	.entry-meta
 		{
 		.list-reset;
 		.font-size(16);
-		color: @grey;	
+		color: @grey;
 		border-top: 1px solid @lightergrey;
 		border-bottom: 1px solid @lightergrey;
 		}
-	
+
 	.entry-categories,
 	.entry-tags
 		{
 		display: none;
 		}
-		
+
 	&.sticky .entry-meta
 		{
 		border-top: 1px solid fadeout(@primarycol, 80%);
@@ -228,19 +227,19 @@ body
 		padding: (@baseline / 2) 0;
 		float: left;
 		}
-		
+
 	.entry-meta li.entry-author
 		{
 		margin-right: (@baseline / 2);
 		padding-right: (@baseline / 2);
 		border-right: 1px solid @lightergrey;
 		}
-	
+
 	&.sticky .entry-meta li.entry-author
 		{
 		border-right: 1px solid fadeout(@primarycol, 80%);
 		}
-	
+
 	.entry-comments
 		{
 		position: absolute;
@@ -255,7 +254,7 @@ body
 	.page-link
 		{
 		.font-size(16);
-		color: @lightgrey;	
+		color: @lightgrey;
 		margin-bottom: @baseline / 2;
 		}
 
@@ -265,7 +264,7 @@ body
 		padding: 2px 8px 4px 8px;
 		background: @lightergrey;
 		}
-	
+
 	.page-link a:hover span
 		{
 		background: @primarycol;
@@ -277,23 +276,23 @@ body
 		.font-size(15);
 		color: @lightgrey;
 		}
-		
+
 	.entry-content
 		{
 		.clearfix;
 		}
-	
+
 	.previous
 		{
 		float: left;
 		}
-	
+
 	.next
 		{
 		float: right;
 		}
 	}
-	
+
 .page
 	{
 
@@ -305,25 +304,25 @@ body
 
 // comments
 
-#comments 
+#comments
 	{
-	
-	ol, 
+
+	ol,
 	ul
 		{
 		.list-reset;
 		}
-		
+
 	ul
 		{
 		margin-left: @baseline;
 		}
-		
-	ol > li 
+
+	ol > li
 		{
 		margin-bottom: @baseline;
 		}
-	
+
 	.comment
 		{
 		.clearfix;
@@ -334,27 +333,27 @@ body
 		{
 		background: @lightergrey;
 		}
-	
+
 	.comment.even
 		{
 		background: fadeout(@primarycol, 95%);
 		}
-		
+
 	.comment-meta
 		{
 		.list-reset;
 		}
-	
+
 	.comment header
 		{
 		margin-bottom: @baseline;
 		}
-		
+
 	.comment header img
 		{
 		float: right;
 		}
-	
+
 	.comment-date
 		{
 		.font-size(16);
@@ -362,56 +361,56 @@ body
 		position: relative;
 		top: -8px;
 		}
-	
+
 	.comment footer
 		{
 		.font-size(14);
 		}
-		
-	.bypostauthor, 
+
+	.bypostauthor,
 	.comment-author-admin
 		{
 		background: fadeout(@linkcol, 95%) !important;
 		}
-	
+
 	.trackback,
 	.pingback
 		{
 		padding: @baseline/2;
 		}
-	
+
 	.pingback.even,
 	.trackback.even
 		{
 		background: fadeout(@primarycol, 95%);
 		}
-	
+
 	.pingback.odd,
 	.trackback.odd
 		{
 		background: @lightergrey;
 		}
-	
+
 	.trackback p,
 	.pingback p
 		{
 		margin: 0;
 		}
-	
+
 	.trackback .entry-edit,
 	.pingback .entry-edit
 		{
 		.font-size(14);
 		display: block;
 		}
-	
+
 	#comment-list #respond
 		{
 		padding: @baseline/2;
 		background: @lightergrey;
 		margin-bottom: @baseline;
 		}
-		
+
 	#cancel-comment-reply-link
 		{
 		.font-size(14);
@@ -420,7 +419,7 @@ body
 		float: right;
 		}
 	}
-	
+
 #comment-form
 	{
 	.help
@@ -441,25 +440,25 @@ body
 		margin: 0;
 		}
 	}
-	
+
 #author-information
 	{
 	background-color: fadeout(@primarycol, 95%);
 	padding: @baseline;
 	margin-bottom: @baseline;
-	
+
 	header
 		{
 		.clearfix;
 		margin-bottom: @baseline;
 		}
-		
+
 	.avatar
 		{
 		float: left;
 		margin-right: @baseline / 2;
 		}
-	
+
 	#author-meta
 		{
 		.list-reset;
@@ -471,26 +470,26 @@ body
 	{
 	.clearfix;
 	margin-bottom: @baseline / 2;
-	
+
 	ul
 		{
 		.list-reset;
 		text-align: center;
 		}
-	
+
 	ul li
 		{
 		display: inline;
 		margin: 0 2px;
 		}
-	
+
 	span.page-numbers,
 	a.page-numbers
 		{
 		padding: 2px 8px 4px 8px;
 		background: @lightergrey;
 		}
-	
+
 	span.page-numbers:hover,
 	a.page-numbers:hover
 		{
@@ -503,7 +502,7 @@ body
 		background: @lightergrey;
 		color: #141414;
 		}
-		
+
 	}
 
 .single .pagination
@@ -524,12 +523,12 @@ body
 	color: @lightgrey;
 	border-top: 1px solid @primarycol;
 	padding-top: @baseline;
-		
+
 	&:hover
 		{
 		color: #141414;
 		}
-	
+
 	#sidebar-footer
 		{
 		.row(12);
@@ -539,42 +538,42 @@ body
 		margin-bottom: @baseline;
 		padding-bottom: @baseline;
 		}
-		
-	#footer-navigation 
+
+	#footer-navigation
 		{
 		.list-reset;
-			
+
 		ul.children
 			{
 			display: none;
 			text-align: center;
 			}
-			
+
 		ul
 			{
 			text-align:center;
 			}
-		
+
 		ul li
 			{
 			margin: 0 @baseline / 2;
 			display: inline;
 			}
 		}
-	
+
 	.widget
 		{
 		.column(3, 12);
 		.clearfix;
 		text-align: center;
 		}
-		
+
 	.widget h4
 		{
 		padding-bottom: @baseline/1.5;
 		border-bottom: 1px solid @lightergrey;
 		}
-		
+
 	#null-footer
 		{
 		text-align: center;
@@ -583,9 +582,9 @@ body
 
 // these media queries can be removed in favour of the ones below
 
-@media screen and (max-width: 700px) 
+@media screen and (max-width: 700px)
 	{
-	
+
 	#header nav
 		{
 		position: static;
@@ -595,7 +594,7 @@ body
 		{
 		margin: @baseline 0 0 0;
 		}
-		
+
 	#header nav ul li
 		{
 		margin: 0 0 1px 0;
@@ -615,20 +614,20 @@ body
 		{
 		//margin: 0 0 1px 0;
 		}
-		
+
 	#content,
 	#sidebar,
-	.widget 
+	.widget
 		{
 		.column(12);
 		}
-	
+
 	.widget
 		{
 		margin-bottom: @baseline;
 		}
 
-	#footer 
+	#footer
 		{
 		.widget
 			{
@@ -642,32 +641,32 @@ body
 
 // larger mobile devices like galaxy note
 @media only screen and (min-width: 481px) {
-	
-	// styles in 481up.less 
+
+	// styles in 481up.less
 	//@import "481up.less";
 
 }
 
 // tablets and smaller laptops
 @media only screen and (min-width: 768px) {
-	
-	// styles in 768up.less 
+
+	// styles in 768up.less
 	//@import "768up.less";
 
-} 
+}
 
 // desktop, normal laptops
 @media only screen and (min-width: 1030px) {
-	
-	// styles in 1030up.less 
+
+	// styles in 1030up.less
 	//@import "1030up.less";
 
 }
 
 // larger viewing sizes, desktops, full screen viewers?
 @media only screen and (min-width: 1240px) {
-	
-	// styles in 1240up.less 
+
+	// styles in 1240up.less
 	//@import "1240up.less";
 
 }
@@ -684,54 +683,54 @@ only screen and (min-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 144dpi),
 only screen and (min-resolution: 2dppx)
 	{
-	@import "2x.less"; 
-	} 
-
-// Smartphones (portrait and landscape)
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) 
-	{
-	/* prevent iOS, WinMobile from adjusting font size */
-  	html 
-  		{ 
-  		-webkit-text-size-adjust:none;
-  		-ms-text-size-adjust:none; 
-  		}
-  		
+	@import "2x.less";
 	}
 
-// Smartphones (landscape) 
-@media only screen 
-and (min-width : 321px) 
+// Smartphones (portrait and landscape)
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px)
+	{
+	/* prevent iOS, WinMobile from adjusting font size */
+  	html
+  		{
+  		-webkit-text-size-adjust:none;
+  		-ms-text-size-adjust:none;
+  		}
+
+	}
+
+// Smartphones (landscape)
+@media only screen
+and (min-width : 321px)
 	{
 	}
 
 // Smartphones (portrait)
-@media only screen 
-and (max-width : 320px) 
+@media only screen
+and (max-width : 320px)
 	{
 	}
 
 // iPads (portrait and landscape)
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 	{
 	}
 
 // iPads (landscape)
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
 	{
 	}
 
 // iPads (portrait)
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
 	{
 	}

@@ -315,7 +315,7 @@ if (of_get_option('disable_rss', '0')) {
 }
 
 function null_disable_rss_feed() {
-	wp_die( __('RSS is currently disabled. Please visit our <a href="'. esc_url( home_url() ) .'">homepage</a>!', 'null'));
+	wp_die( sprintf( __('RSS is currently disabled. Please visit our <a href="$s">homepage</a>!', 'null'), esc_url( home_url() ) ) );
 }
 
 /***************************************************************
@@ -566,20 +566,6 @@ function null_filter_menu_class( $objects ) {
 }
 
 /***************************************************************
-* Function null_breadcrumb_textdomain
-* Use null textdomain for breadcrumbs as it is bundled with theme
-***************************************************************/
-
-add_filter('breadcrumb_trail_textdomain','null_breadcrumb_textdomain');
-
-function null_breadcrumb_textdomain($domain) {
-
-	$domain = 'null';
-	return $domain;
-
-}
-
-/***************************************************************
 * Function null_post_class
 * Add some custom classes to each post
 ***************************************************************/
@@ -822,9 +808,9 @@ if (!function_exists('null_estimated_reading_time')) {
 		$m = floor($word / 200);
 		$s = floor($word % 200 / (200 / 60));
 		if ($m) {
-			$est = sprintf(_n("%d minute", "%d minutes", $m), $m) . ', ' . sprintf(_n("%d second", "%d seconds", $s), $s);
+			$est = sprintf(_n("%d minute", "%d minutes", $m, 'null'), $m) . ', ' . sprintf(_n("%d second", "%d seconds", $s, 'null'), $s);
 		} else {
-			$est = sprintf(_n("%d second", "%d seconds", $s), $s);
+			$est = sprintf(_n("%d second", "%d seconds", $s, 'null'), $s);
 		}
 		return $est;
 	}
