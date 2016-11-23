@@ -9,15 +9,15 @@
  *
  * Breadcrumb Trail - A breadcrumb menu script for WordPress.
  *
- * Breadcrumb Trail is a script for showing a breadcrumb trail for any type of page.  It tries to anticipate 
+ * Breadcrumb Trail is a script for showing a breadcrumb trail for any type of page.  It tries to anticipate
  * any type of structure and display the best possible trail that matches your site's permalink structure.
  * While not perfect, it attempts to fill in the gaps left by many other breadcrumb scripts.
  *
- * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
- * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume 
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+ * General Public License version 2, as published by the Free Software Foundation.  You may NOT assume
  * that you can use any other version of the GPL.
  *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without 
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package BreadcrumbTrail
@@ -29,8 +29,8 @@
  */
 
 /**
- * Yes, we're localizing the plugin.  This partly makes sure non-English users can use it too.  
- * To translate into your language use the breadcrumb-trail-en_EN.po file as as guide.  Poedit 
+ * Yes, we're localizing the plugin.  This partly makes sure non-English users can use it too.
+ * To translate into your language use the breadcrumb-trail-en_EN.po file as as guide.  Poedit
  * is a good tool to for translating.
  * @link http://poedit.net
  *
@@ -39,8 +39,8 @@
 //load_plugin_textdomain( 'breadcrumb-trail', false, 'breadcrumb-trail' );
 
 /**
- * Shows a breadcrumb for all types of pages.  This function is formatting the final output of the 
- * breadcrumb trail.  The breadcrumb_trail_get_items() function returns the items and this function 
+ * Shows a breadcrumb for all types of pages.  This function is formatting the final output of the
+ * breadcrumb trail.  The breadcrumb_trail_get_items() function returns the items and this function
  * formats those items.
  *
  * @since 0.1.0
@@ -117,7 +117,7 @@ function breadcrumb_trail( $args = array() ) {
 }
 
 /**
- * Gets the items for the breadcrumb trail.  This is the heart of the script.  It checks the current page 
+ * Gets the items for the breadcrumb trail.  This is the heart of the script.  It checks the current page
  * being viewed and decided based on the information provided by WordPress what items should be
  * added to the breadcrumb trail.
  *
@@ -138,7 +138,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
 
 	/* If $show_home is set and we're not on the front page of the site, link to the home page. */
 	if ( !is_front_page() && $args['show_home'] )
-		$trail[] = '<a href="' . home_url() . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $args['show_home'] . '</a>';
+		$trail[] = '<a href="' . esc_url( home_url() ) . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" class="trail-begin">' . $args['show_home'] . '</a>';
 
 	/* If viewing the front page of the site. */
 	if ( is_front_page() ) {
@@ -361,7 +361,7 @@ function breadcrumb_trail_get_items( $args = array() ) {
 
 /**
  * Turns %tag% from permalink structures into usable links for the breadcrumb trail.  This feels kind of
- * hackish for now because we're checking for specific %tag% examples and only doing it for the 'post' 
+ * hackish for now because we're checking for specific %tag% examples and only doing it for the 'post'
  * post type.  In the future, maybe it'll handle a wider variety of possibilities, especially for custom post
  * types.
  *
@@ -450,8 +450,8 @@ function breadcrumb_trail_map_rewrite_tags( $post_id = '', $path = '', $args = a
 }
 
 /**
- * Gets parent pages of any post type or taxonomy by the ID or Path.  The goal of this function is to create 
- * a clear path back to home given what would normally be a "ghost" directory.  If any page matches the given 
+ * Gets parent pages of any post type or taxonomy by the ID or Path.  The goal of this function is to create
+ * a clear path back to home given what would normally be a "ghost" directory.  If any page matches the given
  * path, it'll be added.  But, it's also just a way to check for a hierarchy with hierarchical post types.
  *
  * @since 0.3.0
@@ -537,7 +537,7 @@ function breadcrumb_trail_get_parents( $post_id = '', $path = '' ) {
 }
 
 /**
- * Searches for term parents of hierarchical taxonomies.  This function is similar to the WordPress 
+ * Searches for term parents of hierarchical taxonomies.  This function is similar to the WordPress
  * function get_category_parents() but handles any type of taxonomy.
  *
  * @since 0.3.0
