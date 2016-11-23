@@ -1,7 +1,8 @@
-![null logo](https://dl.dropbox.com/u/3019972/null.png)
+![null logo](http://cloud.scott.ee/images/null.png)
 
-## null
+# null
 
+* Status: ✖ Inactive
 * Contributors: [@scottsweb](http://twitter.com/scottsweb)
 * Theme Name: null
 * Theme URI: [http://null.scott.ee](http://null.scott.ee)
@@ -12,11 +13,11 @@
 * License URI: [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html)
 * Text Domain: null
 
-## about
+## About
 
-null is a tinkerers framework with ambitions to be the smartest, fastest and simplest way to build WordPress themes. 
+null is a tinkerers framework with ambitions to be the smartest, fastest and simplest way to build WordPress themes.
 
-null provides a platform for both rapid prototyping and production sites and can be used as either a starter theme or parent theme, the choice is yours! 
+null provides a platform for both rapid prototyping and production sites and can be used as either a starter theme or parent theme, the choice is yours!
 
 Things you will love:
 
@@ -28,7 +29,7 @@ Things you will love:
 * Semantic, responsive grid systems - null makes use of <a href="http://semantic.gs/">semantic.gs</a>.
 
 
-## installation
+## Installation
 
 To install this theme:
 
@@ -36,9 +37,9 @@ To install this theme:
 1. Alternatively you can unzip the theme folder (.zip). Then, via FTP, upload the "null" folder to your server and place it in the /wp-content/themes/ directory.
 1. Login to your wp-admin and visit "Appearance -> Themes". Now click on the null theme to activate it.
 1. After activation you will be given the option to setup WordPress with a number of default settings. This is an optional step and should **not** be run if you have already setup WordPress how you like it.
-1. Visit "Appearance -> Theme Options" and configure the theme options to your liking. 
+1. Visit "Appearance -> Theme Options" and configure the theme options to your liking.
 
-## frequently asked questions
+## Frequently Asked Questions
 
 ### Which Open Source projects does null make use of?
 
@@ -63,18 +64,6 @@ Credits go to:
 
 I will do my best to keep this updated as the framework develops - please let me know if I have missed you out.
 
-### Documentation?
-
-No yet, but it is planned. When using null as a parent theme there are plenty of hooks and filters to make use of which we need to document, in the meantime browse the code (it is very well commented).
-
-### What are your plans for future versions?
-
-A roadmap of sorts can be found at the top of functions.php. Some of the more ambitious features I hope to add at some point include:
-
-* Building virtual page templates and grids for use on pages and custom post types
-* Improved typographic control
-* Further integration with the WordPress theme customiser
-
 ### Is there a child starter theme available?
 
 Yes. It is called [null-child](https://github.com/scottsweb/null-child).
@@ -84,13 +73,34 @@ Yes. It is called [null-child](https://github.com/scottsweb/null-child).
 Currently null supports IE6+ and all modern browsers. By the time 1.0 launches support for IE6 and IE7 will most likely be removed.
 
 ### Does null pass [Theme-Check](http://wordpress.org/extend/plugins/theme-check/)?
-Not at the moment. It may never pass as we require the use of file_put_contents to write the compiled LESS files to the cache folder. The theme-check is also currently not checking .less files for required styles. Most of the errors and warnings are fairly minor. The plan is to improve this over time.
+Not at the moment but it is close. Most of the errors and warnings are fairly minor. The plan is to improve this over time.
 
-### Contributing 
+### Contributing
 
 Please submit all bugs, questions and suggestions to the [GitHub Issues](https://github.com/scottsweb/null/issues) queue.
 
-## changelog
+## Changelog
+
+#### 1.0
+* IMPORTANT. Removed LESS compiler. You will need a [standalone plugin](https://github.com/roborourke/wp-less) for this now
+* IMPORTANT. Removed ACF. You will need a [standalone version of ACF](https://www.advancedcustomfields.com/) now
+* Options framework latest
+* WordPress 4.0+ fixes
+* Loads of other fixes and tweaks - see commit history
+
+So this marks an end to the development of null. I am not doing much theme development these days so this feels like a good chance to wrap it up. If I was to put more time towards developing it there are still lots of improvements to be made, some things on my wish list included:
+
+* Switching from LESS, perhaps use [Jetpack for compilation of styles](https://kovshenin.com/2014/color-options-vs-decisions/)
+* Removing .htaccess changes and relying on [plugins instead](https://github.com/roots/wp-h5bp-htaccess/)
+* Reduce the number of template files in the parent theme to make child theming simpler
+* Introduce some basic styles for post formats and make the default theme a touch nicer to look at
+* Add support for [RSS to the Windows tile spec](http://www.buildmypinnedsite.com/) and [shortcuts to the jumplist](https://msdn.microsoft.com/en-us/library/gg491725(v=vs.85).aspx) based on the navigation
+* Provide an example home.php template for an interesting blog landing page
+* Move more theme options to [the customiser](https://aristath.github.io/kirki/)
+* Improve [theme accessibility](https://poststatus.com/how-to-create-accessible-wordpress-themes/)
+* Continue to remove polyfills and third party code. Move post types and widgets out of theme
+* Improve the gallery shortcode
+* Building virtual page templates and grids for use on pages and custom post types
 
 #### 1.0-beta2
 * Fix notice is class-admin-menu.php
@@ -121,7 +131,7 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 * Placeholder text is faded out on focus to improve usability (WebKit)
 * Use a hash of the settings to cache bust the CSS - better save performance using theme customiser
 * Filter for child themes to adjust cache bust variable and pass it into LESS to cache bust CSS images (handy for WPEngine)
-* Allow extension folders (widgets, post types, shortcodes) to be empty 
+* Allow extension folders (widgets, post types, shortcodes) to be empty
 * Advanced Custom Fields 4.1.5.1 and an option to disable/unload in theme options
 * [Theme Hook Alliance Compatibility](https://github.com/zamoose/themehookalliance)
 * Ensure of_get_option always has default options
@@ -179,14 +189,14 @@ Please submit all bugs, questions and suggestions to the [GitHub Issues](https:/
 * Options framework updated to 1.4
 * Font options added with Google Fonts API integration
 * WordPress 3.5 compatibility
-* Embed widget shortcode 
+* Embed widget shortcode
 * Removed IE6 polyfills - by the time v1.0 comes around all polyfills may be removed
 * HiDPI theme image
 * Improved compatibility with [null-child theme](https://github.com/scottsweb/null-child)
 
 #### 0.97
-* post_class classes moved away from the loops 
-* Minor bug fix on update script 
+* post_class classes moved away from the loops
+* Minor bug fix on update script
 * Tweak to remove attachment urls from inserted media
 
 #### 0.96
