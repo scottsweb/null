@@ -8,7 +8,7 @@
 * Theme URI: [http://null.scott.ee](http://null.scott.ee)
 * Description: null: the tinkerers framework, a HTML5 WordPress starter theme & parent theme
 * Author: [Scott Evans](http://scott.ee)
-* Author URI: [http://scott.ee](http://scott.ee)
+* Author URI: [https://scott.ee](http://scott.ee)
 * License: GNU General Public License v2.0
 * License URI: [http://www.gnu.org/licenses/gpl-2.0.html](http://www.gnu.org/licenses/gpl-2.0.html)
 * Text Domain: null
@@ -122,7 +122,7 @@ So this marks an end to the development of null. I am not doing much theme devel
 * Add composer.json
 * A few other minor things (see commit history)
 
-#### 1.0-beta
+#### 1.0-beta
 * Updated option framework to be compatible with new media uploader
 * New settings for Windows 8 pinned sites
 * Disabling comments now removes the comments menu
